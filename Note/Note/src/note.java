@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-class Value
+class Value1
 {
     private int i;
     public void set(int i){this.i = i;}
@@ -103,20 +103,20 @@ public class note
             System.out.println(i);//int数组中的元素没有变，仍为1
         }
 
-        Value[] c = new Value[5];
+        Value1[] c = new Value1[5];
         for ( int i=0; i<c.length; i++)
         {
-            c[i] = new Value();//
+            c[i] = new Value1();//
             c[i].set(0);
         }
         System.out.println("数组c中的元素为：");
-        for (Value k : c)
+        for (Value1 k : c)
         {
             System.out.println(k.get());//0
             k.set(1);
         }
         System.out.println("数组c中的元素为：");
-        for (Value k : c)
+        for (Value1 k : c)
         {
             System.out.println(k.get());//1
         }
