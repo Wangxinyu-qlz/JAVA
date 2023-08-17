@@ -2,6 +2,7 @@ import java.util.HashMap;
 
 public class Room {
 	private String description;
+//	使用容器（Hash）表示方向，实现"软编码"
 	private HashMap<String, Room> exits = new HashMap<String,Room>();
 
 	public Room(String description) {
