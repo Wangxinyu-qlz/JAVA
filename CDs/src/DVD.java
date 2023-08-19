@@ -2,7 +2,9 @@
 public class DVD extends Item {
 
     private String director;
-
+//  子类必须调用父类的构造器，完成父类的初始化
+//  创建子类对象时，不管使用子类的那个构造器，默认情况下总会去调用父类的无参构造器
+//  如果父类中没有无参构造器，必须在子类的构造器中用super()指定使用父类中的某个构造器完成对父类的初始化
     public DVD(String title, String director, int playingTime, String comment) {
         super(title, playingTime, false, comment);
         // 可行的，debug之后，可以看到两个title director playingTime comment，其中一个是自己的另一个是Item的，单步进入，优先将自己的四个变量赋值，Item的变量依然为NULL，“离我最近的是我的”原则

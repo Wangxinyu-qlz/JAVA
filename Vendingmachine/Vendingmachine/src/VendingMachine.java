@@ -6,6 +6,12 @@ public class VendingMachine
     // price = 80;//Syntax error on token ";", , expected    声明可以不在方法中，但是单独赋值需要在方法中
     int balance;//用户投币金额
     int total;//卖出商品总价格
+//    构造器有系统自动调用
+//    当没有显式的定义构造器时，自动生成默认构造器
+//    使用：VendingMachine vm = new VendingMachine()
+//    一旦定义自己的构造器，默认构造器被覆盖，除非显式地定义默认构造器：
+//    VendingMachine() {
+//    }
 
 //  构造函数，在实例化对象时，会先找这个函数，然后执行该函数之前的成员变量声明，最后在执行构造函数内部的语句
 //  构造函数没有返回类型
@@ -18,7 +24,9 @@ public class VendingMachine
 //  VendingMachine vm1 = new VendingMachine(30);语句会执行此构造函数，将price的值修改为了30
     VendingMachine(int price)
     {
+//        this.price就是当前对象的属性，谁调用，就是谁的
         this.price = price;
+        System.out.println("this的HashCode为：" + this.hashCode());
     }
 
     void setPrice(int price)
@@ -55,6 +63,7 @@ public class VendingMachine
     {
         System.out.println(this.balance);
     }
+
 
     public static void main(String[] args)
     {
