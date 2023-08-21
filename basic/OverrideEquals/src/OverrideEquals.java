@@ -4,8 +4,23 @@ public class OverrideEquals {
         Person person1 = new Person("jack", 10, '男');
         Person person2 = new Person("Smith", 10, '男');
         Person person3 = new Person("Bob", 10, '男');
+//        TODO @@@一定要注意有没有重写equals方法@@@
         System.out.println(person.equals(person1));//重写前为false,重写后为true
         System.out.println(person2.equals(person3));//false
+        System.out.println(person == person1);//false  都是new的对象
+        Person person4 = person;
+        System.out.println(person == person4);//true  person4指向了person的对象
+
+//        TODO debug：ch1:'A' 65     ch2:'\f' 12
+        int it = 65;
+        float f = 65.0f;
+        System.out.println("65==65.0f?:" + (it == f));//true
+        char ch1 = 'A';
+        char ch2 = 12;
+        System.out.println("65=='A'?:" + (it == ch1));//true
+        System.out.println("12(int)==12(char)?:" + (12 == ch2));//true
+//        编译错误
+//        System.out.println("hello" == new Person("q", 12, '男'));
 
     }
 }
@@ -25,7 +40,7 @@ class Person {
         if(obj instanceof Person) {
 //            向下转型->得到obj的属性
             Person p = (Person)obj;
-            return p.name.equals(this.name) && p.age == this.age && p.gender == this.gender;
+            return this.name.equals(p.name) && this.age == p.age && this.gender == p.gender;
         }
         return false;
 
