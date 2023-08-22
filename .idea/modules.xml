@@ -21,12 +21,15 @@
       <module fileurl="file://$PROJECT_DIR$/basic/PolyParameter/PolyParameter.iml" filepath="$PROJECT_DIR$/basic/PolyParameter/PolyParameter.iml" />
       <module fileurl="file://$PROJECT_DIR$/Vendingmachine/Vendingmachine.iml" filepath="$PROJECT_DIR$/Vendingmachine/Vendingmachine.iml" />
       <module fileurl="file://$PROJECT_DIR$/basic/Homework/annual.salary/annual.salary.iml" filepath="$PROJECT_DIR$/basic/Homework/annual.salary/annual.salary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/basic/Homework/bank/bank.iml" filepath="$PROJECT_DIR$/basic/Homework/bank/bank.iml" />
       <module fileurl="file://$PROJECT_DIR$/basic/basic.iml" filepath="$PROJECT_DIR$/basic/basic.iml" />
       <module fileurl="file://$PROJECT_DIR$/castle/castle.iml" filepath="$PROJECT_DIR$/castle/castle.iml" />
       <module fileurl="file://$PROJECT_DIR$/basic/finalize/finalize.iml" filepath="$PROJECT_DIR$/basic/finalize/finalize.iml" />
-      <module fileurl="file://$PROJECT_DIR$/hello world/hello/hello.iml" filepath="$PROJECT_DIR$/hello world/hello/hello.iml" />
-      <module fileurl="file://$PROJECT_DIR$/hello world/hello world.iml" filepath="$PROJECT_DIR$/hello world/hello world.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stage0_basic/hello/hello.iml" filepath="$PROJECT_DIR$/stage0_basic/hello/hello.iml" />
+      <module fileurl="file://$PROJECT_DIR$/basic/housing.rental.system/housing.rental.system.iml" filepath="$PROJECT_DIR$/basic/housing.rental.system/housing.rental.system.iml" />
       <module fileurl="file://$PROJECT_DIR$/basic/Homework/person.sort/person.sort.iml" filepath="$PROJECT_DIR$/basic/Homework/person.sort/person.sort.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stage0_basic/stage0_basic.iml" filepath="$PROJECT_DIR$/stage0_basic/stage0_basic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stage0_strengthen/stage0_strengthen.iml" filepath="$PROJECT_DIR$/stage0_strengthen/stage0_strengthen.iml" />
       <module fileurl="file://$PROJECT_DIR$/basic/Homework/teacher/teacher.iml" filepath="$PROJECT_DIR$/basic/Homework/teacher/teacher.iml" />
       <module fileurl="file://$PROJECT_DIR$/basic/toString/toString.iml" filepath="$PROJECT_DIR$/basic/toString/toString.iml" />
       <module fileurl="file://$PROJECT_DIR$/basic/Homework/work.salary/work.salary.iml" filepath="$PROJECT_DIR$/basic/Homework/work.salary/work.salary.iml" />
