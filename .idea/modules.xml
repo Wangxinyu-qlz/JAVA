@@ -2,37 +2,48 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/basic/Account/Account.iml" filepath="$PROJECT_DIR$/basic/Account/Account.iml" />
-      <module fileurl="file://$PROJECT_DIR$/CDs/CDs.iml" filepath="$PROJECT_DIR$/CDs/CDs.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Clock/Clock.iml" filepath="$PROJECT_DIR$/Clock/Clock.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Coin/Coin.iml" filepath="$PROJECT_DIR$/Coin/Coin.iml" />
-      <module fileurl="file://$PROJECT_DIR$/basic/DynamicBinding/DynamicBinding.iml" filepath="$PROJECT_DIR$/basic/DynamicBinding/DynamicBinding.iml" />
-      <module fileurl="file://$PROJECT_DIR$/basic/Extend/Extend.iml" filepath="$PROJECT_DIR$/basic/Extend/Extend.iml" />
-      <module fileurl="file://$PROJECT_DIR$/basic/ExtendTheory/ExtendTheory.iml" filepath="$PROJECT_DIR$/basic/ExtendTheory/ExtendTheory.iml" />
-      <module fileurl="file://$PROJECT_DIR$/basic/HashCode/HashCode.iml" filepath="$PROJECT_DIR$/basic/HashCode/HashCode.iml" />
-      <module fileurl="file://$PROJECT_DIR$/basic/Homework/Homework.iml" filepath="$PROJECT_DIR$/basic/Homework/Homework.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stage1/Account/Account.iml" filepath="$PROJECT_DIR$/stage1/Account/Account.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stage0_strengthen/CDs/CDs.iml" filepath="$PROJECT_DIR$/stage0_strengthen/CDs/CDs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stage0_strengthen/Clock/Clock.iml" filepath="$PROJECT_DIR$/stage0_strengthen/Clock/Clock.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stage0_strengthen/Coin/Coin.iml" filepath="$PROJECT_DIR$/stage0_strengthen/Coin/Coin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stage1/DynamicBinding/DynamicBinding.iml" filepath="$PROJECT_DIR$/stage1/DynamicBinding/DynamicBinding.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stage1/Extend/Extend.iml" filepath="$PROJECT_DIR$/stage1/Extend/Extend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stage1/ExtendTheory/ExtendTheory.iml" filepath="$PROJECT_DIR$/stage1/ExtendTheory/ExtendTheory.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stage1/HashCode/HashCode.iml" filepath="$PROJECT_DIR$/stage1/HashCode/HashCode.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stage1/Homework/Homework.iml" filepath="$PROJECT_DIR$/stage1/Homework/Homework.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Java.iml" filepath="$PROJECT_DIR$/.idea/Java.iml" />
-      <module fileurl="file://$PROJECT_DIR$/basic/LingQianTongOOP/LingQianTongOOP.iml" filepath="$PROJECT_DIR$/basic/LingQianTongOOP/LingQianTongOOP.iml" />
-      <module fileurl="file://$PROJECT_DIR$/basic/LingQianTong_NotOOP/LingQianTong_NotOOP.iml" filepath="$PROJECT_DIR$/basic/LingQianTong_NotOOP/LingQianTong_NotOOP.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Note/Note.iml" filepath="$PROJECT_DIR$/Note/Note.iml" />
-      <module fileurl="file://$PROJECT_DIR$/basic/Object_/Object_.iml" filepath="$PROJECT_DIR$/basic/Object_/Object_.iml" />
-      <module fileurl="file://$PROJECT_DIR$/basic/OverrideEquals/OverrideEquals.iml" filepath="$PROJECT_DIR$/basic/OverrideEquals/OverrideEquals.iml" />
-      <module fileurl="file://$PROJECT_DIR$/basic/PolyAaary/PolyAaary.iml" filepath="$PROJECT_DIR$/basic/PolyAaary/PolyAaary.iml" />
-      <module fileurl="file://$PROJECT_DIR$/basic/PolyParameter/PolyParameter.iml" filepath="$PROJECT_DIR$/basic/PolyParameter/PolyParameter.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Vendingmachine/Vendingmachine.iml" filepath="$PROJECT_DIR$/Vendingmachine/Vendingmachine.iml" />
-      <module fileurl="file://$PROJECT_DIR$/basic/Homework/annual.salary/annual.salary.iml" filepath="$PROJECT_DIR$/basic/Homework/annual.salary/annual.salary.iml" />
-      <module fileurl="file://$PROJECT_DIR$/basic/Homework/bank/bank.iml" filepath="$PROJECT_DIR$/basic/Homework/bank/bank.iml" />
-      <module fileurl="file://$PROJECT_DIR$/basic/basic.iml" filepath="$PROJECT_DIR$/basic/basic.iml" />
-      <module fileurl="file://$PROJECT_DIR$/castle/castle.iml" filepath="$PROJECT_DIR$/castle/castle.iml" />
-      <module fileurl="file://$PROJECT_DIR$/basic/finalize/finalize.iml" filepath="$PROJECT_DIR$/basic/finalize/finalize.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stage1/LingQianTongOOP/LingQianTongOOP.iml" filepath="$PROJECT_DIR$/stage1/LingQianTongOOP/LingQianTongOOP.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stage1/LingQianTong_NotOOP/LingQianTong_NotOOP.iml" filepath="$PROJECT_DIR$/stage1/LingQianTong_NotOOP/LingQianTong_NotOOP.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stage0_strengthen/Note/Note.iml" filepath="$PROJECT_DIR$/stage0_strengthen/Note/Note.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stage1/Object_/Object_.iml" filepath="$PROJECT_DIR$/stage1/Object_/Object_.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stage1/OverrideEquals/OverrideEquals.iml" filepath="$PROJECT_DIR$/stage1/OverrideEquals/OverrideEquals.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stage1/PolyAaary/PolyAaary.iml" filepath="$PROJECT_DIR$/stage1/PolyAaary/PolyAaary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stage1/PolyParameter/PolyParameter.iml" filepath="$PROJECT_DIR$/stage1/PolyParameter/PolyParameter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stage0_strengthen/Vendingmachine/Vendingmachine.iml" filepath="$PROJECT_DIR$/stage0_strengthen/Vendingmachine/Vendingmachine.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stage2/abstract_/abstract_.iml" filepath="$PROJECT_DIR$/stage2/abstract_/abstract_.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stage1/Homework/annual.salary/annual.salary.iml" filepath="$PROJECT_DIR$/stage1/Homework/annual.salary/annual.salary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stage1/Homework/bank/bank.iml" filepath="$PROJECT_DIR$/stage1/Homework/bank/bank.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stage0_strengthen/castle/castle.iml" filepath="$PROJECT_DIR$/stage0_strengthen/castle/castle.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stage2/child.game/child.game.iml" filepath="$PROJECT_DIR$/stage2/child.game/child.game.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stage2/child.game.OOP/child.game.OOP.iml" filepath="$PROJECT_DIR$/stage2/child.game.OOP/child.game.OOP.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stage2/codeblock/codeblock.iml" filepath="$PROJECT_DIR$/stage2/codeblock/codeblock.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stage2/final/final.iml" filepath="$PROJECT_DIR$/stage2/final/final.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stage1/finalize/finalize.iml" filepath="$PROJECT_DIR$/stage1/finalize/finalize.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage0_basic/hello/hello.iml" filepath="$PROJECT_DIR$/stage0_basic/hello/hello.iml" />
-      <module fileurl="file://$PROJECT_DIR$/basic/housing.rental.system/housing.rental.system.iml" filepath="$PROJECT_DIR$/basic/housing.rental.system/housing.rental.system.iml" />
-      <module fileurl="file://$PROJECT_DIR$/basic/Homework/person.sort/person.sort.iml" filepath="$PROJECT_DIR$/basic/Homework/person.sort/person.sort.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stage1/housing.rental.system/housing.rental.system.iml" filepath="$PROJECT_DIR$/stage1/housing.rental.system/housing.rental.system.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stage2/interface/interface.iml" filepath="$PROJECT_DIR$/stage2/interface/interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stage2/main/main.iml" filepath="$PROJECT_DIR$/stage2/main/main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stage1/Homework/person.sort/person.sort.iml" filepath="$PROJECT_DIR$/stage1/Homework/person.sort/person.sort.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stage2/singleton.design.pattern/singleton.design.pattern.iml" filepath="$PROJECT_DIR$/stage2/singleton.design.pattern/singleton.design.pattern.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage0_basic/stage0_basic.iml" filepath="$PROJECT_DIR$/stage0_basic/stage0_basic.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage0_strengthen/stage0_strengthen.iml" filepath="$PROJECT_DIR$/stage0_strengthen/stage0_strengthen.iml" />
-      <module fileurl="file://$PROJECT_DIR$/basic/Homework/teacher/teacher.iml" filepath="$PROJECT_DIR$/basic/Homework/teacher/teacher.iml" />
-      <module fileurl="file://$PROJECT_DIR$/basic/toString/toString.iml" filepath="$PROJECT_DIR$/basic/toString/toString.iml" />
-      <module fileurl="file://$PROJECT_DIR$/basic/Homework/work.salary/work.salary.iml" filepath="$PROJECT_DIR$/basic/Homework/work.salary/work.salary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stage1/stage1.iml" filepath="$PROJECT_DIR$/stage1/stage1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stage2/stage2.iml" filepath="$PROJECT_DIR$/stage2/stage2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stage2/staticmethod/staticmethod.iml" filepath="$PROJECT_DIR$/stage2/staticmethod/staticmethod.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stage1/Homework/teacher/teacher.iml" filepath="$PROJECT_DIR$/stage1/Homework/teacher/teacher.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stage1/toString/toString.iml" filepath="$PROJECT_DIR$/stage1/toString/toString.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stage2/visitstatic/visitstatic.iml" filepath="$PROJECT_DIR$/stage2/visitstatic/visitstatic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stage1/Homework/work.salary/work.salary.iml" filepath="$PROJECT_DIR$/stage1/Homework/work.salary/work.salary.iml" />
     </modules>
   </component>
 </project>
