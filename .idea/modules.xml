@@ -37,7 +37,9 @@
       <module fileurl="file://$PROJECT_DIR$/stage0_basic/hello/hello.iml" filepath="$PROJECT_DIR$/stage0_basic/hello/hello.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage1/housing.rental.system/housing.rental.system.iml" filepath="$PROJECT_DIR$/stage1/housing.rental.system/housing.rental.system.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/inner.class/inner.class.iml" filepath="$PROJECT_DIR$/stage2/inner.class/inner.class.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stage2/inner.class_review/inner.class_review.iml" filepath="$PROJECT_DIR$/stage2/inner.class_review/inner.class_review.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/interface/interface.iml" filepath="$PROJECT_DIR$/stage2/interface/interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stage2/interface/interface_exercise/interface_exercise.iml" filepath="$PROJECT_DIR$/stage2/interface/interface_exercise/interface_exercise.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/main/main.iml" filepath="$PROJECT_DIR$/stage2/main/main.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage1/Homework/person.sort/person.sort.iml" filepath="$PROJECT_DIR$/stage1/Homework/person.sort/person.sort.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/singleton.design.pattern/singleton.design.pattern.iml" filepath="$PROJECT_DIR$/stage2/singleton.design.pattern/singleton.design.pattern.iml" />

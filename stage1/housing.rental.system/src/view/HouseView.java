@@ -12,7 +12,7 @@ public class HouseView {
 //    显示主菜单
     private boolean loop = true;//控制显示菜单循环
     private char key = ' ';//接受用户输入
-    private HouseService houseservice = new HouseService(1);
+    private HouseService houseservice = new HouseService(2);
     public void mainView() {
         do {
             System.out.println("\n=============房屋出租系统菜单=============");
@@ -60,7 +60,8 @@ public class HouseView {
         System.out.print("状态：");
         String state = Utility.readString(3);
 //        创建新的House对象，id系统自动分配，自增长
-        House house = new House(0, "aa", "123", "杨凌", 200, "未出租");
+//        House house = new House(0, "aa", "123", "杨凌", 200, "未出租");//测试用
+        House house = new House(0, name, phone, address, rent, state);
         if(houseservice.add(house)) {
             System.out.println("添加成功！");
         }

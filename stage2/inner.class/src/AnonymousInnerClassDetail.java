@@ -24,7 +24,7 @@ class Outer05 {
                 System.out.println("Outer05.this HashCode=" + Outer05.this);//Outer05.this HashCode=Outer05@1b6d3586
             }
         };
-        p.hi();//动态绑定，运行类型是Outer05$1  输出：匿名内部类重写了hi方法
+        p.hi();//动态绑定，运行类型是Outer05$1  输出：匿名内部类重写了hi方法，n1=88 \n 外部类的n1 = 99
 
         new Person() {}.hi();//输出结果：Person hi()
 

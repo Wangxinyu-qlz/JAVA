@@ -18,7 +18,7 @@ public class CodeBlockDetails03 {
 }
 
 class AAA {
-    static {
+    static {//
         System.out.println("AAA的static代码块");
     }
     {
@@ -32,7 +32,7 @@ class AAA {
 }
 
 class BBB extends AAA {
-    static {
+    static {//4
         System.out.println("BBB的static代码块");
     }
     {
@@ -44,3 +44,15 @@ class BBB extends AAA {
         System.out.println("BBB()构造器被调用");
     }
 }
+
+/*
+* TODO 调试执行顺序：
+* 1.line21  父类AAA的静态成员
+* 2.line35  子类BBB的静态成员
+* 3.line41  子类的隐藏super
+* 4.line27  父类的隐藏super
+* 5.line24  父类的普通成员
+* 6.line30  父类的构造器
+* 7.line39  子类的普通成员
+* 8.line44  子类的构造器
+* */

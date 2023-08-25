@@ -13,28 +13,28 @@ public class CodeBlockDetails02 {
 }
 
 class A {
-    private int n2 = getN2();
+    private int n2 = getN2();//4
 
     {
-        System.out.println("A 普通代码块 01");
+        System.out.println("A 普通代码块 01");//5
     }
 
-    private static int n1 = getN1();
+    private static int n1 = getN1();//1
 
     static {
-        System.out.println("A 静态代码块 01");
+        System.out.println("A 静态代码块 01");//3
     }
 
-    public static int getN1() {
+    public static int getN1() {//2
         System.out.println("getN1被调用...");
         return 100;
     }
-    public int getN2() {
+    public int getN2() {//4
         System.out.println("getN2被调用...");
         return 200;
     }
 
-    public A () {
+    public A () {//6
         System.out.println("A（）的无参构造器被调用");
     }
 }

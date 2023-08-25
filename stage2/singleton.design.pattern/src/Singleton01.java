@@ -12,8 +12,9 @@ import javax.crypto.spec.IvParameterSpec;
 * */
 public class Singleton01 {
     public static void main(String[] args) {
+//        可以创建多个对象
     GirlFriend g1 = new GirlFriend("小红");
-    GirlFriend g2 = new GirlFriend("小红");
+    GirlFriend g2 = new GirlFriend("小花");
 
     System.out.println(GirlFriend1.n1);//100  在一开始就创建了，哪怕没有用到
 //    通过方法获取对象
@@ -21,12 +22,13 @@ public class Singleton01 {
     System.out.println(gf1);
     GirlFriend1 gf2 = GirlFriend1.getInstance();
     System.out.println(gf2);
+//    只能创建一个对象
     System.out.println(gf1 == gf2);//true
     }
 }
 
 //类GirlFriend
-//只能有一个女朋友
+//可以创建多个对象
 class GirlFriend {
     private String name;
 
@@ -35,6 +37,7 @@ class GirlFriend {
     }
 }
 
+//只能创建一个对象
 class GirlFriend1 {
     public static int n1 = 100;
     private String name;

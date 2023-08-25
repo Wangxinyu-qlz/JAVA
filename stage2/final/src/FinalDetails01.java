@@ -9,7 +9,7 @@ public class FinalDetails01 {
 class A01 {
 //    final修饰的@@普通@@属性，必须初始化，初始化的位置：1.定义时 2.构造器 3.代码块中
     public final double TAX_RATE1 = 0.08;
-//    public final double TAX_RATE2;//常量必须初始化
+//    public final double TAX_RATE2;//TODO 常量必须初始化
     public final double TAX_RATE3;
     public final double TAX_RATE4;
 
