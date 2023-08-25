@@ -21,7 +21,6 @@ public class SmallChangesSysOOP {
 //    菜单功能
     public void mainMenu() {
         do {
-            Scanner scanner = new Scanner(System.in);
             System.out.println("\n-----------------零钱通菜单------------------");
             System.out.println("\t\t\t\t1  零钱通明细");
             System.out.println("\t\t\t\t2  收益入账");
