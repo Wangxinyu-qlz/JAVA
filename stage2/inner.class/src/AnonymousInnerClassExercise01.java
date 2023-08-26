@@ -1,4 +1,4 @@
-public class InnerClassExercise01 {
+public class AnonymousInnerClassExercise01 {
     public static void main(String[] args) {
 //        当做实参传递，简洁高效，软编码
         f1(new IL() {

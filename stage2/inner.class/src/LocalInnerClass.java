@@ -1,6 +1,6 @@
 /*
 * 演示局部内部类的使用
-*
+* 局部内部类定义在，外部类的 方法或者代码块中
 * */
 public class LocalInnerClass {
     public static void main(String[] args) {

@@ -1,6 +1,4 @@
-import javafx.scene.control.Cell;
-
-public class InnerClassExercise02 {
+public class AnonymousInnerClassExercise02 {
     public static void main(String[] args) {
         CellPhone cellPhone = new CellPhone();
         cellPhone.alarmClock(new Bell() {
