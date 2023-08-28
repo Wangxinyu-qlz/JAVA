@@ -21,7 +21,6 @@ public class String02 {
 		System.out.println(s1 == s2.intern());//true
 		System.out.println(s2 == s2.intern());//false
 
-
 		Person p1 = new Person();
 		p1.name = "qqq";
 		Person p2 = new Person();

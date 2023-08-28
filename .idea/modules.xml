@@ -28,6 +28,7 @@
       <module fileurl="file://$PROJECT_DIR$/stage2/abstract_/abstract_.iml" filepath="$PROJECT_DIR$/stage2/abstract_/abstract_.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/annotation/annotation.iml" filepath="$PROJECT_DIR$/stage2/annotation/annotation.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage1/Homework/annual.salary/annual.salary.iml" filepath="$PROJECT_DIR$/stage1/Homework/annual.salary/annual.salary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stage2/commonly_used_class/arrays_/arrays_.iml" filepath="$PROJECT_DIR$/stage2/commonly_used_class/arrays_/arrays_.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage1/Homework/bank/bank.iml" filepath="$PROJECT_DIR$/stage1/Homework/bank/bank.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage0_strengthen/castle/castle.iml" filepath="$PROJECT_DIR$/stage0_strengthen/castle/castle.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/child.game/child.game.iml" filepath="$PROJECT_DIR$/stage2/child.game/child.game.iml" />
@@ -47,6 +48,7 @@
       <module fileurl="file://$PROJECT_DIR$/stage2/interface/interface.iml" filepath="$PROJECT_DIR$/stage2/interface/interface.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/interface/interface_exercise/interface_exercise.iml" filepath="$PROJECT_DIR$/stage2/interface/interface_exercise/interface_exercise.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/main/main.iml" filepath="$PROJECT_DIR$/stage2/main/main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stage2/commonly_used_class/math_/math_.iml" filepath="$PROJECT_DIR$/stage2/commonly_used_class/math_/math_.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage1/Homework/person.sort/person.sort.iml" filepath="$PROJECT_DIR$/stage1/Homework/person.sort/person.sort.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/singleton.design.pattern/singleton.design.pattern.iml" filepath="$PROJECT_DIR$/stage2/singleton.design.pattern/singleton.design.pattern.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage0_basic/stage0_basic.iml" filepath="$PROJECT_DIR$/stage0_basic/stage0_basic.iml" />
@@ -55,10 +57,12 @@
       <module fileurl="file://$PROJECT_DIR$/stage2/stage2.iml" filepath="$PROJECT_DIR$/stage2/stage2.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/staticmethod/staticmethod.iml" filepath="$PROJECT_DIR$/stage2/staticmethod/staticmethod.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/commonly_used_class/string/string.iml" filepath="$PROJECT_DIR$/stage2/commonly_used_class/string/string.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stage2/commonly_used_class/system_/system_.iml" filepath="$PROJECT_DIR$/stage2/commonly_used_class/system_/system_.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage1/Homework/teacher/teacher.iml" filepath="$PROJECT_DIR$/stage1/Homework/teacher/teacher.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage1/toString/toString.iml" filepath="$PROJECT_DIR$/stage1/toString/toString.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/visitstatic/visitstatic.iml" filepath="$PROJECT_DIR$/stage2/visitstatic/visitstatic.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage1/Homework/work.salary/work.salary.iml" filepath="$PROJECT_DIR$/stage1/Homework/work.salary/work.salary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stage2/commonly_used_class/wrapper/wrapper.iml" filepath="$PROJECT_DIR$/stage2/commonly_used_class/wrapper/wrapper.iml" />
     </modules>
   </component>
 </project>
