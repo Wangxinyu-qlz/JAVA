@@ -20,7 +20,7 @@ public class TreeSet_ {
 			@Override
 			public int compare(Object o1, Object o2) {
 //				下面 调用String的CompareTo方法，进行比较
-//				return ((String) o2).compareTo((String) o1);//字母排序，无法添加内容的元素
+//				return ((String) o2).compareTo((String) o1);//字母排序，无法添加内容相同的元素
 				return ((String) o1).length() - ((String) o2).length();//按照长度，无法重复添加长度相同的元素
 			}
 		});
