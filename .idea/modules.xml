@@ -25,6 +25,8 @@
       <module fileurl="file://$PROJECT_DIR$/stage1/PolyParameter_review/PolyParameter_review.iml" filepath="$PROJECT_DIR$/stage1/PolyParameter_review/PolyParameter_review.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage1/PolyStateExercise/PolyStateExercise.iml" filepath="$PROJECT_DIR$/stage1/PolyStateExercise/PolyStateExercise.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage0_strengthen/Vendingmachine/Vendingmachine.iml" filepath="$PROJECT_DIR$/stage0_strengthen/Vendingmachine/Vendingmachine.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stage2/WOT/WOT.iml" filepath="$PROJECT_DIR$/stage2/WOT/WOT.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stage2/WOT/WoTGame/WoTGame.iml" filepath="$PROJECT_DIR$/stage2/WOT/WoTGame/WoTGame.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/abstract_/abstract_.iml" filepath="$PROJECT_DIR$/stage2/abstract_/abstract_.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/annotation/annotation.iml" filepath="$PROJECT_DIR$/stage2/annotation/annotation.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage1/Homework/annual.salary/annual.salary.iml" filepath="$PROJECT_DIR$/stage1/Homework/annual.salary/annual.salary.iml" />
@@ -67,6 +69,7 @@
       <module fileurl="file://$PROJECT_DIR$/stage1/toString/toString.iml" filepath="$PROJECT_DIR$/stage1/toString/toString.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/visitstatic/visitstatic.iml" filepath="$PROJECT_DIR$/stage2/visitstatic/visitstatic.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage1/Homework/work.salary/work.salary.iml" filepath="$PROJECT_DIR$/stage1/Homework/work.salary/work.salary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stage2/WOT/wot_draw/wot_draw.iml" filepath="$PROJECT_DIR$/stage2/WOT/wot_draw/wot_draw.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/commonly_used_class/wrapper/wrapper.iml" filepath="$PROJECT_DIR$/stage2/commonly_used_class/wrapper/wrapper.iml" />
     </modules>
   </component>
