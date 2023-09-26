@@ -26,7 +26,8 @@
       <module fileurl="file://$PROJECT_DIR$/stage1/PolyStateExercise/PolyStateExercise.iml" filepath="$PROJECT_DIR$/stage1/PolyStateExercise/PolyStateExercise.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage0_strengthen/Vendingmachine/Vendingmachine.iml" filepath="$PROJECT_DIR$/stage0_strengthen/Vendingmachine/Vendingmachine.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/WOT/WOT.iml" filepath="$PROJECT_DIR$/stage2/WOT/WOT.iml" />
-      <module fileurl="file://$PROJECT_DIR$/stage2/WOT/WoTGame/WoTGame.iml" filepath="$PROJECT_DIR$/stage2/WOT/WoTGame/WoTGame.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stage2/WOT/WOT01/WOT01.iml" filepath="$PROJECT_DIR$/stage2/WOT/WOT01/WOT01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stage2/WOT/WOT02/WOT02.iml" filepath="$PROJECT_DIR$/stage2/WOT/WOT02/WOT02.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/abstract_/abstract_.iml" filepath="$PROJECT_DIR$/stage2/abstract_/abstract_.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/annotation/annotation.iml" filepath="$PROJECT_DIR$/stage2/annotation/annotation.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage1/Homework/annual.salary/annual.salary.iml" filepath="$PROJECT_DIR$/stage1/Homework/annual.salary/annual.salary.iml" />
@@ -40,6 +41,7 @@
       <module fileurl="file://$PROJECT_DIR$/stage2/commonly_used_class/commonly_used_class.iml" filepath="$PROJECT_DIR$/stage2/commonly_used_class/commonly_used_class.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/commonly_used_class/date_/date_.iml" filepath="$PROJECT_DIR$/stage2/commonly_used_class/date_/date_.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/enumeration/enumeration.iml" filepath="$PROJECT_DIR$/stage2/enumeration/enumeration.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stage2/WOT/event_/event_.iml" filepath="$PROJECT_DIR$/stage2/WOT/event_/event_.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/exception/exception.iml" filepath="$PROJECT_DIR$/stage2/exception/exception.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/final/final.iml" filepath="$PROJECT_DIR$/stage2/final/final.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage1/finalize/finalize.iml" filepath="$PROJECT_DIR$/stage1/finalize/finalize.iml" />
@@ -56,6 +58,7 @@
       <module fileurl="file://$PROJECT_DIR$/stage2/jUnit_/jUnit_.iml" filepath="$PROJECT_DIR$/stage2/jUnit_/jUnit_.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/main/main.iml" filepath="$PROJECT_DIR$/stage2/main/main.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/commonly_used_class/math_/math_.iml" filepath="$PROJECT_DIR$/stage2/commonly_used_class/math_/math_.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stage2/multi-threads/multi-threads.iml" filepath="$PROJECT_DIR$/stage2/multi-threads/multi-threads.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage1/Homework/person.sort/person.sort.iml" filepath="$PROJECT_DIR$/stage1/Homework/person.sort/person.sort.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/singleton.design.pattern/singleton.design.pattern.iml" filepath="$PROJECT_DIR$/stage2/singleton.design.pattern/singleton.design.pattern.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage0_basic/stage0_basic.iml" filepath="$PROJECT_DIR$/stage0_basic/stage0_basic.iml" />
