@@ -28,6 +28,8 @@
       <module fileurl="file://$PROJECT_DIR$/stage2/WOT/WOT.iml" filepath="$PROJECT_DIR$/stage2/WOT/WOT.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/WOT/WOT01/WOT01.iml" filepath="$PROJECT_DIR$/stage2/WOT/WOT01/WOT01.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/WOT/WOT02/WOT02.iml" filepath="$PROJECT_DIR$/stage2/WOT/WOT02/WOT02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stage2/WOT/WOT3/WOT3.iml" filepath="$PROJECT_DIR$/stage2/WOT/WOT3/WOT3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stage2/WOT/WOT4/WOT4.iml" filepath="$PROJECT_DIR$/stage2/WOT/WOT4/WOT4.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/abstract_/abstract_.iml" filepath="$PROJECT_DIR$/stage2/abstract_/abstract_.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/annotation/annotation.iml" filepath="$PROJECT_DIR$/stage2/annotation/annotation.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage1/Homework/annual.salary/annual.salary.iml" filepath="$PROJECT_DIR$/stage1/Homework/annual.salary/annual.salary.iml" />
@@ -46,7 +48,6 @@
       <module fileurl="file://$PROJECT_DIR$/stage2/final/final.iml" filepath="$PROJECT_DIR$/stage2/final/final.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage1/finalize/finalize.iml" filepath="$PROJECT_DIR$/stage1/finalize/finalize.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/generic/generic.iml" filepath="$PROJECT_DIR$/stage2/generic/generic.iml" />
-      <module fileurl="file://$PROJECT_DIR$/stage0_basic/hello/hello.iml" filepath="$PROJECT_DIR$/stage0_basic/hello/hello.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/homework/homework.iml" filepath="$PROJECT_DIR$/stage2/homework/homework.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/homework_review/homework_review.iml" filepath="$PROJECT_DIR$/stage2/homework_review/homework_review.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/homework_string/homework_string.iml" filepath="$PROJECT_DIR$/stage2/homework_string/homework_string.iml" />

@@ -35,12 +35,12 @@ class SellTicket03 extends Thread {
 				loop = false;
 				return;
 			}
-			try {
-				Thread.sleep(50);
-			} catch (InterruptedException e) {
-				throw new RuntimeException(e);
-			}
 			System.out.println("窗口" + Thread.currentThread().getName() + "售出一张票。" + "剩余票数=" + (--ticketNum));
+		}
+		try {
+			Thread.sleep(50);
+		} catch (InterruptedException e) {
+			throw new RuntimeException(e);
 		}
 	}
 
