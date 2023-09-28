@@ -16,8 +16,13 @@ import java.util.Vector;
 public class MyPanel extends JPanel implements KeyListener,Runnable {
 //	定义我的坦克
 	Hero hero = null;
+//	定义敌方坦克->Vector
 	Vector<EnemyTank> enemyTanks = new Vector<>();
+//	炸弹->Vector
+	Vector<Bomb> bombs = new Vector<>();
 	int enemyTankNumber = 3;//敌方坦克数量
+//	定义三张图像
+
 	public MyPanel() {
 		hero = new Hero(100, 100);//初始化自己的坦克
 		hero.setSpeed(3);
