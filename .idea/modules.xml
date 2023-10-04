@@ -45,6 +45,7 @@
       <module fileurl="file://$PROJECT_DIR$/stage2/enumeration/enumeration.iml" filepath="$PROJECT_DIR$/stage2/enumeration/enumeration.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/WOT/event_/event_.iml" filepath="$PROJECT_DIR$/stage2/WOT/event_/event_.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/exception/exception.iml" filepath="$PROJECT_DIR$/stage2/exception/exception.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stage2/file/file.iml" filepath="$PROJECT_DIR$/stage2/file/file.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/final/final.iml" filepath="$PROJECT_DIR$/stage2/final/final.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage1/finalize/finalize.iml" filepath="$PROJECT_DIR$/stage1/finalize/finalize.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/generic/generic.iml" filepath="$PROJECT_DIR$/stage2/generic/generic.iml" />

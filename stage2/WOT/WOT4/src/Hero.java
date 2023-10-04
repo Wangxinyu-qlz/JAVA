@@ -20,7 +20,7 @@ public class Hero extends Tank{
 			return;
 		}
 //		创建Shot对象，需要根据当前hero的位置和方向
-//		TODO getDirection?
+//		TODO getDirection? 继承了父类的所有方法和属性
 		switch(getDirection()) {
 			case 0://上
 				shot = new Shot(getX() + 20, getY(), 0);
