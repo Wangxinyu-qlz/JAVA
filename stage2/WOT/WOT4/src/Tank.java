@@ -7,6 +7,7 @@ public class Tank {
 	private int y;//纵坐标
 	private int direction;//0上 1右 2下 3左
 	private int speed;//坦克移动速度
+	boolean isLive = true;
 	public Tank(int x, int y) {
 		this.x = x;
 		this.y = y;
