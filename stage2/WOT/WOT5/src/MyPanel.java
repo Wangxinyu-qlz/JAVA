@@ -16,46 +16,93 @@ public class MyPanel extends JPanel implements KeyListener,Runnable {
 	Hero hero = null;
 //	定义敌方坦克->Vector
 	Vector<EnemyTank> enemyTanks = new Vector<>();
+//	定义一个存放Node对象的Vector，用于恢复敌人坦克的坐标和方向
+	Vector<Node> nodes = new Vector<>();
 //	炸弹->Vector
 	Vector<Bomb> bombs = new Vector<>();
 //	当子弹击中坦克对象时，就加入一个Bomb对象到bombs
-	int enemyTankNumber = 8;//敌方坦克数量
+	int enemyTankNumber = 3;//敌方坦克数量
 
 //	定义三张炸弹图像，用于显示爆炸效果
 	Image image1 = null;
 	Image image2 = null;
 	Image image3 = null;
 
-	public MyPanel() {
+	public MyPanel(String key) {
+//		将MyPanel对象的 enemyTanks 设置给 Recorder 的 setEnemyTanks
+		Recorder.setEnemyTanks(enemyTanks);
 		hero = new Hero(600, 100);//初始化自己的坦克
 		hero.setSpeed(3);
-//		初始化敌方坦克
-		for (int i = 0; i < enemyTankNumber; i++) {
-			EnemyTank enemyTank = new EnemyTank(100 * (i + 1), 0);
-//			TODO 坦克放置重叠 将enemyTanks 设置给 enemyTank
-			enemyTank.setEnemyTanks(enemyTanks);
-			enemyTank.setDirection(2);
-			enemyTank.setSpeed(2);
-//			启动敌人坦克线程
-			new Thread(enemyTank).start();
-//			给该enemyTank初始化一颗子弹
-			Shot shot = new Shot(enemyTank.getX() + 20, enemyTank.getY() + 60, enemyTank.getDirection());
-			enemyTank.shots.add(shot);
-//			启动线程 shot 对象
-			new Thread(shot).start();
-			enemyTanks.add(enemyTank);
+
+		switch(key) {
+			case "1":
+		//		初始化敌方坦克
+//				Recorder.setAllEnemyTankNum(0);
+				for (int i = 0; i < enemyTankNumber; i++) {
+					EnemyTank enemyTank = new EnemyTank(100 * (i + 1), 0);
+		//			TODO 坦克放置重叠 将enemyTanks 设置给 enemyTank
+					enemyTank.setEnemyTanks(enemyTanks);
+					enemyTank.setDirection(2);
+					enemyTank.setSpeed(2);
+		//			启动敌人坦克线程
+					new Thread(enemyTank).start();
+		//			给该enemyTank初始化一颗子弹
+					Shot shot = new Shot(enemyTank.getX() + 20, enemyTank.getY() + 60, enemyTank.getDirection());
+					enemyTank.shots.add(shot);
+		//			启动线程 shot 对象
+					new Thread(shot).start();
+					enemyTanks.add(enemyTank);
+				}
+				break;
+			case "2":
+		//		恢复上局数据
+				nodes = Recorder.getNodeAndAllEnemyTankRecord();
+		//		初始化敌方坦克
+				for (int i = 0; i < nodes.size(); i++) {
+					Node node = nodes.get(i);
+					EnemyTank enemyTank = new EnemyTank(node.getX(), node.getY());
+		//			TODO 坦克防止重叠 将enemyTanks 设置给 enemyTank
+					enemyTank.setEnemyTanks(enemyTanks);
+					enemyTank.setDirection(node.getDirection());
+					enemyTank.setSpeed(2);
+		//			启动敌人坦克线程
+					new Thread(enemyTank).start();
+		//			给该enemyTank初始化一颗子弹
+					Shot shot = new Shot(enemyTank.getX() + 20, enemyTank.getY() + 60, enemyTank.getDirection());
+					enemyTank.shots.add(shot);
+		//			启动线程 shot 对象
+					new Thread(shot).start();
+					enemyTanks.add(enemyTank);
+				}
+				break;
+			default:
+				System.out.println("您输入的值有误！");
 		}
+
 //		初始化图片对象
 		image1 = Toolkit.getDefaultToolkit().getImage(Panel.class.getResource("/bomb_1.gif"));
 		image2 = Toolkit.getDefaultToolkit().getImage(Panel.class.getResource("/bomb_2.gif"));
 		image3 = Toolkit.getDefaultToolkit().getImage(Panel.class.getResource("/bomb_3.gif"));
 	}
 
+//	编写方法，显示我方击毁敌方坦克的信息
+	public void showInfo(Graphics g) {
+//		画出玩家的总成绩
+		g.setColor(Color.black);
+		Font font = new Font("宋体", Font.BOLD, 25);
+		g.setFont(font);
+
+		g.drawString("您累计击毁敌方坦克", 1020, 30);
+		drawTank(1020, 60, g, 0, 0);//画出一个敌方坦克
+		g.setColor(Color.black);//这里需要重新设为黑色（在画坦克时设为了青色）
+		g.drawString(String.valueOf(Recorder.getAllEnemyTankNum()), 1080, 100);
+	}
+
 	@Override
 	public void paint(Graphics g) {
 		super.paint(g);
 		g.fillRect(0, 0, 1000, 750);//填充矩形，默认为黑色
-
+		showInfo(g);
 //		画己方坦克
 		if (hero != null && hero.isLive) {
 			drawTank(hero.getX(), hero.getY(), g, hero.getDirection(), 1);
@@ -234,6 +281,10 @@ public class MyPanel extends JPanel implements KeyListener,Runnable {
 					tank.isLive = false;
 //					坦克被击毁后，将坦克从集合中移除 否则会击中坦克尸体
 					enemyTanks.remove(tank);
+//					敌方坦克被击毁，对allEnemyTankNum++
+					if(tank instanceof EnemyTank) {
+						Recorder.addAllEnemyTankNum();
+					}
 //					创建Bomb对象，加入到bombs集合
 					Bomb bomb = new Bomb(tank.getX(), tank.getY());
 					bombs.add(bomb);
@@ -247,6 +298,10 @@ public class MyPanel extends JPanel implements KeyListener,Runnable {
 					tank.isLive = false;
 //					坦克被击毁后，将坦克从集合中移除 否则会击中坦克尸体
 					enemyTanks.remove(tank);
+//					敌方坦克被击毁，对allEnemyTankNum++
+					if(tank instanceof EnemyTank) {
+						Recorder.addAllEnemyTankNum();
+					}
 //					创建Bomb对象，加入到bombs集合
 					Bomb bomb = new Bomb(tank.getX(), tank.getY());
 					bombs.add(bomb);
