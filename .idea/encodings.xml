@@ -2,5 +2,7 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/stage0_strengthen/Note/Note/src/note.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/stage2/file/data.dat" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/stage2/file/test_encoder.txt" charset="GBK" />
   </component>
 </project>
