@@ -11,7 +11,7 @@ import java.util.Scanner;
  */
 public class TankGame06 extends JFrame {
 //	定义MyPanel
-	MyPanel mp = null;
+	MyPanel mp;
 	static Scanner scanner = new Scanner(System.in);
 	@Test
 	public static void main(String[] args) {

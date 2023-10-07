@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/stage3/API_/API_.iml" filepath="$PROJECT_DIR$/stage3/API_/API_.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage1/Account/Account.iml" filepath="$PROJECT_DIR$/stage1/Account/Account.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage0_strengthen/CDs/CDs.iml" filepath="$PROJECT_DIR$/stage0_strengthen/CDs/CDs.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage0_strengthen/Clock/Clock.iml" filepath="$PROJECT_DIR$/stage0_strengthen/Clock/Clock.iml" />
@@ -69,6 +70,7 @@
       <module fileurl="file://$PROJECT_DIR$/stage0_strengthen/stage0_strengthen.iml" filepath="$PROJECT_DIR$/stage0_strengthen/stage0_strengthen.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage1/stage1.iml" filepath="$PROJECT_DIR$/stage1/stage1.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/stage2.iml" filepath="$PROJECT_DIR$/stage2/stage2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stage3/stage3.iml" filepath="$PROJECT_DIR$/stage3/stage3.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/staticmethod/staticmethod.iml" filepath="$PROJECT_DIR$/stage2/staticmethod/staticmethod.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/commonly_used_class/string/string.iml" filepath="$PROJECT_DIR$/stage2/commonly_used_class/string/string.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/commonly_used_class/system_/system_.iml" filepath="$PROJECT_DIR$/stage2/commonly_used_class/system_/system_.iml" />
