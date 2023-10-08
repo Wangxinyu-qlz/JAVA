@@ -49,6 +49,7 @@
       <module fileurl="file://$PROJECT_DIR$/stage2/WOT/event_/event_.iml" filepath="$PROJECT_DIR$/stage2/WOT/event_/event_.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/exception/exception.iml" filepath="$PROJECT_DIR$/stage2/exception/exception.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/file/file.iml" filepath="$PROJECT_DIR$/stage2/file/file.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stage3/fileUpload/fileUpload.iml" filepath="$PROJECT_DIR$/stage3/fileUpload/fileUpload.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/final/final.iml" filepath="$PROJECT_DIR$/stage2/final/final.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage1/finalize/finalize.iml" filepath="$PROJECT_DIR$/stage1/finalize/finalize.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/generic/generic.iml" filepath="$PROJECT_DIR$/stage2/generic/generic.iml" />
@@ -66,6 +67,7 @@
       <module fileurl="file://$PROJECT_DIR$/stage2/multi-threads/multi-threads.iml" filepath="$PROJECT_DIR$/stage2/multi-threads/multi-threads.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage1/Homework/person.sort/person.sort.iml" filepath="$PROJECT_DIR$/stage1/Homework/person.sort/person.sort.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/singleton.design.pattern/singleton.design.pattern.iml" filepath="$PROJECT_DIR$/stage2/singleton.design.pattern/singleton.design.pattern.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stage3/socket/socket.iml" filepath="$PROJECT_DIR$/stage3/socket/socket.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage0_basic/stage0_basic.iml" filepath="$PROJECT_DIR$/stage0_basic/stage0_basic.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage0_strengthen/stage0_strengthen.iml" filepath="$PROJECT_DIR$/stage0_strengthen/stage0_strengthen.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage1/stage1.iml" filepath="$PROJECT_DIR$/stage1/stage1.iml" />
