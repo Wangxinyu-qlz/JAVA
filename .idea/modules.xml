@@ -49,11 +49,13 @@
       <module fileurl="file://$PROJECT_DIR$/stage2/WOT/event_/event_.iml" filepath="$PROJECT_DIR$/stage2/WOT/event_/event_.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/exception/exception.iml" filepath="$PROJECT_DIR$/stage2/exception/exception.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/file/file.iml" filepath="$PROJECT_DIR$/stage2/file/file.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stage3/fileDownload/fileDownload.iml" filepath="$PROJECT_DIR$/stage3/fileDownload/fileDownload.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage3/fileUpload/fileUpload.iml" filepath="$PROJECT_DIR$/stage3/fileUpload/fileUpload.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/final/final.iml" filepath="$PROJECT_DIR$/stage2/final/final.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage1/finalize/finalize.iml" filepath="$PROJECT_DIR$/stage1/finalize/finalize.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/generic/generic.iml" filepath="$PROJECT_DIR$/stage2/generic/generic.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/homework/homework.iml" filepath="$PROJECT_DIR$/stage2/homework/homework.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stage3/homework1/homework1.iml" filepath="$PROJECT_DIR$/stage3/homework1/homework1.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/homework_review/homework_review.iml" filepath="$PROJECT_DIR$/stage2/homework_review/homework_review.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/homework_string/homework_string.iml" filepath="$PROJECT_DIR$/stage2/homework_string/homework_string.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage1/housing.rental.system/housing.rental.system.iml" filepath="$PROJECT_DIR$/stage1/housing.rental.system/housing.rental.system.iml" />
@@ -78,6 +80,7 @@
       <module fileurl="file://$PROJECT_DIR$/stage2/commonly_used_class/system_/system_.iml" filepath="$PROJECT_DIR$/stage2/commonly_used_class/system_/system_.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage1/Homework/teacher/teacher.iml" filepath="$PROJECT_DIR$/stage1/Homework/teacher/teacher.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage1/toString/toString.iml" filepath="$PROJECT_DIR$/stage1/toString/toString.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stage3/udp/udp.iml" filepath="$PROJECT_DIR$/stage3/udp/udp.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/visitstatic/visitstatic.iml" filepath="$PROJECT_DIR$/stage2/visitstatic/visitstatic.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage1/Homework/work.salary/work.salary.iml" filepath="$PROJECT_DIR$/stage1/Homework/work.salary/work.salary.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/WOT/wot_draw/wot_draw.iml" filepath="$PROJECT_DIR$/stage2/WOT/wot_draw/wot_draw.iml" />
