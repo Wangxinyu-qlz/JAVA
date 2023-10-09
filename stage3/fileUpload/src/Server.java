@@ -1,7 +1,4 @@
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 
@@ -24,6 +21,14 @@ public class Server {
 		BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(new FileOutputStream(filePath));
 		bufferedOutputStream.write(bytes);
 		bufferedOutputStream.close();
+
+		BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
+		bufferedWriter.write("服务器收到图片");
+		bufferedWriter.newLine();
+		bufferedWriter.flush();
+		socket.shutdownOutput();
+
+		bufferedWriter.close();
 
 //		关闭相关流
 		bufferedInputStream.close();

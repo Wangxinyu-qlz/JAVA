@@ -1,6 +1,4 @@
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
-import java.io.FileInputStream;
+import java.io.*;
 import java.net.InetAddress;
 import java.net.Socket;
 
@@ -20,9 +18,16 @@ public class Client {
 		BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(socket.getOutputStream());
 
 		bufferedOutputStream.write(image);//将文件对应的字节数组，写入到数据通道
-
-		bufferedInputStream.close();
 		socket.shutdownOutput();//设置数据结束标记
+
+		BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+		String s;
+		while((s = bufferedReader.readLine()) != null) {
+			System.out.print(s);
+		}
+		bufferedReader.close();
+		bufferedInputStream.close();
+
 
 //		关闭相关流
 		bufferedOutputStream.close();
