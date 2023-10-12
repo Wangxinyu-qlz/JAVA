@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/stage3/API_/API_.iml" filepath="$PROJECT_DIR$/stage3/API_/API_.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage1/Account/Account.iml" filepath="$PROJECT_DIR$/stage1/Account/Account.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage0_strengthen/CDs/CDs.iml" filepath="$PROJECT_DIR$/stage0_strengthen/CDs/CDs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/QQ/Client/Client.iml" filepath="$PROJECT_DIR$/QQ/Client/Client.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage0_strengthen/Clock/Clock.iml" filepath="$PROJECT_DIR$/stage0_strengthen/Clock/Clock.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage0_strengthen/Coin/Coin.iml" filepath="$PROJECT_DIR$/stage0_strengthen/Coin/Coin.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage1/DynamicBinding/DynamicBinding.iml" filepath="$PROJECT_DIR$/stage1/DynamicBinding/DynamicBinding.iml" />
@@ -25,6 +26,7 @@
       <module fileurl="file://$PROJECT_DIR$/stage1/PolyParameter/PolyParameter.iml" filepath="$PROJECT_DIR$/stage1/PolyParameter/PolyParameter.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage1/PolyParameter_review/PolyParameter_review.iml" filepath="$PROJECT_DIR$/stage1/PolyParameter_review/PolyParameter_review.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage1/PolyStateExercise/PolyStateExercise.iml" filepath="$PROJECT_DIR$/stage1/PolyStateExercise/PolyStateExercise.iml" />
+      <module fileurl="file://$PROJECT_DIR$/QQ/Server/Server.iml" filepath="$PROJECT_DIR$/QQ/Server/Server.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage0_strengthen/Vendingmachine/Vendingmachine.iml" filepath="$PROJECT_DIR$/stage0_strengthen/Vendingmachine/Vendingmachine.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/WOT/WOT.iml" filepath="$PROJECT_DIR$/stage2/WOT/WOT.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/WOT/WOT01/WOT01.iml" filepath="$PROJECT_DIR$/stage2/WOT/WOT01/WOT01.iml" />
@@ -68,13 +70,14 @@
       <module fileurl="file://$PROJECT_DIR$/stage2/commonly_used_class/math_/math_.iml" filepath="$PROJECT_DIR$/stage2/commonly_used_class/math_/math_.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/multi-threads/multi-threads.iml" filepath="$PROJECT_DIR$/stage2/multi-threads/multi-threads.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage1/Homework/person.sort/person.sort.iml" filepath="$PROJECT_DIR$/stage1/Homework/person.sort/person.sort.iml" />
+      <module fileurl="file://$PROJECT_DIR$/QQ/Client/qqcommonC/qqcommonC.iml" filepath="$PROJECT_DIR$/QQ/Client/qqcommonC/qqcommonC.iml" />
+      <module fileurl="file://$PROJECT_DIR$/QQ/Server/qqcommonS/qqcommonS.iml" filepath="$PROJECT_DIR$/QQ/Server/qqcommonS/qqcommonS.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/singleton.design.pattern/singleton.design.pattern.iml" filepath="$PROJECT_DIR$/stage2/singleton.design.pattern/singleton.design.pattern.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage3/socket/socket.iml" filepath="$PROJECT_DIR$/stage3/socket/socket.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage0_basic/stage0_basic.iml" filepath="$PROJECT_DIR$/stage0_basic/stage0_basic.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage0_strengthen/stage0_strengthen.iml" filepath="$PROJECT_DIR$/stage0_strengthen/stage0_strengthen.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage1/stage1.iml" filepath="$PROJECT_DIR$/stage1/stage1.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/stage2.iml" filepath="$PROJECT_DIR$/stage2/stage2.iml" />
-      <module fileurl="file://$PROJECT_DIR$/stage3/stage3.iml" filepath="$PROJECT_DIR$/stage3/stage3.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/staticmethod/staticmethod.iml" filepath="$PROJECT_DIR$/stage2/staticmethod/staticmethod.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/commonly_used_class/string/string.iml" filepath="$PROJECT_DIR$/stage2/commonly_used_class/string/string.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/commonly_used_class/system_/system_.iml" filepath="$PROJECT_DIR$/stage2/commonly_used_class/system_/system_.iml" />

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/QQ/QQ.iml" filepath="$PROJECT_DIR$/QQ/QQ.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Server.iml" filepath="$PROJECT_DIR$/.idea/Server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/QQ/qqcommon/qqcommon.iml" filepath="$PROJECT_DIR$/QQ/qqcommon/qqcommon.iml" />
+      <module fileurl="file://$PROJECT_DIR$/QQ/qqframe/qqframe.iml" filepath="$PROJECT_DIR$/QQ/qqframe/qqframe.iml" />
+      <module fileurl="file://$PROJECT_DIR$/QQ/qqserver/qqserver.iml" filepath="$PROJECT_DIR$/QQ/qqserver/qqserver.iml" />
+    </modules>
+  </component>
+</project>
