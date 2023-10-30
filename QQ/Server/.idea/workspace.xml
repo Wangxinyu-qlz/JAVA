@@ -4,29 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b826fec-e4f0-48c4-9874-4d9357a0f2b2" name="Changes" comment="study21">
-      <change afterPath="$PROJECT_DIR$/../Client/QQ/qqclient/service/src/FileClientService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/QQ/qqserver/src/OfflineMessage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/QQ/qqserver/src/SendNewsToAllService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/QQ/qqclient/service/src/ClientConnectServerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/QQ/qqclient/service/src/ClientConnectServerThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/QQ/qqclient/service/src/MessageClientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/QQ/qqclient/service/src/MessageClientService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/QQ/qqclient/view/src/QQView.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/QQ/qqclient/view/src/QQView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/QQ/qqcommon/src/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/QQ/qqcommon/src/Message.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/QQ/qqcommon/src/MessageType.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/QQ/qqcommon/src/MessageType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QQ/qqcommon/src/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/QQ/qqcommon/src/Message.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QQ/qqcommon/src/MessageType.java" beforeDir="false" afterPath="$PROJECT_DIR$/QQ/qqcommon/src/MessageType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QQ/qqserver/qqserver.iml" beforeDir="false" afterPath="$PROJECT_DIR$/QQ/qqserver/qqserver.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QQ/qqserver/src/ManagerServerConnectClientThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/QQ/qqserver/src/ManagerServerConnectClientThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QQ/qqserver/src/QQServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/QQ/qqserver/src/QQServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QQ/qqserver/src/ServerConectClientThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/QQ/qqserver/src/ServerConectClientThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QQ/utils/utils.iml" beforeDir="false" afterPath="$PROJECT_DIR$/QQ/utils/utils.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qqcommon/Message.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qqcommon/Message.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qqcommon/MessageType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qqcommon/MessageType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qqserver/QQServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qqserver/QQServer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qqserver/ServerConectClientThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qqserver/ServerConectClientThread.class" afterDir="false" />
-    </list>
+    <list default="true" id="8b826fec-e4f0-48c4-9874-4d9357a0f2b2" name="Changes" comment="study22" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -112,7 +90,7 @@
       <workItem from="1698586060155" duration="8000" />
       <workItem from="1698586162187" duration="817000" />
       <workItem from="1698647625228" duration="727000" />
-      <workItem from="1698648373452" duration="19613000" />
+      <workItem from="1698648373452" duration="20386000" />
     </task>
     <task id="LOCAL-00001" summary="study21">
       <option name="closed" value="true" />
@@ -122,16 +100,36 @@
       <option name="project" value="LOCAL" />
       <updated>1698648196058</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="study22">
+      <option name="closed" value="true" />
+      <created>1698675614980</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1698675614980</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="study21" />
-    <option name="LAST_COMMIT_MESSAGE" value="study21" />
+    <MESSAGE value="study22" />
+    <option name="LAST_COMMIT_MESSAGE" value="study22" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
