@@ -1,6 +1,7 @@
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
+import java.util.Iterator;
 
 /**
  * @author qiaolezi
@@ -14,6 +15,10 @@ public class ServerConectClientThread extends Thread {
 	public ServerConectClientThread(Socket socket, String userId) {
 		this.socket = socket;
 		this.userId = userId;
+	}
+
+	public Socket getSocket() {
+		return socket;
 	}
 
 	@Override
@@ -40,7 +45,30 @@ public class ServerConectClientThread extends Thread {
 					ObjectOutputStream objectOutputStream = new ObjectOutputStream(socket.getOutputStream());
 					objectOutputStream.writeObject(message1);
 
-				//	客户端退出
+				} else if (message.getMesType().equals(MessageType.MESSAGE_TO_ALL_MES)) {
+					//遍历管理线程的集合，将message对象转发给指定的客户端
+					Iterator<String> iterator = ManagerServerConnectClientThread.getHm().keySet().iterator();
+					while(iterator.hasNext()) {
+						String userId = iterator.next();
+						if (!userId.equals(message.getSender())) {//排除这个发消息的人
+							ObjectOutputStream objectOutputStream =
+									new ObjectOutputStream(ManagerServerConnectClientThread.
+											getServerConnectClientThread(userId).
+											socket.getOutputStream());
+							objectOutputStream.writeObject(message);
+						}
+					}
+
+				} else if (message.getMesType().equals(MessageType.MESSAGE_COMM_MES)) {
+					//根据message获取getterId，再获取对应的线程
+					ServerConectClientThread serverConnectClientThread =
+							ManagerServerConnectClientThread.getServerConnectClientThread(message.getGetter());
+					//得到对应socket的对象输出流，将message对象转发给指定的客户端
+					ObjectOutputStream objectOutputStream =
+							new ObjectOutputStream(serverConnectClientThread.getSocket().getOutputStream());
+					objectOutputStream.writeObject(message);//转发，如果客户不在线，可以保存到数据库，实现离线留言
+
+				//客户端退出
 				} else if (message.getMesType().equals(MessageType.MESSAGE_CLIENT_EXIT)) {
 					//将该用户对应的线程，从集合中删除
 					userId = message.getSender();
@@ -50,9 +78,11 @@ public class ServerConectClientThread extends Thread {
 					System.out.println(userId + "已退出系统");
 					//退出循环
 					break;
+
 				} else {
 					System.out.println("其他消息类型，暂时不做处理");
 				}
+
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

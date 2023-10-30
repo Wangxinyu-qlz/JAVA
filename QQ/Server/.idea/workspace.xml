@@ -5,59 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8b826fec-e4f0-48c4-9874-4d9357a0f2b2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../Client/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Client/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Client/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Client/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Client/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Client/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Client/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Client/QQ/QQ.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Client/QQ/qqclient/qqclient.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Client/QQ/qqclient/service/service.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Client/QQ/qqclient/service/src/ClientConnectServerThread.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Client/QQ/qqclient/service/src/ManagerClientConnectServerThread.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Client/QQ/qqclient/service/src/MessageClientService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Client/QQ/qqclient/service/src/UserClientService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Client/QQ/qqclient/view/src/QQView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Client/QQ/qqclient/view/view.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Client/QQ/qqcommon/qqcommon.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Client/QQ/qqcommon/src/Message.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Client/QQ/qqcommon/src/MessageType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Client/QQ/qqcommon/src/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Client/QQ/utils/src/Utility.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Client/QQ/utils/utils.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Client/out/production/qqclient.utils/Utility.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Client/out/production/qqclient.view/QQView.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/Server.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/QQ/QQ.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/QQ/qqcommon/qqcommon.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/QQ/qqcommon/src/Message.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/QQ/qqcommon/src/MessageType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/QQ/qqcommon/src/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/QQ/qqframe/qqframe.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/QQ/qqframe/src/QQFrame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/QQ/qqserver/qqserver.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/QQ/qqserver/src/ManagerServerConnectClientThread.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/QQ/qqserver/src/QQServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/QQ/qqserver/src/ServerConectClientThread.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/QQ/utils/src/Utility.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/QQ/utils/utils.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/qqcommon/Message.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/qqcommon/MessageType.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/qqcommon/User.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/qqframe/QQFrame.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/qqserver/ManagerServerConnectClientThread.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/qqserver/QQServer.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/qqserver/ServerConectClientThread.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../stage3/stage3.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/Client.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/QQ/qqclient/service/src/ClientConnectServerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/QQ/qqclient/service/src/ClientConnectServerThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/QQ/qqclient/service/src/MessageClientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/QQ/qqclient/service/src/MessageClientService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/QQ/qqclient/view/src/QQView.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/QQ/qqclient/view/src/QQView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/QQ/qqcommon/src/MessageType.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/QQ/qqcommon/src/MessageType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QQ/qqcommon/src/MessageType.java" beforeDir="false" afterPath="$PROJECT_DIR$/QQ/qqcommon/src/MessageType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QQ/qqserver/src/ManagerServerConnectClientThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/QQ/qqserver/src/ManagerServerConnectClientThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QQ/qqserver/src/ServerConectClientThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/QQ/qqserver/src/ServerConectClientThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qqcommon/MessageType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qqcommon/MessageType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qqserver/ManagerServerConnectClientThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qqserver/ManagerServerConnectClientThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qqserver/ServerConectClientThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qqserver/ServerConectClientThread.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,24 +38,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "jdk.selected.JAVA_MODULE": "corretto-1.8",
-    "last_opened_file_path": "C:/My_Code/Java/QQ/Server/QQ",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-1.8&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/My_Code/Java/QQ/Server/QQ&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\My_Code\Java\QQ\Server\QQ" />
@@ -133,7 +93,10 @@
       <workItem from="1697017450491" duration="607000" />
       <workItem from="1697023244158" duration="533000" />
       <workItem from="1697023794027" duration="2000" />
-      <workItem from="1697023818178" duration="1697000" />
+      <workItem from="1697023818178" duration="8512000" />
+      <workItem from="1698586060155" duration="8000" />
+      <workItem from="1698586162187" duration="817000" />
+      <workItem from="1698647625228" duration="317000" />
     </task>
     <servers />
   </component>

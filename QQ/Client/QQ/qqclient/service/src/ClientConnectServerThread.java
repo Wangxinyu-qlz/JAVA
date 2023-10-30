@@ -33,6 +33,15 @@ public class ClientConnectServerThread extends Thread {
 					for (int i = 0; i < onlineUsers.length; i++) {
 						System.out.println("用户：" + onlineUsers[i]);
 					}
+
+				} else if (message.getMesType().equals(MessageType.MESSAGE_COMM_MES)) {
+					//将转发过来的消息输出
+					System.out.println("\n" + message.getSender() + " 对 " + message.getGetter()  + " 说："
+							+ message.getContent() + "  (" + message.getSendTime() +")");
+				} else if (message.getMesType().equals(MessageType.MESSAGE_TO_ALL_MES)) {
+					//将转发过来的消息输出
+					System.out.println("\n" + message.getSender() + " 的群发消息：" + message.getContent() +
+							"  (" + message.getSendTime() +")");
 				} else {
 					System.out.println("其他类型的消息，暂时不处理");
 				}

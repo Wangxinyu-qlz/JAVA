@@ -14,6 +14,10 @@ public class ManagerServerConnectClientThread {
 		hm.put(userId, serverConectClientThread);
 	}
 
+	public static HashMap<String, ServerConectClientThread> getHm() {
+		return hm;
+	}
+
 	public static void removeServerConnectClientThread(String userId) {
 		hm.remove(userId);
 	}
