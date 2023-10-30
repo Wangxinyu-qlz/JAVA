@@ -7,6 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/QQ/qqcommon/qqcommon.iml" filepath="$PROJECT_DIR$/QQ/qqcommon/qqcommon.iml" />
       <module fileurl="file://$PROJECT_DIR$/QQ/qqframe/qqframe.iml" filepath="$PROJECT_DIR$/QQ/qqframe/qqframe.iml" />
       <module fileurl="file://$PROJECT_DIR$/QQ/qqserver/qqserver.iml" filepath="$PROJECT_DIR$/QQ/qqserver/qqserver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/QQ/utils/utils.iml" filepath="$PROJECT_DIR$/QQ/utils/utils.iml" />
     </modules>
   </component>
 </project>

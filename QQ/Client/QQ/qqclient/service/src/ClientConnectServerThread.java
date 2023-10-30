@@ -1,3 +1,5 @@
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.net.Socket;
 
@@ -42,6 +44,15 @@ public class ClientConnectServerThread extends Thread {
 					//将转发过来的消息输出
 					System.out.println("\n" + message.getSender() + " 的群发消息：" + message.getContent() +
 							"  (" + message.getSendTime() +")");
+				} else if (message.getMesType().equals(MessageType.MESSAGE_FILE_MES)) {
+					System.out.println("\n" + message.getSender() + "给" + message.getGetter() + "发送文件：" +
+							message.getSrc() + "到我的电脑目录：" + message.getDest());
+
+					//取出message的字节数组，通过文件输出流，写入到磁盘
+					FileOutputStream fileOutputStream = new FileOutputStream(message.getDest());
+					fileOutputStream.write(message.getFileBytes());
+					fileOutputStream.close();//关闭/刷新
+					System.out.println("\n文件保存成功！");
 				} else {
 					System.out.println("其他类型的消息，暂时不处理");
 				}

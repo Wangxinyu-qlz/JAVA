@@ -4,25 +4,40 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b826fec-e4f0-48c4-9874-4d9357a0f2b2" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../Client/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="8b826fec-e4f0-48c4-9874-4d9357a0f2b2" name="Changes" comment="study21">
+      <change afterPath="$PROJECT_DIR$/../Client/QQ/qqclient/service/src/FileClientService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/QQ/qqserver/src/OfflineMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/QQ/qqserver/src/SendNewsToAllService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Client/QQ/qqclient/service/src/ClientConnectServerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/QQ/qqclient/service/src/ClientConnectServerThread.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Client/QQ/qqclient/service/src/MessageClientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/QQ/qqclient/service/src/MessageClientService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Client/QQ/qqclient/view/src/QQView.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/QQ/qqclient/view/src/QQView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/QQ/qqcommon/src/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/QQ/qqcommon/src/Message.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Client/QQ/qqcommon/src/MessageType.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/QQ/qqcommon/src/MessageType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QQ/qqcommon/src/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/QQ/qqcommon/src/Message.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/QQ/qqcommon/src/MessageType.java" beforeDir="false" afterPath="$PROJECT_DIR$/QQ/qqcommon/src/MessageType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QQ/qqserver/qqserver.iml" beforeDir="false" afterPath="$PROJECT_DIR$/QQ/qqserver/qqserver.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/QQ/qqserver/src/ManagerServerConnectClientThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/QQ/qqserver/src/ManagerServerConnectClientThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QQ/qqserver/src/QQServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/QQ/qqserver/src/QQServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/QQ/qqserver/src/ServerConectClientThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/QQ/qqserver/src/ServerConectClientThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QQ/utils/utils.iml" beforeDir="false" afterPath="$PROJECT_DIR$/QQ/utils/utils.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qqcommon/Message.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qqcommon/Message.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/qqcommon/MessageType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qqcommon/MessageType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/qqserver/ManagerServerConnectClientThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qqserver/ManagerServerConnectClientThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/qqserver/QQServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qqserver/QQServer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/qqserver/ServerConectClientThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/qqserver/ServerConectClientThread.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
@@ -74,7 +89,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.QQFrame" />
+        <item itemvalue="应用程序.QQFrame" />
       </list>
     </recent_temporary>
   </component>
@@ -96,8 +111,18 @@
       <workItem from="1697023818178" duration="8512000" />
       <workItem from="1698586060155" duration="8000" />
       <workItem from="1698586162187" duration="817000" />
-      <workItem from="1698647625228" duration="317000" />
+      <workItem from="1698647625228" duration="727000" />
+      <workItem from="1698648373452" duration="19613000" />
     </task>
+    <task id="LOCAL-00001" summary="study21">
+      <option name="closed" value="true" />
+      <created>1698648196058</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1698648196058</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -105,5 +130,14 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="study21" />
+    <option name="LAST_COMMIT_MESSAGE" value="study21" />
+  </component>
+  <component name="XDebuggerManager">
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="java.util.concurrent.ConcurrentHashMap" memberName="keySet" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>

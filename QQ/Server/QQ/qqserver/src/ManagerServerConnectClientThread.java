@@ -38,4 +38,5 @@ public class ManagerServerConnectClientThread {
 
 		return onlineUsersList;
 	}
+
 }

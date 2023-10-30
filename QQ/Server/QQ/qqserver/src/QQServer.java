@@ -3,7 +3,6 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.HashMap;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
@@ -43,6 +42,9 @@ public class QQServer {
 		// 端口可以写在一个配置文件中
 		try {
 			System.out.println("服务器在9999端口监听...");
+			//启动推送线程
+			new Thread(new SendNewsToAllService()).start();
+
 			serverSocket = new ServerSocket(9999);
 
 			while(true) {//一致保持监听：和某个客户端建立链接后，继续监听
@@ -69,6 +71,10 @@ public class QQServer {
 					//将该线程对象放入HashMap中进行管理
 					ManagerServerConnectClientThread.addServerConnectClientThread(
 							user.getUserId(), serverConectClientThread);
+
+					//TODO 将其他用户给该用户的离线留言发送至该用户
+					OfflineMessage.SendOfflineMessage(user.getUserId());
+
 				} else {//非法->登陆失败
 					System.out.println("用户id=" + user.getUserId() + "，用户密码=" + user.getPassword() + "验证失败");
 					message.setMesType(MessageType.MESSAGE_LOGIN_FAIL);

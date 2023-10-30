@@ -22,7 +22,7 @@ public class MessageClientService {
 		message.setContent(content);
 		String sendTime = new Date().toString();
 		message.setSendTime(sendTime);//发送时间
-		System.out.println("来自" + senderId + " 的消息：" + content + "(" + sendTime + ")");
+		System.out.println(senderId + " 发送的消息：" + content + "(" + sendTime + ")");
 
 		try {
 			//发送给服务端

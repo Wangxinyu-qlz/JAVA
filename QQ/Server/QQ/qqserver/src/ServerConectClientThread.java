@@ -1,7 +1,10 @@
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
+import java.sql.Array;
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * @author qiaolezi
@@ -29,7 +32,7 @@ public class ServerConectClientThread extends Thread {
 				System.out.println("服务端和客户端" + userId + "保持通信，读取数据...");
 				ObjectInputStream objectInputStream = new ObjectInputStream(socket.getInputStream());
 				Message message = (Message) objectInputStream.readObject();
-				//TODO 处理message
+
 				//根据message的类型，做相应的业务处理
 				//客户端请求在线用户列表
 				if(message.getMesType().equals(MessageType.MESSAGE_GET_ONLINE_FRIEND)) {
@@ -45,6 +48,7 @@ public class ServerConectClientThread extends Thread {
 					ObjectOutputStream objectOutputStream = new ObjectOutputStream(socket.getOutputStream());
 					objectOutputStream.writeObject(message1);
 
+				//群发消息
 				} else if (message.getMesType().equals(MessageType.MESSAGE_TO_ALL_MES)) {
 					//遍历管理线程的集合，将message对象转发给指定的客户端
 					Iterator<String> iterator = ManagerServerConnectClientThread.getHm().keySet().iterator();
@@ -59,16 +63,23 @@ public class ServerConectClientThread extends Thread {
 						}
 					}
 
+				//私聊消息
 				} else if (message.getMesType().equals(MessageType.MESSAGE_COMM_MES)) {
+					String getter = message.getGetter();
 					//根据message获取getterId，再获取对应的线程
 					ServerConectClientThread serverConnectClientThread =
-							ManagerServerConnectClientThread.getServerConnectClientThread(message.getGetter());
-					//得到对应socket的对象输出流，将message对象转发给指定的客户端
-					ObjectOutputStream objectOutputStream =
-							new ObjectOutputStream(serverConnectClientThread.getSocket().getOutputStream());
-					objectOutputStream.writeObject(message);//转发，如果客户不在线，可以保存到数据库，实现离线留言
+							ManagerServerConnectClientThread.getServerConnectClientThread(getter);
 
-				//客户端退出
+					if (serverConnectClientThread != null) {//线程存在说明用户在线
+						//得到对应socket的对象输出流，将message对象转发给指定的客户端
+						ObjectOutputStream objectOutputStream =
+								new ObjectOutputStream(serverConnectClientThread.getSocket().getOutputStream());
+						objectOutputStream.writeObject(message);//转发
+					} else {//TODO 如果用户不在线，将离线消息保存
+						OfflineMessage.saveOfflineMessage(message.getGetter(), message);
+					}
+
+					//客户端退出
 				} else if (message.getMesType().equals(MessageType.MESSAGE_CLIENT_EXIT)) {
 					//将该用户对应的线程，从集合中删除
 					userId = message.getSender();
@@ -79,6 +90,15 @@ public class ServerConectClientThread extends Thread {
 					//退出循环
 					break;
 
+				//私发文件
+				} else if (message.getMesType().equals(MessageType.MESSAGE_FILE_MES)) {
+					//根据getterId获取到对应的线程，并进行转发
+					ServerConectClientThread serverConnectClientThread =
+							ManagerServerConnectClientThread.getServerConnectClientThread(message.getGetter());
+					ObjectOutputStream objectOutputStream =
+							new ObjectOutputStream(serverConnectClientThread.getSocket().getOutputStream());
+					//转发
+					objectOutputStream.writeObject(message);
 				} else {
 					System.out.println("其他消息类型，暂时不做处理");
 				}
