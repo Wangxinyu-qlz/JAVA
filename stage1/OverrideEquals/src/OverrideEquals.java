@@ -11,7 +11,7 @@ public class OverrideEquals {
         Person person4 = person;
         System.out.println(person == person4);//true  person4指向了person的对象
 
-//        TODO debug：ch1:'A' 65     ch2:'\f' 12
+//        TODO debug：ch1:'A' 65     ch2:'\f' 12  int和char类型的的比较
         int it = 65;
         float f = 65.0f;
         System.out.println("65==65.0f?:" + (it == f));//true

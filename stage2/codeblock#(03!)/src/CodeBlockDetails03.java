@@ -18,6 +18,7 @@ public class CodeBlockDetails03 {
 }
 
 class AAA {
+    private static int n = 0;
     static {//
         System.out.println("AAA的static代码块");
     }
@@ -25,13 +26,14 @@ class AAA {
         System.out.println("AAA的普通代码块");
     }
     public AAA() {
-//        super();//隐藏
+        super();//隐藏
 //        2.调用普通代码块
         System.out.println("AAA()构造器被调用");
     }
 }
 
 class BBB extends AAA {
+    public static int n = 0;
     static {//4
         System.out.println("BBB的static代码块");
     }
@@ -39,7 +41,7 @@ class BBB extends AAA {
         System.out.println("BBB的普通代码块");
     }
     public BBB() {
-//        1.super();//隐藏
+        super();//隐藏
 //        2.调用普通代码块
         System.out.println("BBB()构造器被调用");
     }

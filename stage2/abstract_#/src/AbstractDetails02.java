@@ -35,7 +35,7 @@ class G extends E {
 
 abstract class H{
     public abstract void hi();
-//    抽象方法不能使用private final static修饰，这些关键字和重写冲突
+//    TODO 抽象方法不能使用private final static修饰，这些关键字和重写冲突
 //    private不能让子类实现
 //    private abstract void hi1();
 //    final不能让子类重写

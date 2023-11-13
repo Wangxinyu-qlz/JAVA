@@ -9,6 +9,7 @@ public class Equals01 {
         B bObj = a;
         B bObj_ = new A();//与上等价，向上转型
         System.out.println(a == bObj);//@@@true@@@
+        System.out.println(a==bObj_);//flase
 //        ==还可以判断基本数据类型的值是否相等
         int aa = 10;
         int bb = 10;

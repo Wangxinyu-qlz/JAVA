@@ -14,7 +14,7 @@ public class PloyArray {
 //        Teacher teacher2 = (Teacher) persons[4];
 //        students1.study();
 //        teacher2.teach();
-        for (int i = 0; i < persons.length; i++) {
+        for (int i = 0; i < persons.length; i++) {  
 //            persons[i]编译类型是Person，运行类型根据实际情况由JVW判断
             System.out.println(persons[i].say());//动态绑定机制
 //            类型判断

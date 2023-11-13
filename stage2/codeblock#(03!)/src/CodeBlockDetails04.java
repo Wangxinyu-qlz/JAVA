@@ -18,10 +18,10 @@ class A02 { //父类
         System.out.println("A02 的一个静态代码块..");//(2)
     }
 
-    public int n3 = getVal02();//普通属性的初始化
+    public int n3 = getVal02();//(5)普通属性的初始化
 
     {
-        System.out.println("A02 的第一个普通代码块..");//(5)
+        System.out.println("A02 的第一个普通代码块..");//(6)
     }
 
     public A02() {//构造器
@@ -37,7 +37,7 @@ class A02 { //父类
     }
 
     public int getVal02() {
-        System.out.println("getVal02");//(6)
+        System.out.println("getVal02");//(5)
         return 10;
     }
 }
@@ -59,7 +59,6 @@ class B02 extends A02 { //
 //隐藏了super()
 //普通代码块和普通属性的初始化...
         System.out.println("B02 的构造器");//(10)
-// TODO Auto-generated constructor stub
     }
 
     public static int getVal03() {

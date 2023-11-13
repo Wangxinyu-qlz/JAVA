@@ -1,4 +1,4 @@
-public class RoString {
+public class ToString {
     public static void main(String[] args) {
         Monster monster = new Monster("小妖怪", "巡山", 1000);
         System.out.println(monster.toString());//重写前Monster@27d6c5e0

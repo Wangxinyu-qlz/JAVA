@@ -65,6 +65,7 @@ class Outer04 {//外部类
 
 //        基于抽象类的匿名内部类
         Animal animal = new Animal() {
+            @Override
             public void eat() {
                 System.out.println("小狗吃骨头");
             }

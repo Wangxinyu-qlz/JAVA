@@ -7,7 +7,7 @@ public class CodeBlock_review {
         * 1
         * 这是普通代码块
         * */
-//        AW aw = new AW(1);//创建对象实例
+        //AW aw = new AW(1);//创建对象实例
         /*
         * 这是static代码块
         * 1

@@ -1,12 +1,12 @@
 public class Test {
     public static void main(String[] args) {
         Worker tom = new Worker("tom", 20000);
-        Manager mialn = new Manager("mialn", 5000, 200000);
+        Manager milan = new Manager("milan", 5000, 200000);
         Test test  = new Test();
         test.showEmpAnnual(tom);
-        test.showEmpAnnual(mialn);
+        test.showEmpAnnual(milan);
         test.testWork(tom);
-        test.testWork(mialn);
+        test.testWork(milan);
     }
 
 //    实现获取任意员工对象的年工资

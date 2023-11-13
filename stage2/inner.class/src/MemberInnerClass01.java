@@ -1,5 +1,3 @@
-import javax.crypto.spec.IvParameterSpec;
-
 public class MemberInnerClass01 {
     public static void main(String[] args) {
         Outer08 outer08 = new Outer08();
@@ -13,8 +11,6 @@ public class MemberInnerClass01 {
         outer08.getInner08Instance();
         Outer08.Inner08 inner08Instance = outer08.getInner08Instance();
         System.out.println(inner08Instance.getClass());//class Outer08$Inner08
-
-
     }
 }
 

@@ -1,5 +1,3 @@
-import sun.util.resources.cldr.dav.CurrencyNames_dav;
-
 public class AbstractExercise {
     public static void main(String[] args) {
         CommonEmployee e = new CommonEmployee("zhangiang", "9527", 20000.0);
