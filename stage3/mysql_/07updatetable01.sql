@@ -27,7 +27,7 @@ rename table employee to employee;
 alter table employee
     character set utf8mb4;
 
--- 修改列名/字段名
+-- 修改列名/字段名以及数据类型
 alter table employee
     change name user_name varchar(32) not null default '';
 
