@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SqlDialectMappings">
+    <file url="file://$PROJECT_DIR$/stage3/mysql_/00charVarcharDetail.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/stage3/mysql_/00date.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/stage3/mysql_/01database.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/stage3/mysql_/05createtable.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/stage3/mysql_/06createtable02.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/stage3/mysql_/07updatetable01.sql" dialect="MySQL" />
+    <file url="PROJECT" dialect="MySQL" />
+  </component>
+  <component name="SqlResolveMappings">
+    <file url="file://$PROJECT_DIR$/stage3/mysql_/09update.sql" scope="{&quot;node&quot;:{  &quot;@negative&quot;:&quot;1&quot;,  &quot;group&quot;:{   &quot;@kind&quot;:&quot;root&quot;,   &quot;node&quot;:{    &quot;@negative&quot;:&quot;1&quot;   }  } }}" />
+    <file url="PROJECT" scope="{&quot;node&quot;:{  &quot;@negative&quot;:&quot;1&quot;,  &quot;group&quot;:{   &quot;@kind&quot;:&quot;root&quot;,   &quot;node&quot;:{    &quot;@negative&quot;:&quot;1&quot;   }  } }}" />
+  </component>
+</project>

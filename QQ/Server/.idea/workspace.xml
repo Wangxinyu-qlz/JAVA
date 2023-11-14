@@ -4,7 +4,33 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b826fec-e4f0-48c4-9874-4d9357a0f2b2" name="Changes" comment="study22" />
+    <list default="true" id="8b826fec-e4f0-48c4-9874-4d9357a0f2b2" name="Changes" comment="study22">
+      <change afterPath="$PROJECT_DIR$/../../.idea/checkstyle-idea.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../stage3/mysql_/00bit.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../stage3/mysql_/00charVarchar.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../stage3/mysql_/00charVarcharDetail.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../stage3/mysql_/00date.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../stage3/mysql_/00datetime.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../stage3/mysql_/00floatdoubledem.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../stage3/mysql_/00int.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../stage3/mysql_/01database.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../stage3/mysql_/02database02.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../stage3/mysql_/03database03.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../stage3/mysql_/04database04.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../stage3/mysql_/05createtable.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../stage3/mysql_/06createtable02.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../stage3/mysql_/07updatetable01.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../stage3/mysql_/08insert01.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../stage3/mysql_/homework03.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../stage3/mysql_/homework04.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../stage3/mysql_/homework05.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../stage3/mysql_/homework1.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../stage3/mysql_/homework2.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -65,11 +91,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="应用程序.QQFrame" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -91,6 +112,9 @@
       <workItem from="1698586162187" duration="817000" />
       <workItem from="1698647625228" duration="727000" />
       <workItem from="1698648373452" duration="21013000" />
+      <workItem from="1699856090265" duration="20000" />
+      <workItem from="1699856596359" duration="989000" />
+      <workItem from="1699858437755" duration="7000" />
     </task>
     <task id="LOCAL-00001" summary="study21">
       <option name="closed" value="true" />
