@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/a10/a10.iml" filepath="$PROJECT_DIR$/a10/a10.iml" />
+      <module fileurl="file://$PROJECT_DIR$/a1juxing/a1juxing.iml" filepath="$PROJECT_DIR$/a1juxing/a1juxing.iml" />
+      <module fileurl="file://$PROJECT_DIR$/a2/a2.iml" filepath="$PROJECT_DIR$/a2/a2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/a3/a3.iml" filepath="$PROJECT_DIR$/a3/a3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/a4/a4.iml" filepath="$PROJECT_DIR$/a4/a4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/a5/a5.iml" filepath="$PROJECT_DIR$/a5/a5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/a6xinguan/a6xinguan.iml" filepath="$PROJECT_DIR$/a6xinguan/a6xinguan.iml" />
+      <module fileurl="file://$PROJECT_DIR$/a7/a7.iml" filepath="$PROJECT_DIR$/a7/a7.iml" />
+      <module fileurl="file://$PROJECT_DIR$/a8/a8.iml" filepath="$PROJECT_DIR$/a8/a8.iml" />
+      <module fileurl="file://$PROJECT_DIR$/a9/a9.iml" filepath="$PROJECT_DIR$/a9/a9.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/java.iml" filepath="$PROJECT_DIR$/.idea/java.iml" />
+    </modules>
+  </component>
+</project>
