@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JavaScript 是弱类型的</title>
+<!--
+JS特点：
+    1.JavaScript 是一种解释型的脚本语言，C、C++等语言先编译后执行，而 JavaScript 是在程序的运行过程中逐行进行解释
+    2.JavaScript是一种基于对象的脚本语言，可以创建对象，也能使用现有的对象(有对象)
+    3.JavaScript 是弱类型的，对变量的数据类型不做严格的要求，变量的数据类型在运行过程可以变化
+
+1. js 代码可以写在script 标签中
+2. type="text/javascript" 表示这个脚本(script)类型是javascript
+3. type="text/javascript" 可以不写，但是建议写上
+4. js 语句可以不写; 建议写上
+5. var
+-->
+<script type="text/javascript">
+// //弱类型
+// var name = "韩顺平教育";
+// //输出 alert() 使用弹框方式
+// //输出 console.log() 在调试输出
+// alert("name=" + name);
+// //输出变量的类型typeof, 输出变量的类型
+// alert(typeof name);
+// name = 100; //给name 重新赋值
+//alert(typeof(name));// 类型number
+
+var age = 10;//数值
+console.log("age=" + age)
+console.log(typeof age);
+age = "北京";
+console.log("age=" + age)
+console.log(typeof age);
+
+//输出字符串+数字的话会把数字转成string
+var n = 123 + "abc";
+console.log(n);
+console.log(typeof n);
+</script>
+</head>
+<body>
+
+</body>
+</html>

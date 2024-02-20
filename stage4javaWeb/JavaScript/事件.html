@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件</title>
+    <!--
+    TODO 事件重要
+    事件分类
+        1. 事件的注册（绑定）
+        当事件响应(触发)后要浏览器执行哪些操作代码，叫事件注册或事件绑定
+        2. 静态注册事件
+        通过 html 标签的事件属性直接赋于事件响应后的代码，这种方式叫静态注册
+        3. 动态注册事件
+        通过 js 代码得到标签的 dom 对象，然后再通过 dom 对象.事件名 = function(){}
+    动态注册事件步骤
+        1. 获取标签 dom 对象
+        2. dom对象.事件名 = function(){}
+    onload 加载完成事件
+        1. onload : 某个页面或图像被完成加载-->
+    <script type="text/javascript">
+        //定义了一个函数
+        function sayOK() {
+            alert('静态注册 onload 事件 sayOK');
+        }
+        
+        //1. 在 js 中，将页面窗口 映射成 window dom 对象
+        //2. window 对象有很多的函数和属性，可以使用
+        //3. window.onload 表示页面被加载完毕
+        //4. 后面的 function (){} 表示加载完毕后，要执行的函数/代码
+        //5. 多说一句
+        window.onload = function () {
+            alert("加载完了------动态注册 onload 事件");
+        }
+        
+        function sayOK() {
+            alert("你点击了sayOK 按钮");
+        }
+        
+        //当页面加载完毕后，我们再进行动态绑定
+        //基本概念和机制一定要清楚
+        window.onload = function () {
+            // 动态注册 onclick 事件
+            //1. 先拿到id=btn01 的 button 对应dom 对象
+            //2. 通过 dom 对象动态的绑定onclick 事件
+            //3. 通过document 的 getElementById 获取对应的dom 对象
+            var btn01 = document.getElementById("btn01");
+            btn01.onclick = function () {
+                alert("你点击了sayHi 按钮");
+            }
+        }
+        
+        //静态绑定
+        function upperCase() {
+            //1. 先得到fname 输入框的value -> 得到对应dom 对象
+            var fname = document.getElementById("fname");
+            fname.value = fname.value.toUpperCase();
+        }
+        
+        //在页面加载完毕，完成动态绑定
+        window.onload = function () {
+            //1.得到fname2 的dom 对象
+            var fname2 = document.getElementById("fname2");
+            fname2.onblur = function () {
+                fname2.value = fname2.value.toUpperCase();
+            }
+        }
+    
+    </script>
+</head>
+<body>
+<button onclick="sayOK()">sayOK 按钮</button>
+<button id="btn01">sayHi 按钮</button><br>
+输入英文单词：
+<input type="text" id="fname" onblur="upperCase()" /><br />
+输入英文单词：
+<input type="text" id="fname2" />
+</body>
+</html>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!--    TODO Head中的JS代码调用的时候才会执行，但是在主页和其余部分代码之前预先装载
+             Body中的JS代码在页面加载的时候被执行
+-->
+    <meta charset="UTF-8">
+    <title>数据类型</title>
+    <script type="text/javascript">
+        //自定义对象的方式1
+        //person 是一个空对象，没有自定义的函数和属性
+        var person = new Object();
+        console.log("person 类型=" + typeof (person));//object
+        //增加一个属性name
+        person.name = "韩顺平";
+        //增加一个属性
+        person.age = 20;
+        //增加函数
+        person.say = function () {
+            //这里的this 就是person
+            console.log("person 的信息 " + this.name + " " + this.age + " " + this.job);
+            
+        }
+        
+        //调用
+        //访问属性
+        console.log("name= " + person.name + " " + person.email);
+        //访问方法
+        person.say();
+        
+        //小细节, 如果没有定义属性，直接使用，就会出现变量提升，显示undefined
+        console.log("address= " + person.address);
+        
+        //演示自定义对象方式2：{} 形式
+        var person = {
+            name: "老韩", //说明多个属性和函数之间，使用,隔开
+            age: 20,
+            hi: function () {
+                console.log("person 信息= " + this.name + " " + this.age);
+            },
+            sum: function (n1, n2) {
+                return n1 + n2;
+            }
+        }
+        
+        //使用
+        console.log("外部访问 name= " + person.name + " age=" + person.age);
+        person.hi();
+        console.log("sum=" + person.sum(10, 30));
+    
+    </script>
+</head>
+<body>
+<script type="text/javascript">
+    /*
+        数值类型： number
+        字符串类型： string
+        对象类型: object
+        布尔类型： boolean
+        函数类型： function
+        undefined 变量未赋初始值时，默认 undefined
+        null      空值
+        NaN       Not a Number非数值
+    * */
+    //数据类型举例
+    var name;
+    //alert(name); //undefined
+    name = "北京";
+    //1. typeof()是 JavaScript 语言提供的一个函数。
+    //2. 返回变量的数据类型
+    alert(typeof (name));//String
+    var age = 10;
+    alert("age 数据类型=" + typeof (age));//number
+    //特殊值
+    var job = null;
+    alert("job=" + job);//null
+    alert(1 * "hello");// NaN 非数值  无法识别是什么
+    //String 字符串 [可以双引号括起来，也可以单引号括起来]"a book of JavaScript"、'abc'、"a"
+    
+    /*
+    TODO
+        1. 等于： == 是简单的做字面值的比较
+        2.全等于： === 除了做字面值的比较之外，还会比较两个变量的数据类型
+    * */
+    var a = "100";
+    var b = 100;
+    alert(a == b); //true 字面值是相同的
+    alert(a === b); // false 字面值相同，但是类型不同
+    
+    /*
+    TODO
+        1. 在 JavaScript 语言中，所有的变量，都可以做为一个 boolean 类型的变量去使用。
+        2. 0 、null、undefined、""(空串) NaN 都认为是false
+        3. &&且运算，有两种情况 => 老韩解读(即 && 返回值是遵守短路与的机制)
+            表达式全为真的时候，返回最后一个表达式的值
+            表达式中，有一个假的时候，返回第一个为假的表达式的值
+        4. || 或运算, 有两种情况 => 老韩解读(即|| 返回值是遵守短路或的机制)
+            表达式全为假的时候，返回最后一个表达式的值
+            表达式中，有一个真的时候，返回第一个为真的表达式的值
+        5. && 运算 和 || 运算 有短路现象
+            运算有确定结果的时候，后面的表达式不再执行
+    */
+    var res1 = null && 800;
+    alert("res1=" + res1);//null
+    
+    var res2 = "老韩" || 800;
+    alert("res2=" + res2);//老韩
+    
+    var res3 = (10 + 1) || (6 < 0);
+    alert("res3=" + res3);//11
+    
+    // 5. && 运算 和 || 运算 有短路现象
+    var n1 = 1;
+    var n2 = 3;
+    var res4 = (n1++ > 100) || n2++;
+    alert("n1=" + n1 + " n2=" + n2);//n1=2 n2=4
+    
+    //三目运算符：如果 (10 > 1) 条件表达式为T, 返回第一个表达式的值 一真大师
+    // 条件表达式为F, 返回第2 个表达式的值
+    var n1 = 90;
+    var n2 = 1;
+    var res = n2 > 9 ? "老韩" + " 你好" : 800 + n1;
+    alert("res=" + res);//890
+    
+    //-----------------------数组-------------------------
+    //"Audi", "BMW", "Volvo";
+    //数组定义方式1
+    var cars1 = ["Audi", "BMW", "Volvo"];
+    console.log("cars1=" + cars1);
+    console.log(cars1[1]);//表示访问 cars1 数组的第 2 个元素, 1 表示下标/索引，从0开始编号
+    
+    //数组定义方式2
+    var cars2 = [];//空数组
+    //添加元素
+    cars2[0] = "奥迪";
+    cars2[1] = "宝马";
+    cars2[2] = "奔驰";
+    console.log("cars2=" + cars2);
+    console.log("cars2[2]=" + cars2[2]);//奔驰
+    console.log("cars2[10]=" + cars2[10]);// 如果该元素不存在，返回的就是undefined
+    
+    //数组定义方式3
+    var cars3 = new Array("Audi", "BMW", "Volvo");
+    console.log("cars3=" + cars3);
+    console.log("cars3[0]=" + cars3[0]);//Audi
+    
+    //数组定义方式4
+    var cars4 = new Array();//空数组
+    console.log(typeof cars4);
+    cars4[0] = "法拉利";
+    cars4[1] = "保时捷";
+    cars4[2] = "yy";//相当于是给数组扩容
+    cars4[0] = "zz";//替换
+    
+    cars4[8] = "红旗";//扩容, 如果是跳过了下标给赋值，那么中间没有赋值的元素为undefined
+    console.log("cars4[3]=" + cars4[3]);//undefined
+    console.log("cars4= " + cars4);
+    
+    var cars = ["Audi", "BMW", "Volvo", 100, 1.1, true];
+    //遍历
+    console.log("数组的长度= " + cars.length)//6
+    for (i = 0; i < cars.length; i++) {
+        console.log(cars[i]); //log 方法会自动换行
+    }
+    
+    function hi() {
+        alert("hi 老韩~");
+    }
+    
+    function f2(name) {
+        alert("hi " + name);
+        
+    }
+    
+    f2("老韩");
+    
+    //定义有形参和返回值的函数, 不需要指定返回类型, 返回类型由返回的数
+    //js 的函数调用机制和java 一样
+    function f3(n1, n2) {
+        return n1 + n2;
+        
+    }
+    
+    alert("f3(10, 20)=" + f3(10, 20));
+    
+    //TODO 将函数赋给变量
+    //可以理解成f1 指向了函数
+    var f1 = function () {
+        alert("hi 老韩");
+    }
+    
+    console.log(typeof f1);//function
+    f1();//调用函数
+    
+    //老韩这样玩一把
+    var f3 = f1;
+    
+    f3();
+    var f2 = function (name) {
+        alert("hi " + name);
+        
+    }
+    
+    f2("小米");
+    
+    var f4 = function (n1, n2) {
+        return n1 + n2;
+        
+    }
+    
+    alert("res= " + f4(10, 50));
+    
+    
+    /*
+    TODO
+        1. JS 中函数的重载会覆盖掉上一次的定义
+        2. 函数的 arguments 隐形参数（作用域在 function 函数内）
+            (1) 隐形参数: 在 function 函数中不需要定义，可以直接用来获取所有参数的变量。
+            (2) 隐形参数特别像 java 的可变参数一样。 public void fun( int ... args )
+            (3) js 中的隐形参数跟 java 的可变参数一样。操作类似数组
+    */
+    // function f1() {
+    // alert("ok jack~")
+    // }
+    // function f1(name) {
+    // alert("hi " + name);
+    // }
+    // f1();
+    function f2() {
+        //遍历 函数的 arguments 隐形参数
+        //arguments 是数组
+        //老韩提示：如果我们希望通过 console.log 输出对象的数据，使用, 连接而不是+
+        console.log("arguments= ", arguments);
+        console.log("arguments 长度= " + arguments.length)
+        alert("f2()...")
+        
+    }
+    
+    f2(10, 20, 30, "韩顺平");
+    
+    //3 (1)如果我们的函数有形参，在传入实参的时候，仍然按照顺序匹配
+    // (2)如果有匹配上，就赋给他， 如果没有匹配上，也无所谓
+    // (3)仍然会把所有的实参，赋给 arguments
+    // (4)如果形参个数，大于了实参个数，则该形参的值为 undefined
+    function f3(n) {
+        console.log("n=" + n);//100
+        console.log("arguments= ", arguments);//100, 90, 20
+        
+    }
+    
+    f3(100, 90, 20);
+
+</script>
+
+<!--
+这里表示给button 绑定了onclick 事件
+当用户点击了该button，就会触发 hi() 函数
+-->
+<button onClick="hi()">点击这里</button>
+</body>
+</html>
