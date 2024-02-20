@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM</title>
+    <!--文档对象模型，文档和对象之间的映射关系-->
+    <!--
+        1. 先得到h1 的 dom 对象, 通过 id 获取
+        2. 对h1 对应的dom 对象操作即可
+    -->
+    
+    <script type="text/javascript">
+        function getValue() {//定义函数
+            //myHeader 就是dom 对象
+            var myHeader = document.getElementById("myHeader");
+            alert(myHeader);//HTMLHeadingElement
+            //myHeader.innerText 获取到 myHeader 的包含的文本
+            //看看 innerText , innerHTML
+            alert(myHeader.innerText);//文本 我的头啊
+            alert(myHeader.innerHTML);//html <div>我的头啊</div>
+            alert("终于看到你了！")
+        }
+        
+        //动态绑定
+        window.onload = function () {
+            //1. 获取 myHeader 的dom 对象
+            var myHeader = document.getElementById("myHeader");
+            //2. 给myHeader 绑定 onclick 的事件
+            myHeader.onclick = function () {
+                alert("动态绑定 内容是= " + myHeader.innerText);
+            }
+        }
+        // 把上面的覆盖了
+        // 可以再次获取对象并绑定事件
+        window.onload = function () {
+            var test = document.getElementById("test");
+            test.onclick = function () {
+                alert("test" + test.innerHTML);
+            }
+            // 再次获取并绑定
+            var myHeader = document.getElementById("myHeader");
+            myHeader.onclick = function () {
+                alert("动态绑定 内容是= " + myHeader.innerText);
+            }
+        }
+    
+    </script>
+</head>
+<body>
+<!-- 静态绑定一个点击事件 -->
+<h1 id="myHeader">
+    <div>我的头啊</div>
+</h1>
+<p>点一下上面试试吧！</p>
+<br>
+<h2 id="test">
+    <div>test</div>
+</h2>
+<br>
+<h3 onclick="getValue()">
+    <div>？？？</div>
+</h3>
+</body>
+</html>
