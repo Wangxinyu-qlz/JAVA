@@ -10,6 +10,7 @@
       <module fileurl="file://$PROJECT_DIR$/stage1/DynamicBinding/DynamicBinding.iml" filepath="$PROJECT_DIR$/stage1/DynamicBinding/DynamicBinding.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage1/Extend/Extend.iml" filepath="$PROJECT_DIR$/stage1/Extend/Extend.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage1/ExtendTheory/ExtendTheory.iml" filepath="$PROJECT_DIR$/stage1/ExtendTheory/ExtendTheory.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HTML.iml" filepath="$PROJECT_DIR$/HTML.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage1/HashCode/HashCode.iml" filepath="$PROJECT_DIR$/stage1/HashCode/HashCode.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage1/Homework/Homework.iml" filepath="$PROJECT_DIR$/stage1/Homework/Homework.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage1/House.rent.system/House.rent.system.iml" filepath="$PROJECT_DIR$/stage1/House.rent.system/House.rent.system.iml" />
@@ -35,6 +36,7 @@
       <module fileurl="file://$PROJECT_DIR$/stage2/WOT/WOT4/WOT4.iml" filepath="$PROJECT_DIR$/stage2/WOT/WOT4/WOT4.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/WOT/WOT5/WOT5.iml" filepath="$PROJECT_DIR$/stage2/WOT/WOT5/WOT5.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/WOT/WOT6/WOT6.iml" filepath="$PROJECT_DIR$/stage2/WOT/WOT6/WOT6.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stage4_JavaWeb/XML/XML.iml" filepath="$PROJECT_DIR$/stage4_JavaWeb/XML/XML.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/abstract_#/abstract_#.iml" filepath="$PROJECT_DIR$/stage2/abstract_#/abstract_#.iml" />
       <module fileurl="file://$PROJECT_DIR$/algorithm/algorithm.iml" filepath="$PROJECT_DIR$/algorithm/algorithm.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/annotation/annotation.iml" filepath="$PROJECT_DIR$/stage2/annotation/annotation.iml" />
@@ -48,6 +50,7 @@
       <module fileurl="file://$PROJECT_DIR$/stage2/collection_##/collection_##.iml" filepath="$PROJECT_DIR$/stage2/collection_##/collection_##.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/commonly_used_class/commonly_used_class.iml" filepath="$PROJECT_DIR$/stage2/commonly_used_class/commonly_used_class.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/commonly_used_class/date_/date_.iml" filepath="$PROJECT_DIR$/stage2/commonly_used_class/date_/date_.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dom.iml" filepath="$PROJECT_DIR$/dom.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/enumeration/enumeration.iml" filepath="$PROJECT_DIR$/stage2/enumeration/enumeration.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/WOT/event_/event_.iml" filepath="$PROJECT_DIR$/stage2/WOT/event_/event_.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/exception/exception.iml" filepath="$PROJECT_DIR$/stage2/exception/exception.iml" />
@@ -68,6 +71,7 @@
       <module fileurl="file://$PROJECT_DIR$/stage2/interface/interface_exercise/interface_exercise.iml" filepath="$PROJECT_DIR$/stage2/interface/interface_exercise/interface_exercise.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/jUnit_/jUnit_.iml" filepath="$PROJECT_DIR$/stage2/jUnit_/jUnit_.iml" />
       <module fileurl="file://$PROJECT_DIR$/java8/java8.iml" filepath="$PROJECT_DIR$/java8/java8.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javascript.iml" filepath="$PROJECT_DIR$/javascript.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/main/main.iml" filepath="$PROJECT_DIR$/stage2/main/main.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/commonly_used_class/math_/math_.iml" filepath="$PROJECT_DIR$/stage2/commonly_used_class/math_/math_.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/multi-threads/multi-threads.iml" filepath="$PROJECT_DIR$/stage2/multi-threads/multi-threads.iml" />
@@ -83,12 +87,14 @@
       <module fileurl="file://$PROJECT_DIR$/stage1/stage1.iml" filepath="$PROJECT_DIR$/stage1/stage1.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/stage2.iml" filepath="$PROJECT_DIR$/stage2/stage2.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage3/stage3.iml" filepath="$PROJECT_DIR$/stage3/stage3.iml" />
-      <module fileurl="file://$PROJECT_DIR$/stage4javaWeb/stage4javaWeb.iml" filepath="$PROJECT_DIR$/stage4javaWeb/stage4javaWeb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stage4_JavaWeb.iml" filepath="$PROJECT_DIR$/stage4_JavaWeb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stage4javaWe/stage4javaWeb.iml" filepath="$PROJECT_DIR$/stage4javaWe/stage4javaWeb.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/staticmethod/staticmethod.iml" filepath="$PROJECT_DIR$/stage2/staticmethod/staticmethod.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/commonly_used_class/string/string.iml" filepath="$PROJECT_DIR$/stage2/commonly_used_class/string/string.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/commonly_used_class/system_/system_.iml" filepath="$PROJECT_DIR$/stage2/commonly_used_class/system_/system_.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage1/Homework/teacher/teacher.iml" filepath="$PROJECT_DIR$/stage1/Homework/teacher/teacher.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage1/toString/toString.iml" filepath="$PROJECT_DIR$/stage1/toString/toString.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stage4_JavaWeb/tomcat/tomcat.iml" filepath="$PROJECT_DIR$/stage4_JavaWeb/tomcat/tomcat.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage3/udp/udp.iml" filepath="$PROJECT_DIR$/stage3/udp/udp.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/visitstatic/visitstatic.iml" filepath="$PROJECT_DIR$/stage2/visitstatic/visitstatic.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage3/webAPI/webAPI.iml" filepath="$PROJECT_DIR$/stage3/webAPI/webAPI.iml" />

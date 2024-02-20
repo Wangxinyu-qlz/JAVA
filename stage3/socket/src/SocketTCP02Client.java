@@ -11,11 +11,11 @@ import java.net.Socket;
 public class SocketTCP02Client {
 	public static void main(String[] args) throws IOException {
 		Socket socket = new Socket(InetAddress.getLocalHost(), 9999);
-		System.out.println("发送");
-		OutputStream outputStream = socket.getOutputStream();
-		outputStream.write("你好服务器，我是客户端".getBytes());
-		socket.shutdownOutput();//设置结束标记
-		System.out.println("发送完毕");
+		//System.out.println("发送");
+		//OutputStream outputStream = socket.getOutputStream();
+		//outputStream.write("你好服务器，我是客户端".getBytes());
+		//socket.shutdownOutput();//设置结束标记
+		//System.out.println("发送完毕");
 
 		System.out.println("接收");
 		InputStream inputStream = socket.getInputStream();
@@ -27,7 +27,7 @@ public class SocketTCP02Client {
 		System.out.println("接受完毕");
 
 		socket.close();
-		outputStream.close();
+		//outputStream.close();
 		inputStream.close();
 	}
 }
