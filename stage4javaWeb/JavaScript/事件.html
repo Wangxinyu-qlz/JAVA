@@ -64,6 +64,53 @@
                 fname2.value = fname2.value.toUpperCase();
             }
         }
+        
+        function mySal() {
+            alert("工资范围变化了~");
+            
+        }
+        
+        //动态注册
+        window.onload = function () {
+            //获取到sel01 的dom 对象
+            var sel01 = document.getElementById("sel01");
+            //给sel01 绑定onchange 事件
+            sel01.onchange = function () {
+                alert("你换女友的~");
+            }
+        }
+        
+        
+        //静态注册表单提交事件
+        function register() {
+            //先得到输入的用户名和密码
+            var username = document.getElementById("username");
+            var pwd = document.getElementById("pwd");
+            //判断是否为空""
+            if ("" == username.value || "" == pwd.value) {
+                alert("用户名和密码不能为空, 不能提交");
+                return false;//不提交
+            }
+            //表示要提交
+            return true;
+        }
+        
+        //动态注册表单提交事件
+        window.onload = function () {
+            //使用折半法, 观察原页面是否真的是最新的, 是不是修改的页面和访问的页面一致
+            //得到 from2 表单dom 对象
+            var form2 = document.getElementById("form2");
+            
+            // //给form2 绑定onsubmit 事件
+            // 老韩解释 onsubmit 绑定的函数，会直接将结果(f,t)返回给onsubmit
+            form2.onsubmit = function () {
+                if (form2.username.value == "" || form2.pwd.value == "") {
+                    alert("用户名和密码不能为空, 不能提交");
+                    return false;//不提交
+                }
+                return true;
+            }
+        }
     
     </script>
 </head>
@@ -73,6 +120,35 @@
 输入英文单词：
 <input type="text" id="fname" onblur="upperCase()" /><br />
 输入英文单词：
-<input type="text" id="fname2" />
+<input type="text" id="fname2"/><br><br>
+
+你当前工资水平： <!--静态注册 onchange 事件-->
+<select onchange="mySal()">
+    <option>--工资范围--</option>
+    <option>10k 以下</option>
+    <option>10k-30k</option>
+    <option>30k 以上</option>
+</select> <br/>
+
+你当前女友是谁：
+<select id="sel01"> <!-- 动态绑定 onchange-->
+    <option>---女友---</option>
+    <option>艳红</option>
+    <option>春桃</option>
+    <option>春花</option>
+</select>
+<br>
+
+<h1>注册用户1</h1> <!-- 静态注册表单提交事件 -->
+<form action="../html/ok.html" onsubmit="return register()">
+    u: <input type="text" id="username" name="username"/><br/>
+    p: <input type="password" id="pwd" name="pwd"/><br/>
+    <input type="submit" value="注册用户"/>
+</form>
+<h1>注册用户2</h1> <!-- 动态注册表单提交事件 -->
+<form action="../html/ok.html" id="form2">
+    u: <input type="text" name="username"/><br/>
+    p: <input type="password" name="pwd"/><br/>
+    <input type="submit" value="注册用户"/></form>
 </body>
 </html>
