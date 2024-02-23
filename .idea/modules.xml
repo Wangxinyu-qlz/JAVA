@@ -80,6 +80,7 @@
       <module fileurl="file://$PROJECT_DIR$/QQ/Client/qqcommonC/qqcommonC.iml" filepath="$PROJECT_DIR$/QQ/Client/qqcommonC/qqcommonC.iml" />
       <module fileurl="file://$PROJECT_DIR$/QQ/Server/qqcommonS/qqcommonS.iml" filepath="$PROJECT_DIR$/QQ/Server/qqcommonS/qqcommonS.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage3/reflection/reflection.iml" filepath="$PROJECT_DIR$/stage3/reflection/reflection.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stage4_IavaWeb/servlet/servlet.iml" filepath="$PROJECT_DIR$/stage4_IavaWeb/servlet/servlet.iml" />
       <module fileurl="file://$PROJECT_DIR$/shuaTi/shuaTi.iml" filepath="$PROJECT_DIR$/shuaTi/shuaTi.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/singleton.design.pattern/singleton.design.pattern.iml" filepath="$PROJECT_DIR$/stage2/singleton.design.pattern/singleton.design.pattern.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage3/socket/socket.iml" filepath="$PROJECT_DIR$/stage3/socket/socket.iml" />
