@@ -1,0 +1,15 @@
+127.0.0.1 - - [23/Feb/2024:22:03:17 +0800] "GET /fishWeb_Web_exploded/fish/index.html HTTP/1.1" 404 1066
+127.0.0.1 - - [23/Feb/2024:22:03:17 +0800] "GET /fishWeb_Web_exploded/fish/index.html HTTP/1.1" 404 1066
+127.0.0.1 - - [23/Feb/2024:22:03:17 +0800] "GET /fishWeb_Web_exploded/fish/index.html HTTP/1.1" 404 1066
+127.0.0.1 - - [23/Feb/2024:22:03:18 +0800] "GET /fishWeb_Web_exploded/fish/index.html HTTP/1.1" 404 1066
+127.0.0.1 - - [23/Feb/2024:22:03:18 +0800] "GET /fishWeb_Web_exploded/fish/index.html HTTP/1.1" 404 1066
+127.0.0.1 - - [23/Feb/2024:22:03:18 +0800] "GET /fishWeb_Web_exploded/fish/index.html HTTP/1.1" 404 1066
+127.0.0.1 - - [23/Feb/2024:22:03:18 +0800] "GET /fishWeb_Web_exploded/fish/index.html HTTP/1.1" 404 1066
+127.0.0.1 - - [23/Feb/2024:22:03:18 +0800] "GET /fishWeb_Web_exploded/fish/index.html HTTP/1.1" 404 1066
+127.0.0.1 - - [23/Feb/2024:22:03:19 +0800] "GET /fishWeb_Web_exploded/fish/index.html HTTP/1.1" 404 1066
+127.0.0.1 - - [23/Feb/2024:22:03:19 +0800] "GET /fishWeb_Web_exploded/fish/index.html HTTP/1.1" 404 1066
+127.0.0.1 - - [23/Feb/2024:22:03:19 +0800] "GET /fishWeb_Web_exploded/fish/index.html HTTP/1.1" 404 1066
+127.0.0.1 - - [23/Feb/2024:22:03:19 +0800] "GET /fishWeb_Web_exploded/fish/index.html HTTP/1.1" 404 1066
+127.0.0.1 - - [23/Feb/2024:22:04:56 +0800] "GET /fishWeb_Web_exploded/ HTTP/1.1" 404 1036
+127.0.0.1 - - [23/Feb/2024:22:04:57 +0800] "GET / HTTP/1.1" 200 11452
+127.0.0.1 - - [23/Feb/2024:22:04:57 +0800] "GET /fishWeb_Web_exploded/ HTTP/1.1" 404 1036

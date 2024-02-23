@@ -1,0 +1,86 @@
+23-Feb-2024 22:02:51.097 警告 [main] org.apache.catalina.startup.SetAllPropertiesRule.begin [SetAllPropertiesRule]{Server/Service/Connector} Setting property 'URLEncoding' to 'utf-8' did not find a matching property.
+23-Feb-2024 22:02:51.142 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log Server version:        Apache Tomcat/8.0.50
+23-Feb-2024 22:02:51.142 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Feb 7 2018 20:06:05 UTC
+23-Feb-2024 22:02:51.142 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log Server number:         8.0.50.0
+23-Feb-2024 22:02:51.142 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 11
+23-Feb-2024 22:02:51.143 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+23-Feb-2024 22:02:51.143 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+23-Feb-2024 22:02:51.143 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jdk-19
+23-Feb-2024 22:02:51.143 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           19+36-2238
+23-Feb-2024 22:02:51.143 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+23-Feb-2024 22:02:51.143 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\My_Code\Java\stage4_IavaWeb\apache-tomcat-8.0.50
+23-Feb-2024 22:02:51.143 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\My_Code\Java\stage4_IavaWeb\apache-tomcat-8.0.50
+23-Feb-2024 22:02:51.144 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+23-Feb-2024 22:02:51.144 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+23-Feb-2024 22:02:51.144 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\My_Code\Java\stage4_IavaWeb\apache-tomcat-8.0.50\conf\logging.properties
+23-Feb-2024 22:02:51.144 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+23-Feb-2024 22:02:51.144 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+23-Feb-2024 22:02:51.144 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+23-Feb-2024 22:02:51.144 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+23-Feb-2024 22:02:51.145 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\My_Code\Java\stage4_IavaWeb\apache-tomcat-8.0.50
+23-Feb-2024 22:02:51.145 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\My_Code\Java\stage4_IavaWeb\apache-tomcat-8.0.50
+23-Feb-2024 22:02:51.145 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\My_Code\Java\stage4_IavaWeb\apache-tomcat-8.0.50\temp
+23-Feb-2024 22:02:51.145 信息 [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded APR based Apache Tomcat Native library 1.2.16 using APR version 1.6.3.
+23-Feb-2024 22:02:51.145 信息 [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+23-Feb-2024 22:02:51.682 信息 [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized (OpenSSL 1.0.2m  2 Nov 2017)
+23-Feb-2024 22:02:51.714 信息 [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-apr-8080"]
+23-Feb-2024 22:02:51.722 信息 [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-apr-8009"]
+23-Feb-2024 22:02:51.724 信息 [main] org.apache.catalina.startup.Catalina.load Initialization processed in 959 ms
+23-Feb-2024 22:02:51.760 信息 [main] org.apache.catalina.core.StandardService.startInternal Starting service Catalina
+23-Feb-2024 22:02:51.760 信息 [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet Engine: Apache Tomcat/8.0.50
+23-Feb-2024 22:02:51.768 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory C:\My_Code\Java\stage4_IavaWeb\apache-tomcat-8.0.50\webapps\docs
+23-Feb-2024 22:02:52.068 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory C:\My_Code\Java\stage4_IavaWeb\apache-tomcat-8.0.50\webapps\docs has finished in 300 ms
+23-Feb-2024 22:02:52.069 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory C:\My_Code\Java\stage4_IavaWeb\apache-tomcat-8.0.50\webapps\examples
+23-Feb-2024 22:02:52.324 严重 [localhost-startStop-1] org.apache.catalina.core.ContainerBase.addChildInternal ContainerBase.addChild: start: 
+ org.apache.catalina.LifecycleException: Failed to start component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/examples]]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:162)
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:753)
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:729)
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:717)
+	at org.apache.catalina.startup.HostConfig.deployDirectory(HostConfig.java:1126)
+	at org.apache.catalina.startup.HostConfig$DeployDirectory.run(HostConfig.java:1868)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:577)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Caused by: java.lang.NoClassDefFoundError: websocket/drawboard/Room$Player
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method)
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3458)
+	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2557)
+	at org.apache.tomcat.websocket.pojo.PojoMethodMapping.<init>(PojoMethodMapping.java:86)
+	at org.apache.tomcat.websocket.server.WsServerContainer.addEndpoint(WsServerContainer.java:191)
+	at org.apache.tomcat.websocket.server.WsSci.onStartup(WsSci.java:116)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5311)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:145)
+	... 10 more
+Caused by: java.lang.ClassNotFoundException: websocket.drawboard.Room$Player
+	at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1335)
+	at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1163)
+	... 18 more
+
+23-Feb-2024 22:02:52.326 严重 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Error deploying web application directory C:\My_Code\Java\stage4_IavaWeb\apache-tomcat-8.0.50\webapps\examples
+ java.lang.IllegalStateException: ContainerBase.addChild: start: org.apache.catalina.LifecycleException: Failed to start component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/examples]]
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:757)
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:729)
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:717)
+	at org.apache.catalina.startup.HostConfig.deployDirectory(HostConfig.java:1126)
+	at org.apache.catalina.startup.HostConfig$DeployDirectory.run(HostConfig.java:1868)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:577)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+
+23-Feb-2024 22:02:52.327 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory C:\My_Code\Java\stage4_IavaWeb\apache-tomcat-8.0.50\webapps\examples has finished in 258 ms
+23-Feb-2024 22:02:52.327 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory C:\My_Code\Java\stage4_IavaWeb\apache-tomcat-8.0.50\webapps\host-manager
+23-Feb-2024 22:02:52.362 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory C:\My_Code\Java\stage4_IavaWeb\apache-tomcat-8.0.50\webapps\host-manager has finished in 35 ms
+23-Feb-2024 22:02:52.362 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory C:\My_Code\Java\stage4_IavaWeb\apache-tomcat-8.0.50\webapps\manager
+23-Feb-2024 22:02:52.381 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory C:\My_Code\Java\stage4_IavaWeb\apache-tomcat-8.0.50\webapps\manager has finished in 19 ms
+23-Feb-2024 22:02:52.381 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory C:\My_Code\Java\stage4_IavaWeb\apache-tomcat-8.0.50\webapps\ROOT
+23-Feb-2024 22:02:52.396 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory C:\My_Code\Java\stage4_IavaWeb\apache-tomcat-8.0.50\webapps\ROOT has finished in 14 ms
+23-Feb-2024 22:02:52.397 信息 [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-apr-8080"]
+23-Feb-2024 22:02:52.406 信息 [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-apr-8009"]
+23-Feb-2024 22:02:52.411 信息 [main] org.apache.catalina.startup.Catalina.start Server startup in 685 ms
+23-Feb-2024 22:03:02.710 警告 [main] org.apache.catalina.core.StandardServer.await StandardServer.await: Invalid command '' received
+23-Feb-2024 22:04:55.171 警告 [main] org.apache.catalina.core.StandardServer.await StandardServer.await: Invalid command '' received
