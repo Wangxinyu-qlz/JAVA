@@ -4,6 +4,7 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
          <!--web.xml文件主要用于配置该 web 应用使用到的 Servlet-->
+
         <!--配置 HelloServlet-->
         <servlet>
             <!--为 servlet 命名，不可重复-->
@@ -11,14 +12,46 @@
             <!--指定 Servlet 的类的全路径
             TomCat 在反射生成该 Servlet 时需要使用-->
             <servlet-class>servlet.HelloServlet</servlet-class>
-            <!--TODO ？？？load-on-startup 表示 TomCat 启动时，会自动加载 servlet 实例-->
+            <!--TODO load-on-startup 表示 TomCat(等servlet容器) 启动时，会自动加载 servlet 实例
+                    也就是在启动的时候，就调用一次init()
+                    1表示装载的顺序
+            即 启动时就执行 init()
+            在 servlet 容器启动后，浏览器首次向 Servlet 发送请求
+            Servlet重新装载时（比如tomcat进行redeploy重新部署，重新部署会销毁所有的Servlet实例）
+            浏览器再向 Servlet 发送请求的第1次（init()被调用一次，service被调用）
+            如果有多个Servlet类，控制其启动的顺序
+            TODO 如果这里设置了启动顺序为1，OkServlet通过注解设置启动顺序为1，
+             只启动OkServlet时，HelloServlet也会被启动-->
             <load-on-startup>1</load-on-startup>
         </servlet>
         <servlet-mapping>
             <!--此处的 servlet-name 要和上面的一致-->
             <servlet-name>HelloServlet</servlet-name>
             <!--servlet 访问的 url 路径，名字自由取，但是必须有 /
-            在浏览器中访问：http://localhost:8080/servlet/helloservlet-->
+            在浏览器中访问：http://localhost:8080/servlet/helloservlet
+            -->
             <url-pattern>/helloServlet</url-pattern>
         </servlet-mapping>
+
+        <!--配置HiServlet-->
+        <servlet>
+            <servlet-name>HiServlet</servlet-name>
+            <servlet-class>servlet.HiServlet</servlet-class>
+        </servlet>
+        <servlet-mapping>
+            <servlet-name>HiServlet</servlet-name>
+            <url-pattern>/hiServlet</url-pattern>
+        </servlet-mapping>
+
+
+        <servlet>
+            <servlet-name>OkServlet</servlet-name>
+            <servlet-class>servlet.annotation.OkServlet</servlet-class>
+        </servlet>
+        <servlet-mapping>
+            <servlet-name>OkServlet</servlet-name>
+            <url-pattern>/okServlet</url-pattern>
+        </servlet-mapping>
+
+
 </web-app>

@@ -2,14 +2,15 @@ public class Main {
     public static void main(String[] args) {
         A a = new B();
 //        属性没有动态绑定，取决于编译类型，哪里声明，哪里使用
-        System.out.println(a.i);//10
+        System.out.println("a.i=" + a.i);//10
 //        调用对象方法时，该方法和该对象的@@@运行类型@@@/内存地址动态绑定
 //        执行B中的sum方法，使用B中定义的i(20)
-        System.out.println(a.sum());//40
-        System.out.println(a.sum1());//30
+        System.out.println("a.sum()=" + a.sum());//40
+        System.out.println("a.sum1()=" + a.sum1());//30
 //        @@@a的运行类型是B@@
-        System.out.println(a.sum2());//30 A中的sum2()@@@调用B中的getI()@@@，因为它的运行类型是B
-        System.out.println(a.sum3());//20
+//        TODO 动态绑定执行哪里的函数 A中的sum2()@@@调用B中的getI()@@@，因为它的运行类型是B
+        System.out.println("a.sum2()=" + a.sum2());//30
+        System.out.println("a.sum3()=" + a.sum3());//20
     }
 }
 class A {
