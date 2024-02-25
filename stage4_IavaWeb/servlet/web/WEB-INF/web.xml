@@ -22,7 +22,7 @@
             如果有多个Servlet类，控制其启动的顺序
             TODO 如果这里设置了启动顺序为1，OkServlet通过注解设置启动顺序为1，
              只启动OkServlet时，HelloServlet也会被启动-->
-            <load-on-startup>1</load-on-startup>
+            <!--<load-on-startup>1</load-on-startup>-->
         </servlet>
         <servlet-mapping>
             <!--此处的 servlet-name 要和上面的一致-->
@@ -52,6 +52,16 @@
             <servlet-name>OkServlet</servlet-name>
             <url-pattern>/okServlet</url-pattern>
         </servlet-mapping>
+
+        <!-- 定义一个 context 参数  配置整个网站的信息 -->
+        <context-param>
+            <param-name>website</param-name>
+            <param-value>http://www.myweb.net</param-value>
+        </context-param>
+        <context-param>
+            <param-name>school</param-name>
+            <param-value>NWAFU</param-value>
+        </context-param>
 
 
 </web-app>
