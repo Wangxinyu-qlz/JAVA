@@ -1,4 +1,4 @@
-package servlet.annotation;
+package servlet.request;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -44,7 +44,7 @@ public class HttpRequestMethods extends HttpServlet {
 
 		//本质是在http响应头加上 ContentType: text/html;charset=utf-8
 		response.setContentType("text/html;charset=utf-8");
-		response.setContentType("application/x-tar;charset=utf-8");//请求之后会弹出现在界面
+		//response.setContentType("application/x-tar;charset=utf-8");//请求之后会弹出现在界面
 		//response.setCharacterEncoding("utf-8");//仍然是乱码
 		PrintWriter writer = response.getWriter();
 		writer.print("提价的信息为：" + username + " " + pwd);

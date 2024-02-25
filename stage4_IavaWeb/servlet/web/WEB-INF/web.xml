@@ -46,7 +46,7 @@
 
         <servlet>
             <servlet-name>OkServlet</servlet-name>
-            <servlet-class>servlet.annotation.OkServlet</servlet-class>
+            <servlet-class>servlet.OkServlet</servlet-class>
         </servlet>
         <servlet-mapping>
             <servlet-name>OkServlet</servlet-name>

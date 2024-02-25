@@ -1,4 +1,4 @@
-package servlet.annotation;
+package servlet.request;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
@@ -43,8 +43,8 @@ public class DBServlet extends HttpServlet {
 			description The server encountered an internal error that prevented it from fulfilling this request.
 		  exception
 			java.lang.NullPointerException
-			servlet.annotation.DBServlet.doPost(DBServlet.java:31)
-			servlet.annotation.DBServlet.doGet(DBServlet.java:37)
+			servlet.request.DBServlet.doPost(DBServlet.java:31)
+			servlet.request.DBServlet.doGet(DBServlet.java:37)
 			javax.servlet.http.HttpServlet.service(HttpServlet.java:622)
 			javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
 			org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
