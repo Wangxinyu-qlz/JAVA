@@ -26,10 +26,12 @@ public class MyTomcat {
 
 			//测试
 			InputStream inputStream = socket.getInputStream();
-			byte[] bytes = new byte[1024];
+			byte[] bytes = new byte[1024];//数据缓冲区
 			int len = 0;
 			String s = "";
 			//从输入流中读取字节并转换为字符串打印出来
+			//inputStream.read(bytes)  将读取到的数据存储到bytes数组中，如果bytes的长度是0，不会读取。
+			//返回 实际读取到的数据的长度
 			if ((len = inputStream.read(bytes)) > 0) {
 				s = new String(bytes, 0, len);
 			}

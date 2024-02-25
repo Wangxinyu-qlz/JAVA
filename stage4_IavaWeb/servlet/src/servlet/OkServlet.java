@@ -44,7 +44,7 @@ import java.io.IOException;
 	* {"/ok1", "/ok2"} 可以给 OkServlet 配置多个 url-pattern
 	* 相当于 @WebServlet(urlPatterns = {"/ok1", "/ok2"}) 代替web.xml 的配置
 	* 浏览器访问 OkServlet 时，可以 http://localhost:8080/servlet/ok1 或者 http://localhost:8080/servlet/ok1
-	* web.xml 中的 init-param 在住注解的指定方式
+	* web.xml 中的 init-param 在注解的指定方式
 	*       <init-param>
                 <param-name></param-name>
                 <param-value></param-value>
