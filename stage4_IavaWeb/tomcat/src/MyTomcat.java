@@ -48,7 +48,7 @@ public class MyTomcat {
 			//    \r\n
 			StringBuilder resStr = builder
 					.append("HTTP/1.1 200 OK\n")
-					.append("Content-Type: text/html\n")
+					.append("Content-Type: text/html; charset=utf-8\n")
 					.append("\r\n");
 			outputStream.write(resStr.toString().getBytes());
 
