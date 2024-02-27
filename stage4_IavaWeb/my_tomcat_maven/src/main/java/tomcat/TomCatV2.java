@@ -6,6 +6,9 @@ import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 
+/**
+ * TomCat在这里相当于一个大堂服务员，有客人（前端请求）来就引荐给相关部门处理（线程）
+ */
 public class TomCatV2 {
 	public static void main(String[] args) throws IOException {
 		ServerSocket serverSocket = new ServerSocket(8080);

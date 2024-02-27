@@ -22,6 +22,8 @@ import java.util.concurrent.ConcurrentHashMap;
  * @author: Qiaolezi
  * @create: 2024-02-27 18:52
  * @description: 通过XML+反射初始化容器
+ * TomCat在这里相当于一个大堂服务员，有客人（前端请求）来就引荐给相关部门处理（线程） -> run()方法
+ * TomCat还维护了两个容器，里面放着可访问的类的名称（ServletName），url等（XML.web中的信息），在启动后首先init()加载这些信息
  **/
 public class TomCatV3 {
 	//使用ConcurrentHashMap构建容器，在MyRequestHandler.java 82行
@@ -55,7 +57,7 @@ public class TomCatV3 {
 		}
 	}
 
-	//直接对两个容器进行初始化
+	//直接对两个容器进行初始化，加载信息
 	public void init() {
 		//读取web.xml文件 => dom4j =>
 		//得到web.xml文件的路径 => 拷一份
