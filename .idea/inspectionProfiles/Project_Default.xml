@@ -7,7 +7,7 @@
       </Languages>
     </inspection_tool>
     <inspection_tool class="JavadocDeclaration" enabled="true" level="WARNING" enabled_by_default="true">
-      <option name="ADDITIONAL_TAGS" value="program:,description:,author:,create:" />
+      <option name="ADDITIONAL_TAGS" value="program:,description:,author:,create:,parameter：,return:" />
     </inspection_tool>
     <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="ignoredPackages">

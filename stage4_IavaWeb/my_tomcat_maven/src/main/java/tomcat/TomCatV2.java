@@ -9,7 +9,7 @@ import java.net.Socket;
 public class TomCatV2 {
 	public static void main(String[] args) throws IOException {
 		ServerSocket serverSocket = new ServerSocket(8080);
-		System.out.println("============监听===========");
+		System.out.println("============TomCatV2监听===========");
 
 		//只要serverSocket没有关闭，就一直等待
 		while (!serverSocket.isClosed()) {
