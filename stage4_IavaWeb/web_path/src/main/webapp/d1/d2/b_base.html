@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--使用base标签
+TODO 当前页面所有资源的参考路径都是 http://localhost:8080/web_path/
+-->
+<base href="http://localhost:8080/web_path/">
+<!--还可以简化
+浏览器在解析base标签的时候，第一个"/"会解析为："http://localhost:8080/"-->
+<base href="/web_path/">
+<head>
+    <meta charset="UTF-8">
+    <title>base标签</title>
+</head>
+<body>
+<h1>b_base.html</h1>
+<a href="../../a.html">../../a.html</a><br>
+<a href="a.html">a.html</a>
+<!--百度也被拼接了
+http://localhost:8080/web_path/d1/d2/b_base.html-->
+<a href="www.baidu.com">百度</a>
+</body>
+</html>

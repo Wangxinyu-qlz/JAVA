@@ -5,6 +5,7 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/stage4_IavaWeb/my_tomcat_maven/pom.xml" />
+        <option value="$PROJECT_DIR$/stage4_IavaWeb/web_path/pom.xml" />
       </list>
     </option>
     <option name="workspaceImportForciblyTurnedOn" value="true" />
