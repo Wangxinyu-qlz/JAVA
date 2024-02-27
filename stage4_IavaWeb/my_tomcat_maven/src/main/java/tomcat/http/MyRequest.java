@@ -27,11 +27,11 @@ public class MyRequest {
 	//inputStream对应于http请求的socket
 	public MyRequest(InputStream inputStream) {
 		this.inputStream = inputStream;
-		init();
+		encapsulateHttp();
 	}
 
-	private void init( ) {
-		System.out.println("init...");
+	//encapsulate封装
+	private void encapsulateHttp( ) {
 		//inputStream字节流->BufferedReader字符流
 		try {
 			BufferedReader bufferedReader = new BufferedReader(

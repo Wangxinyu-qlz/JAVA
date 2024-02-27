@@ -10,7 +10,12 @@ import java.io.OutputStream;
  **/
 public class MyResponse {
 	private OutputStream outputStream = null;
+	//HTTP响应头
+	public static final String responseHeader = "Http/1.1 200 OK\r\n" +
+					"Content-Type: text/html; charset=utf-8\r\n" +
+					"\r\n";
 
+	//setContentType()方法
 	public MyResponse(OutputStream outputStream) {
 		this.outputStream = outputStream;
 	}

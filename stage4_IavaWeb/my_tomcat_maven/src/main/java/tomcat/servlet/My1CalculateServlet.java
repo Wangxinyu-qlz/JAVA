@@ -11,17 +11,17 @@ import java.io.OutputStream;
 /**
  * @program: Java
  * @author: Qiaolezi
- * @create: 2024-02-27 14:56
+ * @create: 2024-02-27 20:24
  * @description:
  **/
-public class MyCalculateServlet extends MyHttpServlet {
+public class My1CalculateServlet extends MyHttpServlet {
 
 	@Override
 	public void doGet(MyRequest request, MyResponse response) throws IOException {
 		int num1 = WebUtils.parerInt(request.getParameter("num1"), 0);
 		int num2 = WebUtils.parerInt(request.getParameter("num2"), 0);
 		OutputStream outputStream = response.getOutputStream();
-		String responseMes = MyResponse.responseHeader + (num1+num2) + "加法反射构建";
+		String responseMes = MyResponse.responseHeader + (num1 * num2) + "乘法反射构建";
 		outputStream.write(responseMes.getBytes());
 
 		outputStream.flush();
