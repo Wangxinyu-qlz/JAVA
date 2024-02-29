@@ -8,6 +8,7 @@ import org.dom4j.io.SAXReader;
 import tomcat.handler.MyRequestHandler;
 import tomcat.servlet.MyHttpServlet;
 
+import javax.servlet.Filter;
 import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -38,6 +39,12 @@ public class TomCatV3 {
 	//ConcurrentHashMap   Key:url-pattern   Value:ServletName
 	public static final ConcurrentHashMap<String, String>
 			servletUrlMapping = new ConcurrentHashMap<>();
+
+	//TODO 这里还维护了一个filter容器
+	public static final ConcurrentHashMap<String, String>
+			filterUrlMapping = new ConcurrentHashMap<>();
+	public static final ConcurrentHashMap<String, Filter>
+			filterMapping = new ConcurrentHashMap<>();
 
 	public static void main(String[] args) throws IOException {
 		TomCatV3 tomCatV3 = new TomCatV3();

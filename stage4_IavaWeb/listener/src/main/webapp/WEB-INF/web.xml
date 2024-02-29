@@ -5,19 +5,6 @@
          version="4.0">
     <display-name>Archetype Created Web Application</display-name>
 
-    <!--TODO filter一般写在其他Servlet前面
-    url-pattern：当请求的url和其匹配时，就会调用filter
-    /manager/*  第一个"/"会被解析成 "http://ip/port/project_name"
-    完整路径为：http://ip/port/project_name/manage/*
-    当请求的资源的url满足该条件时，都会调用ManegeFilter-->
-    <filter>
-        <filter-name>ManageFilter</filter-name>
-        <filter-class>filter.filter.ManageFilter</filter-class>
-    </filter>
-    <filter-mapping>
-      <filter-name>ManageFilter</filter-name>
-      <url-pattern>/manage/*</url-pattern>
-    </filter-mapping>
 
     <listener>
         <listener-class>listener.MyServletContextListener</listener-class>
@@ -44,14 +31,5 @@
     <servlet-mapping>
         <servlet-name>HiServlet</servlet-name>
         <url-pattern>/hi</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>LoginCheckServlet</servlet-name>
-        <servlet-class>filter.servlert.LonginCheckServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>LoginCheckServlet</servlet-name>
-        <url-pattern>/loginCheckServlet</url-pattern>
     </servlet-mapping>
 </web-app>
