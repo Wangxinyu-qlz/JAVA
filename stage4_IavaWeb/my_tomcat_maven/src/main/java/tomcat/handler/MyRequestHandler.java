@@ -74,6 +74,11 @@ public class MyRequestHandler implements Runnable {
 			//MyCalculateServlet myCalculateServlet = new MyCalculateServlet();//硬编码
 			//myCalculateServlet.doGet(myRequest, myResponse);
 
+			//TODO 有了filter机制，可以理解在调用servlet之前，先匹配filter
+			// 1.根据request 对象封装的uri
+			// 2.到filterUrlMapping 匹配
+			// 3.如果匹配上，调用filterMapping 对应的filter对象的 doFilter()方法
+			// 4.如果没有匹配上，就直接方放行，执行servlet/jsp/html
 			//软编码：
 			// 1.uri:servletMapping的url-pattern -> servletName
 			String uri = myRequest.getUri();
