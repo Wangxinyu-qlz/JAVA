@@ -57,6 +57,7 @@
       <module fileurl="file://$PROJECT_DIR$/stage2/file/file.iml" filepath="$PROJECT_DIR$/stage2/file/file.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage3/fileDownload/fileDownload.iml" filepath="$PROJECT_DIR$/stage3/fileDownload/fileDownload.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage3/fileUpload/fileUpload.iml" filepath="$PROJECT_DIR$/stage3/fileUpload/fileUpload.iml" />
+      <module fileurl="file://$PROJECT_DIR$/file_up_down_load.iml" filepath="$PROJECT_DIR$/file_up_down_load.iml" />
       <module fileurl="file://$PROJECT_DIR$/filter.iml" filepath="$PROJECT_DIR$/filter.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/final/final.iml" filepath="$PROJECT_DIR$/stage2/final/final.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage1/finalize/finalize.iml" filepath="$PROJECT_DIR$/stage1/finalize/finalize.iml" />

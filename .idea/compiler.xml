@@ -9,6 +9,7 @@
         <module name="my_tomcat_maven" />
         <module name="listener" />
         <module name="filter" />
+        <module name="file_up_down_load" />
         <module name="web_path" />
         <module name="ajax" />
       </profile>

@@ -9,6 +9,7 @@
         <option value="$PROJECT_DIR$/stage4_IavaWeb/listener/pom.xml" />
         <option value="$PROJECT_DIR$/stage4_IavaWeb/filter/pom.xml" />
         <option value="$PROJECT_DIR$/stage4_IavaWeb/ajax/pom.xml" />
+        <option value="$PROJECT_DIR$/stage4_IavaWeb/file_up_down_load/pom.xml" />
       </list>
     </option>
     <option name="workspaceImportForciblyTurnedOn" value="true" />
