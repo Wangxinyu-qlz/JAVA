@@ -145,10 +145,10 @@ request.setAttribute("tomcatExamplesUrl", "/examples/");
                                 Important announcements, releases, security vulnerability notifications. (Low volume).</strong>
                             </li>
                             <li><a href="${tomcatUrl}lists.html#tomcat-users">tomcat-users</a><br />
-                                User support and discussion
+                                ajax.entity.User support and discussion
                             </li>
                             <li><a href="${tomcatUrl}lists.html#taglibs-user">taglibs-user</a><br />
-                                User support and discussion for <a href="${tomcatUrl}taglibs/">Apache Taglibs</a>
+                                ajax.entity.User support and discussion for <a href="${tomcatUrl}taglibs/">Apache Taglibs</a>
                             </li>
                             <li><a href="${tomcatUrl}lists.html#tomcat-dev">tomcat-dev</a><br />
                                 Development mailing list, including commit messages

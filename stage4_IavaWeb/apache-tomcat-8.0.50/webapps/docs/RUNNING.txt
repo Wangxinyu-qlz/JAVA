@@ -246,7 +246,7 @@ In CATALINA_BASE:
            * tomcat-juli.jar
 
           The setenv scripts were described above. The tomcat-juli library
-          is documented in the Logging chapter in the User Guide.
+          is documented in the Logging chapter in the ajax.entity.User Guide.
 
  * conf - Server configuration files (including server.xml)
 
@@ -274,7 +274,7 @@ In CATALINA_HOME:
 
  * endorsed - Libraries that override standard "Endorsed Standards"
               libraries provided by JRE. See Classloading documentation
-              in the User Guide for details.
+              in the ajax.entity.User Guide for details.
               No longer supported with Java 9.
 
               By default this "endorsed" directory is absent.
@@ -290,7 +290,7 @@ CATALINA_BASE/lib.
 
 In general it is advised to never share libraries between web applications,
 but put them into WEB-INF/lib directories inside the applications. See
-Classloading documentation in the User Guide for details.
+Classloading documentation in the ajax.entity.User Guide for details.
 
 
 It might be useful to note that the values of CATALINA_HOME and
@@ -315,7 +315,7 @@ The file will look like the following:
          allow="127\.0\.0\.1" />
   </Context>
 
-See Deployer chapter in User Guide and Context and Host chapters in the
+See Deployer chapter in ajax.entity.User Guide and Context and Host chapters in the
 Configuration Reference for more information on contexts and web
 application deployment.
 
@@ -392,7 +392,7 @@ For further reading:
 
  - Apache Tomcat documentation
 
-    * Documentation for APR/Native library in the Tomcat User's Guide
+    * Documentation for APR/Native library in the Tomcat ajax.entity.User's Guide
 
       http://tomcat.apache.org/tomcat-8.0-doc/apr.html
 

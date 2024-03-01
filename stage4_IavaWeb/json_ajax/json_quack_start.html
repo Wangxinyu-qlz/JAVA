@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>json</title>
+    <script type="text/javascript">
+        
+        window.onload = function () {
+            var myJson = {
+                "key1": "name",
+                "key2": [1, "hello", 2.0],
+                "key3": 12,
+                "key4": {"age": 12, "name": "1"},
+                "key5": [{"age": 7, "name": "wang"}, {"age": 78, "name": "li"},],
+                "key6": null
+            }
+            console.log("key1=", myJson.key1);
+            console.log("key2=", myJson.key2);
+            //对key2期取出的值进行遍历
+            for (var i=0; i<myJson.key2.length; i++) {
+                console.log("第%i个元素的值=", (i+1), myJson.key2[i]);
+            }
+            console.log("key4=", myJson.key4.age, myJson.key4.name);
+            console.log("key5=", myJson.key5[0].age, myJson.key5[0].name);
+            
+            console.log("=============================");
+            console.log(myJson);
+            //json对象 -> 字符串对象  不会影响原来的json对象
+            var jsonStr = JSON.stringify(myJson);
+            console.log(jsonStr);
+            //字符串对象 -> json      不会影响原来的string
+            var jsonObject = JSON.parse(jsonStr);
+            console.log(jsonObject);
+            
+            //定义json对象时，可以使用""  也可以使用''
+            var json_person1 = {"name": "jack", "age": 100};
+            var json_person2 = {'name': 'jack', 'age': 100};
+            //但是在把原生字符串转成 json 对象时, 必须使用 "", 否则会报错 比如：
+            var str_dog = "{'name':'小黄狗', 'age': 4}";
+            var OBJ_dog = JSON.parse(str_dog);
+        };
+
+    
+    </script>
+</head>
+<body>
+<h1>Json 入门</h1>
+</body>
+</html>
