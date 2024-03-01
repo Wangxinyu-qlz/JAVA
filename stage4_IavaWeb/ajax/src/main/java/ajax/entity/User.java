@@ -13,6 +13,10 @@ public class User {
 	private String pwd;
 	private String email;
 
+    //TODO 必须提供一个无参构造器, 是给我们的反射使用
+    public User() {
+    }
+
 	public User(Integer id, String username, String pwd, String email) {
 		this.id = id;
 		this.username = username;

@@ -29,6 +29,7 @@
                 // 每当xhr对象的readyState改变时，就会触发onreadystatechange事件
                 // 0：请求未初始化 1：服务器连接已建立 2：请求已接收3：请求已处理4：请求已完成且响应已就绪
                 xhr.onreadystatechange = function () {
+                    document.getElementById("div1").innerHTML = xhr.responseText;
                     // console.log("xhr=", xhr);
                     // 请求已完成且响应已就绪 且 状态码是200
                     if(xhr.readyState == 4 && xhr.status == 200 ) {

@@ -54,13 +54,13 @@ public class ManageFilter implements Filter {
 			//2.request 和 response对象会传递给目标资源/文件
 			//3.一定要理解filter传递的两个对象，在后面的servlet、jsp 是同一个对象（在一次http请求中）
 			//实验方法：
-			//  1.通过 http://localhost:8080/listener/login.jsp 正常登录
-			//  2.通过 http://localhost:8080/listener/manage/admin.jsp 直接访问
+			//  1.通过 http://localhost:8080/filter/login.jsp 正常登录
+			//  2.通过 http://localhost:8080/filter/manage/admin.jsp 直接访问
 			//  3.后台即输出：
-			//          1111111111111111111request=org.apache.catalina.connector.RequestFacade@769c4a8a
-			//          2222222222222222222request=org.apache.catalina.connector.RequestFacade@769c4a8a
+			//          登陆成功request=org.apache.catalina.connector.RequestFacade@769c4a8a
+			//          admin.jsp:  request=org.apache.catalina.connector.RequestFacade@769c4a8a
 			//注意：如果设置了session的生命周期，session.setMaxInactiveInterval(3)，1和2的间隔不要超过这个时间，
-			// 否则看不到3的输出结果，只会输出333333333333333333request=org.apache.catalina.connector.RequestFacade@769c4a8a
+			// 否则看不到3的输出结果，只会输出没登录过/登录失效request=org.apache.catalina.connector.RequestFacade@769c4a8a
 			System.out.println("登陆成功request=" + request);
 			chain.doFilter(request, response);
 		} else {//没有登陆过，让他去登录

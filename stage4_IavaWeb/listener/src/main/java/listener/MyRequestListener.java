@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletRequest;
  **/
 public class MyRequestListener implements ServletRequestListener {
 	@Override
-	public void requestDestroyed(ServletRequestEvent sre) {
+	public void requestInitialized(ServletRequestEvent sre) {
 		System.out.println("MyRequestListener监听到 request 对象被创建");
 		ServletRequest servletRequest = sre.getServletRequest();
 		System.out.println("记录访问日志......");
@@ -23,7 +23,7 @@ public class MyRequestListener implements ServletRequestListener {
 	}
 
 	@Override
-	public void requestInitialized(ServletRequestEvent sre) {
+	public void requestDestroyed(ServletRequestEvent sre) {
 		System.out.println("MyRequestListener监听到 request 对象被销毁");
 	}
 }
