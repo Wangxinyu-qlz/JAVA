@@ -9,21 +9,29 @@
 public class CodeBlockDetails01 {
     public static void main(String[] args) {
 //        1.创建对象实例时（new）
+//      BB的静态代码块
+//      AA的静态代码块被执行
         AA aa = new AA();
 //        2.创建子类对象时，父类也会被加载，并且父类先被加载
-        BB bb = new BB();
+        BB bb = new BB();//因为AA被创建时，BB被加载了，所以这一句没有输出结果，但如果单独执行，会输出：BB的静态代码块
 //        3.使用类的静态成员时（属性，方法）
-        System.out.println(Cat.n1);//Animal的静态代码块1正在被执行 Cat的静态代码块正在被执行 999
-
+        //Animal的静态代码块1正在被执行
+        //Cat的静态代码块正在被执行
+        //999
+        System.out.println(Cat.n1);
+//
 //        DD的静态代码块1正在被执行  (static代码块只被执行一次)
 //        DD的普通代码块正在被执行   (普通代码块随着对象的创建被调用)且只在创建对象时被调用
 //        DD的普通代码块正在被执行   (普通代码块随着对象的创建被调用)且只在创建对象时被调用
         DD dd1 = new DD();
         DD dd2 = new DD();
 //        只使用类的静态成员时，普通代码块不会执行
-        System.out.println(DD.age);//8848
-
-        System.out.println(EE.age);//EE的静态代码块1正在被执行   2323
+        //DD的静态代码块1正在被执行
+        //8848
+        System.out.println(DD.age);
+        //EE的静态代码块1正在被执行
+        //2323
+        System.out.println(EE.age);
 
 
     }
