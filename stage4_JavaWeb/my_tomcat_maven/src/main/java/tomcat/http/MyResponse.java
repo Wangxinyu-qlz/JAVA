@@ -16,6 +16,7 @@ public class MyResponse {
 					"\r\n";
 
 	//setContentType()方法
+
 	public MyResponse(OutputStream outputStream) {
 		this.outputStream = outputStream;
 	}

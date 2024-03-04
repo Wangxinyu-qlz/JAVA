@@ -18,6 +18,7 @@ public abstract class MyHttpServlet implements MyServlet{
 	@Override
 	public void service(MyRequest request, MyResponse response) throws IOException {
 		if("GET".equalsIgnoreCase(request.getMethod())) {
+			//动态绑定
 			this.doGet(request, response);
 		} else if ("POST".equalsIgnoreCase(request.getMethod())) {
 			this.doPost(request, response);

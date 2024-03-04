@@ -20,7 +20,14 @@
         <option value="$PROJECT_DIR$/sping_framework/pom.xml" />
         <option value="$PROJECT_DIR$/stage6_sping_framework/pom.xml" />
         <option value="$PROJECT_DIR$/stage6_springFramework/pom.xml" />
+        <option value="$PROJECT_DIR$/stage6_SpringFramework/pom.xml" />
       </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/stage6_SpringFramework/pom.xml" />
+        <option value="$PROJECT_DIR$/stage6_springFramework/pom.xml" />
+      </set>
     </option>
     <option name="workspaceImportForciblyTurnedOn" value="true" />
   </component>

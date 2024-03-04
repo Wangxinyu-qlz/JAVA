@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--
+        配置Monster对象
+        在beans.xml文件中，可以配置多个bean(java对象)
+        class属性是用于指定类的全路径->反射
+        id属性表示该java对象在该容器中的id（用于获取该对象） 唯一
+        <property name="id" value="1"/>用于给该对象的属性赋值
+    -->
+    <bean class="main.spring.bean.Monster" id="monster01">
+        <property name="id" value="1"/>
+        <property name="name" value="牛魔"/>
+        <property name="skill" value="撼天动地"/>
+    
+    </bean>
+</beans>

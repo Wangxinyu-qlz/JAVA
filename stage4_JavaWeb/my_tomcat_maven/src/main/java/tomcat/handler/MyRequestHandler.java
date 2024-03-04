@@ -61,7 +61,7 @@ public class MyRequestHandler implements Runnable {
 			//outputStream.write(builder.toString().getBytes());
 			//int i= 0;
 			//i++;
-			//outputStream.write(String.valueOf(i).getBytes());//不会累加
+			//outputStream.write(String.valueOf(i).getBytes());//不会累加，每一次请求都new一个线程为其服务
 
 			//这个Response对象可以床底给Servlet，在其中的doPost()和doGet()方法中处理
 			MyResponse myResponse = new MyResponse(socket.getOutputStream());

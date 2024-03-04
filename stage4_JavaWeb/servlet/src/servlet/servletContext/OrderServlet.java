@@ -1,11 +1,10 @@
 package servlet.servletContext;
 
-/**
- * @program: Java
+/**@program: Java
  * @description: ServletContext
  * @author: Qiaolezi
  * @create: 2024-02-25 17:31
- **/
+ */
 import javax.servlet.ServletContext;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -38,6 +37,4 @@ public class OrderServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		doPost(request, response);
 	}
-
 }
-
