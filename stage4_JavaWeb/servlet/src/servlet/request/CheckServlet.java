@@ -11,7 +11,7 @@ import java.io.IOException;
 /**
  * @program: Java
  * @description: 请求转发
- * TODO 支付界面不要使用转发，一直停留在当前界面，但是对再次请求数据，导致多次支付请求
+ * TODO 支付界面不要使用转发，一直停留在当前界面，但是会再次请求数据，导致多次支付请求
  * @author: Qiaolezi
  * @create: 2024-02-25 20:36
  **/

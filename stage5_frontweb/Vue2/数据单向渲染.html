@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ch" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>数据单向渲染</title>
+</head>
+<body>
+<!--应当写在vue对象的前面-->
+<div id="app1">
+    <!--插值表达式，数据来自数据池（data:{}）
+    执行时到data{}中进行匹配，如果匹配就进行替换
+    如果没有匹配，输出 空（什么也没有）-->
+    <h1>{{message}}</h1>
+    <!--使用插值表达式引用data数据池 仅限在标签体内
+    如果在标签/元素 的属性上引用data数据池，不能使用插值表达式
+    使用v-bind-->
+    <!--不能正常运行-->
+    <img src="{{img_src}}" alt="不见了">
+    <br>
+<!--    使用数据的双向渲染 data{}数据池的img_src-->
+    显示的图像：
+    <input type="text" v-model="img_src"><br><hr>
+    <img :src="img_src" :width="img_width">
+    <hr>
+    <img src="src/1.png" v-bind:width="img_width">
+    <img src="src/2.png" :width="img_width"><br>
+    <hr>
+
+</div>
+<!--引入vue.js-->
+<script src="vue.js"></script>
+
+<script>
+    //创建一个vue对象
+    /**
+     * 1.创建一个Vue实例
+     * 2.在控制台输出vm对象，查看其结构
+     * @type {{el: string}}
+     */
+    let vm = new Vue({
+        // el: data:{}不能乱写
+        el: "#app1",//创建的vue实例挂载到 id=app 的 div 下，data_binding
+        data: {//表示数据池（model有数据），以k-v形式设置，根据实际需求设置
+            message: "数据单向渲染",
+            img_src: "src/1.png",//注意路径
+            img_width: "200px",
+        }
+    })
+</script>
+</body>
+</html>

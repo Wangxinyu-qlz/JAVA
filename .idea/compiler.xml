@@ -1,18 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
+    <excludeFromCompile>
+      <directory url="file://$PROJECT_DIR$/stage6_sping_framework/src/main/resources/archetype-resources" includeSubdirectories="true" />
+    </excludeFromCompile>
     <annotationProcessing>
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="my_tomcat_maven" />
-        <module name="listener" />
         <module name="filter" />
+        <module name="listener" />
         <module name="file_up_down_load" />
         <module name="web_path" />
+        <module name="stage6_springFramework" />
         <module name="ajax" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="stage6_sping_framework" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
