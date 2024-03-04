@@ -37,7 +37,6 @@
       <module fileurl="file://$PROJECT_DIR$/stage2/WOT/WOT6/WOT6.iml" filepath="$PROJECT_DIR$/stage2/WOT/WOT6/WOT6.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage4_IavaWeb/XML/XML.iml" filepath="$PROJECT_DIR$/stage4_IavaWeb/XML/XML.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/abstract_#/abstract_#.iml" filepath="$PROJECT_DIR$/stage2/abstract_#/abstract_#.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ajax.iml" filepath="$PROJECT_DIR$/ajax.iml" />
       <module fileurl="file://$PROJECT_DIR$/algorithm/algorithm.iml" filepath="$PROJECT_DIR$/algorithm/algorithm.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/annotation/annotation.iml" filepath="$PROJECT_DIR$/stage2/annotation/annotation.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage1/Homework/annual.salary/annual.salary.iml" filepath="$PROJECT_DIR$/stage1/Homework/annual.salary/annual.salary.iml" />
@@ -58,7 +57,6 @@
       <module fileurl="file://$PROJECT_DIR$/stage3/fileDownload/fileDownload.iml" filepath="$PROJECT_DIR$/stage3/fileDownload/fileDownload.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage3/fileUpload/fileUpload.iml" filepath="$PROJECT_DIR$/stage3/fileUpload/fileUpload.iml" />
       <module fileurl="file://$PROJECT_DIR$/file_up_down_load.iml" filepath="$PROJECT_DIR$/file_up_down_load.iml" />
-      <module fileurl="file://$PROJECT_DIR$/filter.iml" filepath="$PROJECT_DIR$/filter.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/final/final.iml" filepath="$PROJECT_DIR$/stage2/final/final.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage1/finalize/finalize.iml" filepath="$PROJECT_DIR$/stage1/finalize/finalize.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage4_IavaWeb/fishWeb/fishWeb.iml" filepath="$PROJECT_DIR$/stage4_IavaWeb/fishWeb/fishWeb.iml" />
@@ -76,11 +74,9 @@
       <module fileurl="file://$PROJECT_DIR$/java8/java8.iml" filepath="$PROJECT_DIR$/java8/java8.iml" />
       <module fileurl="file://$PROJECT_DIR$/javascript.iml" filepath="$PROJECT_DIR$/javascript.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage4_IavaWeb/json_ajax/json_ajax.iml" filepath="$PROJECT_DIR$/stage4_IavaWeb/json_ajax/json_ajax.iml" />
-      <module fileurl="file://$PROJECT_DIR$/listener.iml" filepath="$PROJECT_DIR$/listener.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/main/main.iml" filepath="$PROJECT_DIR$/stage2/main/main.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/commonly_used_class/math_/math_.iml" filepath="$PROJECT_DIR$/stage2/commonly_used_class/math_/math_.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/multi-threads/multi-threads.iml" filepath="$PROJECT_DIR$/stage2/multi-threads/multi-threads.iml" />
-      <module fileurl="file://$PROJECT_DIR$/my_tomcat_maven.iml" filepath="$PROJECT_DIR$/my_tomcat_maven.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage1/Homework/person.sort/person.sort.iml" filepath="$PROJECT_DIR$/stage1/Homework/person.sort/person.sort.iml" />
       <module fileurl="file://$PROJECT_DIR$/QQ/Client/qqcommonC/qqcommonC.iml" filepath="$PROJECT_DIR$/QQ/Client/qqcommonC/qqcommonC.iml" />
       <module fileurl="file://$PROJECT_DIR$/QQ/Server/qqcommonS/qqcommonS.iml" filepath="$PROJECT_DIR$/QQ/Server/qqcommonS/qqcommonS.iml" />
@@ -97,6 +93,7 @@
       <module fileurl="file://$PROJECT_DIR$/stage4_IavaWeb/stage4_IavaWeb.iml" filepath="$PROJECT_DIR$/stage4_IavaWeb/stage4_IavaWeb.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage4_JavaWeb.iml" filepath="$PROJECT_DIR$/stage4_JavaWeb.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage4javaWe/stage4javaWeb.iml" filepath="$PROJECT_DIR$/stage4javaWe/stage4javaWeb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stage5_frontweb.iml" filepath="$PROJECT_DIR$/stage5_frontweb.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/staticmethod/staticmethod.iml" filepath="$PROJECT_DIR$/stage2/staticmethod/staticmethod.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/commonly_used_class/string/string.iml" filepath="$PROJECT_DIR$/stage2/commonly_used_class/string/string.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/commonly_used_class/system_/system_.iml" filepath="$PROJECT_DIR$/stage2/commonly_used_class/system_/system_.iml" />
@@ -106,6 +103,7 @@
       <module fileurl="file://$PROJECT_DIR$/stage4_IavaWeb/tomcat/tomcat.iml" filepath="$PROJECT_DIR$/stage4_IavaWeb/tomcat/tomcat.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage3/udp/udp.iml" filepath="$PROJECT_DIR$/stage3/udp/udp.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/visitstatic/visitstatic.iml" filepath="$PROJECT_DIR$/stage2/visitstatic/visitstatic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stage5_frontweb/vue2.iml" filepath="$PROJECT_DIR$/stage5_frontweb/vue2.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage3/webAPI/webAPI.iml" filepath="$PROJECT_DIR$/stage3/webAPI/webAPI.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage1/Homework/work.salary/work.salary.iml" filepath="$PROJECT_DIR$/stage1/Homework/work.salary/work.salary.iml" />
       <module fileurl="file://$PROJECT_DIR$/stage2/WOT/wot_draw/wot_draw.iml" filepath="$PROJECT_DIR$/stage2/WOT/wot_draw/wot_draw.iml" />
