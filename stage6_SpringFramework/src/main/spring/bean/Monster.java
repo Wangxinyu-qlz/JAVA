@@ -7,23 +7,23 @@ package main.spring.bean;
  * @description: JavaBean
  **/
 public class Monster {
-	private Integer id;
+	private Integer monsterId;
 	private String name;
 	private String skill;
 	public Monster() {};
 
-	public Monster(Integer id, String name, String skill) {
-		this.id = id;
+	public Monster(Integer monsterId, String name, String skill) {
+		this.monsterId = monsterId;
 		this.name = name;
 		this.skill = skill;
 	}
 
-	public Integer getId() {
-		return id;
+	public Integer getMonsterId() {
+		return monsterId;
 	}
 
-	public void setId(Integer id) {
-		this.id = id;
+	public void setMonsterId(Integer monsterId) {
+		this.monsterId = monsterId;
 	}
 
 	public String getName() {
@@ -45,7 +45,7 @@ public class Monster {
 	@Override
 	public String toString() {
 		return "Monster{" +
-				"id=" + id +
+				"id=" + monsterId +
 				", name='" + name + '\'' +
 				", skill='" + skill + '\'' +
 				'}';

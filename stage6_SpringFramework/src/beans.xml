@@ -1,8 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-
+    
+    <!--通过p命名空间配置-->
+    <bean class="main.spring.bean.Monster" id="monster06"
+          p:monsterId="6"
+          p:name="后羿"
+          p:skill="周日熄火了"
+    />
+    
+    <!--配置Monster，指定构造器初始化bean对象
+    <constructor-arg>标签 指定使用构造器的参数
+    index表示使用构造器的第index个参数，从0开始
+    还可以通过name / type 指定参数
+    -->
+    <bean class="main.spring.bean.Monster" id="monster03">
+        <constructor-arg value="3" index="0"/>
+        <constructor-arg value="芈月" index="1"/>
+        <constructor-arg value="镜花水月" index="2"/>
+    </bean>
+    <bean class="main.spring.bean.Monster" id="monster04">
+        <constructor-arg value="4" name="monsterId"/>
+        <constructor-arg value="镜" name="name"/>
+        <constructor-arg value="老花镜" name="skill"/>
+    </bean>
+    <bean class="main.spring.bean.Monster" id="monster05">
+        <constructor-arg value="5" type="java.lang.Integer"/>
+        <constructor-arg value="赔钱虎" type="java.lang.String"/>
+        <constructor-arg value="矮脚虎" type="java.lang.String"/>
+    </bean>
+    
+    <!--通过类型获取
+    前提是只有一个该类型的bean
+    如果下面的Monster bean不注释，使用Monster bean = ioc.getBean(Monster.class);
+    会抛出异常NoUniqueBeanDefinitionException-->
+    <!--<bean class="main.spring.bean.Monster">-->
+    <!--    <property name="monsterId" value="2"/>-->
+    <!--    <property name="name" value="猴子"/>-->
+    <!--    <property name="skill" value="火眼金睛"/>-->
+    <!--</bean>-->
     <!--
         配置Monster对象
         在beans.xml文件中，可以配置多个bean(java对象)
@@ -11,9 +48,16 @@
         <property name="id" value="1"/>用于给该对象的属性赋值
     -->
     <bean class="main.spring.bean.Monster" id="monster01">
-        <property name="id" value="1"/>
+        <!--通过配置文件给bean设置属性时，
+        底层通过setter()方法完成，setName()
+        如果Entity中没有这个方法，会报错-->
+        <property name="monsterId" value="1"/>
         <property name="name" value="牛魔"/>
         <property name="skill" value="撼天动地"/>
-    
+    </bean>
+    <bean class="main.spring.bean.Monster" id="monster02">
+        <property name="monsterId" value="2"/>
+        <property name="name" value="猴子"/>
+        <property name="skill" value="火眼金睛"/>
     </bean>
 </beans>
