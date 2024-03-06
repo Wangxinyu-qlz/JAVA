@@ -22,23 +22,23 @@ import java.util.Random;
  **/
 public class PrefixSum {
 	public static void main(String[] args) {
-		int[] q = new int[1000];
-		for(int i=1; i<1000; i++) {
+		int[] q = new int[5+10];
+		for(int i=1; i<=5; i++) {
 			q[i] = (int)(Math.random() * 5 + 1);
 		}
-		for(int i =1; i<100;  i++) {
+		for(int i =1; i<=5;  i++) {
 			System.out.print(q[i] + " ");
 		}
 		System.out.println("\n");
-		int[] sum = new int[10000];
+		int[] sum = new int[6];
 		sum[0] = 0;
 		//写入 O(n)
-		for(int i=1; i<q.length; i++) {
+		for(int i=1; i<=5; i++) {
 			sum[i] = q[i] + sum[i-1];
 		}
 
 		//查询：O(1)
-		System.out.println("数组q的[l, r]区间的和为：sum[r] - sum[l-1]="+ (sum[3] - sum[0]));
+		System.out.println("数组q的[l, r]区间的和为：sum[r] - sum[l-1]="+ (sum[5] - sum[0]));
 	}
 
 }
