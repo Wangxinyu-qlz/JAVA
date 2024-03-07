@@ -3,6 +3,30 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
     
+    <!--配置memberDAOImplement对象
+    这句放在 配置MemberServiceImplement对象 的语句下面也行-->
+    <bean class="main.spring.dao.MemberDAOImplement" id="memberDAOImplement"/>
+    
+    <!--配置MemberServiceImplement对象   使用ref  -->
+    <!--1.ref="memberDAOImplement"表示：
+                MemberServiceImplement对象属性memberDAOImplement引用的对象是id=memberService的对象
+        2.这里就是Spring的依赖注入
+        3.在Spring容器中，是作为一个整体执行的，即如果引用到了一个bean对象，对配置的顺序没有要求
+        4.建议按照顺序写，增加代码可读性
+    -->
+    <!--<bean class="main.spring.service.MemberService" id="memberService">-->
+    <!--    <property name="memberDAOImplement" ref="memberDAOImplement"/>-->
+    <!--</bean>-->
+    <!--配置MemberServiceImplement对象   使用内部Bean  -->
+    <bean class="main.spring.service.MemberService" id="memberService2">
+        <!--配置内部bean-->
+        <property name="memberDAOImplement">
+            <bean class="main.spring.dao.MemberDAOImplement"/>
+        </property>
+    </bean>
+    
+    <!--=================================================================================================-->
+    <!--以下配置方法不要记忆，只要见到认识就行-->
     <!--通过p命名空间配置-->
     <bean class="main.spring.bean.Monster" id="monster06"
           p:monsterId="6"

@@ -1,12 +1,16 @@
 package main.test;
 
 
+import java.io.File;
+
 import main.spring.bean.Monster;
+import main.spring.service.MemberService;
+
 import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import java.io.File;
+
 
 /**
  * @program: stage6_SpringFramework
@@ -15,6 +19,34 @@ import java.io.File;
  * @description:
  **/
 public class springBeanTest {
+	//通过内部bean设置Bean属性
+	@Test
+	public void setBeanByInnerBeanProperty() {
+		ClassPathXmlApplicationContext ioc = new
+				ClassPathXmlApplicationContext("beans.xml");
+		MemberService memberService = (MemberService)ioc.getBean("memberService2");
+		/**
+		 * MemberDAOImplement无参构造器  被执行
+		 * MemberDAOImplement::add()方法  被执行
+		 */
+		memberService.add();
+
+	}
+
+	//通过ref配置设置Bean属性
+	@Test
+	public void setBeanByRef() {
+		ClassPathXmlApplicationContext ioc = new
+				ClassPathXmlApplicationContext("beans.xml");
+		MemberService memberService = (MemberService)ioc.getBean("memberService");
+		/**
+		 * MemberDAOImplement无参构造器  被执行
+		 * MemberDAOImplement::add()方法  被执行
+		 */
+		memberService.add();
+
+	}
+
 	//通过p命名空间设置属性
 	@Test
 	public void setByPNameSpace() {

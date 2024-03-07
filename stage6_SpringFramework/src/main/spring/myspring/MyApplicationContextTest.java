@@ -1,4 +1,4 @@
-package main.myspring;
+package main.spring.myspring;
 
 import main.spring.bean.Monster;
 
