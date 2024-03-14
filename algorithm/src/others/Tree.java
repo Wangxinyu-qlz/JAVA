@@ -1,3 +1,5 @@
+package others;
+
 import java.util.*;
 class Tree{
   public static void main(String[] args){

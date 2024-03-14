@@ -1,3 +1,5 @@
+package others;
+
 /**
  * @author qiaolezi
  * @version 1.0

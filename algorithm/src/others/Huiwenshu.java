@@ -1,3 +1,5 @@
+package others;
+
 import java.util.*;
 public class Huiwenshu {
 	public static void main(String[] args){

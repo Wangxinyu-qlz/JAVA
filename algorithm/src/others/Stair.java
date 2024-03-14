@@ -1,3 +1,5 @@
+package others;
+
 public class Stair {
 	public static void main(String[] args){
 		int i= 1;
