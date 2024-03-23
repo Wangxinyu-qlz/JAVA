@@ -12,7 +12,7 @@ package doublePointer;
  **/
 public class Back {
 	public static void main(String[] args) {
-		String s = "aq#";
+		String s = "######aq#";
 		String t = "a";
 		boolean b = backspaceCompare(s, t);
 		System.out.println(b);
@@ -27,7 +27,7 @@ public class Back {
 				if (S.charAt(i) == '#') {
 					skipS++;
 					i--;
-				} else if (skipS > 0) {
+				} else if (skipS > 0 && S.charAt(i)!='#') {
 					skipS--;
 					i--;
 				} else {
