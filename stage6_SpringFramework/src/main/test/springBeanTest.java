@@ -1,15 +1,15 @@
 package main.test;
 
-
-import java.io.File;
-
+import main.spring.bean.BookStore;
+import main.spring.bean.Employee;
+import main.spring.bean.Master;
 import main.spring.bean.Monster;
 import main.spring.service.MemberService;
-
 import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import java.io.File;
 
 
 /**
@@ -19,6 +19,38 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  * @description:
  **/
 public class springBeanTest {
+
+	//级联属性赋值
+	@Test
+	public void setBeanByRelation() {
+		ClassPathXmlApplicationContext ioc = new ClassPathXmlApplicationContext("beans.xml");
+
+		Employee employee = ioc.getBean("employee", Employee.class);
+		System.out.println(employee);
+
+	}
+
+	//通过util:list名称空间给属性赋值
+	@Test
+	public void setBeanByUtilList() {
+		ClassPathXmlApplicationContext ioc = new ClassPathXmlApplicationContext("beans.xml");
+
+		BookStore bookStore = ioc.getBean("bookStore", BookStore.class);
+		System.out.println("bookStore=" + bookStore);
+
+	}
+
+
+	//通过集合数组属性进行赋值
+	@Test
+	public void setBeanByCollection() {
+		ClassPathXmlApplicationContext ioc = new ClassPathXmlApplicationContext("beans.xml");
+
+		Master master = ioc.getBean("master", Master.class);
+		System.out.println("master=" + master);
+
+	}
+
 	//通过内部bean设置Bean属性
 	@Test
 	public void setBeanByInnerBeanProperty() {

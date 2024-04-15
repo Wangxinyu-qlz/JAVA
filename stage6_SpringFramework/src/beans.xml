@@ -1,13 +1,121 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
+    <!--======================================配置Department对象==============================================-->
+    <bean class="main.spring.bean.Department" id="department"/>
     
-    <!--配置memberDAOImplement对象
+    <!--======================================配置Employee对象==============================================-->
+    <bean class="main.spring.bean.Employee" id="employee">
+        <property name="name" value="jack"/>
+        <property name="department" ref="department"/>
+        <!--给department的name属性指定值  TODO 级联属性赋值
+        调用 Department 的 setName() 方法-->
+        <property name="department.name" value="Java开发"/>
+    </bean>
+    
+    
+    <!--======================================配置BookStore对象==============================================-->
+    <!--数据复用-->
+    <util:list id="myBookList">
+        <value>三国演义</value>
+        <value>红楼梦</value>
+        <value>西游记</value>
+        <value>水浒传</value>
+    </util:list>
+    <bean class="main.spring.bean.BookStore" id="bookStore">
+        <!--本方法-->
+        <!--<property name="bookList">-->
+        <!--    &lt;!&ndash;如果还有一个bean，id不一样，但是内容一样-->
+        <!--    可以使用util:list将这部分抽取出来&ndash;&gt;-->
+        <!--    <list>-->
+        <!--        <value>三国演义</value>-->
+        <!--        <value>红楼梦</value>-->
+        <!--        <value>西游记</value>-->
+        <!--        <value>水浒传</value>-->
+        <!--    </list>-->
+        <!--</property>-->
+        
+        <!--使用util:list-->
+        <property name="bookList" ref="myBookList"/>
+    </bean>
+    
+    <!--======================================配置Master对象==============================================-->
+    <!--体会spring 容器的配置特点，依赖注入，十分灵活-->
+    <bean class="main.spring.bean.Master" id="master">
+        <property name="name" value="金蝉子"/>
+        
+        <!--给List属性赋值-->
+        <property name="monsterList">
+            <list>
+                <!--引用(reference)的方法-->
+                <ref bean="monster01"/>
+                <ref bean="monster02"/>
+                <!--内部bean-->
+                <bean class="main.spring.bean.Monster">
+                    <property name="name" value="沙和尚"/>
+                    <property name="monsterId" value="100"/>
+                    <property name="skill" value="黄沙漫天"/>
+                </bean>
+            </list>
+        </property>
+        
+        <!--给Map属性赋值-->
+        <property name="monsterMap">
+            <map>
+                <entry key="monster03" value-ref="monster03"/>
+                <entry>
+                    <key>
+                        <value>monster04</value>
+                    </key>
+                    <ref bean="monster04"/>
+                </entry>
+            </map>
+        </property>
+        
+        <!--给Set属性赋值-->
+        <property name="monsterSet">
+            <set>
+                <ref bean="monster05"/>
+                <ref bean="monster06"/>
+                <bean class="main.spring.bean.Monster">
+                    <constructor-arg value="07" index="0"/>
+                    <constructor-arg value="金角大王" index="1"/>
+                    <constructor-arg value="火" index="2"/>
+                </bean>
+            </set>
+        </property>
+        
+        <!--给Array属性赋值-->
+        <property name="monsterName">
+            <array>
+                <!--这里的array标签(value, bean, ref)有业务决定
+                由于monsterName属性是String，所以这里就是value
+                也有可能是map,set...-->
+                <value>小妖怪</value>
+                <value>大妖怪</value>
+                <value>老妖怪</value>
+            </array>
+        </property>
+        
+        <!--给properties属性赋值  K(String)-V(String)-->
+        <property name="pros">
+            <props>
+                <prop key="userName">root</prop>
+                <prop key="passWord">123456</prop>
+                <prop key="ip">127.0.0.1</prop>
+            </props>
+        </property>
+    </bean>
+    
+    
+    <!--======================================配置memberDAOImplement对象=================================================
     这句放在 配置MemberServiceImplement对象 的语句下面也行-->
     <bean class="main.spring.dao.MemberDAOImplement" id="memberDAOImplement"/>
     
-    <!--配置MemberServiceImplement对象   使用ref  -->
+    <!--======================================配置MemberServiceImplement对象=============================================
+    TODO 1.使用ref  -->
     <!--1.ref="memberDAOImplement"表示：
                 MemberServiceImplement对象属性memberDAOImplement引用的对象是id=memberService的对象
         2.这里就是Spring的依赖注入
@@ -17,7 +125,8 @@
     <!--<bean class="main.spring.service.MemberService" id="memberService">-->
     <!--    <property name="memberDAOImplement" ref="memberDAOImplement"/>-->
     <!--</bean>-->
-    <!--配置MemberServiceImplement对象   使用内部Bean  -->
+    
+    <!--TODO 2.使用内部Bean  -->
     <bean class="main.spring.service.MemberService" id="memberService2">
         <!--配置内部bean-->
         <property name="memberDAOImplement">
@@ -25,16 +134,16 @@
         </property>
     </bean>
     
-    <!--=================================================================================================-->
+    <!--====================================================配置Monster===============================================-->
     <!--以下配置方法不要记忆，只要见到认识就行-->
-    <!--通过p命名空间配置-->
+    <!--TODO 1.通过p命名空间配置-->
     <bean class="main.spring.bean.Monster" id="monster06"
           p:monsterId="6"
           p:name="后羿"
           p:skill="周日熄火了"
     />
     
-    <!--配置Monster，指定构造器初始化bean对象
+    <!--TODO 2.配置Monster，指定构造器初始化bean对象
     <constructor-arg>标签 指定使用构造器的参数
     index表示使用构造器的第index个参数，从0开始
     还可以通过name / type 指定参数
@@ -55,7 +164,7 @@
         <constructor-arg value="矮脚虎" type="java.lang.String"/>
     </bean>
     
-    <!--通过类型获取
+    <!--TODO 3.通过类型获取
     前提是只有一个该类型的bean
     如果下面的Monster bean不注释，使用Monster bean = ioc.getBean(Monster.class);
     会抛出异常NoUniqueBeanDefinitionException-->
