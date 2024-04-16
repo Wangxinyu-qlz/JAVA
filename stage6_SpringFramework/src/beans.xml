@@ -4,12 +4,23 @@
        xmlns:util="http://www.springframework.org/schema/util"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
     <!--======================================配置Dog对象，单例&多例=======================================-->
-    <!--默认情况下，scope（范围）为 singleton，ioc中只会有一个该bean对象，程序员执行getBean时，返回的是同一个对象
-    如果改为prototype，则为多例，每次执行getBean时，都是不同的对象-->
-    <bean class="main.spring.bean.Dog" id="dog" scope="prototype">
+    <!--
+    1.默认情况下，scope（范围）为 singleton，
+      ioc中只会有一个该bean对象，程序员执行getBean时，返回的是同一个对象
+      TODO 在启动容器时就会创建对象，并放入singletonObjects集合
+       如果希望其在getBean时才创建，使用lazy-init="true"
+       默认情况下，lazy-init="false"，空间换时间-->
+    <bean class="main.spring.bean.Dog" id="dog" scope="singleton" lazy-init="true">
         <property name="id" value="100"/>
         <property name="name" value="毛毛"/>
     </bean>
+    <!--
+    2.如果改为prototype，则为多例，每次执行getBean时，都是不同的对象
+      TODO 在getBean时才会创建对象-->
+    <!--<bean class="main.spring.bean.Dog" id="dog" scope="prototype">-->
+    <!--    <property name="id" value="100"/>-->
+    <!--    <property name="name" value="毛毛"/>-->
+    <!--</bean>-->
     
     <!--======================================配置Animal Cat对象，验证Bean创建顺序=======================================-->
     <!--
