@@ -3,6 +3,14 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
        xmlns:util="http://www.springframework.org/schema/util"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
+    <!--======================================配置Dog对象，单例&多例=======================================-->
+    <!--默认情况下，scope（范围）为 singleton，ioc中只会有一个该bean对象，程序员执行getBean时，返回的是同一个对象
+    如果改为prototype，则为多例，每次执行getBean时，都是不同的对象-->
+    <bean class="main.spring.bean.Dog" id="dog" scope="prototype">
+        <property name="id" value="100"/>
+        <property name="name" value="毛毛"/>
+    </bean>
+    
     <!--======================================配置Animal Cat对象，验证Bean创建顺序=======================================-->
     <!--
     默认情况：按照定义的顺序执行

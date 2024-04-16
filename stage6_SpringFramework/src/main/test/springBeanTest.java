@@ -1,9 +1,6 @@
 package main.test;
 
-import main.spring.bean.BookStore;
-import main.spring.bean.Employee;
-import main.spring.bean.Master;
-import main.spring.bean.Monster;
+import main.spring.bean.*;
 import main.spring.service.MemberService;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
@@ -19,6 +16,19 @@ import java.io.File;
  * @description:
  **/
 public class springBeanTest {
+	//测试 多例prototype 单例singleton
+	@Test
+	public void testBeanScope() {
+		ClassPathXmlApplicationContext ioc = new ClassPathXmlApplicationContext("beans.xml");
+		Dog dog = ioc.getBean("dog", Dog.class);
+		Dog dog1 = ioc.getBean("dog", Dog.class);
+		Dog dog2 = ioc.getBean("dog", Dog.class);
+		//使用scope="singleton": dog == dog1 == dog2
+		//使用scope="prototype": 三个都是不同的对象
+		System.out.println("dog=" + dog);
+		System.out.println("dog1=" + dog1);
+		System.out.println("dog2=" + dog2);
+	}
 
 	//测试 Bean 创建顺序
 	@Test
