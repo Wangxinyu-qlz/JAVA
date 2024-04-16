@@ -11,11 +11,16 @@ import main.spring.dao.MemberDAOImplement;
 public class MemberService {
 	private MemberDAOImplement memberDAOImplement;
 
+	public MemberService() {
+		//System.out.println("MemberService() 无参构造器被执行");
+	}
+
 	public MemberDAOImplement getMemberDAOImplement() {
 		return memberDAOImplement;
 	}
 
 	public void setMemberDAOImplement(MemberDAOImplement memberDAOImplement) {
+		//System.out.println("setMemberDAOImplement()......");
 		this.memberDAOImplement = memberDAOImplement;
 	}
 

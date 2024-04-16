@@ -3,6 +3,86 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
        xmlns:util="http://www.springframework.org/schema/util"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
+    <!--======================================配置Animal Cat对象，验证Bean创建顺序=======================================-->
+    <!--
+    默认情况：按照定义的顺序执行
+        Cat()无参构造器被执行
+        Animal()无参构造器被执行-->
+    <!--<bean class="main.spring.bean.Cat" id="cat"/>-->
+    <!--<bean class="main.spring.bean.Animal" id="animal"/>-->
+    
+    <!--
+    depends-on="animal" 先执行 被依赖的Bean
+        Animal()无参构造器被执行
+        Cat()无参构造器被执行-->
+    <bean class="main.spring.bean.Cat" id="cat" depends-on="animal"/>
+    <bean class="main.spring.bean.Animal" id="animal"/>
+    
+    
+    <!--======================================配置Monster对象，抽象对象=================================================-->
+    <!--
+    1.abstract="true" 该bean 对象实用类被继承的
+    2.不能被获取/实例化-->
+    <bean class="main.spring.bean.Monster" id="monster12" abstract="true">
+        <property name="monsterId" value="10"/>
+        <property name="name" value="蜈蚣精~"/>
+        <property name="skill" value="蜇人~"/>
+    </bean>
+    
+    <bean class="main.spring.bean.Monster" id="monster13" parent="monster12"/>
+    
+    <!--======================================配置Monster对象，信息重用=================================================-->
+    <bean class="main.spring.bean.Monster" id="monster10">
+        <property name="monsterId" value="10"/>
+        <property name="name" value="蜈蚣精"/>
+        <property name="skill" value="蜇人"/>
+    </bean>
+    <!--配置一个信息 和 id="monster10"的bean 一样的bean
+    信息重用
+    parent="monster10" 指定当前配置的对象的属性值 从id="monster10"的对象来-->
+    <bean class="main.spring.bean.Monster" id="monster11" parent="monster10"/>
+    
+    <!--======================================配置Monster对象，通过FactoryBean获取======================================-->
+    <!--
+    1.这里的class指定要使用的FactoryBean
+    2.key表示 MyFactoryBean 属性 key
+    3.value 指定要获取的对象的key-->
+    <bean class="main.spring.factory.MyFactoryBean" id="factoryBean">
+        <property name="key" value="monster01"/>
+    </bean>
+    
+    <!--======================================配置Monster对象，通过实例工厂获取===========================================-->
+    <!--TODO 必须先配置一个实例工厂
+    1.factory-bean="myInstanceFactory" 指定使用哪个实例工厂
+    2.factory-method="getMonster" 指定使用该实例工厂中的哪个方法
+    3.<constructor-arg value="monster04"/> 指定返回哪个对象-->
+    <bean class="main.spring.factory.MyInstanceFactory" id="myInstanceFactory"/>
+    <bean class="main.spring.factory.MyInstanceFactory" id="my_monster02" factory-bean="myInstanceFactory"
+          factory-method="getMonster">
+        <constructor-arg value="monster04"/>
+    </bean>
+    
+    <bean class="main.spring.factory.MyInstanceFactory" id="myInstanceFactory02"/>
+    <bean class="main.spring.factory.MyInstanceFactory" id="my_monster03" factory-bean="myInstanceFactory02"
+          factory-method="getMonster">
+        <constructor-arg value="monster04"/>
+    </bean>
+    
+    <!--======================================配置Monster对象，通过静态工厂获取===========================================-->
+    <!--
+    1.通过静态工厂配置bean
+    2.class 是静态工厂类的全路径
+    3.factory-method 指定静态工厂中的哪个方法返回对象
+    4.<constructor-arg value="monster02"/> 指的是通过静态工厂 返回哪个对象
+    5.下面两个工厂是同一个，是静态的
+    -->
+    <bean class="main.spring.factory.MyStaticFactory" id="my_monster01" factory-method="getMonster">
+        <constructor-arg value="monster02"/>
+    </bean>
+    <bean class="main.spring.factory.MyStaticFactory" id="my_monster01_" factory-method="getMonster">
+        <constructor-arg value="monster02"/>
+    </bean>
+    
     <!--======================================配置Department对象==============================================-->
     <bean class="main.spring.bean.Department" id="department"/>
     
@@ -111,7 +191,7 @@
     
     
     <!--======================================配置memberDAOImplement对象=================================================
-    这句放在 配置MemberServiceImplement对象 的语句下面也行-->
+    TODO 这句放在 配置MemberServiceImplement对象 的语句下面也行 不会有null引用-->
     <bean class="main.spring.dao.MemberDAOImplement" id="memberDAOImplement"/>
     
     <!--======================================配置MemberServiceImplement对象=============================================
@@ -122,17 +202,17 @@
         3.在Spring容器中，是作为一个整体执行的，即如果引用到了一个bean对象，对配置的顺序没有要求
         4.建议按照顺序写，增加代码可读性
     -->
-    <!--<bean class="main.spring.service.MemberService" id="memberService">-->
-    <!--    <property name="memberDAOImplement" ref="memberDAOImplement"/>-->
-    <!--</bean>-->
+    <bean class="main.spring.service.MemberService" id="memberService">
+        <property name="memberDAOImplement" ref="memberDAOImplement"/>
+    </bean>
     
     <!--TODO 2.使用内部Bean  -->
-    <bean class="main.spring.service.MemberService" id="memberService2">
-        <!--配置内部bean-->
-        <property name="memberDAOImplement">
-            <bean class="main.spring.dao.MemberDAOImplement"/>
-        </property>
-    </bean>
+    <!--<bean class="main.spring.service.MemberService" id="memberService2">-->
+    <!--    &lt;!&ndash;配置内部bean&ndash;&gt;-->
+    <!--    <property name="memberDAOImplement">-->
+    <!--        <bean class="main.spring.dao.MemberDAOImplement"/>-->
+    <!--    </property>-->
+    <!--</bean>-->
     
     <!--====================================================配置Monster===============================================-->
     <!--以下配置方法不要记忆，只要见到认识就行-->

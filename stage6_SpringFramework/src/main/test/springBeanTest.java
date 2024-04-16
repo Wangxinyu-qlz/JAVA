@@ -20,6 +20,71 @@ import java.io.File;
  **/
 public class springBeanTest {
 
+	//测试 Bean 创建顺序
+	@Test
+	public void testBeanCreate() {
+		ClassPathXmlApplicationContext ioc = new ClassPathXmlApplicationContext("beans.xml");
+		System.out.println("OK~");
+	}
+
+	//通过 继承 配置Bean
+	@Test
+	public void setBeanByExtends() {
+		ClassPathXmlApplicationContext ioc = new ClassPathXmlApplicationContext("beans.xml");
+
+		Monster monster11 = ioc.getBean("monster11", Monster.class);
+		System.out.println(monster11);
+
+		//Error creating bean with name 'monster12': Bean definition is abstract
+		//Monster abstractBean = ioc.getBean("monster12", Monster.class);
+
+		Monster monster13 = ioc.getBean("monster13", Monster.class);
+		System.out.println(monster13);
+	}
+
+	//通过FactoryBean获取Bean
+	@Test
+	public void setBeanByFactoryBean() {
+		ClassPathXmlApplicationContext ioc = new ClassPathXmlApplicationContext("beans.xml");
+
+		Monster factoryBean = ioc.getBean("factoryBean", Monster.class);
+		System.out.println(factoryBean);
+
+	}
+
+	//通过实例工厂获取bean
+	@Test
+	public void setBeanByInstanceFactory() {
+		ClassPathXmlApplicationContext ioc = new ClassPathXmlApplicationContext("beans.xml");
+
+		Monster my_monster02 = ioc.getBean("my_monster02", Monster.class);
+		Monster my_monster02_ = ioc.getBean("my_monster02", Monster.class);
+		System.out.println(my_monster02);
+		System.out.println(my_monster02_);
+		//beans.xml中的实例对象只用了一次，id是唯一的
+		System.out.println(my_monster02 == my_monster02_);//TODO true
+
+		//这里的实例工厂不同
+		Monster my_monster03 = ioc.getBean("my_monster03", Monster.class);
+		System.out.println(my_monster02);
+		System.out.println(my_monster03);
+		System.out.println(my_monster02 == my_monster03);//false
+
+	}
+
+	//通过静态工厂获取bean
+	@Test
+	public void setBeanByStaticFactory() {
+		ClassPathXmlApplicationContext ioc = new ClassPathXmlApplicationContext("beans.xml");
+
+		Monster my_monster01 = ioc.getBean("my_monster01", Monster.class);
+		System.out.println(my_monster01);
+		Monster my_monster01_ = ioc.getBean("my_monster01_", Monster.class);
+		System.out.println(my_monster01_);
+		System.out.println(my_monster01_ == my_monster01);//true
+
+	}
+
 	//级联属性赋值
 	@Test
 	public void setBeanByRelation() {

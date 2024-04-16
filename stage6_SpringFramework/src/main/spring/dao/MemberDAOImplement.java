@@ -8,9 +8,9 @@ package main.spring.dao;
  **/
 public class MemberDAOImplement {
 	public MemberDAOImplement() {
-		System.out.println("MemberDAOImplement无参构造器  被执行");
+		//System.out.println("MemberDAOImplement无参构造器  被执行");
 	}
 	public void add() {
-		System.out.println("MemberDAOImplement::add()方法  被执行");
+		//System.out.println("MemberDAOImplement::add()方法  被执行");
 	}
 }
