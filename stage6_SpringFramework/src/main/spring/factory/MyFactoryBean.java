@@ -38,8 +38,11 @@ public class MyFactoryBean implements FactoryBean<Monster> {
 		return Monster.class;
 	}
 
+	//这里指定返回是否是单例：
+	//在整个系统中，某个类只能存在一个对象实例并只提供一个取得其对象实例的方法
+	//在这里指的是：配置一个Bean对象之后，ioc容器只会创建一个bean实例
 	@Override
-	public boolean isSingleton() {//这里指定是否返回是单例：在整个系统中，某个类只能存在一个对象实例并只提供一个取得其对象实例的方法
+	public boolean isSingleton() {
 		//return FactoryBean.super.isSingleton();//这里默认是true
 		return true;
 	}
