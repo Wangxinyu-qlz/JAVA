@@ -17,6 +17,15 @@ import java.io.File;
  * @description:
  **/
 public class springBeanTest {
+	//通过属性文件给bean赋值
+	@Test
+	public void setBeanByPropertiesFile() {
+		ApplicationContext ioc = new ClassPathXmlApplicationContext("beans.xml");
+
+		Monster bean = ioc.getBean("monster1000", Monster.class);
+		System.out.println(bean);
+	}
+
 	//bean的后置处理器
 	@Test
 	public void testBeanPostProcessor() {
