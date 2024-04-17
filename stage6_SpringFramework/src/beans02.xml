@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    
+    <!--======================================配置House对象，演示整个Bean的生命周期=======================================-->
+    <bean class="main.spring.bean.House" id="house" init-method="init" destroy-method="destroy">
+        <property name="name" value="别墅"/>
+    </bean>
+    
+    <bean class="main.spring.bean.House" id="house02" init-method="init" destroy-method="destroy">
+        <property name="name" value="瓦房"/>
+    </bean>
+    
+    <!--======================================配置bean的后置处理器对象===================================================-->
+    <!--
+    1.在beans02.xml容器配置文件中配置 myBeanPostProcessor 后
+    2.TODO 后置处理器会作用在该容器的 所有对象 中
+    3.TODO 针对所有对象编程->切面编程(AOP)
+    -->
+    <bean class="main.spring.bean.MyBeanPostProcessor" id="myBeanPostProcessor"/>
+</beans>

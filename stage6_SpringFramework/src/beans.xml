@@ -3,7 +3,18 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
        xmlns:util="http://www.springframework.org/schema/util"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
-    <!--======================================配置Dog对象，单例&多例=======================================-->
+    <!--======================================配置House对象，演示整个Bean的生命周期=======================================-->
+    <!--
+    1.TODO init-method="init"指定bean的初始化方法，在setter方法后执行
+    2.init方法执行的时机，由Spring容器控制
+    3.TODO destroy-method="destroy"指定bean的销毁方法，在容器关闭时执行
+    4.destroy方法执行的时机，由Spring容器控制
+    -->
+    <bean class="main.spring.bean.House" id="house" init-method="init" destroy-method="destroy">
+        <property name="name" value="平房"/>
+    </bean>
+    
+    <!--======================================配置Dog对象，单例&多例====================================================-->
     <!--
     1.默认情况下，scope（范围）为 singleton，
       ioc中只会有一个该bean对象，程序员执行getBean时，返回的是同一个对象

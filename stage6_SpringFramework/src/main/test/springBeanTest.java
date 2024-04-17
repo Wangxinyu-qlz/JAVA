@@ -4,6 +4,7 @@ import main.spring.bean.*;
 import main.spring.service.MemberService;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.io.File;
@@ -16,6 +17,59 @@ import java.io.File;
  * @description:
  **/
 public class springBeanTest {
+	//bean的后置处理器
+	@Test
+	public void testBeanPostProcessor() {
+		//TODO 这些是在ioc容器初始化的时候完成的
+		//House()构造器
+		//House setName()=别墅
+		//postProcessBeforeInitialization()被调用，bean=House{name='别墅'}  beanName=house
+		//House setName()=上海豪宅
+		//House init()..
+		//postProcessAfterInitialization()被调用，bean=House{name='上海豪宅'}  beanName=house
+		//House()构造器
+		//House setName()=瓦房
+		//postProcessBeforeInitialization()被调用，bean=House{name='瓦房'}  beanName=house02
+		//House setName()=上海豪宅
+		//House init()..
+		//postProcessAfterInitialization()被调用，bean=House{name='上海豪宅'}  beanName=house02
+		ApplicationContext ioc = new ClassPathXmlApplicationContext("beans02.xml");
+
+		//使用house=House{name='上海豪宅'}
+		//使用house=House{name='上海豪宅'}
+		House house = ioc.getBean("house", House.class);
+		System.out.println("使用house=" + house);
+		House house02 = ioc.getBean("house02", House.class);
+		System.out.println("使用house=" + house02);
+
+		//House destroy()..
+		//House destroy()..
+		((ConfigurableApplicationContext)ioc).close();
+	}
+
+	//测试Bean的生命周期
+	@Test
+	public void testBeanLife() {
+		//ClassPathXmlApplicationContext ioc = new ClassPathXmlApplicationContext("beans.xml");
+		//TODO 实际开发中使用接口类型接收，因为这样 ioc 变量更加灵活
+		//House()构造器
+		//House setName()=平房
+		//House init()..
+		ApplicationContext ioc = new ClassPathXmlApplicationContext("beans.xml");
+
+		//使用的House=main.spring.bean.House@7a8c8dcf
+		House house = ioc.getBean("house", House.class);
+		System.out.println("使用的House=" + house);
+
+		//关闭容器
+		//ioc.close();
+		//ioc的编译类型是ApplicationContext  运行类型是ClassPathXmlApplicationContext
+		//因为ClassPathXmlApplicationContext 实现了 ConfigurableApplicationContext接口
+		//ConfigurableApplicationContext 有close()方法
+		//将ioc转换为ConfigurableApplicationContext类型
+		((ConfigurableApplicationContext) ioc).close();//House destroy()..
+	}
+
 	//测试 多例prototype 单例singleton
 	@Test
 	public void testBeanScope() {
