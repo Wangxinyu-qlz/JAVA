@@ -27,11 +27,15 @@ public class springBeanTest {
 	public void setBeanByAnnotation() {
 		ApplicationContext ioc = new ClassPathXmlApplicationContext("beans05.xml");
 
+		//TODO 默认情况下，注解标识的类创建对象后，在容器中，id 为类名首字母小写
+		// 或者在注解的时候自行指定 id
 		UserDao userDao = ioc.getBean(UserDao.class);
+		UserDao userDao1 = ioc.getBean("userDao", UserDao.class);
 		UserService userService = ioc.getBean(UserService.class);
 		UserAction userAction = ioc.getBean(UserAction.class);
 		MyComponent myComponent = ioc.getBean(MyComponent.class);
 		System.out.println(userDao + "\n" + userAction + "\n" + userService + " \n" + myComponent);
+		System.out.println(userDao1);
 		System.out.println("ok");
 	}
 
