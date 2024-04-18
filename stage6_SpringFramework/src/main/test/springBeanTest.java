@@ -18,6 +18,15 @@ import java.io.File;
  * @description:
  **/
 public class springBeanTest {
+	//通过Spring EL表达式 对属性赋值
+	@Test
+	public void setBeanBySpel() {
+		ApplicationContext ioc = new ClassPathXmlApplicationContext("beans04.xml");
+
+		Object spELBean = ioc.getBean("spELBean", SpELBean.class);
+		System.out.println(spELBean);
+	}
+
 	//自动装配
 	@Test
 	public void setBeanByAutowire() {

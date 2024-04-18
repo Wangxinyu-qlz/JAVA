@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    
+    <bean class="main.spring.bean.Monster" id="monster01">
+        <property name="monsterId" value="1"/>
+        <property name="name" value="q"/>
+        <property name="skill" value="eat"/>
+    </bean>
+    
+    <!--Spring EL 表达式使用方法-->
+    <bean class="main.spring.bean.SpELBean" id="spELBean">
+        <!--字面量-->
+        <property name="name" value="#{'lsp'}"/>
+        <!--引用其他bean-->
+        <property name="monster" value="#{monster01}"/>
+        <!--引用其他bean的属性值-->
+        <property name="monsterName" value="#{monster01.name}"/>
+        <!--调用普通方法-->
+        <property name="crySound" value="#{spELBean.cry('喵喵')}"/>
+        <!--调用静态方法 赋值 加上全类名-->
+        <property name="bookName" value="#{T(main.spring.bean.SpELBean).read('红楼梦')}"/>
+        <!--通过运算赋值-->
+        <property name="result" value="#{89*1.1}"/>
+    </bean>
+</beans>
