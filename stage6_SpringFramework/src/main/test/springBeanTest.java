@@ -22,6 +22,22 @@ import java.io.File;
  * @description:
  **/
 public class springBeanTest {
+	//通过Autowired注解配置bean
+	@Test
+	public void setPropertyByAutowired() {
+		ApplicationContext ioc = new ClassPathXmlApplicationContext("beans06.xml");
+		UserAction userAction = ioc.getBean("userAction", UserAction.class);
+		System.out.println("userAction=" + userAction);
+
+		UserService userService = ioc.getBean("userService", UserService.class);
+		UserService userService2 = ioc.getBean("userService2", UserService.class);
+		UserService userService3 = ioc.getBean("userService3", UserService.class);
+		System.out.println("userService=" + userService);
+		System.out.println("userService2=" + userService2);
+		System.out.println("userService3=" + userService3);
+		userAction.sayOk();
+	}
+
 	//通过注解配置bean
 	@Test
 	public void setBeanByAnnotation() {
