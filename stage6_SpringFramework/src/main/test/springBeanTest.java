@@ -1,6 +1,10 @@
 package main.test;
 
 import main.spring.bean.*;
+import main.spring.component.MyComponent;
+import main.spring.component.UserAction;
+import main.spring.component.UserDao;
+import main.spring.component.UserService;
 import main.spring.service.MemberService;
 import main.spring.web.OrderAction;
 import org.junit.jupiter.api.Test;
@@ -18,6 +22,19 @@ import java.io.File;
  * @description:
  **/
 public class springBeanTest {
+	//通过注解配置bean
+	@Test
+	public void setBeanByAnnotation() {
+		ApplicationContext ioc = new ClassPathXmlApplicationContext("beans05.xml");
+
+		UserDao userDao = ioc.getBean(UserDao.class);
+		UserService userService = ioc.getBean(UserService.class);
+		UserAction userAction = ioc.getBean(UserAction.class);
+		MyComponent myComponent = ioc.getBean(MyComponent.class);
+		System.out.println(userDao + "\n" + userAction + "\n" + userService + " \n" + myComponent);
+		System.out.println("ok");
+	}
+
 	//通过Spring EL表达式 对属性赋值
 	@Test
 	public void setBeanBySpel() {
