@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--=============================================================配置OrderDao对象=================================-->
+    <bean class="main.spring.dao.OrderDao" id="orderDao"/>
+    <!--Could not autowire. There is more than one bean of 'OrderDao' type. Beans: orderDao,orderDao. Properties: 'orderDao'-->
+    <!--<bean class="main.spring.dao.OrderDao" id="orderDao1"/>-->
+    <!--===========================================================配置OrderService对象==================================
+    TODO 自动装配 byType
+     1.autowire="byType" 在创建OrderService时，通过类型 给对象的属性 自动完成赋值/引用
+     2.OrderService对象有一个OrderDao属性
+     3.在容器中查找有没有OrderDao类型的对象
+     4.如果有->自动装配
+     5.byType装配方式要求 容器中不能多个相同类型的对象
+     6.如果对象没有属性，自动装配没必要配置-->
+    <!--<bean autowire="byType" class="main.spring.service.OrderService" id="orderService"/>-->
+    
+    <!--
+    TODO byName
+     1.名字完成自动装配
+     2.autowire="byName" class="main.spring.service.OrderService"
+     3.先看OrderService 属性 private OrderDao orderDao
+     4.再根据这个属性的setXXX()方法的 XXX查找 对象id (<bean class="main.spring.dao.OrderDao" id="orderDao"/>)
+        (XXX不区分 首字母 大小写，其他字母必须严格一致 OrderDao==orderDao行)
+        (改成setOrderDaox setorderdao，会无法获取到对象，null但是不报错)
+     5.public void setOrderDao() 查找id=orderDao对象自动装配
+     6.如果有->自动装配-->
+    <bean autowire="byName" class="main.spring.service.OrderService" id="orderService"/>
+    <!--===========================================================配置OrderAction对象================================-->
+    <!--<bean autowire="byType" class="main.spring.web.OrderAction" id="orderAction"/>-->
+    <bean autowire="byName" class="main.spring.web.OrderAction" id="orderAction"/>
+</beans>

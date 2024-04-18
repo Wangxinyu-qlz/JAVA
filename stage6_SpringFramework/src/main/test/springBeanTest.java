@@ -2,6 +2,7 @@ package main.test;
 
 import main.spring.bean.*;
 import main.spring.service.MemberService;
+import main.spring.web.OrderAction;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -17,6 +18,18 @@ import java.io.File;
  * @description:
  **/
 public class springBeanTest {
+	//自动装配
+	@Test
+	public void setBeanByAutowire() {
+		ApplicationContext ioc = new ClassPathXmlApplicationContext("beans03.xml");
+
+		OrderAction orderAction = ioc.getBean("orderAction", OrderAction.class);
+		System.out.println(orderAction.getOrderService());
+		System.out.println(orderAction.getOrderService().getOrderDao());
+		((ConfigurableApplicationContext)ioc).close();
+	}
+
+
 	//通过属性文件给bean赋值
 	@Test
 	public void setBeanByPropertiesFile() {
