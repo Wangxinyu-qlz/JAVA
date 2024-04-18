@@ -22,16 +22,19 @@ public class UserAction {
 	//name属性使用byName的自动注入策略
 	//比如@Resource(name = "userService2")将容器中的 id=userService2 的对象装配到 userService 变量中
 	//type属性使用byType的自动注入策略
-	//@Resource(type = UserService.class)按照 UserService.class 类型进行装配，TODO ???要求容器中只能有一个该类型的对象
-	// TODO 这里的运行结果和老韩的不一致，实测容器中存在多个同类型的bean也可以正常运行，并且装配的bean的 id 是和这里的 属性名 匹配的
-	//如果没有指定name 和 type，则使用byName的方式装配
+	//@Resource(type = UserService.class)按照 UserService.class 类型进行装配，
+	// TODO 要求容器中只能有一个该类型的对象（前提：这里的属性名是userService4，但是容器中是userService1 2 3）
+	// TODO 这里的运行结果和老韩的不一致，实测容器中存在多个同类型的bean也可以正常运行，
+	//  并且装配的bean的 id 是和这里的 属性名 匹配的（前提：这里的属性名和 容器中的一个bean的id匹配）
+	//如果没有指定name 和 type，则首先使用byName的方式装配，如果失败，使用byType方式装配，如果都不成功，报错
 	//@Resource(name = "userService2")
-	@Resource(type = UserService.class)
-	private UserService userService3;
+	//@Resource(type = UserService.class)
+	@Resource()
+	private UserService userService4;
 	//private UserService userService2;
 	public void sayOk() {
 		System.out.println("UserAction::sayOK()~");
-		System.out.println("UserAction装配的userService属性=" + userService3);
-		userService3.hi();
+		System.out.println("UserAction装配的userService属性=" + userService4);
+		userService4.hi();
 	}
 }

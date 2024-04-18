@@ -6,6 +6,9 @@
     
     <context:component-scan base-package="main.spring.component"/>
     
+    <!--<bean class="main.spring.component.UserAction" id="userAction"/>-->
+    <!--<bean class="main.spring.component.UserService" id="userService"/>-->
+    
     <!--配置两个 UserService 对象-->
     <bean class="main.spring.component.UserService" id="userService2"/>
     <bean class="main.spring.component.UserService" id="userService3"/>
