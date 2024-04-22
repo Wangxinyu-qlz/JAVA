@@ -27,7 +27,7 @@ public class UserAction {
 	// TODO 这里的运行结果和老韩的不一致，实测容器中存在多个同类型的bean也可以正常运行，
 	//  并且装配的bean的 id 是和这里的 属性名 匹配的（前提：这里的属性名和 容器中的一个bean的id匹配）
 	//如果没有指定name 和 type，则首先使用byName的方式装配，如果失败，使用byType方式装配，如果都不成功，报错
-	//@Resource(name = "userService2")
+	//@Resource(name = "userService")
 	//@Resource(type = UserService.class)
 	@Resource()
 	private UserService userService4;

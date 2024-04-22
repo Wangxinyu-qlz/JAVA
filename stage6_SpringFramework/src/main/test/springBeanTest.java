@@ -5,6 +5,7 @@ import main.spring.component.MyComponent;
 import main.spring.component.UserAction;
 import main.spring.component.UserDao;
 import main.spring.component.UserService;
+import main.spring.dependenceInjection.PhoneService;
 import main.spring.service.MemberService;
 import main.spring.web.OrderAction;
 import org.junit.jupiter.api.Test;
@@ -22,6 +23,16 @@ import java.io.File;
  * @description:
  **/
 public class springBeanTest {
+	//通过泛型依赖配置 bean
+	@Test
+	public void setPropertyByDependenceInjection(){
+		ApplicationContext ioc = new ClassPathXmlApplicationContext("beans07.xml");
+
+		PhoneService phoneService = ioc.getBean("phoneService", PhoneService.class);
+		phoneService.save();
+		System.out.println("OK~");
+	}
+
 	//通过Autowired注解配置bean
 	@Test
 	public void setPropertyByAutowired() {
