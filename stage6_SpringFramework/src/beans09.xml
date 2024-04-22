@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">
+    
+    <!--配置一个切面类对象-->
+    <bean class="main.spring.aop.xml.SmartAnimalAspect" id="smartAnimalAspect"/>
+    <!--配置一个Monkey对象-->
+    <bean class="main.spring.aop.xml.Monkey" id="monkey"/>
+    
+    <!--配置切面类-->
+    <aop:config>
+        <!--TODO 注意顺序，切入点->切面对象->-->
+        <!--配置切入点-->
+        <aop:pointcut expression="execution(public double main.spring.aop.xml.Monkey.getSum(double, double))"
+                      id="myPointCut"/>
+        <!--这里指定切面对象-->
+        <aop:aspect ref="smartAnimalAspect" order="10">
+            <aop:before method="showBeginLog" pointcut-ref="myPointCut"/>
+            <aop:after-returning method="showSuccessEndLog" pointcut-ref="myPointCut" returning="res"/>
+            <aop:after-throwing method="showExceptionEndLog" pointcut-ref="myPointCut" throwing="exception"/>
+            <aop:after method="showFinallyEndLog" pointcut-ref="myPointCut"/>
+        </aop:aspect>
+    </aop:config>
+</beans>

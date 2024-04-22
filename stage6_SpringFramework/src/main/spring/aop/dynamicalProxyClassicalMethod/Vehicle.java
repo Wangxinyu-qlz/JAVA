@@ -1,4 +1,4 @@
-package main.spring.proxy_.classicalMethod;
+package main.spring.aop.dynamicalProxyClassicalMethod;
 
 /**
  * @program: stage6_SpringFramework

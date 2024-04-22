@@ -1,10 +1,8 @@
-package main.spring.proxy_.proxy_;
+package main.spring.aop.proxy_;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
-import java.util.Arrays;
-import java.util.Comparator;
 
 /**
  * @program: stage6_SpringFramework
@@ -44,6 +42,7 @@ public class VehicleProxyProvider {
 			/**
 			 *
 			 * @param proxy the proxy instance that the method was invoked on 代理对象
+			 *              main.spring.proxy_.proxy_.Ship@1b26f7b2
 			 *
 			 * @param method the {@code Method} instance corresponding to
 			 * the interface method invoked on the proxy instance.  The declaring
@@ -52,6 +51,7 @@ public class VehicleProxyProvider {
 			 * proxy interface that the proxy class inherits the method through.
 			 * 通过代理对象调用方法时的 那个方法
 			 * 比如：代理对象.run()  car.run()
+			 *               public abstract void main.spring.proxy_.proxy_.Vehicle.run()
 			 *
 			 * @param args an array of objects containing the values of the
 			 * arguments passed in the method invocation on the proxy instance,

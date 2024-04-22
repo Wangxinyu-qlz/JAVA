@@ -1,9 +1,9 @@
-package main.spring.proxy_.proxy_;
+package main.spring.aop.proxyPractice;
 
 /**
  * @program: stage6_SpringFramework
  * @author: Qiaolezi
- * @create: 2024-04-22 15:23
+ * @create: 2024-04-22 17:17
  * @description:
  **/
 public interface Vehicle {

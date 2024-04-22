@@ -1,4 +1,4 @@
-package main.spring.proxy_.classicalMethod;
+package main.spring.aop.dynamicalProxyClassicalMethod;
 
 import org.junit.jupiter.api.Test;
 
