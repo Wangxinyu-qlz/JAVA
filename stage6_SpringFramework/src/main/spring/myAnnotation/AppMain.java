@@ -15,7 +15,5 @@ public class AppMain {
 				new MySpringApplicationContext(MySpringConfig.class);
 
 		System.out.println("OK!");
-
-
 	}
 }
