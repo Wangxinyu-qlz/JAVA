@@ -2,7 +2,6 @@ package main.spring.aop.aspectAopPractice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import sun.management.HotspotClassLoadingMBean;
 
 /**
  * @program: stage6_SpringFramework
