@@ -12,5 +12,7 @@ import main.spring.myAnnotation.annotation.Scope;
 @Component()
 @Scope(value = "singleton")
 public class MonsterDao {
-
+	public void hi() {
+		System.out.println("MonsterDao hi()....");
+	}
 }

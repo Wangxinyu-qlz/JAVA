@@ -1,5 +1,6 @@
 package main.spring.myAnnotation.ioc;
 
+import main.spring.myAnnotation.annotation.Autowired;
 import main.spring.myAnnotation.annotation.Component;
 import main.spring.myAnnotation.annotation.ComponentScan;
 import main.spring.myAnnotation.annotation.Scope;
@@ -7,8 +8,13 @@ import main.spring.myspring.MyApplicationContext;
 import org.springframework.util.StringUtils;
 
 import java.io.File;
+import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
 import java.net.URL;
+import java.util.Enumeration;
 import java.util.concurrent.ConcurrentHashMap;
+
+import static sun.reflect.misc.FieldUtil.getDeclaredFields;
 
 /**
  * @program: stage6_SpringFramework
@@ -21,10 +27,10 @@ public class MySpringApplicationContext {
 	//BeanDefinition对象
 	private final ConcurrentHashMap<String, BeanDefinition> beanDefinitionMap = new ConcurrentHashMap<>();
 	//单例池
-	private final ConcurrentHashMap<String, Object> singletonObject = new ConcurrentHashMap<>();
+	private final ConcurrentHashMap<String, Object> singletonObjects = new ConcurrentHashMap<>();
 
 	//该方法完成对指定包的扫描，并将bean信息封装到BeanDefinition对象，放入到Map
-	public void beanDefinitionScan(Class configClass) {
+	private void beanDefinitionsScan(Class configClass) {
 		this.configClass = configClass;
 
 		//获取扫描的包
@@ -97,13 +103,90 @@ public class MySpringApplicationContext {
 
 	}
 
+	private Object createBean(BeanDefinition beanDefinition) {
+		//得到bean的clazz对象
+		Class clazz = beanDefinition.getClazz();
+		try {
+			//通过反射得到实例  (没有考虑依赖注入的问题)
+			Object instance = clazz.getDeclaredConstructor().newInstance();
+
+			//加入依赖注入的逻辑
+			//1.遍历要创建的对象的所有字段
+			for(Field declaredField : clazz.getDeclaredFields()){
+				//判断是否要依赖注入
+				if(declaredField.isAnnotationPresent(Autowired.class)) {
+					//3.得到字段名字
+					String name = declaredField.getName();
+					//4.通过getBean方法获取需要组装的对象
+					Object bean = getBean(name);
+					//5.组装 instance是要创建的对象，bean是instance的属性
+					//TODO 属性是private修饰的，需要爆破
+					declaredField.setAccessible(true);
+					declaredField.set(instance, bean);
+				}
+
+
+			}
+
+			return instance;
+		} catch (InstantiationException e) {
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			e.printStackTrace();
+		} catch (InvocationTargetException e) {
+			e.printStackTrace();
+		} catch (NoSuchMethodException e) {
+			e.printStackTrace();
+		}
+
+		//如果反射创建对象失败
+		return null;
+
+	}
+
+	private void singletonObjectsInit() {
+		Enumeration<String> beanNames = beanDefinitionMap.keys();
+		while (beanNames.hasMoreElements()) {
+			//得到beanName
+			String beanName = beanNames.nextElement();
+			//得到对应的BeanDefinition
+			BeanDefinition beanDefinition = beanDefinitionMap.get(beanName);
+			//判断是否是singleton or prototype
+			if ("singleton".equalsIgnoreCase(beanDefinition.getScope())) {
+				//将bean实例放入singletonObjects容器
+				Object bean = createBean(beanDefinition);
+				singletonObjects.put(beanName, bean);
+			}
+		}
+	}
+
 	public MySpringApplicationContext(Class configClass) {
-		beanDefinitionScan(configClass);
+		//扫描指定包
+		beanDefinitionsScan(configClass);
+
+		//通过BeanDefinitionMap 初始化 singletonObjects
+		singletonObjectsInit();
+
 		System.out.println("beanDefinitionMap=" + beanDefinitionMap);
+		System.out.println("singletonObjects=" + singletonObjects);
 	}
 
 	//编写方法返回容器的对象
 	public Object getBean(String name) {
+		if (beanDefinitionMap.containsKey(name)) {//是否存在此 beanName
+			BeanDefinition beanDefinition = beanDefinitionMap.get(name);
+			//得到beanDefinition的scope，分别进行处理
+			if("singleton".equalsIgnoreCase(beanDefinition.getScope())) {
+				//是单例，从单例池中获取
+				return singletonObjects.get(name);
+			} else if("prototype".equalsIgnoreCase(beanDefinition.getScope())) {
+				//调用createBean，反射一个对象并返回
+				return createBean(beanDefinition);
+			}
+		} else {
+			throw new NullPointerException("没有这个bean！");
+		}
+
 		return null;
 	}
 

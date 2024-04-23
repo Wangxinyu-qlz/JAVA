@@ -1,5 +1,6 @@
 package main.spring.myAnnotation.component;
 
+import main.spring.myAnnotation.annotation.Autowired;
 import main.spring.myAnnotation.annotation.Component;
 import main.spring.myAnnotation.annotation.Scope;
 
@@ -12,5 +13,10 @@ import main.spring.myAnnotation.annotation.Scope;
 @Component(value = "monsterService")
 @Scope(value = "prototype")
 public class MonsterService {
+	@Autowired
+	private MonsterDao monsterDao;
 
+	public void ok() {
+		monsterDao.hi();
+	}
 }
