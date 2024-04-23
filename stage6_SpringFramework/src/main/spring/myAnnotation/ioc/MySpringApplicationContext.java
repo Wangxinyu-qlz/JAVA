@@ -14,8 +14,6 @@ import java.net.URL;
 import java.util.Enumeration;
 import java.util.concurrent.ConcurrentHashMap;
 
-import static sun.reflect.misc.FieldUtil.getDeclaredFields;
-
 /**
  * @program: stage6_SpringFramework
  * @author: Qiaolezi

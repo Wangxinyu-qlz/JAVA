@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
  * @program: stage6_SpringFramework
  * @author: Qiaolezi
  * @create: 2024-04-23 12:08
- * @description: 后置处理器
+ * @description: 后置处理器 TODO 会处理容器中所有bean
  **/
 @Component
 public class MyBeanPostProcessor implements BeanPostProcessor {
