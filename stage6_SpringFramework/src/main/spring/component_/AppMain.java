@@ -22,8 +22,8 @@ public class AppMain {
 		 * TODO 切面类的后置处理器也会生效
 		 * before  class main.spring.aop_.AnimalAspect
 		 * after  class main.spring.aop_.AnimalAspect
-		 * before  class main.spring.aop_.Dog  初始化之前是原始类型
-		 * after  class com.sun.proxy.$Proxy20  初始化之后是代理类型
+		 * before  class main.spring.aop_.Dog  TODO 初始化之前是原始类型
+		 * after  class com.sun.proxy.$Proxy20  TODO 初始化之后是代理类型  原因是切面类对Dog的方法做了切入
 		 * 单例只调用一次 多例有多少个对象，就调用多少次
 		 * before  class main.spring.component_.UserAction
 		 * after  class main.spring.component_.UserAction
