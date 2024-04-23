@@ -124,10 +124,7 @@ public class MySpringApplicationContext {
 					declaredField.setAccessible(true);
 					declaredField.set(instance, bean);
 				}
-
-
 			}
-
 			return instance;
 		} catch (InstantiationException e) {
 			e.printStackTrace();
@@ -138,10 +135,8 @@ public class MySpringApplicationContext {
 		} catch (NoSuchMethodException e) {
 			e.printStackTrace();
 		}
-
 		//如果反射创建对象失败
 		return null;
-
 	}
 
 	private void singletonObjectsInit() {
