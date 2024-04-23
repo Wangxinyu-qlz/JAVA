@@ -8,6 +8,6 @@ package main.spring.bean;
  **/
 public class Animal {
 	public Animal() {
-		//System.out.println("Animal()无参构造器被执行");
+		//System.out.println("Calculator()无参构造器被执行");
 	}
 }

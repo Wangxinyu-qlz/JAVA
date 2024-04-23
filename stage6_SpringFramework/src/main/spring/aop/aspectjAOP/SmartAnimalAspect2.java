@@ -14,7 +14,7 @@ import java.util.List;
  * @create: 2024-04-22 21:18
  * @description: 环绕通知
  **/
-//@Aspect
+//@Aspect1
 //@Component
 public class SmartAnimalAspect2 {
 	//1.@Around：这是一个环绕通知，完成前置 返回 异常 最终（后置）的功能

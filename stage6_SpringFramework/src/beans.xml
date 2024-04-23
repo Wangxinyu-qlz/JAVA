@@ -49,13 +49,13 @@
     <!--
     默认情况：按照定义的顺序执行
         Cat()无参构造器被执行
-        Animal()无参构造器被执行-->
+        Calculator()无参构造器被执行-->
     <!--<bean class="main.spring.bean.Cat" id="cat"/>-->
-    <!--<bean class="main.spring.bean.Animal" id="animal"/>-->
+    <!--<bean class="main.spring.bean.Calculator" id="animal"/>-->
     
     <!--
     depends-on="animal" 先执行 被依赖的Bean
-        Animal()无参构造器被执行
+        Calculator()无参构造器被执行
         Cat()无参构造器被执行-->
     <bean class="main.spring.bean.Cat" id="cat" depends-on="animal"/>
     <bean class="main.spring.bean.Animal" id="animal"/>
