@@ -1,5 +1,6 @@
 package main.mySQL.test;
 
+import main.mySQL.dao.MonsterDao;
 import main.spring.bean.Monster;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
@@ -163,5 +164,15 @@ public class JdbcTemplateTest {
 		//int update(String sql, SqlParameterSource paramSource)
 		int affected = namedParameterJdbcTemplate.update(sql, sqlParameterSource);
 		System.out.println("update ok affected=" + affected);
+	}
+
+	//测试MonsterDao::save()方法
+	@Test
+	public void testMonsterDao() {
+		ApplicationContext ioc = new ClassPathXmlApplicationContext("jdbcTemplate_ioc.xml");
+
+		MonsterDao monsterDao = ioc.getBean(MonsterDao.class);
+		Monster monster = new Monster(1000, "白骨精", "变身");
+		monsterDao.save(monster);
 	}
 }
