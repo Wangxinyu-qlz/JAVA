@@ -4,10 +4,11 @@ import main.spring.bean.Monster;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 
 import javax.sql.DataSource;
 import java.sql.Connection;
@@ -101,7 +102,7 @@ public class JdbcTemplateTest {
 		System.out.println("monster=" + monster);
 	}
 
-	//查询 id>=200 的对象之后，封装为一个对象
+	//查询 id>=200 的对象之后，封装为一个对象列表
 	@Test
 	public void selectMultiDataByJdbcTemplate() {
 		ApplicationContext ioc = new ClassPathXmlApplicationContext("jdbcTemplate_ioc.xml");
@@ -136,7 +137,7 @@ public class JdbcTemplateTest {
 		NamedParameterJdbcTemplate namedParameterJdbcTemplate =
 				ioc.getBean(NamedParameterJdbcTemplate.class);
 
-		//[:my_id, :name, :skill]按照规定的名字设置参数 这里的参数名字应该和数据库中的字段名一致
+		//[:my_id, :name, :skill]按照规定的名字设置参数 TODO 这里的参数名字应该和数据库中的字段名一致
 		String sql = "INSERT INTO monster VALUES(:id, :name, :skill)";
 		Map<String, Object> paraMap = new HashMap<>();
 		paraMap.put("id", 800);
@@ -145,7 +146,22 @@ public class JdbcTemplateTest {
 		//int update(String sql, Map<String, ?> paramMap) throws DataAccessException;
 		int affected = namedParameterJdbcTemplate.update(sql, paraMap);
 		System.out.println("add ok affected=" + affected);
+	}
 
+	//使用sqlParameterSource 封装具名参数，添加一条记录
+	@Test
+	public void operateDataBySqlParameterSource() {
+		ApplicationContext ioc = new ClassPathXmlApplicationContext("jdbcTemplate_ioc.xml");
+		NamedParameterJdbcTemplate namedParameterJdbcTemplate =
+				ioc.getBean(NamedParameterJdbcTemplate.class);
 
+		//[:my_id, :name, :skill]按照规定的名字设置参数 TODO 这里的参数名字应该和Monster属性名保持一致
+		String sql = "INSERT INTO monster VALUES(:monsterId, :name, :skill)";
+		Monster monster = new Monster(900, "土地爷", "导航");
+		SqlParameterSource sqlParameterSource = new BeanPropertySqlParameterSource(monster);
+
+		//int update(String sql, SqlParameterSource paramSource)
+		int affected = namedParameterJdbcTemplate.update(sql, sqlParameterSource);
+		System.out.println("update ok affected=" + affected);
 	}
 }
