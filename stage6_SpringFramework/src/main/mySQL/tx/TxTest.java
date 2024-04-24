@@ -69,4 +69,13 @@ public class TxTest {
 		GoodsService bean = ioc.getBean(GoodsService.class);
 		bean.bugGoodsByTxIsolation();
 	}
+
+	//测试 timeout 机制
+	@Test
+	public void testBugGoodsByTxTimeout() {
+		ApplicationContext ioc = new ClassPathXmlApplicationContext("tx_ioc.xml");
+		GoodsService bean = ioc.getBean(GoodsService.class);
+		bean.bugGoodsByTxTimeout(1, 1, 1);
+	}
+
 }

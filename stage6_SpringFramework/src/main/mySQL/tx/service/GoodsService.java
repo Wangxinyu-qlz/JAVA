@@ -96,4 +96,32 @@ public class GoodsService {
 		Float price2 = goodsDao.queryPriceById(1);
 		System.out.println("第 2 次查询到的价格=" + price2);
 	}
+
+	//timeout = 2 表示如果 bugGoodsByTxTimeout()方法 执行的时间超过 2 s
+	//该事物就会回滚
+	//如果没有设置timeout属性，默认为 -1 使用数据库的默认超时时间，如果不支持则无(不回滚)
+	@Transactional(timeout = 2)
+	public void bugGoodsByTxTimeout(int userId, int goodsId, int amount) {
+		System.out.println("userId=" + userId + " goodsId=" + goodsId +
+				" 数量=" + amount);
+
+		//1.查询商品价格
+		Float price = goodsDao.queryPriceById(goodsId);
+		//2.减少用户余额
+		goodsDao.updateBalance(userId, price * amount);
+
+		//模拟超时try {
+		System.out.println("模拟超时4s");
+		try {
+			Thread.sleep(4000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		System.out.println("超时模拟结束");
+
+		//3.商品出库
+		goodsDao.updateAmount(goodsId, amount);
+
+		System.out.println("用户购买成功！");
+	}
 }
