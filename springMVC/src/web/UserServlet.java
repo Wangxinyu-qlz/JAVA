@@ -15,7 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class UserServlet {
 	/**
 	 * 1.login()方法用于响应用户的登录请求
-	 * 2.@RequestMapping(value = "/login") 类似原生Servlet配置的url-pattern
+	 * 2.@RequestMapping(value = "/login")
+	 * 类似原生Servlet配置的url-pattern
 	 * 3.当用户在浏览器输入http://localhost:8080/web工程路径[配置的servlet里面的路径springMVC]/login 可以访问到该方法
 	 * 4.return "login_ok"; 表示返回结果给视图解析器(InternalResourceViewResolver)
 	 * 视图解析器会根据配置，决定跳转到哪个页面

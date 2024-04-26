@@ -17,10 +17,10 @@
         
         <!--配置属性 contextConfigLocation
         指定DispatcherServlet 对象 操作的Spring配置文件-->
-        <!--<init-param>-->
-        <!--  <param-name>contextConfigLocation</param-name>-->
-        <!--  <param-value>classpath:applicationContextMVC.xml</param-value>-->
-        <!--</init-param>-->
+        <init-param>
+          <param-name>contextConfigLocation</param-name>
+          <param-value>classpath:applicationContextMVC.xml</param-value>
+        </init-param>
         <!--在web项目启动时，自动加载DispatcherServlet-->
       <load-on-startup>1</load-on-startup>
     </servlet>
