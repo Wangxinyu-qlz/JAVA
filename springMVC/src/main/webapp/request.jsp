@@ -21,14 +21,14 @@
 </form>
 
 <hr><h1>演示params的使用</h1>
-<a href="user/find?bookId=200">查询书籍</a>
+<a href="user/find?bookId=100">查询书籍</a>
 
 <hr><h1>演示Ant风格的请求资源方式 </h1>
 <a href="user/message/aa">发送消息1</a><br>
 <a href="user/message/aa/bb/cc">发送消息2</a><br>
 
 <hr><h1>占位符的演示</h1>
-<a href="user/reg/kristina/300">占位符的演示</a>
+<a href="user/register/tom/300">占位符的演示</a>
 
 <h1>电脑信息</h1>
 
