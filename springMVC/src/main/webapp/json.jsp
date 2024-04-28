@@ -9,17 +9,17 @@
 <head>
     <title>json提交</title>
     <!-- 引入jquery -->
-    <script type="text/javascript" src="script/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="webjars/jquery/3.5.1/dist/jquery.min.js"></script>
 
     <!-- 编写jquery代码和ajax请求 -->
     <script type="text/javascript">
         $(function () {
             //给id="getJson"绑定点击事件
             $("#getJson").click(function () {
-                //console.log("ok ....")
+                console.log("ok ....")
 
                 var url = this.href;
-                var args = {"time": new Date};//这是老师要发送数据,为了防止页面缓存
+                var args = {"time": new Date};//这是老师要发送数据,为了防止页面缓存，时间会变化，ajax会解析成新的请求
                 $.post(
                     url,
                     args,
@@ -37,7 +37,7 @@
             //springmvc 可以在在台將json轉成對象
             $("button[name='butt1']").click(function () {
                 //目标:将userName 和 age 封装成json字符串，发送给目标方法
-                var url = "/springmvc/save2";
+                var url = "/springMVC/save2";
                 var userName = $("#userName").val();
                 var age = $("#age").val();
                 //将json对象转成json字符串

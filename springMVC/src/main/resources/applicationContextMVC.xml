@@ -25,6 +25,10 @@
     </bean>
     
     
+    <bean class="org.springframework.context.support.ResourceBundleMessageSource" id="messageSource">
+        <property name="basename" value="i18n"/>
+    </bean>
+    
     <!--加入两个常规配置-->
     <!--支持 SpringMVC 的高级功能：JSR303校验，映射动态请求-->
     <mvc:annotation-driven></mvc:annotation-driven>
