@@ -64,13 +64,13 @@ public class UserHandler {
 
 	/**
 	 * 目标方法获取userName和userId，
-	 * <a href="user/register/tom/300">占位符演示</a>
-	 * url:   user/register/{username}/{userid}
 	 *
 	 * @param username
 	 * @param userid
 	 * @return
-	 * @PathVariable("username")("userid") 以上三行的username 和 userid要一致
+	 * <a href="user/register/tom/300">占位符演示</a>
+	 * url:     user/register/{username}/{userid}
+	 *          @PathVariable("username")("userid") 以上三行的username 和 userid要一致
 	 */
 	@RequestMapping(value = "/register/{username}/{userid}")
 	public String register(@PathVariable("username") String username, @PathVariable("userid") int userid) {
@@ -100,6 +100,7 @@ public class UserHandler {
 	/**
 	 * 如果请求的参数有 email=xxx ，将其值 赋给 String email
 	 * 名称必须保持一致，否则无法接受数据，-> null
+	 * TODO 如果名称不一致 使用@RequestParam()
 	 * @param email
 	 * @return
 	 */

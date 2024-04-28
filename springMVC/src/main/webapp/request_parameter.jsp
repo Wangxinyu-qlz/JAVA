@@ -12,7 +12,7 @@
 <body>
 <h2>获取到超链接参数值</h2>
 <hr/>
-<a href="vote/vote01?name=hsp">获取超链接的参数</a>
+<a href="vote/vote01?name=qiaoleiz">获取超链接的参数</a>
 
 <h1>获取到消息头</h1>
 <hr>

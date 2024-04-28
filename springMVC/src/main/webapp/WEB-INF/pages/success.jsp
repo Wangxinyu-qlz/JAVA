@@ -8,9 +8,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>购买成功</title>
+    <title>操作成功</title>
 </head>
 <body>
-<h1>恭喜！购买成功！</h1>
+<h1>恭喜！操作成功！</h1>
 </body>
 </html>
