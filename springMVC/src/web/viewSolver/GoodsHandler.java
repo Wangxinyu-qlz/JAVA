@@ -23,6 +23,12 @@ public class GoodsHandler {
 	public String order() {
 		System.out.println("-----------order()--------------");
 		// /WEB-INF/pages/my_view.jsp -> /springMVC/WEB-INF/pages/my_view.jsp
-		return "forward:/WEB-INF/pages/my_view.jsp";
+		return "forward:/WEB-INF/pages/my_view.jsp";//http://localhost:8080/springMVC/goods/order
+		//return "forward:/rest.jsp";
+
+		//直接指定要重定向的页面
+		//TODO 不能从定向到WEB-INF目录下，这个目录从浏览器直接访问也是不行的
+		//return "redirect:/login.jsp";
+		//return "redirect:/WEB-INF/pages/my_view.jsp";//404   http://localhost:8080/springMVC/WEB-INF/pages/my_view.jsp
 	}
 }
