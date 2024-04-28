@@ -5,7 +5,7 @@
   Filename: vote05
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java"
-pageEncoding="UTF-8" isELIgnored="false" %>\
+pageEncoding="UTF-8" isELIgnored="false" %>
 <%--TODO isELIgnored="false" jsp不能解析EL表达式的话 加上这句话--%>
 <html>
 <head>
@@ -20,6 +20,7 @@ address: ${requestScope.address}<br>
 主人名字= ${requestScope.master.name}
 主人id= ${requestScope.master.id}
 宠物名字= ${requestScope.master.pet.name}
+宠物id= ${requestScope.master.pet.id}
 
 <hr>
 取出 session域的数据 <br>

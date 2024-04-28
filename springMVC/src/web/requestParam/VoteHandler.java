@@ -1,14 +1,17 @@
 package web.requestParam;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 import web.requestParam.entity.Master;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.util.Map;
 
 /**
  * @program: springMVC
@@ -79,11 +82,64 @@ public class VoteHandler {
 	public String vote05(Master master,
 	                     HttpServletRequest request,
 	                     HttpServletResponse response) {
-		//SpringMVC 自动将 master 放入到 request 中，
+		//SpringMVC 自动将 master 放入到 request 中，request域("master", master) 类名首字母小写
 		//也可以自己手动放入
 		request.setAttribute("master", master);
 		request.setAttribute("address", "西安");
+		//可以修改master的属性值
+		master.setName("qiaolezi");
 		System.out.println("ok");
 		return "vote_ok";
+	}
+
+	@RequestMapping(value = "/vote06")
+	public String vote06(Map<String, Object> map, Master master) {
+		//SpringMVC 遍历map，将map的K-V放入到request对象
+		//
+		map.put("master", master);
+		map.put("address", "xian");
+		map.replace("address", "西安");
+
+		return "vote_ok";
+	}
+
+	//Model and View
+	@RequestMapping(value = "/vote07")
+	public ModelAndView vote07(Master master) {
+		System.out.println("===============ModelAndView============");
+		ModelAndView modelAndView = new ModelAndView();
+		//数据库查询->对象->放入ModelAndView
+		modelAndView.addObject("master", master);
+		modelAndView.addObject("address", "陕西");
+		//指定跳转的视图名称
+		modelAndView.setViewName("vote_ok");
+		System.out.println("ok");
+
+		//返回结果
+		return modelAndView;
+	}
+
+
+	@RequestMapping(value = "/vote08")
+	public String vote08(Master master, HttpSession httpSession) {
+		//TODO master对象默认是放在request域中的，这里没有显式放，前端也会显示
+		httpSession.setAttribute("master", master);
+		httpSession.setAttribute("address", "陕西省西安市");
+		return "vote_ok";
+	}
+
+	/**
+	 * 1.当Handler的方法被标识为 @ModelAttribute 该就会被视为一个前置方法
+	 * 2.当执行该Handler的其他方法时，会先执行该前置方法
+	 * 3.类似于AOP的前置通知
+	 *
+	 * TODO 用法：修改用户信息
+	 *  1.修改前，在前置方法中从数据库查询该用户的信息
+	 *  2.在修改方法中，使用前置方法从数据库查询用户信息
+	 *  3.如果表单中修了某个属性，以新的数据为准，没有修改，以数据库的信息为准
+	 */
+	@ModelAttribute
+	public void prepareModel() {
+		System.out.println("prepareModel()======准备完毕=======");
 	}
 }
