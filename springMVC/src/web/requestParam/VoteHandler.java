@@ -46,7 +46,7 @@ public class VoteHandler {
 	//前提：提交数据：参数名和对象字段名 一致
 	//如果属性是对象，通过字段名.字段名 Master[pet]  pet.id pet.name
 	//如果匹配失败 -> null
-	@RequestMapping(value = "vote03")
+	@RequestMapping(value = "/vote03")
 	public String vote03(Master master) {
 		System.out.println("master=" + master);
 		return "success";
@@ -58,7 +58,7 @@ public class VoteHandler {
 	 * @param response
 	 * @return
 	 */
-	@RequestMapping(value = "vote04")
+	@RequestMapping(value = "/vote04")
 	public String vote04(HttpServletRequest request,
 	                     HttpServletResponse response,
 	                     HttpSession hs) {
@@ -75,5 +75,15 @@ public class VoteHandler {
 		return "success";
 	}
 
-
+	@RequestMapping(value = "/vote05")
+	public String vote05(Master master,
+	                     HttpServletRequest request,
+	                     HttpServletResponse response) {
+		//SpringMVC 自动将 master 放入到 request 中，
+		//也可以自己手动放入
+		request.setAttribute("master", master);
+		request.setAttribute("address", "西安");
+		System.out.println("ok");
+		return "vote_ok";
+	}
 }
