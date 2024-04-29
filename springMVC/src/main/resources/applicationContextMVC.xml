@@ -29,6 +29,14 @@
         <property name="basename" value="i18n"/>
     </bean>
     
+    <!--文件上传需要-->
+    <!--TODO 底层是按照id查找的，这里的id要改成 CommonsMultipartResolver 实现的接口的名字 multipartResolver-->
+    <!--
+    public class CommonsMultipartResolver extends CommonsFileUploadSupport
+		implements MultipartResolver, ServletContextAware {
+    -->
+    <bean class="org.springframework.web.multipart.commons.CommonsMultipartResolver" id="multipartResolver"/>
+    
     <!--加入两个常规配置-->
     <!--支持 SpringMVC 的高级功能：JSR303校验，映射动态请求-->
     <mvc:annotation-driven></mvc:annotation-driven>
