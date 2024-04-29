@@ -37,6 +37,35 @@
     -->
     <bean class="org.springframework.web.multipart.commons.CommonsMultipartResolver" id="multipartResolver"/>
     
+    <!--配置自定义拦截器 Spring配置文件-->
+    <mvc:interceptors>
+        <!--1.直接使用ref引用对应的拦截器
+        会拦截所有的目标方法-->
+        <!--<ref bean="myInterceptor01"/>-->
+        
+        <!--2.指定要拦截的路径
+        指定对哪个拦截器配置-->
+        <!--<mvc:interceptor>-->
+        <!--    <mvc:mapping path="/hi"/>-->
+        <!--    <ref bean="myInterceptor01"/>-->
+        <!--</mvc:interceptor>-->
+        
+        <!--3.指定一个路径范围 进行拦截 所有以h开头的路径都会被拦截-->
+        <mvc:interceptor>
+            <mvc:mapping path="/h*"/>
+            <!--不拦截 /hello这个路径-->
+            <mvc:exclude-mapping path="/hello"/>
+            <ref bean="myInterceptor01"/>
+        </mvc:interceptor>
+        
+        <!--第二个拦截器
+        多个拦截器按照配置的先后顺序依次执行-->
+        <mvc:interceptor>
+            <mvc:mapping path="/h*"/>
+            <ref bean="myInterceptor02"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
+    
     <!--加入两个常规配置-->
     <!--支持 SpringMVC 的高级功能：JSR303校验，映射动态请求-->
     <mvc:annotation-driven></mvc:annotation-driven>
