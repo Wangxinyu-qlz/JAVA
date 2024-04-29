@@ -33,6 +33,50 @@
                 return false;//这里我们返回false,就不使用href默认机制
             })
 
+            //给id="getJsonMap"绑定点击事件
+            $("#getJsonMap").click(function () {
+                console.log("ok ....")
+
+                var url = this.href;
+                var args = {"time": new Date};//这是老师要发送数据,为了防止页面缓存，时间会变化，ajax会解析成新的请求
+                $.post(
+                    url,
+                    args,
+                    function (data) {//data 就是返回的数据,是json格式=>如果是多个json数据，可以遍历
+                        console.log("dataa= ", data);
+                        for(var a_key in data) {
+                            if(data.hasOwnProperty(a_key)) {
+                                console.log(a_key, ":", "[name:", JSON.stringify(data[a_key].name), ",address:", JSON.stringify(data[a_key].address), "]");
+                            }
+                        }
+                    },
+                    "json"
+                );
+                return false;//这里我们返回false,就不使用href默认机制
+            })
+
+            //给id="getJsonList"绑定点击事件
+            $("#getJsonList").click(function () {
+                console.log("ok ....")
+
+                var url = this.href;
+                var args = {"time": new Date};//这是老师要发送数据,为了防止页面缓存，时间会变化，ajax会解析成新的请求
+                $.post(
+                    url,
+                    args,
+                    function (data) {//data 就是返回的数据,是json格式=>如果是多个json数据，可以遍历
+                        console.log("dataa= ", data);
+                        for(var a_key in data) {
+                            if(data.hasOwnProperty(a_key)) {
+                                console.log("[name:", data[a_key].name, ",address:", data[a_key].address, "]");
+                            }
+                        }
+                    },
+                    "json"
+                );
+                return false;//这里我们返回false,就不使用href默认机制
+            })
+
             //绑定按钮点击事件, 提交json数据
             //springmvc 可以在在台將json轉成對象
             $("button[name='butt1']").click(function () {
@@ -65,6 +109,11 @@
 3. 使用老韩前面讲过的jquery发出ajax请求知识
 --%>
 <a href="<%=request.getContextPath()%>/json/dog" id="getJson">点击获取json数据</a>
+<br>
+
+<a href="<%=request.getContextPath()%>/json/dog2" id="getJsonMap">点击获取json Map数据</a>
+<br>
+<a href="<%=request.getContextPath()%>/json/dog3" id="getJsonList">点击获取json List数据</a>
 
 <h1>发出一个json数据</h1>
 u:<input id="userName" type="text"><br/>

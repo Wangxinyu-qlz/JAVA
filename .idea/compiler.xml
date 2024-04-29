@@ -19,7 +19,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="stage6_sping_framework" target="1.8" />
-      <module name="stage6_SpringFramework" target="1.8" />
+      <module name="stage6_SpringFramework" target="1.5" />
       <module name="stage6_springFramework" target="1.8" />
     </bytecodeTargetLevel>
   </component>
