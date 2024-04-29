@@ -4,7 +4,7 @@
   Version: 1.0
   Filename: ok
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
 <html>
 <head>
     <title>ok页面</title>

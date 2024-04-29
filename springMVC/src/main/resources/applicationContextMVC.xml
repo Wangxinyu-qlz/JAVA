@@ -66,6 +66,17 @@
         </mvc:interceptor>
     </mvc:interceptors>
     
+    <!--配置统一处理异常-->
+    <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+        <property name="exceptionMappings">
+            <props>
+                <!--寻找 /WEB-INF/pages/arrEx.jsp 文件-->
+                <prop key="java.lang.ArrayIndexOutOfBoundsException">arrEx</prop>
+                <prop key="java.lang.Exception">allEx</prop>
+            </props>
+        </property>
+    </bean>
+    
     <!--加入两个常规配置-->
     <!--支持 SpringMVC 的高级功能：JSR303校验，映射动态请求-->
     <mvc:annotation-driven></mvc:annotation-driven>
