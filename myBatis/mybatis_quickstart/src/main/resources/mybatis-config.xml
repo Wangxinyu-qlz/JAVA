@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-config.dtd">
+
+
+<configuration>
+    <!--配置日志输出  STDOUT_LOGGING  MyBatis自带日志 原生sql  LOG4J2
+    TODO 这个配置项需要放在最前-->
+    <settings>
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+    </settings>
+    
+    <!--配置别名-->
+    <typeAliases>
+        <typeAlias type="entity.Monster" alias="Monster"/>
+    </typeAliases>
+    
+    
+    <environments default="development">
+        <environment id="development">
+            <!--配置事务管理器-->
+            <transactionManager type="JDBC"/>
+            <!--配置数据源-->
+            <dataSource type="POOLED">
+                <!--配置驱动-->
+                <!--<property name="driver" value="${driver}"/>-->
+                <!--<property name="url" value="${url}"/>-->
+                <!--<property name="username" value="${username}"/>-->
+                <!--<property name="password" value="${password}"/>-->
+                
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <!--userSSL=true 使用安全连接
+                &amp;  转义符等价于 &-->
+                <property name="url" value="jdbc:mysql://127.0.0.1:3306/mybatis?userSSL=true&amp;userUnicode=true&amp;characterEncoding=UTF-8"/>
+                <property name="username" value="root"/>
+                <property name="password" value="root"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <!--TODO 配置操作数据库的 xml 文件-->
+        <mapper resource="mapper/MonsterMapper.xml"/>
+        <!--TODO 注意这里是class-->
+        <mapper class="mapper.MonsterAnnotation"/>
+    </mappers>
+</configuration>
