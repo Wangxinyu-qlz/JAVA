@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="mapper.MonsterMapper">
+    <!--通过id 或 name查询-->
+    <select id="getMonsterByNameORId" parameterType="Monster" resultType="Monster">
+        select * from `monster` where `id` = #{id} or `name` = #{name};
+    </select>
+    
+    <!--模糊查询-->
+    <!--TODO 模糊查询需要使用 ${} 取值-->
+    <select id="getMonsterByName" parameterType="String" resultType="Monster">
+        select * from `monster` where `name` like '%${name}%';
+    </select>
+</mapper>

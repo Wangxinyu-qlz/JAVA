@@ -23,7 +23,12 @@ public interface MonsterAnnotation {
 	@Insert(value = "INSERT INTO `monster` " +
 			"(`age`, `birthday`, `email`, `gender`, `name`, `salary`) " +
 			"VALUES (#{age}, #{birthday}, #{email}, #{gender}, #{name}, #{salary})")
-	@Options(useGeneratedKeys = true, keyProperty="id")
+	//useGeneratedKeys = true 返回自增值
+	//keyProperty="id" 自增值对应的对象属性
+	//keyColumn = "id" 自增值对应表的字段
+	//keyProperty 和 keyColumn 一致不用添加keyColumn，否则一定要添加
+	//建议都写上
+	@Options(useGeneratedKeys = true, keyProperty="id", keyColumn = "id")
 	void addMonster(Monster monster);
 
 	//删除
