@@ -3,6 +3,7 @@ package mapper;
 import entity.Monster;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @program: mybatis
@@ -18,4 +19,13 @@ public interface MonsterMapper {
 
 	//查询名字中包括'精'的妖怪
 	List<Monster> getMonsterByName(String name);
+
+	//查询 id > 10 && salary > 40.0
+	//入参为 HashMap
+	List<Monster> getMonsterByIdAndSalary_ParameterHashMap(Map<String, Object> map);
+
+	//查询 id > 10 && salary > 40.0
+	//入参为 HashMap
+	//返回为 HashMap
+	List<Map<String, Object>> getMonsterByIdAndSalary_ParameterHashMap_ReturnHashMap(Map<String, Object> map);
 }

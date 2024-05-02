@@ -15,4 +15,15 @@
     <select id="getMonsterByName" parameterType="String" resultType="Monster">
         select * from `monster` where `name` like '%${name}%';
     </select>
+    
+    <!--TODO id > 10 && salary > 40.0 入参是HashMap
+            如果以 Map 形式传入参数，写成 id > #{id} 表示 map 中有一个k-v中： key 为 id
+                                 同理`salary` > #{salary}              key 为 salary-->
+    <select id="getMonsterByIdAndSalary_ParameterHashMap" parameterType="Map" resultType="Monster">
+        select * from `monster` where id > #{id} and `salary` > #{salary};
+    </select>
+    
+    <select id="getMonsterByIdAndSalary_ParameterHashMap_ReturnHashMap" parameterType="Map" resultType="Map">
+        select * from `monster` where id > #{id} and `salary` > #{salary};
+    </select>
 </mapper>

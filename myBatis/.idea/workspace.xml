@@ -4,23 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="168b7bae-394f-47a3-a325-e8c2aeb9f009" name="Changes" comment="mybatis xml/注解配置操作数据库 日志 keyProperty useGeneratedKeys&#10;@Options(useGeneratedKeys=true, keyProperty=&quot;id&quot;)&#10;@Delete()&#10;@Select()&#10;@Insert()&#10;@Update()">
-      <change afterPath="$PROJECT_DIR$/mybatis_quickstart/src/main/resources/jdbc.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xml-mapper/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xml-mapper/src/main/java/entity/Monster.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xml-mapper/src/main/java/mapper/MonsterMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xml-mapper/src/main/java/mapper/MonsterMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xml-mapper/src/main/java/util/MyBatisUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xml-mapper/src/main/resources/jdbc.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xml-mapper/src/main/resources/mybatis-config.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xml-mapper/src/main/resources/mybatis.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xml-mapper/src/test/java/mapper/MonsterMapperTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+    <list default="true" id="168b7bae-394f-47a3-a325-e8c2aeb9f009" name="Changes" comment="xml模糊查询 多条件查询">
+      <change afterPath="$PROJECT_DIR$/xml-mapper/src/main/java/entity/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xml-mapper/src/main/java/mapper/UserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xml-mapper/src/main/java/mapper/UserMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xml-mapper/src/test/java/mapper/UserMapperTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mybatis_quickstart/src/main/java/mapper/MonsterAnnotation.java" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis_quickstart/src/main/java/mapper/MonsterAnnotation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mybatis_quickstart/src/main/java/util/MyBatisUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis_quickstart/src/main/java/util/MyBatisUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mybatis_quickstart/src/main/resources/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis_quickstart/src/main/resources/mybatis-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mybatis_quickstart/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis_quickstart/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xml-mapper/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/xml-mapper/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xml-mapper/src/main/java/mapper/MonsterMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/xml-mapper/src/main/java/mapper/MonsterMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xml-mapper/src/main/java/mapper/MonsterMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/xml-mapper/src/main/java/mapper/MonsterMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xml-mapper/src/main/resources/mybatis.sql" beforeDir="false" afterPath="$PROJECT_DIR$/xml-mapper/src/main/resources/mybatis.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xml-mapper/src/test/java/mapper/MonsterMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/xml-mapper/src/test/java/mapper/MonsterMapperTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,6 +65,8 @@
     "JUnit.MonsterAnnotationTest.init.executor": "Run",
     "JUnit.MonsterMapperTest.addMonster.executor": "Run",
     "JUnit.MonsterMapperTest.deleteMonster.executor": "Run",
+    "JUnit.MonsterMapperTest.getMonsterByIdAndSalary_ParameterHashMap.executor": "Run",
+    "JUnit.MonsterMapperTest.getMonsterByIdAndSalary_ParameterHashMap_ReturnHashMap.executor": "Run",
     "JUnit.MonsterMapperTest.getMonsterByName.executor": "Run",
     "JUnit.MonsterMapperTest.getMonsterByNameORId.executor": "Run",
     "JUnit.MonsterMapperTest.selectAllMonsters.executor": "Run",
@@ -79,6 +78,9 @@
     "JUnit.MyBatisNativeAPITest.nativeDelete.executor": "Run",
     "JUnit.MyBatisNativeAPITest.nativeSelect.executor": "Run",
     "JUnit.MyBatisNativeAPITest.nativeUpdate.executor": "Run",
+    "JUnit.UserMapperTest.add.executor": "Run",
+    "JUnit.UserMapperTest.getAllUser.executor": "Run",
+    "JUnit.UserMapperTest.test1.executor": "Run",
     "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
     "Maven.mybatis [clean].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -94,8 +96,8 @@
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.07627767",
-    "settings.editor.selected.configurable": "reference.settings.ide.settings.notifications",
+    "project.structure.side.proportion": "0.15179393",
+    "settings.editor.selected.configurable": "reference.projectsettings.compiler.javacompiler",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -115,9 +117,9 @@
       <recent name="main.java.entity" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.MonsterMapperTest.getMonsterByName">
-    <configuration name="MonsterAnnotationTest.add" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="mybatis_quickstart" />
+  <component name="RunManager" selected="JUnit.UserMapperTest.getAllUser">
+    <configuration name="MonsterMapperTest.getMonsterByIdAndSalary_ParameterHashMap" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="xml-mapper" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="mapper.*" />
@@ -125,14 +127,46 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="mapper" />
-      <option name="MAIN_CLASS_NAME" value="mapper.MonsterAnnotationTest" />
+      <option name="MAIN_CLASS_NAME" value="mapper.MonsterMapperTest" />
+      <option name="METHOD_NAME" value="getMonsterByIdAndSalary_ParameterHashMap" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MonsterMapperTest.getMonsterByIdAndSalary_ParameterHashMap_ReturnHashMap" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="xml-mapper" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="mapper.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="mapper" />
+      <option name="MAIN_CLASS_NAME" value="mapper.MonsterMapperTest" />
+      <option name="METHOD_NAME" value="getMonsterByIdAndSalary_ParameterHashMap_ReturnHashMap" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserMapperTest.add" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="xml-mapper" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="mapper.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="mapper" />
+      <option name="MAIN_CLASS_NAME" value="mapper.UserMapperTest" />
       <option name="METHOD_NAME" value="add" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MonsterMapperTest.getMonsterByName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserMapperTest.getAllUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="xml-mapper" />
       <extension name="coverage">
         <pattern>
@@ -141,14 +175,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="mapper" />
-      <option name="MAIN_CLASS_NAME" value="mapper.MonsterMapperTest" />
-      <option name="METHOD_NAME" value="getMonsterByName" />
+      <option name="MAIN_CLASS_NAME" value="mapper.UserMapperTest" />
+      <option name="METHOD_NAME" value="getAllUser" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MonsterMapperTest.getMonsterByNameORId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserMapperTest.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="xml-mapper" />
       <extension name="coverage">
         <pattern>
@@ -157,40 +191,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="mapper" />
-      <option name="MAIN_CLASS_NAME" value="mapper.MonsterMapperTest" />
-      <option name="METHOD_NAME" value="getMonsterByNameORId" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MonsterMapperTest.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="xml-mapper" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="mapper.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="mapper" />
-      <option name="MAIN_CLASS_NAME" value="mapper.MonsterMapperTest" />
+      <option name="MAIN_CLASS_NAME" value="mapper.UserMapperTest" />
       <option name="METHOD_NAME" value="test1" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MyBatisNativeAPITest.nativeSelect" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="mybatis_quickstart" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="mapper.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="mapper" />
-      <option name="MAIN_CLASS_NAME" value="mapper.MyBatisNativeAPITest" />
-      <option name="METHOD_NAME" value="nativeSelect" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -198,11 +200,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.MonsterMapperTest.getMonsterByName" />
-        <item itemvalue="JUnit.MonsterMapperTest.getMonsterByNameORId" />
-        <item itemvalue="JUnit.MonsterMapperTest.test1" />
-        <item itemvalue="JUnit.MyBatisNativeAPITest.nativeSelect" />
-        <item itemvalue="JUnit.MonsterAnnotationTest.add" />
+        <item itemvalue="JUnit.UserMapperTest.getAllUser" />
+        <item itemvalue="JUnit.UserMapperTest.add" />
+        <item itemvalue="JUnit.UserMapperTest.test1" />
+        <item itemvalue="JUnit.MonsterMapperTest.getMonsterByIdAndSalary_ParameterHashMap_ReturnHashMap" />
+        <item itemvalue="JUnit.MonsterMapperTest.getMonsterByIdAndSalary_ParameterHashMap" />
       </list>
     </recent_temporary>
   </component>
@@ -223,7 +225,7 @@
       <option name="presentableId" value="Default" />
       <updated>1714463552781</updated>
       <workItem from="1714463553912" duration="18067000" />
-      <workItem from="1714564477751" duration="10083000" />
+      <workItem from="1714564477751" duration="13832000" />
     </task>
     <task id="LOCAL-00001" summary="mybatis xml/注解配置操作数据库 日志 keyProperty useGeneratedKeys&#10;@Options(useGeneratedKeys=true, keyProperty=&quot;id&quot;)&#10;@Delete()&#10;@Select()&#10;@Insert()&#10;@Update()">
       <option name="closed" value="true" />
@@ -233,7 +235,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714475556059</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="xml模糊查询 多条件查询">
+      <option name="closed" value="true" />
+      <created>1714624032215</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1714624032215</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -241,6 +251,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="mybatis xml/注解配置操作数据库 日志 keyProperty useGeneratedKeys&#10;@Options(useGeneratedKeys=true, keyProperty=&quot;id&quot;)&#10;@Delete()&#10;@Select()&#10;@Insert()&#10;@Update()" />
-    <option name="LAST_COMMIT_MESSAGE" value="mybatis xml/注解配置操作数据库 日志 keyProperty useGeneratedKeys&#10;@Options(useGeneratedKeys=true, keyProperty=&quot;id&quot;)&#10;@Delete()&#10;@Select()&#10;@Insert()&#10;@Update()" />
+    <MESSAGE value="xml模糊查询 多条件查询" />
+    <option name="LAST_COMMIT_MESSAGE" value="xml模糊查询 多条件查询" />
   </component>
 </project>

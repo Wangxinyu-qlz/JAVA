@@ -28,3 +28,13 @@ select * from `monster` where `name` like '%精%';
 
 select * from `monster` where id=12 or `name` = '大象精';
 
+select * from `monster` where id > 10 and `salary` > 40;
+
+create table `user` (
+    `user_id` int not null auto_increment,
+    `user_email` varchar(255) default '',
+    `user_name` varchar(255) default '',
+    primary key (`user_id`)
+) charset = utf8;
+
+insert into `user` (`user_email`, `user_name`) values ('qwetr@163.com', 'aiweuf');
