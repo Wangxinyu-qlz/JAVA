@@ -23,8 +23,6 @@ databaseIdProvider?,mappers?)"-->
         <package name="entity"/>
     </typeAliases> 
     
-
-    
     <environments default="development">
         <environment id="development">
             <!--配置事务管理器-->
@@ -50,6 +48,7 @@ databaseIdProvider?,mappers?)"-->
             </dataSource>
         </environment>
     </environments>
+    
     <mappers>
         <!--TODO 配置操作数据库的 xml 文件-->
         <!--<mapper resource="mapper/MonsterMapper.xml"/>-->
