@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="mapper.MonsterMapper">
+    <!--查询所有 age > 10 的妖怪，如果输入的 age <=0 ，输出所有妖怪-->
+    <select id="getMonsterByAge" parameterType="Integer" resultType="Monster">
+        select * from `monster`
+                 where true
+        <if test="age >= 0"> # 使用@Param注解
+            and age > #{age};
+        </if>
+    </select>
+    
+    
+    <!--id > 10 && name='牛魔王'
+    如果 id =null 不带该条件
+    如果 name=null 不带该条件
+    多余的 and 会去掉-->
+    <select id="getMonsterByIdAndName" parameterType="Integer" resultType="Monster">
+        select * from `monster`
+        <where>
+            <if test="id >=0">
+                and `id` > #{id}
+            </if>
+            <if test="name != null and name != ''">  # TODO 空的条件
+                and `name` = #{name}
+            </if>
+        </where>
+    </select>
+    
+    <!--name != null 按照 name 查询
+        id>0 按照 id 查询
+        如果都不满足，按照默认方法查找-->
+    <select id="getMonsterByIdOrName_choose" parameterType="Map" resultType="Monster">
+        select * from `monster`
+        <choose>
+            <when test=" name != null and name !='' ">
+                where `name` = #{name}
+            </when>
+            <when test="id > 0">
+                where `id` > #{id}
+            </when>
+            <otherwise>
+                where `salary` > 100
+            </otherwise>
+        </choose>
+    </select>
+</mapper>
