@@ -81,15 +81,43 @@
     <!--使用很少-->
     <!--按照 Name & Age 查询，如果sql语句开头有and | or | test 替换为where-->
     <!-- select * from `monster` where `name` = ? or `age` > ? -->
-        <select id="getMonsterByNameAndAge_Trim" parameterType="map" resultType="Monster">
-            select * from `monster`
-            <trim prefix="where" prefixOverrides="and|or|test">
-                <if test="name != null and name != '' ">
-                    test `name` = #{name}
-                </if>
-                <if test="age != null and age != '' ">
-                    or `age` > #{age}
-                </if>
-            </trim>
-        </select>
+    <select id="getMonsterByNameAndAge_Trim" parameterType="map" resultType="Monster">
+        select * from `monster`
+        <trim prefix="where" prefixOverrides="and|or|test">
+            <if test="name != null and name != '' ">
+                test `name` = #{name}
+            </if>
+            <if test="age != null and age != '' ">
+                or `age` > #{age}
+            </if>
+        </trim>
+    </select>
+    
+    <!--TODO 重要
+    对指定的id进行修改，如果没有设置新的属性，保持原来的值-->
+    <update id="updateMonster_set" parameterType="map">
+        update `monster`
+        <set>
+            <if test="age != null and age != ''">
+                `age` = #{age},
+            </if>
+            <if test="email != null and email != ''">
+                `email` = #{email},
+            </if>
+            <if test="name != null and name != ''">
+                `name` = #{name},
+            </if>
+            <if test="birthday != null and birthday != ''">
+                `birthday` = #{birthday},
+            </if>
+            <if test="salary != null and salary != ''">
+                `salary` = #{salary},
+            </if>
+            <if test="gender != null and gender != ''">
+                `gender` = #{gender},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+    
 </mapper>

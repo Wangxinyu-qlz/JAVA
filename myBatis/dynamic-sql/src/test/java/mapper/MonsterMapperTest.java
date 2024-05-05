@@ -103,4 +103,40 @@ public class MonsterMapperTest {
 
 		System.out.println("查询完毕~");
 	}
+
+	@Test
+	public void getMonsterByNameAndAge_Trim() {
+		Map<String, Object> map = new HashMap<>();
+		map.put("name", "牛魔王");
+		map.put("age", 20);
+
+		List<Monster> monsters = monsterMapper.getMonsterByNameAndAge_Trim(map);
+		for (Monster m : monsters) {
+			System.out.println("m=" + m);
+		}
+
+		if (sqlSession != null) {
+			sqlSession.close();
+		}
+
+		System.out.println("查询完毕~");
+	}
+
+	@Test
+	public void updateMonster_set() {
+		Map<String, Object> map = new HashMap<>();
+		map.put("name", "牛魔王");
+		map.put("id", "12");
+		map.put("email", "6541@qq.com");
+
+		monsterMapper.updateMonster_set(map);
+
+
+		if (sqlSession != null) {
+			sqlSession.commit();
+			sqlSession.close();
+		}
+
+		System.out.println("修改完毕~");
+	}
 }

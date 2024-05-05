@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mapper.PersonMapper">
+    <!--没有实现级联查询-->
+    <!--<select id="getPersonById" parameterType="Integer" resultType="Person">-->
+    <!--    select * from `person` where id = #{id}-->
+    <!--</select>-->
+    
+    <!--多表联查 方式1-->
+    <resultMap id="PersonResultMap" type="Person">
+        <!--<result property="id" column="id"/>-->
+        <!--TODO 标记处作为id的结果 可以提升整体性能-->
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <!--TODO 复杂类型的关联
+        1. propertiy="card" 表示 Person 对象的card属性
+        2. javaType表示 card 属性的类型 -->
+        <association property="card" javaType="IdenCard">
+            <result property="id" column="id"/>
+            <result property="card_sn" column="card_sn"/>
+        </association>
+    </resultMap>
+    <select id="getPersonById" parameterType="Integer" resultMap="PersonResultMap">
+        select *
+        from `person`,
+             `idencard`
+        where `person`.id = #{id}
+          and `person`.id = `idencard`.id;
+    </select>
+    
+    <!--多表联查 方式2-->
+    <resultMap id="PersonResultMap2" type="Person">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <!--简洁 易于维护 将多表联查分解为单表操作
+        1.property="card": 表示Person对象的card属性
+        2.column="card_id"：是
+            select * from `person` where `id` = #{id} 返回的字段card_id信息
+        3.返回的字段card_id 信息/数据 作为getIdenCardById的入参-->
+        <association property="card" column="card_id"
+                     select="mapper.IdenCardMapper.getIdenCardById"/>
+    </resultMap>
+    <select id="getPersonById" parameterType="Integer" resultMap="?">
+        select *
+        from `person`
+        where `id` = #{id}
+    </select>
+
+</mapper>

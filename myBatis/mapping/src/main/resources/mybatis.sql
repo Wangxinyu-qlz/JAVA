@@ -24,24 +24,3 @@ where id=4;
 
 select * from `monster` where id = 4;
 
-select * from monster where id in (5, 6, 8);
-
-
-
-#----------------------------------------------------------------
-create table person
-(
-    id int primary key auto_increment,
-    name varchar(32) not null default '',
-    card_id int,
-    foreign key (card_id) references idencard(id)
-) charset utf8;
-create table idencard
-(
-    id int primary key auto_increment,
-    card_sn varchar(32) not null default ''
-) charset utf8;
-insert into idencard values (1, '1111111111111111111110');
-insert into person values (1, '张三', 1);
-select * from person;
-select * from idencard;
