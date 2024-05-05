@@ -48,4 +48,33 @@
             </otherwise>
         </choose>
     </select>
+    
+    
+    <!--入参map中会如何传入 id值，k-v ids - [集合，如：List [10, 12, 14]]
+    map 入参中应该有 ids-[12, 14, 16]
+    
+    判断ids是否为空（null ''）
+    不为空，使用foreach标签进行遍历
+    collection="ids" 对应入参map的key - ids
+    item="id" 在遍历ids集合时，取出的值
+    TODO 如果写成index="id" ,无论ids是什么，都会根据ids的元素个数，从0开始索引
+     对于(10, 12, 14)，最终的结果是(0, 1, 2)
+     ==>  Preparing: select * from `monster` WHERE id IN ( ? , ? )
+     ==> Parameters: 0(Integer), 1(Integer), 2(Integer)
+    open 对应于 (10, 12, 14) 的 "("
+    separator 对应于 (10, 12, 14) 的 ","
+    close 对应于 (10, 12, 14) 的 ")"
+    #{id} 对应于 item 的 id
+    -->
+    <select id="getMonsterById_forEach" parameterType="map" resultType="Monster">
+        select * from `monster`
+        <if test=" ids != null and !ids.isEmpty() ">
+            <where>
+                id IN
+                 <foreach collection="ids" item="id" open="(" separator="," close=")">
+                     #{id}
+                 </foreach>
+            </where>
+        </if>
+    </select>
 </mapper>

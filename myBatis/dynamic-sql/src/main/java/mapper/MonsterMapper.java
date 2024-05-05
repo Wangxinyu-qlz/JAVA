@@ -18,5 +18,7 @@ public interface MonsterMapper {
 
 	List<Monster> getMonsterByIdAndName(Monster monster);
 
-	List<Monster> getMonsterByIdOrName_choose(Map<String ,Object> map);
+	List<Monster> getMonsterByIdOrName_choose(Map<String, Object> map);
+
+	List<Monster> getMonsterById_forEach(Map<String, Object> map);
 }

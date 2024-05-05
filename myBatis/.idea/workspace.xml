@@ -4,20 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="168b7bae-394f-47a3-a325-e8c2aeb9f009" name="Changes" comment="resultMap 解决字段名和属性名不一致的查询问题">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dynamic-sql/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dynamic-sql/src/main/java/entity/Monster.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dynamic-sql/src/main/java/mapper/MonsterMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dynamic-sql/src/main/java/mapper/MonsterMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dynamic-sql/src/main/java/util/MyBatisUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dynamic-sql/src/main/resources/jdbc.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dynamic-sql/src/main/resources/mybatis-config.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dynamic-sql/src/main/resources/mybatis.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dynamic-sql/src/test/java/mapper/MonsterMapperTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+    <list default="true" id="168b7bae-394f-47a3-a325-e8c2aeb9f009" name="Changes" comment="where if choose">
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dynamic-sql/src/main/java/mapper/MonsterMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/dynamic-sql/src/main/java/mapper/MonsterMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dynamic-sql/src/main/java/mapper/MonsterMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dynamic-sql/src/main/java/mapper/MonsterMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dynamic-sql/src/main/resources/mybatis.sql" beforeDir="false" afterPath="$PROJECT_DIR$/dynamic-sql/src/main/resources/mybatis.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dynamic-sql/src/test/java/mapper/MonsterMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/dynamic-sql/src/test/java/mapper/MonsterMapperTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,6 +61,7 @@
     "JUnit.MonsterMapperTest.getMonsterByIdAndSalary_ParameterHashMap.executor": "Run",
     "JUnit.MonsterMapperTest.getMonsterByIdAndSalary_ParameterHashMap_ReturnHashMap.executor": "Run",
     "JUnit.MonsterMapperTest.getMonsterByIdOrName_choose.executor": "Run",
+    "JUnit.MonsterMapperTest.getMonsterById_forEach.executor": "Run",
     "JUnit.MonsterMapperTest.getMonsterByName.executor": "Run",
     "JUnit.MonsterMapperTest.getMonsterByNameORId.executor": "Run",
     "JUnit.MonsterMapperTest.selectAllMonsterIf.executor": "Run",
@@ -100,7 +94,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.15179393",
-    "settings.editor.selected.configurable": "reference.projectsettings.compiler.javacompiler",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -123,7 +117,7 @@
       <recent name="main.java.util" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.MonsterMapperTest.getMonsterByIdOrName_choose">
+  <component name="RunManager" selected="JUnit.MonsterMapperTest.getMonsterById_forEach">
     <configuration name="MonsterMapperTest.getMonsterByIdOrName_choose" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="dynamic-sql" />
       <extension name="coverage">
@@ -135,6 +129,22 @@
       <option name="PACKAGE_NAME" value="mapper" />
       <option name="MAIN_CLASS_NAME" value="mapper.MonsterMapperTest" />
       <option name="METHOD_NAME" value="getMonsterByIdOrName_choose" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MonsterMapperTest.getMonsterById_forEach" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="dynamic-sql" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="mapper.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="mapper" />
+      <option name="MAIN_CLASS_NAME" value="mapper.MonsterMapperTest" />
+      <option name="METHOD_NAME" value="getMonsterById_forEach" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -188,29 +198,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserMapperTest.getAllUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="xml-mapper" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="mapper.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="mapper" />
-      <option name="MAIN_CLASS_NAME" value="mapper.UserMapperTest" />
-      <option name="METHOD_NAME" value="getAllUser" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.MonsterMapperTest.getMonsterById_forEach" />
         <item itemvalue="JUnit.MonsterMapperTest.getMonsterByIdOrName_choose" />
         <item itemvalue="JUnit.MonsterMapperTest.selectAllMonsterIfWhere" />
         <item itemvalue="JUnit.MonsterMapperTest.selectAllMonsterIf" />
         <item itemvalue="JUnit.MonsterMapperTest.test1" />
-        <item itemvalue="JUnit.UserMapperTest.getAllUser" />
       </list>
     </recent_temporary>
   </component>
@@ -231,7 +225,8 @@
       <option name="presentableId" value="Default" />
       <updated>1714463552781</updated>
       <workItem from="1714463553912" duration="18067000" />
-      <workItem from="1714564477751" duration="17908000" />
+      <workItem from="1714564477751" duration="28883000" />
+      <workItem from="1714902372860" duration="59000" />
     </task>
     <task id="LOCAL-00001" summary="mybatis xml/注解配置操作数据库 日志 keyProperty useGeneratedKeys&#10;@Options(useGeneratedKeys=true, keyProperty=&quot;id&quot;)&#10;@Delete()&#10;@Select()&#10;@Insert()&#10;@Update()">
       <option name="closed" value="true" />
@@ -265,16 +260,36 @@
       <option name="project" value="LOCAL" />
       <updated>1714637592968</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="where if choose">
+      <option name="closed" value="true" />
+      <created>1714642088210</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1714642088210</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="mybatis xml/注解配置操作数据库 日志 keyProperty useGeneratedKeys&#10;@Options(useGeneratedKeys=true, keyProperty=&quot;id&quot;)&#10;@Delete()&#10;@Select()&#10;@Insert()&#10;@Update()" />
     <MESSAGE value="xml模糊查询 多条件查询" />
     <MESSAGE value="resultMap 解决字段名和属性名不一致的查询问题" />
-    <option name="LAST_COMMIT_MESSAGE" value="resultMap 解决字段名和属性名不一致的查询问题" />
+    <MESSAGE value="where if choose" />
+    <option name="LAST_COMMIT_MESSAGE" value="where if choose" />
   </component>
 </project>

@@ -24,3 +24,4 @@ where id=4;
 
 select * from `monster` where id = 4;
 
+select * from monster where id in (5, 6, 8);
