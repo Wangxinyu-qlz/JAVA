@@ -68,7 +68,7 @@
     -->
     <select id="getMonsterById_forEach" parameterType="map" resultType="Monster">
         select * from `monster`
-        <if test=" ids != null and !ids.isEmpty() ">
+        <if test=" ids != null and !ids.isEmpty() ">  # 注意这里的判空条件
             <where>
                 id IN
                  <foreach collection="ids" item="id" open="(" separator="," close=")">
@@ -77,4 +77,19 @@
             </where>
         </if>
     </select>
+    
+    <!--使用很少-->
+    <!--按照 Name & Age 查询，如果sql语句开头有and | or | test 替换为where-->
+    <!-- select * from `monster` where `name` = ? or `age` > ? -->
+        <select id="getMonsterByNameAndAge_Trim" parameterType="map" resultType="Monster">
+            select * from `monster`
+            <trim prefix="where" prefixOverrides="and|or|test">
+                <if test="name != null and name != '' ">
+                    test `name` = #{name}
+                </if>
+                <if test="age != null and age != '' ">
+                    or `age` > #{age}
+                </if>
+            </trim>
+        </select>
 </mapper>
