@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="mapper.UserMapper">
+    <!--TODO
+            1.先通过user_id得到User信息
+            2.根据user_id得到Pets信息 并映射到User::List<Pet> pets-->
+    <resultMap id="UserResultMap" type="User">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <!--ofType指定查到的集合中存存放的数据类型
+        这里的column="id" 是 select * from users where id = #{id} 返回的结果的"id"-->
+        <collection property="pets" column="id" ofType="Pet"
+                    select="mapper.PetMapper.getPetByUserId"/>
+    </resultMap>
+    
+    <select id="getUserById" parameterType="Integer" resultMap="UserResultMap">
+        select * from users where id = #{id}
+    </select>
+</mapper>

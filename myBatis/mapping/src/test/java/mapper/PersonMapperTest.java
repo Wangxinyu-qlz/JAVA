@@ -1,6 +1,5 @@
 package mapper;
 
-import entity.IdenCard;
 import entity.Person;
 import org.apache.ibatis.session.SqlSession;
 import org.junit.Before;
@@ -31,6 +30,18 @@ public class PersonMapperTest {
 	@Test
 	public void getIdenCardByCardId() {
 		Person personById = personMapper.getPersonById(1);
+		System.out.println("personById:" + personById);
+
+		if(sqlSession != null) {
+			sqlSession.close();
+		}
+
+		System.out.println("ok");
+	}
+
+	@Test
+	public void getIdenCardByCardId2() {
+		Person personById = personMapper.getPersonById2(1);
 		System.out.println("personById:" + personById);
 
 		if(sqlSession != null) {

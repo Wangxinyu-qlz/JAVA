@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<!--TODO 元素类型为 "configuration" 的内容必须匹配
+"(properties?,settings?,typeAliases?,typeHandlers?,objectFactory?,
+objectWrapperFactory?,reflectorFactory?,plugins?,environments?,
+databaseIdProvider?,mappers?)"-->
+<configuration>
+    <!--引入外部jdbc.properties文件-->
+    <properties resource="jdbc.properties"/>
+    <!--配置日志输出  STDOUT_LOGGING  MyBatis自带日志 原生sql  LOG4J2-->
+    <settings>
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+        <!--全局性的开启或者关闭所有映射器配置文件中已配置的任何缓存   默认为true-->
+        <setting name="cacheEnabled" value="true"/>
+    </settings>
+    
+    <!--配置别名-->
+    <typeAliases>
+        <!--<typeAlias type="entity.Monster" alias="Monster"/>-->
+        
+        <!--直接引入包，包下的类都可以直接使用-->
+        <package name="entity"/>
+    </typeAliases> 
+    
+
+    
+    <environments default="development">
+        <environment id="development">
+            <!--配置事务管理器-->
+            <transactionManager type="JDBC"/>
+            
+            <!--配置数据源-->
+            <dataSource type="POOLED">
+                <!--配置驱动-->
+                <!--使用外部properties文件配置相关值
+                    该文件一定要放在resources文件夹下
+                    在properties文件中，不需要转义字符 即直接写 &  而不是&amp  -->
+                <property name="driver" value="${jdbc.driver}"/>
+                <property name="url" value="${jdbc.url}"/>
+                <property name="username" value="${jdbc.username}"/>
+                <property name="password" value="${jdbc.password}"/>
+                
+                <!--<property name="driver" value="com.mysql.jdbc.Driver"/>-->
+                <!--&lt;!&ndash;userSSL=true 使用安全连接-->
+                <!--&amp;  转义符等价于 & -->
+                <!--<property name="url" value="jdbc:mysql://127.0.0.1:3306/mybatis?userSSL=true&amp;userUnicode=true&amp;characterEncoding=UTF-8"/>-->
+                <!--<property name="username" value="root"/>-->
+                <!--<property name="password" value="root"/>-->
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <!--TODO 配置操作数据库的 xml 文件-->
+        <!--<mapper resource="mapper/MonsterMapper.xml"/>-->
+        <!--TODO 注意这里是class-->
+        <!--<mapper class="mapper.MonsterAnnotation"/>-->
+        <!--直接导入包，包下的所有Mapper.xml和基于注解实现的接口都可使用-->
+        <package name="mapper"/>
+    </mappers>
+</configuration>

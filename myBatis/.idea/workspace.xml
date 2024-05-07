@@ -5,7 +5,41 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="168b7bae-394f-47a3-a325-e8c2aeb9f009" name="Changes" comment="多表联查">
+      <change afterPath="$PROJECT_DIR$/cache/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cache/src/main/java/entity/Monster.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cache/src/main/java/mapper/MonsterMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cache/src/main/java/mapper/MonsterMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cache/src/main/java/util/MyBatisUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cache/src/main/resources/jdbc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cache/src/main/resources/mybatis-config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cache/src/main/resources/mybatis.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cache/src/test/java/mapper/MonsterMapperTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mapping/src/main/java/entity/Pet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mapping/src/main/java/entity/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mapping/src/main/java/mapper/IdenCardMapperAnnotation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mapping/src/main/java/mapper/PersonMapperAnnotation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mapping/src/main/java/mapper/PetMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mapping/src/main/java/mapper/PetMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mapping/src/main/java/mapper/PetMapperAnnotation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mapping/src/main/java/mapper/UserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mapping/src/main/java/mapper/UserMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mapping/src/main/java/mapper/UserMapperAnnotation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mapping/src/test/java/mapper/IdenCardMapperAnnotationTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mapping/src/test/java/mapper/PersonMapperAnnotationTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mapping/src/test/java/mapper/PetMapperAnnotationTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mapping/src/test/java/mapper/PetMapperTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mapping/src/test/java/mapper/UserMapperAnnotationTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mapping/src/test/java/mapper/UserMapperTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mapping/src/main/java/mapper/PersonMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mapping/src/main/java/mapper/PersonMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mapping/src/main/resources/mybatis.sql" beforeDir="false" afterPath="$PROJECT_DIR$/mapping/src/main/resources/mybatis.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mapping/src/test/java/mapper/IdenCardMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/mapping/src/test/java/mapper/IdenCardMapperTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mapping/src/test/java/mapper/PersonMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/mapping/src/test/java/mapper/PersonMapperTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mybatis_quickstart/src/main/java/mapper/MonsterMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis_quickstart/src/main/java/mapper/MonsterMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mybatis_quickstart/src/test/java/mapper/MonsterMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis_quickstart/src/test/java/mapper/MonsterMapperTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,11 +84,14 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "JUnit.IdenCardMapperAnnotationTest.test1.executor": "Run",
+    "JUnit.IdenCardMapperAnnotationTest.test2.executor": "Run",
     "JUnit.IdenCardMapperTest.getIdenCardByCardId.executor": "Run",
     "JUnit.IdenCardMapperTest.test1.executor": "Run",
     "JUnit.MonsterAnnotationTest.add.executor": "Run",
     "JUnit.MonsterAnnotationTest.init.executor": "Run",
     "JUnit.MonsterMapperTest.addMonster.executor": "Run",
+    "JUnit.MonsterMapperTest.cacheSeqTest.executor": "Run",
     "JUnit.MonsterMapperTest.deleteMonster.executor": "Run",
     "JUnit.MonsterMapperTest.getMonsterByIdAndSalary_ParameterHashMap.executor": "Run",
     "JUnit.MonsterMapperTest.getMonsterByIdAndSalary_ParameterHashMap_ReturnHashMap.executor": "Run",
@@ -63,9 +100,12 @@
     "JUnit.MonsterMapperTest.getMonsterByName.executor": "Run",
     "JUnit.MonsterMapperTest.getMonsterByNameAndAge_Trim.executor": "Run",
     "JUnit.MonsterMapperTest.getMonsterByNameORId.executor": "Run",
+    "JUnit.MonsterMapperTest.level1CacheTest.executor": "Run",
+    "JUnit.MonsterMapperTest.level2CacheTest.executor": "Debug",
     "JUnit.MonsterMapperTest.selectAllMonsterIf.executor": "Run",
     "JUnit.MonsterMapperTest.selectAllMonsterIfWhere.executor": "Run",
     "JUnit.MonsterMapperTest.selectAllMonsters.executor": "Run",
+    "JUnit.MonsterMapperTest.selectMonster (1).executor": "Run",
     "JUnit.MonsterMapperTest.selectMonster.executor": "Run",
     "JUnit.MonsterMapperTest.test1.executor": "Run",
     "JUnit.MonsterMapperTest.updateMonster.executor": "Run",
@@ -75,10 +115,19 @@
     "JUnit.MyBatisNativeAPITest.nativeDelete.executor": "Run",
     "JUnit.MyBatisNativeAPITest.nativeSelect.executor": "Run",
     "JUnit.MyBatisNativeAPITest.nativeUpdate.executor": "Run",
+    "JUnit.PersonMapperAnnotationTest.test2.executor": "Run",
     "JUnit.PersonMapperTest.getIdenCardByCardId.executor": "Run",
+    "JUnit.PersonMapperTest.getIdenCardByCardId2.executor": "Run",
+    "JUnit.PetMapperAnnotationTest.test.executor": "Run",
+    "JUnit.PetMapperAnnotationTest.test1.executor": "Run",
+    "JUnit.PetMapperTest.test2.executor": "Run",
+    "JUnit.PetMapperTest.test3.executor": "Run",
+    "JUnit.UserMapperAnnotationTest.test1.executor": "Run",
+    "JUnit.UserMapperAnnotationTest.test2.executor": "Run",
     "JUnit.UserMapperTest.add.executor": "Run",
     "JUnit.UserMapperTest.getAllUser.executor": "Run",
     "JUnit.UserMapperTest.test1.executor": "Run",
+    "JUnit.UserMapperTest.test2.executor": "Run",
     "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
     "Maven.mybatis [clean].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -86,7 +135,7 @@
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/My_Code/Java/mybatis/mapping/src/main/resources",
+    "last_opened_file_path": "C:/My_Code/Java/mybatis/cache/src/main/resources",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -106,54 +155,26 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\My_Code\Java\mybatis\cache\src\main\resources" />
+      <recent name="C:\My_Code\Java\mybatis\cache\src\main\java\mapper" />
       <recent name="C:\My_Code\Java\mybatis\mapping\src\main\resources" />
       <recent name="C:\My_Code\Java\mybatis\dynamic-sql\src\main\java" />
       <recent name="C:\My_Code\Java\mybatis\dynamic-sql\src\main\java\mapper" />
-      <recent name="C:\My_Code\Java\mybatis\dynamic-sql\src\main\resources" />
-      <recent name="C:\My_Code\Java\mybatis\xml-mapper\src\main\resources" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="mapper" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="util" />
       <recent name="mapper" />
+      <recent name="entity" />
+      <recent name="util" />
       <recent name="main.java.entity" />
       <recent name="main.java.util" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.PersonMapperTest.getIdenCardByCardId">
-    <configuration name="IdenCardMapperTest.getIdenCardByCardId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="mapping" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="mapper.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="mapper" />
-      <option name="MAIN_CLASS_NAME" value="mapper.IdenCardMapperTest" />
-      <option name="METHOD_NAME" value="getIdenCardByCardId" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="IdenCardMapperTest.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="mapping" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="mapper.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="mapper" />
-      <option name="MAIN_CLASS_NAME" value="mapper.IdenCardMapperTest" />
-      <option name="METHOD_NAME" value="test1" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MonsterMapperTest.getMonsterByNameAndAge_Trim" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="dynamic-sql" />
+  <component name="RunManager" selected="JUnit.MonsterMapperTest.cacheSeqTest">
+    <configuration name="MonsterMapperTest.cacheSeqTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="cache" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="mapper.*" />
@@ -162,14 +183,14 @@
       </extension>
       <option name="PACKAGE_NAME" value="mapper" />
       <option name="MAIN_CLASS_NAME" value="mapper.MonsterMapperTest" />
-      <option name="METHOD_NAME" value="getMonsterByNameAndAge_Trim" />
+      <option name="METHOD_NAME" value="cacheSeqTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MonsterMapperTest.updateMonster_set" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="dynamic-sql" />
+    <configuration name="MonsterMapperTest.level1CacheTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="cache" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="mapper.*" />
@@ -178,13 +199,45 @@
       </extension>
       <option name="PACKAGE_NAME" value="mapper" />
       <option name="MAIN_CLASS_NAME" value="mapper.MonsterMapperTest" />
-      <option name="METHOD_NAME" value="updateMonster_set" />
+      <option name="METHOD_NAME" value="level1CacheTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PersonMapperTest.getIdenCardByCardId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MonsterMapperTest.level2CacheTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="cache" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="mapper.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="mapper" />
+      <option name="MAIN_CLASS_NAME" value="mapper.MonsterMapperTest" />
+      <option name="METHOD_NAME" value="level2CacheTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MonsterMapperTest.selectMonster (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="cache" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="mapper.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="mapper" />
+      <option name="MAIN_CLASS_NAME" value="mapper.MonsterMapperTest" />
+      <option name="METHOD_NAME" value="selectMonster" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserMapperTest.test2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="mapping" />
       <extension name="coverage">
         <pattern>
@@ -193,8 +246,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="mapper" />
-      <option name="MAIN_CLASS_NAME" value="mapper.PersonMapperTest" />
-      <option name="METHOD_NAME" value="getIdenCardByCardId" />
+      <option name="MAIN_CLASS_NAME" value="mapper.UserMapperTest" />
+      <option name="METHOD_NAME" value="test2" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -202,11 +255,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.PersonMapperTest.getIdenCardByCardId" />
-        <item itemvalue="JUnit.IdenCardMapperTest.getIdenCardByCardId" />
-        <item itemvalue="JUnit.IdenCardMapperTest.test1" />
-        <item itemvalue="JUnit.MonsterMapperTest.updateMonster_set" />
-        <item itemvalue="JUnit.MonsterMapperTest.getMonsterByNameAndAge_Trim" />
+        <item itemvalue="JUnit.MonsterMapperTest.cacheSeqTest" />
+        <item itemvalue="JUnit.MonsterMapperTest.level2CacheTest" />
+        <item itemvalue="JUnit.MonsterMapperTest.level1CacheTest" />
+        <item itemvalue="JUnit.MonsterMapperTest.selectMonster (1)" />
+        <item itemvalue="JUnit.UserMapperTest.test2" />
       </list>
     </recent_temporary>
   </component>
@@ -228,7 +281,7 @@
       <updated>1714463552781</updated>
       <workItem from="1714463553912" duration="18067000" />
       <workItem from="1714564477751" duration="28883000" />
-      <workItem from="1714902372860" duration="15511000" />
+      <workItem from="1714902372860" duration="34237000" />
     </task>
     <task id="LOCAL-00001" summary="mybatis xml/注解配置操作数据库 日志 keyProperty useGeneratedKeys&#10;@Options(useGeneratedKeys=true, keyProperty=&quot;id&quot;)&#10;@Delete()&#10;@Select()&#10;@Insert()&#10;@Update()">
       <option name="closed" value="true" />
@@ -294,7 +347,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714922053583</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="多表联查">
+      <option name="closed" value="true" />
+      <created>1715061792637</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1715061792638</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -321,5 +382,26 @@
     <MESSAGE value="trim使用很少" />
     <MESSAGE value="多表联查" />
     <option name="LAST_COMMIT_MESSAGE" value="多表联查" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/cache/src/test/java/mapper/MonsterMapperTest.java</url>
+          <line>44</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/org/mybatis/mybatis/3.5.6/mybatis-3.5.6-sources.jar!/org/apache/ibatis/session/defaults/DefaultSqlSession.java</url>
+          <line>75</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/cache/src/test/java/mapper/MonsterMapperTest.java</url>
+          <line>72</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

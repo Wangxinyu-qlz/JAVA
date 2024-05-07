@@ -99,7 +99,7 @@ public class MonsterMapperTest {
 	//查询
 	@Test
 	public void selectMonster() {
-		Monster monster = monsterMapper.getMonsterById(4);
+		Monster monster = monsterMapper.getMonsterById(5);
 		System.out.println("查询成功---");
 		System.out.println(monster);
 	}

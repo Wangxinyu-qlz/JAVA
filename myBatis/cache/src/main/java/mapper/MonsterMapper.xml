@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="mapper.MonsterMapper">
+    <!--配置二级缓存
+    FIFO:先进先出策略
+    flushInterval：刷新时间（毫秒）
+    size="512"：引用数目
+    readOnly="true"：只读属性，默认是false 更安全，true性能更好
+        如果只是用于读操作，true。如果要修改，最好设置为false-->
+    <cache eviction="FIFO" flushInterval="60000" size="512" readOnly="true" />
+    
+    <select id="getMonsterById" parameterType="Integer" resultType="Monster">
+        select * from `monster` where id = #{id};
+    </select>
+    
+    <!--如果返回集合，应该写成集合包含的类型，而不是集合本身的类型-->
+    <select id="getAllMonsters" resultType="Monster" useCache="false">
+        select * from `monster`;
+    </select>
+</mapper>

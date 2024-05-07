@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="mapper.PetMapper">
+    <resultMap id="PetResultMap" type="Pet">
+        <id property="id" column="id"/>
+        <result property="nickname" column="nickname"/>
+        <association property="user" column="user_id"
+                     select="mapper.UserMapper.getUserById"/>
+    </resultMap>
+    
+    
+    <select id="getPetByUserId" parameterType="Integer" resultMap="PetResultMap">
+        <!--List<Pet> getPetByUserId(Integer UserId);-->
+        select * from pets where user_id = #{UserId}
+    </select>
+    
+    <!--TODO 复用
+    Pet getPetById(Integer id);-->
+    <select id="getPetById" parameterType="Integer" resultMap="PetResultMap">
+        select * from pets where id=#{id}
+    </select>
+</mapper>

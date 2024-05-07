@@ -32,7 +32,10 @@ public class IdenCardMapperTest {
 
 	@Test
 	public void getIdenCardByCardId() {
+		long l = System.currentTimeMillis();
 		IdenCard idenCardById = idenCardMapper.getIdenCardById(1);
+		long l1 = System.currentTimeMillis();
+		System.out.println("执行时间：" + (l1 - l) + "ms");
 		System.out.println("idenCardById:" + idenCardById);
 
 		if(sqlSession != null) {

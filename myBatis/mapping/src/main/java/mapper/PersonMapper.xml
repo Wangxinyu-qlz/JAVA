@@ -9,16 +9,20 @@
     <!--    select * from `person` where id = #{id}-->
     <!--</select>-->
     
+    <!--============================================================================================-->
     <!--多表联查 方式1-->
+    <!--getPersonById()最终返回的是Person [至少有级联的对象属性] Type仍然配置Person
+    property:属性名字   column:数据库字段名-->
     <resultMap id="PersonResultMap" type="Person">
         <!--<result property="id" column="id"/>-->
         <!--TODO 标记处作为id的结果 可以提升整体性能-->
         <id property="id" column="id"/>
         <result property="name" column="name"/>
         <!--TODO 复杂类型的关联
-        1. propertiy="card" 表示 Person 对象的card属性
+        1. property="card" 表示 Person 对象的card属性
         2. javaType表示 card 属性的类型 -->
         <association property="card" javaType="IdenCard">
+            <!--指定IdenCard的属性名字和对应的数据库字段名字-->
             <result property="id" column="id"/>
             <result property="card_sn" column="card_sn"/>
         </association>
@@ -31,19 +35,25 @@
           and `person`.id = `idencard`.id;
     </select>
     
-    <!--多表联查 方式2-->
+    <!--===========================================================================================-->
+    <!--多表联查 方式2
+    TODO 推荐：简洁 易于维护 将多表联查分解为单表操作，可以复用其他方法
+        1）先通过 select * from `person` where `id` = #{id} 返回Person信息
+        2）在通过返回的card_id 值，执行操作得到 IdenCard 数据-->
     <resultMap id="PersonResultMap2" type="Person">
         <id property="id" column="id"/>
         <result property="name" column="name"/>
-        <!--简洁 易于维护 将多表联查分解为单表操作
+        <!--
         1.property="card": 表示Person对象的card属性
-        2.column="card_id"：是
+        2.TODO column="card_id"：是
             select * from `person` where `id` = #{id} 返回的字段card_id信息
-        3.返回的字段card_id 信息/数据 作为getIdenCardById的入参-->
+        3.返回的字段card_id 数据 作为getIdenCardById的入参 进行查询-->
         <association property="card" column="card_id"
                      select="mapper.IdenCardMapper.getIdenCardById"/>
     </resultMap>
-    <select id="getPersonById" parameterType="Integer" resultMap="?">
+    <select id="getPersonById2" parameterType="Integer" resultMap="PersonResultMap2">
+        <!--<association property="card" column="my_id"-->
+#         select id,`name`,card_id as my_id
         select *
         from `person`
         where `id` = #{id}
