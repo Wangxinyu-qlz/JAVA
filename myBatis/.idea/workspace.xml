@@ -4,27 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="168b7bae-394f-47a3-a325-e8c2aeb9f009" name="Changes" comment="trim使用很少">
-      <change afterPath="$PROJECT_DIR$/mapping/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mapping/src/main/java/entity/IdenCard.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mapping/src/main/java/entity/Person.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mapping/src/main/java/mapper/IdenCardMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mapping/src/main/java/mapper/IdenCardMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mapping/src/main/java/mapper/PersonMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mapping/src/main/java/mapper/PersonMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mapping/src/main/java/util/MyBatisUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mapping/src/main/resources/jdbc.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mapping/src/main/resources/mybatis-config.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mapping/src/main/resources/mybatis.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mapping/src/test/java/mapper/IdenCardMapperTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mapping/src/test/java/mapper/PersonMapperTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+    <list default="true" id="168b7bae-394f-47a3-a325-e8c2aeb9f009" name="Changes" comment="多表联查">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dynamic-sql/src/main/java/mapper/MonsterMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/dynamic-sql/src/main/java/mapper/MonsterMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dynamic-sql/src/main/java/mapper/MonsterMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dynamic-sql/src/main/java/mapper/MonsterMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dynamic-sql/src/main/resources/mybatis.sql" beforeDir="false" afterPath="$PROJECT_DIR$/dynamic-sql/src/main/resources/mybatis.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dynamic-sql/src/test/java/mapper/MonsterMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/dynamic-sql/src/test/java/mapper/MonsterMapperTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -247,7 +228,7 @@
       <updated>1714463552781</updated>
       <workItem from="1714463553912" duration="18067000" />
       <workItem from="1714564477751" duration="28883000" />
-      <workItem from="1714902372860" duration="11361000" />
+      <workItem from="1714902372860" duration="15511000" />
     </task>
     <task id="LOCAL-00001" summary="mybatis xml/注解配置操作数据库 日志 keyProperty useGeneratedKeys&#10;@Options(useGeneratedKeys=true, keyProperty=&quot;id&quot;)&#10;@Delete()&#10;@Select()&#10;@Insert()&#10;@Update()">
       <option name="closed" value="true" />
@@ -305,7 +286,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714913070678</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="多表联查">
+      <option name="closed" value="true" />
+      <created>1714922053583</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1714922053583</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -330,6 +319,7 @@
     <MESSAGE value="foreach" />
     <MESSAGE value="ids != null and !ids.isEmpty()" />
     <MESSAGE value="trim使用很少" />
-    <option name="LAST_COMMIT_MESSAGE" value="trim使用很少" />
+    <MESSAGE value="多表联查" />
+    <option name="LAST_COMMIT_MESSAGE" value="多表联查" />
   </component>
 </project>
