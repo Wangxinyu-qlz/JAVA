@@ -4,10 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="168b7bae-394f-47a3-a325-e8c2aeb9f009" name="Changes" comment="缓存 二级缓存-&gt;一级缓存">
-      <change afterPath="$PROJECT_DIR$/cache/src/main/resources/ehcache.xml" afterDir="false" />
+    <list default="true" id="168b7bae-394f-47a3-a325-e8c2aeb9f009" name="Changes" comment="ehcache  完结撒花">
+      <change afterPath="$PROJECT_DIR$/../furnature_ssm/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../furnature_ssm/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../furnature_ssm/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../furnature_ssm/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../furnature_ssm/src/main/java/furnature/controller/TestController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../furnature_ssm/src/main/resources/applicationContext.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../furnature_ssm/src/main/resources/jdbc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../furnature_ssm/src/main/webapp/WEB-INF/dispatcher-servlet.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../furnature_ssm/src/main/webapp/WEB-INF/views/hi.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../furnature_ssm/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../furnature_ssm/src/main/webapp/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cache/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/cache/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cache/src/main/java/mapper/MonsterMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/cache/src/main/java/mapper/MonsterMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cache/src/main/resources/jdbc.properties" beforeDir="false" afterPath="$PROJECT_DIR$/cache/src/main/resources/jdbc.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cache/src/test/java/mapper/MonsterMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/cache/src/test/java/mapper/MonsterMapperTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,78 +62,78 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "JUnit.IdenCardMapperAnnotationTest.test1.executor": "Run",
-    "JUnit.IdenCardMapperAnnotationTest.test2.executor": "Run",
-    "JUnit.IdenCardMapperTest.getIdenCardByCardId.executor": "Run",
-    "JUnit.IdenCardMapperTest.test1.executor": "Run",
-    "JUnit.MonsterAnnotationTest.add.executor": "Run",
-    "JUnit.MonsterAnnotationTest.init.executor": "Run",
-    "JUnit.MonsterMapperTest.addMonster.executor": "Run",
-    "JUnit.MonsterMapperTest.cacheSeqTest.executor": "Run",
-    "JUnit.MonsterMapperTest.deleteMonster.executor": "Run",
-    "JUnit.MonsterMapperTest.ehCacheTest.executor": "Run",
-    "JUnit.MonsterMapperTest.getMonsterByIdAndSalary_ParameterHashMap.executor": "Run",
-    "JUnit.MonsterMapperTest.getMonsterByIdAndSalary_ParameterHashMap_ReturnHashMap.executor": "Run",
-    "JUnit.MonsterMapperTest.getMonsterByIdOrName_choose.executor": "Run",
-    "JUnit.MonsterMapperTest.getMonsterById_forEach.executor": "Run",
-    "JUnit.MonsterMapperTest.getMonsterByName.executor": "Run",
-    "JUnit.MonsterMapperTest.getMonsterByNameAndAge_Trim.executor": "Run",
-    "JUnit.MonsterMapperTest.getMonsterByNameORId.executor": "Run",
-    "JUnit.MonsterMapperTest.level1CacheTest.executor": "Run",
-    "JUnit.MonsterMapperTest.level2CacheTest.executor": "Debug",
-    "JUnit.MonsterMapperTest.selectAllMonsterIf.executor": "Run",
-    "JUnit.MonsterMapperTest.selectAllMonsterIfWhere.executor": "Run",
-    "JUnit.MonsterMapperTest.selectAllMonsters.executor": "Run",
-    "JUnit.MonsterMapperTest.selectMonster (1).executor": "Run",
-    "JUnit.MonsterMapperTest.selectMonster.executor": "Run",
-    "JUnit.MonsterMapperTest.test1.executor": "Run",
-    "JUnit.MonsterMapperTest.updateMonster.executor": "Run",
-    "JUnit.MonsterMapperTest.updateMonster_set.executor": "Run",
-    "JUnit.MyBatisNativeAPITest.init.executor": "Run",
-    "JUnit.MyBatisNativeAPITest.nativeCRUD.executor": "Run",
-    "JUnit.MyBatisNativeAPITest.nativeDelete.executor": "Run",
-    "JUnit.MyBatisNativeAPITest.nativeSelect.executor": "Run",
-    "JUnit.MyBatisNativeAPITest.nativeUpdate.executor": "Run",
-    "JUnit.PersonMapperAnnotationTest.test2.executor": "Run",
-    "JUnit.PersonMapperTest.getIdenCardByCardId.executor": "Run",
-    "JUnit.PersonMapperTest.getIdenCardByCardId2.executor": "Run",
-    "JUnit.PetMapperAnnotationTest.test.executor": "Run",
-    "JUnit.PetMapperAnnotationTest.test1.executor": "Run",
-    "JUnit.PetMapperTest.test2.executor": "Run",
-    "JUnit.PetMapperTest.test3.executor": "Run",
-    "JUnit.UserMapperAnnotationTest.test1.executor": "Run",
-    "JUnit.UserMapperAnnotationTest.test2.executor": "Run",
-    "JUnit.UserMapperTest.add.executor": "Run",
-    "JUnit.UserMapperTest.getAllUser.executor": "Run",
-    "JUnit.UserMapperTest.test1.executor": "Run",
-    "JUnit.UserMapperTest.test2.executor": "Run",
-    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
-    "Maven.mybatis [clean].executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/My_Code/Java/mybatis/cache/src/main/resources",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.15179393",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;JUnit.IdenCardMapperAnnotationTest.test1.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.IdenCardMapperAnnotationTest.test2.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.IdenCardMapperTest.getIdenCardByCardId.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.IdenCardMapperTest.test1.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MonsterAnnotationTest.add.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MonsterAnnotationTest.init.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MonsterMapperTest.addMonster.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MonsterMapperTest.cacheSeqTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MonsterMapperTest.deleteMonster.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MonsterMapperTest.ehCacheTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MonsterMapperTest.getMonsterByIdAndSalary_ParameterHashMap.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MonsterMapperTest.getMonsterByIdAndSalary_ParameterHashMap_ReturnHashMap.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MonsterMapperTest.getMonsterByIdOrName_choose.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MonsterMapperTest.getMonsterById_forEach.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MonsterMapperTest.getMonsterByName.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MonsterMapperTest.getMonsterByNameAndAge_Trim.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MonsterMapperTest.getMonsterByNameORId.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MonsterMapperTest.level1CacheTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MonsterMapperTest.level2CacheTest.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.MonsterMapperTest.selectAllMonsterIf.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MonsterMapperTest.selectAllMonsterIfWhere.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MonsterMapperTest.selectAllMonsters.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MonsterMapperTest.selectMonster (1).executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MonsterMapperTest.selectMonster.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MonsterMapperTest.test1.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MonsterMapperTest.updateMonster.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MonsterMapperTest.updateMonster_set.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MyBatisNativeAPITest.init.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MyBatisNativeAPITest.nativeCRUD.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MyBatisNativeAPITest.nativeDelete.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MyBatisNativeAPITest.nativeSelect.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MyBatisNativeAPITest.nativeUpdate.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PersonMapperAnnotationTest.test2.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PersonMapperTest.getIdenCardByCardId.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PersonMapperTest.getIdenCardByCardId2.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PetMapperAnnotationTest.test.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PetMapperAnnotationTest.test1.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PetMapperTest.test2.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PetMapperTest.test3.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserMapperAnnotationTest.test1.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserMapperAnnotationTest.test2.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserMapperTest.add.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserMapperTest.getAllUser.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserMapperTest.test1.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserMapperTest.test2.executor&quot;: &quot;Run&quot;,
+    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.mybatis [clean].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/My_Code/Java/mybatis/cache/src/main/resources&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.15179393&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\My_Code\Java\mybatis\cache\src\main\resources" />
@@ -250,7 +262,8 @@
       <updated>1714463552781</updated>
       <workItem from="1714463553912" duration="18067000" />
       <workItem from="1714564477751" duration="28883000" />
-      <workItem from="1714902372860" duration="37213000" />
+      <workItem from="1714902372860" duration="37402000" />
+      <workItem from="1715143114819" duration="30000" />
     </task>
     <task id="LOCAL-00001" summary="mybatis xml/注解配置操作数据库 日志 keyProperty useGeneratedKeys&#10;@Options(useGeneratedKeys=true, keyProperty=&quot;id&quot;)&#10;@Delete()&#10;@Select()&#10;@Insert()&#10;@Update()">
       <option name="closed" value="true" />
@@ -332,7 +345,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715095632529</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="ehcache  完结撒花">
+      <option name="closed" value="true" />
+      <created>1715137368958</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1715137368958</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -359,7 +380,8 @@
     <MESSAGE value="trim使用很少" />
     <MESSAGE value="多表联查" />
     <MESSAGE value="缓存 二级缓存-&gt;一级缓存" />
-    <option name="LAST_COMMIT_MESSAGE" value="缓存 二级缓存-&gt;一级缓存" />
+    <MESSAGE value="ehcache  完结撒花" />
+    <option name="LAST_COMMIT_MESSAGE" value="ehcache  完结撒花" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

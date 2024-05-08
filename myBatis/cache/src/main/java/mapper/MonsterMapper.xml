@@ -11,7 +11,10 @@
     size="512"：引用数目
     readOnly="true"：只读属性，默认是false 更安全，true性能更好
         如果只是用于读操作，true。如果要修改，最好设置为false-->
-    <cache eviction="FIFO" flushInterval="60000" size="512" readOnly="true" />
+    <!--<cache eviction="FIFO" flushInterval="60000" size="512" readOnly="true" />-->
+    
+    <!--启用ehcache-->
+    <cache type="org.mybatis.caches.ehcache.EhcacheCache"/>
     
     <select id="getMonsterById" parameterType="Integer" resultType="Monster">
         select * from `monster` where id = #{id};

@@ -1,0 +1,71 @@
+<!DOCTYPE web-app PUBLIC
+        "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+        "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+    <display-name>Archetype Created Web Application</display-name>
+    <!--配置启动Spring容器
+    主要配置和业务逻辑有关的，数据源 事务控制等-->
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath:applicationContext.xml</param-value>
+    </context-param>
+    
+    <!--ContextLoaderListener监听器作用：启动web容器时，自动装配ApplicationContext配置信息
+    实现了ServletContextListener接口，在web.xml配置该监听器，启动容器时，默认执行它实现的方法-->
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+    
+    <!--SpringMVC的前端控制器，拦截所有请求
+    SpringMVC中央控制器
+    负责处理所有的应用请求
+    如果没有指定SpringMVC配置文件，默认为"servlet-name的值" + "-servlet.xml"：dispatcher-servlet.xml
+    如果指定了配置文件，以指定的文件为准-->
+    <servlet>
+        <servlet-name>dispatcher</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>dispatcher</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+    
+    <!--字符编码过滤器，放在所有过滤器之前
+    forceRequestEncoding：：true  执行request.setCharacterEncoding(encoding)
+    forceResponseEncoding：：true  执行response.setCharacterEncoding(encoding)-->
+    <filter>
+        <filter-name>CharacterEncodingFilter</filter-name>
+        <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>utf-8</param-value>
+        </init-param>
+        <init-param>
+            <param-name>forceRequestEncoding</param-name>
+            <param-value>true</param-value>
+        </init-param>
+        <init-param>
+            <param-name>forceResponseEncoding</param-name>
+            <param-value>true</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>CharacterEncodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    
+    <!--配置HiddenHttpMethodFilter
+    使用REST风格的URL，将页面发过来的post请求转为指定的delete/put请求-->
+    <filter>
+        <filter-name>HiddenHttpMethodFilter</filter-name>
+        <filter-class>org.springframework.web.filter.HiddenHttpMethodFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>HiddenHttpMethodFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    
+    
+</web-app>

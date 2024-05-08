@@ -113,5 +113,33 @@ public class MonsterMapperTest {
 		}
 	}
 
+	//测试ehcache缓存
+	@Test
+	public void ehCacheTest() {
+		Monster monster = monsterMapper.getMonsterById(5);
+		System.out.println(monster);
+
+		//一级缓存失效 将数据放入到二级缓存ehCache
+		if (sqlSession != null) {
+			sqlSession.close();
+		}
+		init();
+
+		System.out.println("开启了二级缓存ehcache，在关闭会话之后，" +
+				"再次查询相同的对象，不会发出sql，直接从二级缓存ehcache获取数据");
+		//Cache Hit Ratio [mapper.MonsterMapper]: 0.5
+		//这里一共对id=5的monster进行了两次查询，第一次没有找到缓存，第二次找到了，所有命中率是0.5
+		Monster monster2 = monsterMapper.getMonsterById(5);
+		System.out.println(monster2);
+
+		//到二级缓存获取
+		Monster monster3 = monsterMapper.getMonsterById(5);
+		System.out.println(monster3);
+
+		if (sqlSession != null) {
+			sqlSession.close();
+		}
+	}
+
 
 }
