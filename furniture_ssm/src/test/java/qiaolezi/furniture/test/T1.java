@@ -10,6 +10,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  * @description:
  **/
 public class T1 {
+	//测试能否得到Spring容器的数据源对象和会话工厂对象
 	@Test
 	public void testSqlSessionFactoryBean() {
 		ClassPathXmlApplicationContext ac = new ClassPathXmlApplicationContext("applicationContext.xml");

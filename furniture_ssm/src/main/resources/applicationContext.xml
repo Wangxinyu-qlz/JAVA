@@ -49,9 +49,9 @@
     </bean>
     
     <!--配置事务控制-->
-    <bean class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+    <bean class="org.springframework.jdbc.datasource.DataSourceTransactionManager" id="transactionManager">
         <!--指定数据源-->
-        <property name="dataSource" value="pooledDataSource"/>
+        <property name="dataSource" ref="pooledDataSource"/>
     </bean>
     
     <aop:config>
