@@ -72,4 +72,25 @@
           factory-method="getMonster">
         <constructor-arg value="monster1"/>
     </bean>
+    
+    <!--实例工厂=======================================================================================================-->
+    
+    <!--需要先配置一个实例工厂-->
+    <bean class="main.spring.practice.factory.InstanceFactory" id="instanceFactory"/>
+    <!--然后指定使用这个实例工厂-->
+    <bean class="main.spring.practice.factory.InstanceFactory" id="monsterFactory" factory-bean="instanceFactory"
+          factory-method="getMonster">
+        <constructor-arg value="monster1"/>
+    </bean>
+    
+    <bean class="main.spring.practice.factory.InstanceFactory" id="instanceFactory1"/>
+    <bean class="main.spring.practice.factory.InstanceFactory" id="monsterFactory1" factory-bean="instanceFactory1"
+          factory-method="getMonster">
+        <constructor-arg value="monster1"/>
+    </bean>
+    
+    <bean class="main.spring.practice.factory.MonsterFactoryUseFactoryBean" id="monsterFactoryUseFactoryBean">
+        <property name="key" value="monster"/>
+    </bean>
+    
 </beans>

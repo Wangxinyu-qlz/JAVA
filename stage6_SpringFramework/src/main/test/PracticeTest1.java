@@ -28,10 +28,20 @@ public class PracticeTest1 {
 	@Test
 	void testFactory() {
 		//TODO 静态工厂本身无法多例?? 是的，静态方法创建的对象ioc无法管理
+		// 将工厂配置为prototype也无济于事
 		ApplicationContext ioc = new ClassPathXmlApplicationContext("practice1.xml");
 		Monster staticMonsterFactory = (Monster)ioc.getBean("staticMonsterFactory");
-		System.out.println(staticMonsterFactory.hashCode());
+		System.out.println(staticMonsterFactory + "  hashCode:" + staticMonsterFactory.hashCode());
 		Monster staticMonsterFactory2 = (Monster)ioc.getBean("staticMonsterFactory");
-		System.out.println(staticMonsterFactory2.hashCode());
+		System.out.println(staticMonsterFactory2 + "  hashCode:" + staticMonsterFactory2.hashCode());
+
+		//实例工厂
+		Monster monster = ioc.getBean("monsterFactory", Monster.class);
+		System.out.println(monster + "hashCode:" + monster.hashCode());
+		Monster monster1 = ioc.getBean("monsterFactory1", Monster.class);
+		System.out.println(monster1 + "hashCode:" + monster1.hashCode());
+
+		Monster monster2 = ioc.getBean("monsterFactoryUseFactoryBean", Monster.class);
+		System.out.println(monster2 +"hashCode:" + monster2.hashCode());
 	}
 }
