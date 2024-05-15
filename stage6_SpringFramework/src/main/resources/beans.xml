@@ -110,6 +110,15 @@
         <constructor-arg value="monster04"/>
     </bean>
     
+    <bean class="main.spring.bean.Monster" id="monster111">
+        <!--通过配置文件给bean设置属性时，
+        底层通过setter()方法完成，setName()
+        如果Entity中没有这个方法，会报错-->
+        <property name="monsterId" value="1"/>
+        <property name="name" value="牛魔"/>
+        <property name="skill" value="撼天动地"/>
+    </bean>
+    
     <!--======================================配置Monster对象，通过静态工厂获取===========================================-->
     <!--
     1.通过静态工厂配置bean
@@ -119,10 +128,10 @@
     5.下面两个工厂是同一个，是静态的
     -->
     <bean class="main.spring.factory.MyStaticFactory" id="my_monster01" factory-method="getMonster">
-        <constructor-arg value="monster02"/>
+        <constructor-arg value="monster111111111111111111111111"/>
     </bean>
     <bean class="main.spring.factory.MyStaticFactory" id="my_monster01_" factory-method="getMonster">
-        <constructor-arg value="monster02"/>
+        <constructor-arg value="monster11111111111111111111111111"/>
     </bean>
     
     <!--======================================配置Department对象==============================================-->

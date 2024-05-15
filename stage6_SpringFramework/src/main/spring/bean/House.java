@@ -17,7 +17,6 @@ public class House {
 	}
 
 	public void setName(String name) {
-		System.out.println("House setName()=" + name);
 		this.name = name;
 	}
 

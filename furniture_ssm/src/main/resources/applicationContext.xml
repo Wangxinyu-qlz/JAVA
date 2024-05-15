@@ -54,12 +54,16 @@
         <property name="dataSource" ref="pooledDataSource"/>
     </bean>
     
+    <!--
+    这里为所有service下的方法配置事务增强
+    Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3b96c42e]
+    Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults-->
     <aop:config>
         <aop:pointcut id="txPoint" expression="execution(* qiaolezi.furniture.service..*(..))"/>
         <aop:advisor advice-ref="txAdvice" pointcut-ref="txPoint"/>
     </aop:config>
     
-    <!--配置事务增强，指定实物如何切入-->
+    <!--配置事务增强，指定事务如何切入-->
     <tx:advice id="txAdvice">
         <tx:attributes>
             <!--* 代表所有方法都是事务方法-->

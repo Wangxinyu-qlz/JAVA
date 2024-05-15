@@ -18,8 +18,8 @@ public class MyStaticFactory {
 	//类加载时执行，只会执行一次
 	static {
 		monsterMap = new HashMap<>();
-		monsterMap.put("monster01", new Monster(100, "牛魔", "撼天动地"));
-		monsterMap.put("monster02", new Monster(200, "孙悟空", "火眼金睛"));
+		monsterMap.put("monster111", new Monster(100, "牛魔", "撼天动地"));
+		monsterMap.put("monster02", new Monster(2, "猴子", "火眼金睛"));
 	}
 
 	//提供一个静态方法，返回Monster对象

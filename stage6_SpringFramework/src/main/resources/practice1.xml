@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/util
+       https://www.springframework.org/schema/util/spring-util.xsd">
+    
+    <bean class="main.spring.bean.Department" id="department">
+        <property name="name" value="杰瑞老大"/>
+    </bean>
+    
+    <bean class="main.spring.practice.Cat" id="cat">
+        <property name="name" value="小杰"/>
+        <property name="age" value="6"/>
+    </bean>
+    <util:list id="catName">
+        <value>1</value>
+        <value>2</value>
+    </util:list>
+    <bean class="main.spring.practice.Monster" id="monster1" init-method="init" destroy-method="destroy">
+        <property name="id" value="1"/>
+        <property name="name" value="胖虎"/>
+        <property name="address" value="Japan"/>
+        <property name="department" ref="department"/>
+        <property name="catList">
+            <list>
+                <ref bean="cat"/>
+            </list>
+        </property>
+        
+        <property name="catMap">
+            <map>
+                <description>第一只</description>
+                <entry key="cat1" value-ref="cat"/>
+            </map>
+        </property>
+        
+        <!--<property name="catName">-->
+        <!--    <array>-->
+        <!--        <value>小</value>-->
+        <!--    </array>-->
+        <!--</property>-->
+        <property name="catName" ref="catName"/>
+        
+        <property name="catSet">
+            <set>
+                <ref bean="cat"/>
+                <bean class="main.spring.practice.Cat">
+                    <property name="age" value="5"/>
+                    <property name="name" value="大大"/>
+                </bean>
+            </set>
+        </property>
+        
+        <property name="properties">
+            <props>
+                <prop key="address">sui</prop>
+                <prop key="name">test</prop>
+            </props>
+        </property>
+    </bean>
+    
+    <!--静态工厂，通过这个工厂获得的对象都是同一个，因为这个工厂被加载进ioc容器时，static{new Monster}只会执行一次
+    TODO 思考，如果静态工厂设置为prototype作用域会不会每次都创建不同（对象）的静态工厂，从而实现使用静态工厂获取多例对象的效果？
+     答：不可以。
+     1.静态方法调用：静态工厂方法是通过类名直接调用的，而不是通过Spring容器管理的bean。
+     因此，每次调用静态工厂方法，都会返回同一个对象，即使你在Spring配置中将其作用域设置为原型也无效。
+     2.Spring容器无法管理静态方法：Spring容器负责管理由容器创建的bean的生命周期。
+     但是，对于静态方法创建的对象，Spring无法介入和管理，因为这些对象是在Spring容器之外创建的。-->
+    <bean class="main.spring.practice.factory.StaticFactory" id="staticMonsterFactory"
+          factory-method="getMonster">
+        <constructor-arg value="monster1"/>
+    </bean>
+</beans>

@@ -254,7 +254,7 @@ public class springBeanTest {
 	public void setBeanByCollection() {
 		ClassPathXmlApplicationContext ioc = new ClassPathXmlApplicationContext("beans.xml");
 
-		Master master = ioc.getBean("master", Master.class);
+		Master master = ioc.getBean(Master.class);
 		System.out.println("master=" + master);
 
 	}
@@ -312,6 +312,16 @@ public class springBeanTest {
 		Monster monster05 = ioc.getBean("monster05", Monster.class);
 		//Monster{id=5, name='赔钱虎', skill='矮脚虎'}
 		System.out.println(monster05);
+	}
+
+		@Test
+	public void getMonsterConflictWithStaticFactory() {
+		ApplicationContext ioc = new
+				ClassPathXmlApplicationContext("beans.xml");
+
+		Object monster01 = ioc.getBean("monster111", Monster.class);
+		//monster01=Monster{id=1, name='牛魔', skill='撼天动地'}
+
 	}
 	@Test
 	public void getMonster() {
