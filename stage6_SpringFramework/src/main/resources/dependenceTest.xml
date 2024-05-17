@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+    
+    <bean class="main.spring.practice.bean.Cat" id="cat" depends-on="monster"
+          init-method="init" destroy-method="destroy">
+        <property name="name" value="jen"/>
+        <property name="age" value="12"/>
+    </bean>
+    <bean class="main.spring.practice.bean.Monster" id="monster"
+          init-method="init" destroy-method="destroy"/>
+
+</beans>

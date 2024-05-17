@@ -10,7 +10,7 @@
         <property name="name" value="杰瑞老大"/>
     </bean>
     
-    <bean class="main.spring.practice.Cat" id="cat">
+    <bean class="main.spring.practice.bean.Cat" id="cat">
         <property name="name" value="小杰"/>
         <property name="age" value="6"/>
     </bean>
@@ -18,7 +18,7 @@
         <value>1</value>
         <value>2</value>
     </util:list>
-    <bean class="main.spring.practice.Monster" id="monster1" init-method="init" destroy-method="destroy">
+    <bean class="main.spring.practice.bean.Monster" id="monster1" init-method="init" destroy-method="destroy">
         <property name="id" value="1"/>
         <property name="name" value="胖虎"/>
         <property name="address" value="Japan"/>
@@ -46,7 +46,7 @@
         <property name="catSet">
             <set>
                 <ref bean="cat"/>
-                <bean class="main.spring.practice.Cat">
+                <bean class="main.spring.practice.bean.Cat">
                     <property name="age" value="5"/>
                     <property name="name" value="大大"/>
                 </bean>
@@ -93,4 +93,15 @@
         <property name="key" value="monster"/>
     </bean>
     
+    <!--如果这里的value="?" 这个monster不错在：
+    org.springframework.beans.factory.BeanNotOfRequiredTypeException:
+    Bean named 'myFactoryBean' is expected to be of type 'main.spring.practice.bean.Monster'
+    but was actually of type 'org.springframework.beans.factory.support.NullBean'-->
+    <bean class="main.spring.practice.factory.MyFactoryBean" id="myFactoryBean">
+        <property name="key" value="monster1"/>
+    </bean>
+    
+
+
+
 </beans>

@@ -1,4 +1,4 @@
-package main.spring.practice;
+package main.spring.practice.bean;
 
 import main.spring.bean.Department;
 
@@ -31,6 +31,7 @@ public class Monster {
 	}
 
 	public Monster() {
+		System.out.println("Monster::Constructor NULL");
 	}
 
 	public Monster(Integer id, String name, String address, Department department,
@@ -45,6 +46,7 @@ public class Monster {
 		this.catMap = catMap;
 		this.catName = catName;
 		this.properties = properties;
+		System.out.println("Monster::Constructor");
 	}
 
 	public Integer getId() {

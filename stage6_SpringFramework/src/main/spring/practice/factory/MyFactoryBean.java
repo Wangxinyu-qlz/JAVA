@@ -1,5 +1,6 @@
 package main.spring.practice.factory;
 
+import main.spring.bean.Department;
 import main.spring.practice.bean.Monster;
 import org.springframework.beans.factory.FactoryBean;
 
@@ -9,22 +10,21 @@ import java.util.Map;
 /**
  * @program: pom.xml
  * @author: Qiaolezi
- * @create: 2024-05-15 23:18
+ * @create: 2024-05-16 18:23
  * @description:
  **/
-public class MonsterFactoryUseFactoryBean implements FactoryBean<Monster> {
+public class MyFactoryBean implements FactoryBean<Monster> {
+	private Map<String, Monster> monsters;
 	private String key;
-	private Map<String, Monster> monsterMap;
 	{
-		monsterMap = new HashMap<String, Monster>();
+		monsters = new HashMap<String, Monster>();
 		Monster monster = new Monster();
-		Monster monster1 = new Monster();
-		monster.setAddress("澳洲");
-		monster1.setAddress("北美");
-		monsterMap.put("monster", monster);
-		monsterMap.put("monster1", monster1);
+		Monster monster2 = new Monster();
+		monster.setDepartment(new Department("小强"));
+		monster2.setDepartment(new Department("大壮"));
+		monsters.put("monster1", monster);
+		monsters.put("monster2", monster);
 	}
-
 	public void setKey(String key) {
 		this.key = key;
 	}
@@ -36,7 +36,7 @@ public class MonsterFactoryUseFactoryBean implements FactoryBean<Monster> {
 
 	@Override
 	public Monster getObject() throws Exception {
-		return monsterMap.get(key);
+		return monsters.get(key);
 	}
 
 	@Override

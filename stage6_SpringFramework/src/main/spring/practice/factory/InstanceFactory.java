@@ -1,6 +1,6 @@
 package main.spring.practice.factory;
 
-import main.spring.practice.Monster;
+import main.spring.practice.bean.Monster;
 
 import java.util.HashMap;
 import java.util.Map;

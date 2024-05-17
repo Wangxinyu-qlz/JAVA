@@ -1,4 +1,4 @@
-package main.spring.practice;
+package main.spring.practice.bean;
 
 /**
  * @program: pom.xml
@@ -9,11 +9,22 @@ package main.spring.practice;
 public class Cat {
 	private String name;
 	private Integer age;
-	public Cat(){}
+	public Cat(){
+		System.out.println("Cat::Constructor NULL");
+	}
 
 	public Cat(String name, Integer age) {
 		this.name = name;
 		this.age = age;
+		System.out.println("Cat::Constructor");
+	}
+
+	public void init() {
+		System.out.println("Cat init");
+	}
+
+	public void destroy() {
+		System.out.println("Cat destroy");
 	}
 
 	public String getName() {
