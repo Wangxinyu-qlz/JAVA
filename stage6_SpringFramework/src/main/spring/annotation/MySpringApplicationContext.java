@@ -19,7 +19,7 @@ import java.util.concurrent.ConcurrentHashMap;
  **/
 public class MySpringApplicationContext {
 	private Class configClass;
-	//ioc中存方的是通过反射创建的对象（基于注解方式）
+	//ioc中存放的是通过反射创建的对象（基于注解方式）
 	private final ConcurrentHashMap<String, Object> ioc =
 			new ConcurrentHashMap<>();//singletonObjects
 
@@ -30,8 +30,7 @@ public class MySpringApplicationContext {
 
 		//获取扫描的包
 		//1.获取MySpringConfig配置的@ComponentScan(value = "main.spring.component")
-		ComponentScan componentScan = (ComponentScan) this.configClass.
-				getDeclaredAnnotation(ComponentScan.class);
+		ComponentScan componentScan = (ComponentScan) this.configClass.getDeclaredAnnotation(ComponentScan.class);
 		//2.通过componentScan得到要扫描的包
 		String path = componentScan.value();
 		//System.out.println("要扫描的包=" + path);

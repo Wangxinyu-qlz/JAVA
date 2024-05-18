@@ -13,7 +13,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  * @create: 2024-05-18 11:09
  * @description:
  **/
-public class PracticeTest2BeanPostFactory {
+public class PracticeTest2BeanPostProcessor {
 	private ApplicationContext ioc;
 	@BeforeEach
 	void init() {
@@ -22,6 +22,11 @@ public class PracticeTest2BeanPostFactory {
 
 	@Test
 	void testBeanPostProcessor() {
+		//Cat::Constructor NULL
+		//before bean post process
+		//Cat init
+		//after bean post process
+		//Cat{name='宝宝', age=12}
 		Cat cat = ioc.getBean("cat", Cat.class);
 		System.out.println(cat);
 	}
