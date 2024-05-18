@@ -56,7 +56,7 @@ public class PracticeTest1 {
 	@Test
 	void TestParent() {
 		ApplicationContext ioc = new ClassPathXmlApplicationContext("practice1.xml");
-		Monster monster2 = ioc.getBean("monster2", Monster.class);
+		Monster monster2 = ioc.getBean("monster1", Monster.class);
 		System.out.println(monster2);
 		((ConfigurableApplicationContext) ioc).close();
 	}
@@ -73,7 +73,8 @@ public class PracticeTest1 {
 		Cat destroy
 		* */
 
-		/*depend-on = monster
+		/*
+		depend-on = monster
 		Monster::Constructor NULL
 		这是杰瑞init捣乱了吧
 		Cat::Constructor NULL
@@ -90,7 +91,7 @@ public class PracticeTest1 {
 
 	@Test
 	void TestDependenceOn2() {
-		/*
+		/* TODO 如果只调用被依赖的bean，依赖该bean的bean的构造器、init()和destroy()也会被调用
 		* Monster::Constructor NULL
 		这是杰瑞init捣乱了吧
 		Cat::Constructor NULL
@@ -99,7 +100,7 @@ public class PracticeTest1 {
 		杰瑞走了
 		* */
 		ApplicationContext ioc = new ClassPathXmlApplicationContext("dependenceTest.xml");
-		Monster monster2 = ioc.getBean("monster2", Monster.class);
+		Monster monster = ioc.getBean("monster", Monster.class);
 
 		((ConfigurableApplicationContext) ioc).close();
 	}
@@ -107,12 +108,16 @@ public class PracticeTest1 {
 	@Test
 	void TestDestroyWithPrototype() {
 		/*TODO 当一个bean配置为多例时，ioc容器关闭时，不会调用该bean的destroy()方法，因为多例bean不在ioc容器的管理范围内
-		   多例bean每次调用都会创建
+		   多例bean每次调用都会创建，destroy()方法可以选择手动调用
 		Monster::Constructor NULL
 		这是杰瑞init捣乱了吧*/
 		ApplicationContext ioc = new ClassPathXmlApplicationContext("testDestroyWithPrototype.xml");
-		Monster monster2 = ioc.getBean("monster", Monster.class);
+		Monster monster_prototype = ioc.getBean("monster_prototype", Monster.class);
+		Monster monster_singleton = ioc.getBean("monster_singleton", Monster.class);
+		monster_prototype.destroy();//手动调用销毁方法
 
+		Monster monster_prototype1 = ioc.getBean("monster_prototype", Monster.class);
+		System.out.println(monster_prototype.hashCode() + "  vs  " + monster_prototype1.hashCode());
 		((ConfigurableApplicationContext) ioc).close();
 	}
 }

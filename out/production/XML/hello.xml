@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--上面是文档声明  XML 声明应在所有文档内容之前-->
+
+<!--
+1. 需求 1 : 两个程序间进行数据通信？
+2.给一台服务器，做一个配置文件，当服务器程序启动时，去读取它应当监听的端口号、还有连接数据库的用户名和密码
+3、spring 中的 ico 配置文件,beans.xml mybatis XXXMapper.xml tomcat server.xml web.xml maven pom.xml
+4. 能存储复杂的数据关系
+
+1.每个XML 文档必须有且只有一个根元素。
+2.根元素是一个完全包括文档中其他所有元素的元素。
+3.根元素的起始标记要放在所有其他元素的起始标记之前。
+4.根元素的结束标记要放在所有其他元素的结束标记之后
+5.XML 元素指XML 文件中出现的标签，一个标签分为开始标签和结束标签，一个标签有如下几种书写形式
+    包含标签体：<a>www.github.cn</a>
+    不含标签体的：<a></a>, 简写为：<a/>
+6.一个标签中也可以嵌套若干子标签。但所有标签必须合理地嵌套，绝对不允许交叉嵌套
+7.叫法 student 元素，节点，标签
+-->
+<!--根元素，必须闭合-->
+<students>
+    <!--students的子元素-->
+    <!---->
+    <student id="100">
+        <!--
+        student的子元素
+        属性值用双引号（"）或单引号（'）分隔（如果属性值中有'，用"分隔；有"，用'分隔）
+        一个元素可以有多个属性，它的基本格式为：<元素名 属性名="属性值">
+        id='01' 也是正确写法
+        如果属性值有" 则使用' 包括属性比如 id="xxx'yyy"
+        如果属性值有' 则使用" 包括属性比如 id='xxx"yyy'
+        属性名在同一个元素标记只能出现一次<stduent id="01" id="03"> 错误的
+        属性值不能包括& 字符比如： <stduent id="0&1"> 是错误的
+        -->
+        <name>jack</name>
+        <big>jer</big>big>
+        <small>ker</small>
+        <age>10</age>
+        <gender>男</gender>
+    </student>
+    <student id="200">
+        <name>mary</name>
+        <age>18</age>
+        <gender>女</gender>
+        <!--
+            使用转义字符表示一些特殊字符
+            <resume>年龄<10 &版权</resume>
+        -->
+        <resume>年龄&lt;10 &gt; &amp;</resume>
+    </student>
+    <school>清华大学</school>
+    <city/>
+
+    <code>
+        <!--如果希望把某些字符串,当做普通文本，使用CDATA 包括 -->
+        <![CDATA[
+            <script data-compress=strip>
+                function h(obj){
+                    obj.style.behavior='url(#default#homepage)';
+                    var a = obj.setHomePage('//www.baidu.com/');
+                }
+            </script>
+        ]]>
+    </code>
+</students>

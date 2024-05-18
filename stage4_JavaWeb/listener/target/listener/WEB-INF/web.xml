@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+    <display-name>Archetype Created Web Application</display-name>
+
+
+    <listener>
+        <listener-class>listener.MyServletContextListener</listener-class>
+    </listener>
+    <listener>
+        <listener-class>listener.MyServletContextAttributeListener</listener-class>
+    </listener>
+
+    <listener>
+        <listener-class>listener.MyHttpSessionListener</listener-class>
+    </listener>
+    <listener>
+        <listener-class>listener.MyHttpSessionAttributeListener</listener-class>
+    </listener>
+    <listener>
+        <listener-class>listener.MyRequestListener</listener-class>
+    </listener>
+
+
+    <servlet>
+        <servlet-name>HiServlet</servlet-name>
+        <servlet-class>servlet.HiServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HiServlet</servlet-name>
+        <url-pattern>/hi</url-pattern>
+    </servlet-mapping>
+</web-app>

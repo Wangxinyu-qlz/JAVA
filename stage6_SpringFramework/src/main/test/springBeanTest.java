@@ -52,7 +52,7 @@ public class springBeanTest {
 	//通过注解配置bean
 	@Test
 	public void setBeanByAnnotation() {
-		ApplicationContext ioc = new ClassPathXmlApplicationContext("beans05.xml");
+		ApplicationContext ioc = new ClassPathXmlApplicationContext("beans05_annotation_scan.xml");
 
 		//TODO 默认情况下，注解标识的类创建对象后，在容器中，id 为类名首字母小写
 		// 或者在注解的时候自行指定 id
@@ -69,7 +69,7 @@ public class springBeanTest {
 	//通过Spring EL表达式 对属性赋值
 	@Test
 	public void setBeanBySpel() {
-		ApplicationContext ioc = new ClassPathXmlApplicationContext("beans04.xml");
+		ApplicationContext ioc = new ClassPathXmlApplicationContext("beans04_EL.xml");
 
 		Object spELBean = ioc.getBean("spELBean", SpELBean.class);
 		System.out.println(spELBean);
@@ -78,7 +78,7 @@ public class springBeanTest {
 	//自动装配
 	@Test
 	public void setBeanByAutowire() {
-		ApplicationContext ioc = new ClassPathXmlApplicationContext("beans03.xml");
+		ApplicationContext ioc = new ClassPathXmlApplicationContext("beans03_AutoWired.xml");
 
 		OrderAction orderAction = ioc.getBean("orderAction", OrderAction.class);
 		System.out.println(orderAction.getOrderService());
@@ -375,12 +375,13 @@ public class springBeanTest {
 	public void getClassPath() {
 		/**
 		 * getResource():
-		 * 查找具有给定名称的资源。搜索与给定类关联的资源的规则由该类的定义类装入器实现。
-		 * 此方法委托给此对象的类装入器。如果此对象是由引导类加载器加载的，
-		 * 则该方法将委托给 ClassLoader.getSystemResource。
+		 * 查找具有给定名称的资源。
+		 * 搜索与给定类关联的资源的规则由该类的定义类装入器实现。
+		 * 此方法委托给此对象的类装入器。
+		 * 如果此对象是由引导类加载器加载的，则该方法将委托给 ClassLoader.getSystemResource。
 		 * 在委派之前，使用以下算法从给定的资源名称构造绝对资源名称：
 		 * 如果名称以'/' ('\u002f')开头，则资源的绝对名称是名称中'/'后面的部分。
-		 * 否则，绝对名称的格式如下： modified_package_namename
+		 * 否则，绝对名称的格式如下： modified_package_name name
 		 * 其中modified_package_name是此对象的包名称，其中'/'替换为 '.' ('\u002e')。
 		 */
 		File file = new File(this.getClass().getResource("/").getPath());

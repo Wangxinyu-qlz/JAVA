@@ -4,7 +4,12 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd">
     
-    <bean class="main.spring.practice.bean.Monster" id="monster" scope="prototype"
+    <bean class="main.spring.practice.bean.Monster" id="monster_prototype" scope="prototype"
+          init-method="init" destroy-method="destroy"/>
+    
+    <!--只要容器中配置了单例的bean，容器初始化的时候，就会加载进容器，导致测试结果不准确
+    解决方法：1.使用懒加载    2.注释掉这个bean-->
+    <bean class="main.spring.practice.bean.Monster" id="monster_singleton" lazy-init="true"
           init-method="init" destroy-method="destroy"/>
 
 </beans>

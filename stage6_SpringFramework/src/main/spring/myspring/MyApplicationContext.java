@@ -13,7 +13,7 @@ import java.util.concurrent.ConcurrentHashMap;
  * @program: stage6_SpringFramework
  * @author: Qiaolezi
  * @create: 2024-03-05 09:28
- * @description: 实现Spring的一个简单容器机制：解析beans.xml文件，生成对象并放入容器中
+ * @description: TODO 实现Spring的一个简单容器机制：解析beans.xml文件，生成对象并放入容器中
  **/
 public class MyApplicationContext {
 	ConcurrentHashMap<String, Object> singletonObject = new ConcurrentHashMap<>();
@@ -23,7 +23,7 @@ public class MyApplicationContext {
 	public MyApplicationContext(String iocBeanXmlPath) throws Exception {
 		//1.得到类加载路径
 		String path = this.getClass().getResource("/").getPath();
-		//System.out.println(path);
+		System.out.println(path);
 
 		//2.创建SAXReader
 		SAXReader saxReader = new SAXReader();

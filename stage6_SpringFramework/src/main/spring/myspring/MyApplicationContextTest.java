@@ -10,7 +10,7 @@ import main.spring.bean.Monster;
  **/
 public class MyApplicationContextTest {
 	public static void main(String[] args) throws Exception {
-		MyApplicationContext ioc = new MyApplicationContext("beans.xml");
+		MyApplicationContext ioc = new MyApplicationContext("myApplicationContext.xml");
 		Monster monster01 = (Monster)ioc.getBean("monster01");
 		System.out.println(monster01);
 	}

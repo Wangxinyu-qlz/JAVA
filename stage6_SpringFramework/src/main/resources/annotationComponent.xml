@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--<context:component-scan base-package="main.spring.practice.annotation_component"/>-->
+    
+    <!--<context:component-scan base-package="main.spring.practice.annotation_component">-->
+    <!--    <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Component"/>-->
+    <!--</context:component-scan>-->
+    
+    <!--TODO use-default-filters="false"
+         如果设置的是包含 @Component，其他三个注解（@Service @Controller @Repository）的也会被包含进去
+         如果设置的是@Service / @Controller / @Repository，则仅有当前的被包含进去
+         
+         可以在include之后进行exclude，exclude可以生效，但是顺序不能反过来(exclude->include)-->
+    <context:component-scan base-package="main.spring.practice.annotation_component" use-default-filters="false">
+        <context:include-filter type="annotation" expression="org.springframework.stereotype.Component"/>
+        <!--<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Repository"/>-->
+    </context:component-scan>
+</beans>

@@ -11,7 +11,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  **/
 public class AppMain {
 	public static void main(String[] args) {
-		ClassPathXmlApplicationContext ioc = new ClassPathXmlApplicationContext("beans11.xml");
+		ClassPathXmlApplicationContext ioc = new ClassPathXmlApplicationContext("beans11_PostProcessor_AOP.xml");
 		/**
 		 * TODO 没有init()方法也会调用后置处理器
 		 * before  class main.spring.component_.UserDao
