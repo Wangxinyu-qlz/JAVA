@@ -1,4 +1,4 @@
-package main.spring.component;
+package main.spring.componentAutoWiredResource;
 
 import org.springframework.stereotype.Repository;
 

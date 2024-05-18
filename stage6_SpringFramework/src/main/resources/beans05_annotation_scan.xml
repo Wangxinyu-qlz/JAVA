@@ -7,22 +7,22 @@
     <!--配置容器要扫描的包
     1. component-scan 对指定包下的类进行扫描，并创建对象到容器
     2. base-package 指定要扫描的包
-    3. Spring容器初始化时，会扫描 main.spring.component 下的所有的
+    3. Spring容器初始化时，会扫描 main.spring.componentAutoWiredResource 下的所有的
        有注解(@Service @ComponentScan @Controller @Repository)的类，
        TODO 包括他的子包中的类
        将其实例化，生成对象 并放入ioc容器
     4. 可以使用通配符 * 扫描文件夹下所有的包 main.spring.*-->
-    <context:component-scan base-package="main.spring.component"/>
+    <context:component-scan base-package="main.spring.componentAutoWiredResource"/>
     
     <!--只扫描特定的包，了解即可，注意：xxx.class，扫描的其实是out目录下面的文件-->
-    <context:component-scan base-package="main.spring.component" resource-pattern="User*.class"/>
+    <context:component-scan base-package="main.spring.componentAutoWiredResource" resource-pattern="User*.class"/>
     
     <!--排除文件 不扫描
     排除包/子包下的某种类型的注解，通过exclude-filter
      1. exclude-filter 指定要排除的类
      2. type: 排除的方式 annotation基于注解的排除
      3. expression: 排除的注解的全路径-->
-    <context:component-scan base-package="main.spring.component">
+    <context:component-scan base-package="main.spring.componentAutoWiredResource">
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Repository"/>
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Service"/>
     </context:component-scan>
@@ -32,7 +32,7 @@
     2. context: include-filter 指定要扫描的类
     3. type: 扫描的方式 annotation基于注解的扫描
     4. expression: 排扫描的注解的全路径-->
-        <context:component-scan base-package="main.spring.component" use-default-filters="false">
+        <context:component-scan base-package="main.spring.componentAutoWiredResource" use-default-filters="false">
         <context:include-filter type="annotation" expression="org.springframework.stereotype.Repository"/>
         <context:include-filter type="annotation" expression="org.springframework.stereotype.Service"/>
     </context:component-scan>

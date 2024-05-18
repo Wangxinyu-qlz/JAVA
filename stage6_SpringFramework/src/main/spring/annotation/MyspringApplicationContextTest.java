@@ -1,6 +1,6 @@
 package main.spring.annotation;
 
-import main.spring.component.UserAction;
+import main.spring.componentAutoWiredResource.UserAction;
 
 /**
  * @program: stage6_SpringFramework

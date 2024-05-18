@@ -1,10 +1,10 @@
 package main.test;
 
 import main.spring.bean.*;
-import main.spring.component.MyComponent;
-import main.spring.component.UserAction;
-import main.spring.component.UserDao;
-import main.spring.component.UserService;
+import main.spring.componentAutoWiredResource.MyComponent;
+import main.spring.componentAutoWiredResource.UserAction;
+import main.spring.componentAutoWiredResource.UserDao;
+import main.spring.componentAutoWiredResource.UserService;
 import main.spring.dependenceInjection.PhoneService;
 import main.spring.service.MemberService;
 import main.spring.web.OrderAction;
@@ -26,7 +26,7 @@ public class springBeanTest {
 	//通过泛型依赖配置 bean
 	@Test
 	public void setPropertyByDependenceInjection(){
-		ApplicationContext ioc = new ClassPathXmlApplicationContext("beans07.xml");
+		ApplicationContext ioc = new ClassPathXmlApplicationContext("beans07_genericsDependenceInjection.xml");
 
 		PhoneService phoneService = ioc.getBean("phoneService", PhoneService.class);
 		phoneService.save();

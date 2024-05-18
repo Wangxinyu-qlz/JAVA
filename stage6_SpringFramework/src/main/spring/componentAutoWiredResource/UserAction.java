@@ -1,4 +1,4 @@
-package main.spring.component;
+package main.spring.componentAutoWiredResource;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -27,6 +27,16 @@ public class UserAction {
 	// TODO 这里的运行结果和老韩的不一致，实测容器中存在多个同类型的bean也可以正常运行，
 	//  并且装配的bean的 id 是和这里的 属性名 匹配的（前提：这里的属性名和 容器中的一个bean的id匹配）
 	//如果没有指定name 和 type，则首先使用byName的方式装配，如果失败，使用byType方式装配，如果都不成功，报错
+
+	//在启动spring的时候，首先要启动容器；
+	//启动spring容器时，会默认寻找容器扫描范围内的可加载bean，然后查找哪些bean上的属性和方法上有@Resource注解；
+	//找到@Resource注解后，判断@Resource注解括号中的name属性是否为空，
+	//  如果为空：看spring容器中的bean的id与@Resource要注解的那个变量属性名是否相同，
+	//      如相同，匹配成功；
+	//      如果不相同，看spring容器中bean的id对应的类型是否与@Resource要注解的那个变量属性对应的类型是否相等，
+	//          若相等，匹配成功，若不相等，匹配失败。
+	//  如果@Resource注解括号中的name属性不为空，
+	//      看name的属性值和容器中的bean的id名是否相等，如相等，则匹配成功；如不相等，则匹配失败。
 	//@Resource(name = "userService")
 	//@Resource(type = UserService.class)
 	@Resource()
