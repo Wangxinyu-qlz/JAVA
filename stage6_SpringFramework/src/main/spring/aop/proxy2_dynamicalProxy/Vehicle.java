@@ -1,4 +1,4 @@
-package main.spring.aop.proxy_;
+package main.spring.aop.proxy2_dynamicalProxy;
 
 /**
  * @program: stage6_SpringFramework

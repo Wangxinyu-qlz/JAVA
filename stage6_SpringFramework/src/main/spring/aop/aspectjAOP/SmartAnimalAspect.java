@@ -20,9 +20,7 @@ import java.util.Arrays;
 public class SmartAnimalAspect {
 	//定义一个切入点表达式，在后面直接引用，提高复用性
 	@Pointcut(value = "execution(public double main.spring.aop.aspectjAOP.Monkey.getSum(double, double))")
-	public void myPointCut() {
-
-	}
+	public void myPointCut() {}
 
 	/*
 	 * 1.@Before 表示这个方法是一个前置通知，在目标对象的方法执行前 执行
@@ -64,7 +62,7 @@ public class SmartAnimalAspect {
 		System.out.println("SmartAnimalAspect切面类showExceptionEndLog()-方法执行异常-日志-方法名-" + name + exception);
 	}
 
-	//最终通知：切入到目标方法执行后，无论发生异常，都要执行
+	//最终通知：切入到目标方法执行后，无论是否发生异常，都要执行
 	@After(value = "execution(public double main.spring.aop.aspectjAOP.Monkey.getSum(double, double))")
 	public void showFinallyEndLog(JoinPoint joinPoint) {
 		String name = joinPoint.getSignature().getName();
