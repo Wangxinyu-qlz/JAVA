@@ -22,4 +22,17 @@ public class TestSmartDog {
 		int i = calculator.divide_e(1, 0);
 
 	}
+
+	@Test
+	public void test2() {
+		SmartDog smartDog = new SmartDog();
+		ProxyProvider2 proxyProvider2 = new ProxyProvider2(smartDog);
+		Calculator calculator = proxyProvider2.getCalculator();
+		Integer add = calculator.add(1, 1);
+		Integer subtract = calculator.subtract(1, 1);
+		Double multiply = calculator.multiply(1.0, 1.0);
+		Double divide = calculator.divide(1.0, 0.0);
+
+		int i = calculator.divide_e(1, 0);
+	}
 }
