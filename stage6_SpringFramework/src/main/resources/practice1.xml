@@ -93,7 +93,7 @@
         <property name="key" value="monster"/>
     </bean>
     
-    <!--如果这里的value="?" 这个monster不错在：
+    <!--如果这里的value="?" 这个monster错在：
     org.springframework.beans.factory.BeanNotOfRequiredTypeException:
     Bean named 'myFactoryBean' is expected to be of type 'main.spring.practice.bean.Monster'
     but was actually of type 'org.springframework.beans.factory.support.NullBean'-->

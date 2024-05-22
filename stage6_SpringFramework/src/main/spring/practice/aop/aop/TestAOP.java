@@ -49,7 +49,7 @@ public class TestAOP {
 		System.out.println("==================sum===========");
 		double sum = monkey.getSum(1, 2);
 		System.out.println("==============division===========");
-		double division = monkey.getDivision(1, 0);
+		double division = monkey.getDivision(1, 1);
 
 
 	//	如果配置了多个切面，执行过程为：
@@ -71,7 +71,7 @@ public class TestAOP {
 
 	@Test
 	public void test3_no_interfaces() {
-		Car car = ioc.getBean("car01", Car.class);
+		Car car = (Car) ioc.getBean("car01", Car.class);
 		car.run();
 	}
 
