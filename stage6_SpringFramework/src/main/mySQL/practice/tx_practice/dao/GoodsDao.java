@@ -30,4 +30,19 @@ public class GoodsDao {
 		String sql = "update user_account set money = money - ? where user_id = ?";
 		jdbcTemplate.update(sql, money, user_id);
 	}
+
+	public Double queryPriceById1(int id) {
+		String sql = "select price from goods where goods_id = ?";
+		return jdbcTemplate.queryForObject(sql, Double.class, id);
+	}
+
+	public void updateGoodsNum1(int goods_id, int goods_num) {
+		String sql = "update goods_amount set goods_num = goods_num - ? where goods_id = ?";
+		jdbcTemplate.update(sql, goods_num, goods_id);
+	}
+
+	public void updateUserBalance1(int user_id, Double money) {
+		String sql = "update user_account set money = money - ? where user_id = ?";
+		jdbcTemplate.update(sql, money, user_id);
+	}
 }

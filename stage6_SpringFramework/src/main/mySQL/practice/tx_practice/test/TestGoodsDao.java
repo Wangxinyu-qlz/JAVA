@@ -39,12 +39,10 @@ public class TestGoodsDao {
 
 	@Test
 	public void testUpdateUserBalance() {
-		int id = 10;
-		double money = 1;
+		int id = 1;
+		double money = 102.3;
 		GoodsDao goodsDao = ioc.getBean(GoodsDao.class);
 		goodsDao.updateUserBalance(id, money);
 		System.out.println("success!");
 	}
-
-
 }

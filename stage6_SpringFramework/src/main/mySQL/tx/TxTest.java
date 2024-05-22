@@ -77,5 +77,4 @@ public class TxTest {
 		GoodsService bean = ioc.getBean(GoodsService.class);
 		bean.bugGoodsByTxTimeout(1, 1, 1);
 	}
-
 }
