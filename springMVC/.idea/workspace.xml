@@ -10,7 +10,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d78e2bda-5bdd-4d66-bd2c-d5cd590ce33b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/yolov8.png" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/../stage6_SpringFramework/src/main/mySQL/practice/tx_practice/dao/GoodsDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../stage6_SpringFramework/src/main/mySQL/practice/tx_practice/test/TestConnection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../stage6_SpringFramework/src/main/mySQL/practice/tx_practice/test/TestGoodsDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../stage6_SpringFramework/src/main/resources/tx_p.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../stage6_SpringFramework/src/main/resources/jdbc.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../stage6_SpringFramework/src/main/resources/jdbc.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -370,7 +374,7 @@
       <workItem from="1713933853744" duration="12156000" />
       <workItem from="1714100788798" duration="15097000" />
       <workItem from="1714214262698" duration="74452000" />
-      <workItem from="1716352466621" duration="733000" />
+      <workItem from="1716352466621" duration="1339000" />
     </task>
     <task id="LOCAL-00001" summary="spring mvc配置">
       <option name="closed" value="true" />
