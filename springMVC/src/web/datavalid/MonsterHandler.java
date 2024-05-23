@@ -58,6 +58,7 @@ public class MonsterHandler {
 	}
 
 	//取消绑定 monster 的 name 表单提交的值给 monster.name属性
+	//不希望接收到某个表单对应的属性
 	@InitBinder()
 	public void initBinder(WebDataBinder webDataBinder) {
 		//方法上做注解：@InitBinder()

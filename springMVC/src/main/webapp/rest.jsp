@@ -12,7 +12,7 @@
     <script type="text/javascript" src="webjars/jquery/3.5.1/dist/jquery.min.js"></script>
 
     <script type="text/javascript">
-        $(function () { //当页面加载完成后，就执行=> 如果你完全忘记，去回顾我们讲过的jquery
+        $(function () { //当页面加载完成后，就执行
             //给删除超链接绑定一个点击事件
             $("#deleteBook").click(function (){
                 // alert("点击。。。。");

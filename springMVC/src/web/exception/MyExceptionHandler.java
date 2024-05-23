@@ -55,5 +55,4 @@ public class MyExceptionHandler {
 		char c = str.charAt(100);
 		return "success";
 	}
-
 }

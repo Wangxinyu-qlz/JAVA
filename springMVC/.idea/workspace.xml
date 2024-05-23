@@ -9,14 +9,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d78e2bda-5bdd-4d66-bd2c-d5cd590ce33b" name="Changes" comment="i">
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="d78e2bda-5bdd-4d66-bd2c-d5cd590ce33b" name="Changes" comment="添加注释annotation-driven default-servlet-handler">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/applicationContextMVC.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/applicationContextMVC.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/web/filter/MyCharacterFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/web/filter/MyCharacterFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/rest.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/rest.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/web/datavalid/MonsterHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/web/datavalid/MonsterHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/web/viewSolver/GoodsHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/web/viewSolver/GoodsHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -406,7 +403,7 @@
       <workItem from="1713933853744" duration="12156000" />
       <workItem from="1714100788798" duration="15097000" />
       <workItem from="1714214262698" duration="74452000" />
-      <workItem from="1716352466621" duration="14760000" />
+      <workItem from="1716352466621" duration="20443000" />
     </task>
     <task id="LOCAL-00001" summary="spring mvc配置">
       <option name="closed" value="true" />
@@ -520,7 +517,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716366022664</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="添加注释annotation-driven default-servlet-handler">
+      <option name="closed" value="true" />
+      <created>1716454103891</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1716454103891</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -551,7 +556,8 @@
     <MESSAGE value="局部异常" />
     <MESSAGE value="全局异常 一般异常 自定义异常" />
     <MESSAGE value="i" />
-    <option name="LAST_COMMIT_MESSAGE" value="i" />
+    <MESSAGE value="添加注释annotation-driven default-servlet-handler" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加注释annotation-driven default-servlet-handler" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
