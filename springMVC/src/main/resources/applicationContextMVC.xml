@@ -26,7 +26,7 @@
     
     
     <bean class="org.springframework.context.support.ResourceBundleMessageSource" id="messageSource">
-        <property name="basename" value="i18n"/>
+        <property name="basename" value="main.resources.i18n"/>
     </bean>
     
     <!--文件上传需要-->
@@ -78,8 +78,14 @@
     </bean>
     
     <!--加入两个常规配置-->
-    <!--支持 SpringMVC 的高级功能：JSR303校验，映射动态请求-->
+    <!--支持 SpringMVC 的高级功能：JSR303校验，映射动态请求
+    JSR-303/JSR-380 验证：支持使用 @Valid 或 @Validated 等注释验证 Bean
+    基于注解的控制器：允许使用 @Controller 、 @RequestMapping 和其他 Spring MVC 注解
+    转换和格式化：支持请求参数的类型转换和格式化，使用 和 @NumberFormat 等 @InitBinder 注释
+    异步请求处理：支持异步请求处理 using @Async 和其他相关注释
+    -->
     <mvc:annotation-driven></mvc:annotation-driven>
-    <!--将 SpringMVC 不能处理的请求交给 TomCat，比如css,js-->
+    <!--将 SpringMVC 不能处理的请求交给 TomCat，比如css,js
+    dispatcherServlet会拦截所有请求，包括静态资源，而静态资源应该由容器（TomCat）处理-->
     <mvc:default-servlet-handler></mvc:default-servlet-handler>
 </beans>

@@ -11,12 +11,11 @@ import java.io.IOException;
  **/
 public class MyCharacterFilter implements Filter {
 	@Override
-	public void init(FilterConfig filterConfig) throws ServletException {
-
-	}
+	public void init(FilterConfig filterConfig) throws ServletException {}
 
 	@Override
-	public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
+	public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain)
+			throws IOException, ServletException {
 		//加入对中文编码的处理
 		servletRequest.setCharacterEncoding("UTF-8");
 		//放行请求
@@ -24,7 +23,5 @@ public class MyCharacterFilter implements Filter {
 	}
 
 	@Override
-	public void destroy() {
-
-	}
+	public void destroy() {}
 }

@@ -3,7 +3,12 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.example</groupId>
     <artifactId>springMVC</artifactId>
-    <packaging>war</packaging>
+    <packaging>pom</packaging>
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.comlier.target>1.8</maven.comlier.target>
+    </properties>
+
     <version>1.0-SNAPSHOT</version>
     <name>springMVC Maven Webapp</name>
     <url>http://maven.apache.org</url>
