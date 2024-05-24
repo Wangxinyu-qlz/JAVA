@@ -4,20 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="168b7bae-394f-47a3-a325-e8c2aeb9f009" name="Changes" comment="practice1:quick start">
-      <change afterPath="$PROJECT_DIR$/practice_quickStart/src/main/java/mapper/MonsterAnnotation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/practice_quickStart/src/test/java/mapper/AnnotationTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/practice_quickStart/src/test/java/mapper/NativeAPITest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/practice_xmlMapper/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/practice_xmlMapper/src/main/java/org/example/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/practice_xmlMapper/src/test/java/org/example/AppTest.java" afterDir="false" />
+    <list default="true" id="168b7bae-394f-47a3-a325-e8c2aeb9f009" name="Changes" comment="xml mapper">
+      <change afterPath="$PROJECT_DIR$/practice_xmlMapper/src/main/java/entity/Monster.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/practice_xmlMapper/src/main/java/entity/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/practice_xmlMapper/src/main/java/util/MybatisUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/practice_xmlMapper/src/main/resources/jdbc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/practice_xmlMapper/src/main/resources/mybatis-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice_quickStart/src/main/java/mapper/MonsterMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/practice_quickStart/src/main/java/mapper/MonsterMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice_quickStart/src/main/java/mapper/MonsterMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/practice_quickStart/src/main/java/mapper/MonsterMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice_quickStart/src/main/java/util/MyBatisUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/practice_quickStart/src/main/java/util/MyBatisUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice_quickStart/src/main/resources/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/practice_quickStart/src/main/resources/mybatis-config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice_quickStart/src/test/java/mapper/MonsterMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/practice_quickStart/src/test/java/mapper/MonsterMapperTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,7 +120,7 @@
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/My_Code/Java/mybatis/practice_quickStart/src/main/java/ressources",
+    "last_opened_file_path": "C:/My_Code/Java/mybatis/practice_xmlMapper/src/main/java/entity",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -146,11 +140,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\My_Code\Java\mybatis\practice_xmlMapper\src\main\java\entity" />
+      <recent name="C:\My_Code\Java\mybatis\practice_xmlMapper\src\main\resources" />
       <recent name="C:\My_Code\Java\mybatis\practice_quickStart\src\main\java\ressources" />
       <recent name="C:\My_Code\Java\mybatis\cache\src\main\resources" />
       <recent name="C:\My_Code\Java\mybatis\cache\src\main\java\mapper" />
-      <recent name="C:\My_Code\Java\mybatis\mapping\src\main\resources" />
-      <recent name="C:\My_Code\Java\mybatis\dynamic-sql\src\main\java" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="mapper" />
@@ -273,7 +267,7 @@
       <workItem from="1714564477751" duration="28883000" />
       <workItem from="1714902372860" duration="37402000" />
       <workItem from="1715143114819" duration="30000" />
-      <workItem from="1716460464758" duration="12743000" />
+      <workItem from="1716460464758" duration="13736000" />
     </task>
     <task id="LOCAL-00001" summary="mybatis xml/注解配置操作数据库 日志 keyProperty useGeneratedKeys&#10;@Options(useGeneratedKeys=true, keyProperty=&quot;id&quot;)&#10;@Delete()&#10;@Select()&#10;@Insert()&#10;@Update()">
       <option name="closed" value="true" />
@@ -371,7 +365,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716515561757</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="xml mapper">
+      <option name="closed" value="true" />
+      <created>1716524099225</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1716524099225</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -400,7 +402,8 @@
     <MESSAGE value="缓存 二级缓存-&gt;一级缓存" />
     <MESSAGE value="ehcache  完结撒花" />
     <MESSAGE value="practice1:quick start" />
-    <option name="LAST_COMMIT_MESSAGE" value="practice1:quick start" />
+    <MESSAGE value="xml mapper" />
+    <option name="LAST_COMMIT_MESSAGE" value="xml mapper" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
