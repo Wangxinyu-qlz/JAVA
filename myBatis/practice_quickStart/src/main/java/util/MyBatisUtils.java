@@ -15,10 +15,10 @@ import java.io.InputStream;
  * @description:
  **/
 public class MyBatisUtils {
-	private static SqlSessionFactory sqlSessionFactory;;
+	static SqlSessionFactory sqlSessionFactory;
 
 	static{
-		try {
+		try{
 			String resource = "mybatis-config.xml";
 			InputStream inputStream = Resources.getResourceAsStream(resource);
 			sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
@@ -27,7 +27,7 @@ public class MyBatisUtils {
 		}
 	}
 
-	public static SqlSession getSqlSession() {
+	public static SqlSession getSqlSession(){
 		return sqlSessionFactory.openSession();
 	}
 }

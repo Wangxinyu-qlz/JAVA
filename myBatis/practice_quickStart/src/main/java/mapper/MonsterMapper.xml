@@ -3,9 +3,28 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mapper.MonsterMapper">
-    <insert id="addMonster" parameterType="entity.Monster"
+    <insert id="addMonster" parameterType="Monster"
             useGeneratedKeys="true" keyProperty="id">
         insert into  monster (age, birthday, email, gender, name, salary)
         values (#{age},#{birthday},#{email},#{gender},#{name},#{salary})
     </insert>
+    
+    <delete id="delMonster" parameterType="Integer">
+        delete from monster where id = #{id}
+    </delete>
+    
+    <update id="updateMonster" parameterType="Monster">
+        update monster set age=#{age}, birthday=#{birthday},
+                           email = #{email},gender= #{gender},
+                           name=#{name}, salary=#{salary}
+        where id = #{id}
+    </update>
+    
+    <select id="selectMonster" parameterType="Integer" resultType="Monster">
+        select * from monster where id = #{id}
+    </select>
+    
+    <select id="getAllMonsters" resultType="Monster">
+        select * from monster
+    </select>
 </mapper>

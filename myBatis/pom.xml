@@ -20,6 +20,7 @@
         <module>mapping</module>
         <module>cache</module>
         <module>practice_quickStart</module>
+        <module>practice_xmlMapper</module>
     </modules>
     
     <!--配置编译器 / source / target 版本-->

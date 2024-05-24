@@ -2,6 +2,8 @@ package mapper;
 
 import entity.Monster;
 
+import java.util.List;
+
 /**
  * @program: mybatis
  * @author: Qiaolezi
@@ -10,4 +12,12 @@ import entity.Monster;
  **/
 public interface MonsterMapper {
 	void addMonster(Monster monster);
+
+	void delMonster(Integer id);
+
+	void updateMonster(Monster monster);
+
+	public Monster selectMonster(Integer id);
+
+	public List<Monster> getAllMonsters();
 }

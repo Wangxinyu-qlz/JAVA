@@ -4,19 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="168b7bae-394f-47a3-a325-e8c2aeb9f009" name="Changes" comment="ehcache  完结撒花">
-      <change afterPath="$PROJECT_DIR$/practice_quickStart/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/practice_quickStart/src/main/java/entity/Monster.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/practice_quickStart/src/main/java/mapper/MonsterMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/practice_quickStart/src/main/java/mapper/MonsterMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/practice_quickStart/src/main/java/util/MyBatisUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/practice_quickStart/src/main/resources/jdbc.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/practice_quickStart/src/main/resources/mybatis-config.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/practice_quickStart/src/test/java/mapper/MonsterMapperTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+    <list default="true" id="168b7bae-394f-47a3-a325-e8c2aeb9f009" name="Changes" comment="practice1:quick start">
+      <change afterPath="$PROJECT_DIR$/practice_quickStart/src/main/java/mapper/MonsterAnnotation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/practice_quickStart/src/test/java/mapper/AnnotationTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/practice_quickStart/src/test/java/mapper/NativeAPITest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/practice_xmlMapper/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/practice_xmlMapper/src/main/java/org/example/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/practice_xmlMapper/src/test/java/org/example/AppTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../springMVC/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../springMVC/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice_quickStart/src/main/java/mapper/MonsterMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/practice_quickStart/src/main/java/mapper/MonsterMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice_quickStart/src/main/java/mapper/MonsterMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/practice_quickStart/src/main/java/mapper/MonsterMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice_quickStart/src/main/java/util/MyBatisUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/practice_quickStart/src/main/java/util/MyBatisUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice_quickStart/src/main/resources/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/practice_quickStart/src/main/resources/mybatis-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice_quickStart/src/test/java/mapper/MonsterMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/practice_quickStart/src/test/java/mapper/MonsterMapperTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,6 +62,10 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "JUnit.AnnotationTest.executor": "Run",
+    "JUnit.AnnotationTest.testAdd.executor": "Run",
+    "JUnit.AnnotationTest.testDel.executor": "Run",
+    "JUnit.AnnotationTest.testSelect.executor": "Run",
     "JUnit.IdenCardMapperAnnotationTest.test1.executor": "Run",
     "JUnit.IdenCardMapperAnnotationTest.test2.executor": "Run",
     "JUnit.IdenCardMapperTest.getIdenCardByCardId.executor": "Run",
@@ -87,6 +92,10 @@
     "JUnit.MonsterMapperTest.selectMonster.executor": "Run",
     "JUnit.MonsterMapperTest.test.executor": "Run",
     "JUnit.MonsterMapperTest.test1.executor": "Run",
+    "JUnit.MonsterMapperTest.testDel.executor": "Run",
+    "JUnit.MonsterMapperTest.testGetAllMonsters.executor": "Run",
+    "JUnit.MonsterMapperTest.testSelect.executor": "Run",
+    "JUnit.MonsterMapperTest.testUpdate.executor": "Run",
     "JUnit.MonsterMapperTest.updateMonster.executor": "Run",
     "JUnit.MonsterMapperTest.updateMonster_set.executor": "Run",
     "JUnit.MyBatisNativeAPITest.init.executor": "Run",
@@ -94,6 +103,9 @@
     "JUnit.MyBatisNativeAPITest.nativeDelete.executor": "Run",
     "JUnit.MyBatisNativeAPITest.nativeSelect.executor": "Run",
     "JUnit.MyBatisNativeAPITest.nativeUpdate.executor": "Run",
+    "JUnit.NativeAPITest.testAdd.executor": "Run",
+    "JUnit.NativeAPITest.testDel.executor": "Run",
+    "JUnit.NativeAPITest.testUpdate.executor": "Run",
     "JUnit.PersonMapperAnnotationTest.test2.executor": "Run",
     "JUnit.PersonMapperTest.getIdenCardByCardId.executor": "Run",
     "JUnit.PersonMapperTest.getIdenCardByCardId2.executor": "Run",
@@ -151,72 +163,8 @@
       <recent name="main.java.util" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.MonsterMapperTest.test">
-    <configuration name="MonsterMapperTest.cacheSeqTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="cache" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="mapper.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="mapper" />
-      <option name="MAIN_CLASS_NAME" value="mapper.MonsterMapperTest" />
-      <option name="METHOD_NAME" value="cacheSeqTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MonsterMapperTest.ehCacheTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="cache" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="mapper.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="mapper" />
-      <option name="MAIN_CLASS_NAME" value="mapper.MonsterMapperTest" />
-      <option name="METHOD_NAME" value="ehCacheTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MonsterMapperTest.level1CacheTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="cache" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="mapper.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="mapper" />
-      <option name="MAIN_CLASS_NAME" value="mapper.MonsterMapperTest" />
-      <option name="METHOD_NAME" value="level1CacheTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MonsterMapperTest.level2CacheTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="cache" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="mapper.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="mapper" />
-      <option name="MAIN_CLASS_NAME" value="mapper.MonsterMapperTest" />
-      <option name="METHOD_NAME" value="level2CacheTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MonsterMapperTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.AnnotationTest.testSelect">
+    <configuration name="AnnotationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="practice_quickStart" />
       <extension name="coverage">
         <pattern>
@@ -225,8 +173,71 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="mapper" />
-      <option name="MAIN_CLASS_NAME" value="mapper.MonsterMapperTest" />
-      <option name="METHOD_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="mapper.AnnotationTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AnnotationTest.testAdd" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="practice_quickStart" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="mapper.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="mapper" />
+      <option name="MAIN_CLASS_NAME" value="mapper.AnnotationTest" />
+      <option name="METHOD_NAME" value="testAdd" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AnnotationTest.testDel" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="practice_quickStart" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="mapper.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="mapper" />
+      <option name="MAIN_CLASS_NAME" value="mapper.AnnotationTest" />
+      <option name="METHOD_NAME" value="testDel" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AnnotationTest.testSelect" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="practice_quickStart" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="mapper.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="mapper" />
+      <option name="MAIN_CLASS_NAME" value="mapper.AnnotationTest" />
+      <option name="METHOD_NAME" value="testSelect" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NativeAPITest.testUpdate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="practice_quickStart" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="mapper.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="mapper" />
+      <option name="MAIN_CLASS_NAME" value="mapper.NativeAPITest" />
+      <option name="METHOD_NAME" value="testUpdate" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -234,11 +245,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.MonsterMapperTest.test" />
-        <item itemvalue="JUnit.MonsterMapperTest.ehCacheTest" />
-        <item itemvalue="JUnit.MonsterMapperTest.cacheSeqTest" />
-        <item itemvalue="JUnit.MonsterMapperTest.level2CacheTest" />
-        <item itemvalue="JUnit.MonsterMapperTest.level1CacheTest" />
+        <item itemvalue="JUnit.AnnotationTest.testSelect" />
+        <item itemvalue="JUnit.AnnotationTest" />
+        <item itemvalue="JUnit.AnnotationTest.testDel" />
+        <item itemvalue="JUnit.AnnotationTest.testAdd" />
+        <item itemvalue="JUnit.NativeAPITest.testUpdate" />
       </list>
     </recent_temporary>
   </component>
@@ -262,7 +273,7 @@
       <workItem from="1714564477751" duration="28883000" />
       <workItem from="1714902372860" duration="37402000" />
       <workItem from="1715143114819" duration="30000" />
-      <workItem from="1716460464758" duration="5136000" />
+      <workItem from="1716460464758" duration="12743000" />
     </task>
     <task id="LOCAL-00001" summary="mybatis xml/注解配置操作数据库 日志 keyProperty useGeneratedKeys&#10;@Options(useGeneratedKeys=true, keyProperty=&quot;id&quot;)&#10;@Delete()&#10;@Select()&#10;@Insert()&#10;@Update()">
       <option name="closed" value="true" />
@@ -352,7 +363,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715137368958</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="practice1:quick start">
+      <option name="closed" value="true" />
+      <created>1716515561757</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1716515561757</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -380,7 +399,8 @@
     <MESSAGE value="多表联查" />
     <MESSAGE value="缓存 二级缓存-&gt;一级缓存" />
     <MESSAGE value="ehcache  完结撒花" />
-    <option name="LAST_COMMIT_MESSAGE" value="ehcache  完结撒花" />
+    <MESSAGE value="practice1:quick start" />
+    <option name="LAST_COMMIT_MESSAGE" value="practice1:quick start" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

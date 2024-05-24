@@ -6,6 +6,14 @@
 <configuration>
     <properties resource="jdbc.properties"/>
     
+    <settings>
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+    </settings>
+    
+    <typeAliases>
+        <typeAlias type="entity.Monster" alias="Monster"/>
+    </typeAliases>
+    
     <environments default="development">
         <environment id="development">
             <transactionManager type="JDBC"/>
@@ -20,5 +28,6 @@
     
     <mappers>
         <mapper resource="mapper/MonsterMapper.xml"/>
+        <mapper class="mapper.MonsterAnnotation"/>
     </mappers>
 </configuration>
