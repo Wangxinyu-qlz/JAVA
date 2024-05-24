@@ -19,6 +19,7 @@
         <module>dynamic-sql</module>
         <module>mapping</module>
         <module>cache</module>
+        <module>practice_quickStart</module>
     </modules>
     
     <!--配置编译器 / source / target 版本-->
@@ -52,7 +53,7 @@
     
     </dependencies>
     
-    <!--TODO 配置resources， 防止资源导出失败
+    <!--TODO 配置resources， 防止资源导出失败 xxxMapper.xml未找到
     扫描src/main/java 和 src/main/resources 目录和子目录所有xml 和 properties文件
     在build项目时，导出到对应的target目录下-->
     <build>
