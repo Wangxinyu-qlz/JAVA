@@ -17,17 +17,18 @@ import java.io.InputStream;
 public class MybatisUtils {
 	static SqlSessionFactory sqlSessionFactory;
 
-	static{
-		try{
-			String source = "mybatis-config.xml";
-			InputStream resourceAsStream = Resources.getResourceAsStream(source);
-			sqlSessionFactory = new SqlSessionFactoryBuilder().build(resourceAsStream);
-		} catch (IOException e) {
-			e.printStackTrace();
+	static {
+		String resource = "mybatis-config.xml";
+		InputStream resourceAsStream = null;
+		try {
+			resourceAsStream = Resources.getResourceAsStream(resource);
+		} catch (IOException ex) {
+			throw new RuntimeException(ex);
 		}
+		sqlSessionFactory = new SqlSessionFactoryBuilder().build(resourceAsStream);
 	}
 
-	public static SqlSession getSqlSession(){
+	public static SqlSession getSqlSession() {
 		return sqlSessionFactory.openSession();
 	}
 }

@@ -24,4 +24,5 @@
     <select id="getAllMonsters" resultType="Monster" useCache="false">
         select * from `monster`;
     </select>
+    
 </mapper>
