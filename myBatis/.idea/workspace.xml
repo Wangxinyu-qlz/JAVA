@@ -5,13 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="168b7bae-394f-47a3-a325-e8c2aeb9f009" name="Changes" comment="xml mapper">
-      <change afterPath="$PROJECT_DIR$/practice_xmlMapper/src/main/java/entity/Monster.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/practice_xmlMapper/src/main/java/entity/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/practice_xmlMapper/src/main/java/util/MybatisUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/practice_xmlMapper/src/main/resources/jdbc.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/practice_xmlMapper/src/main/resources/mybatis-config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xml-mapper/src/main/java/T.java" beforeDir="false" afterPath="$PROJECT_DIR$/xml-mapper/src/main/java/T.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +50,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.T.executor": "Run",
     "JUnit.AnnotationTest.executor": "Run",
     "JUnit.AnnotationTest.testAdd.executor": "Run",
     "JUnit.AnnotationTest.testDel.executor": "Run",
@@ -157,7 +152,17 @@
       <recent name="main.java.util" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.AnnotationTest.testSelect">
+  <component name="RunManager" selected="JUnit.T.test">
+    <configuration name="T" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="corretto-1.8" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="T" />
+      <module name="xml-mapper" />
+      <option name="PROGRAM_PARAMETERS" value="-ea" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="AnnotationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="practice_quickStart" />
       <extension name="coverage">
@@ -169,22 +174,6 @@
       <option name="PACKAGE_NAME" value="mapper" />
       <option name="MAIN_CLASS_NAME" value="mapper.AnnotationTest" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AnnotationTest.testAdd" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="practice_quickStart" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="mapper.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="mapper" />
-      <option name="MAIN_CLASS_NAME" value="mapper.AnnotationTest" />
-      <option name="METHOD_NAME" value="testAdd" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -221,29 +210,30 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="NativeAPITest.testUpdate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="practice_quickStart" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="mapper.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="mapper" />
-      <option name="MAIN_CLASS_NAME" value="mapper.NativeAPITest" />
-      <option name="METHOD_NAME" value="testUpdate" />
+    <configuration name="T.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="xml-mapper" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="T" />
+      <option name="METHOD_NAME" value="test" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.T" />
+      <item itemvalue="JUnit.T.test" />
+      <item itemvalue="JUnit.AnnotationTest" />
+      <item itemvalue="JUnit.AnnotationTest.testDel" />
+      <item itemvalue="JUnit.AnnotationTest.testSelect" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.T.test" />
+        <item itemvalue="Application.T" />
         <item itemvalue="JUnit.AnnotationTest.testSelect" />
         <item itemvalue="JUnit.AnnotationTest" />
         <item itemvalue="JUnit.AnnotationTest.testDel" />
-        <item itemvalue="JUnit.AnnotationTest.testAdd" />
-        <item itemvalue="JUnit.NativeAPITest.testUpdate" />
       </list>
     </recent_temporary>
   </component>
@@ -268,6 +258,7 @@
       <workItem from="1714902372860" duration="37402000" />
       <workItem from="1715143114819" duration="30000" />
       <workItem from="1716460464758" duration="13736000" />
+      <workItem from="1716546203557" duration="6296000" />
     </task>
     <task id="LOCAL-00001" summary="mybatis xml/注解配置操作数据库 日志 keyProperty useGeneratedKeys&#10;@Options(useGeneratedKeys=true, keyProperty=&quot;id&quot;)&#10;@Delete()&#10;@Select()&#10;@Insert()&#10;@Update()">
       <option name="closed" value="true" />
@@ -373,7 +364,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716524099225</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="xml mapper">
+      <option name="closed" value="true" />
+      <created>1716546222723</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1716546222723</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
