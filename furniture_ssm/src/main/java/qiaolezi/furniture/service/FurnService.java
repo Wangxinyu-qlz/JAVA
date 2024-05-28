@@ -2,6 +2,8 @@ package qiaolezi.furniture.service;
 
 import qiaolezi.furniture.bean.Furn;
 
+import java.util.List;
+
 /**
  * @program: furniture_ssm
  * @author: Qiaolezi
@@ -11,4 +13,10 @@ import qiaolezi.furniture.bean.Furn;
 public interface FurnService {
 	//添加
 	void save(Furn furn);
+	List<Furn> findAll();
+
+	void update(Furn furn);
+	void delete(Integer id);
+
+	Furn findById(Integer id);
 }

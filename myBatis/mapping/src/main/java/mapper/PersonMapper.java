@@ -13,5 +13,4 @@ public interface PersonMapper {
 	Person getPersonById(Integer id);
 
 	Person getPersonById2(Integer id);
-
 }

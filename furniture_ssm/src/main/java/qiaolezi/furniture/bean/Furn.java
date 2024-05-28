@@ -15,7 +15,7 @@ public class Furn {
 
 	private Integer stock;
 
-	private String imgPath;
+	private String imgPath = "assets/images/product-image/1.jpg";
 
     public Furn() {
     }
@@ -28,7 +28,10 @@ public class Furn {
         this.price = price;
         this.sales = sales;
         this.stock = stock;
-        this.imgPath = imgPath;
+		//当Furn对象imgPath为Null时，imgPath给默认值
+        if(!(imgPath==null || imgPath.isEmpty())) {
+			this.imgPath = imgPath;
+        }
     }
 
     public Integer getId() {
