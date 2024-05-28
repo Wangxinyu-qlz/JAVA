@@ -16,10 +16,14 @@
     </select>
     
     <select id="findMonsterByName" parameterType="Monster" resultType="Monster">
-        select * from monster where name like '%${value}%'
+        select * from monster where name like '%${value}}%'
     </select>
     
     <select id="findMonsterByIdAndSalary" parameterType="map" resultType="Monster">
+        select * from monster where id > #{id} and salary > #{salary}
+    </select>
+    
+    <select id="findMonsterByIdAndSalary_returnMap" parameterType="map" resultType="map">
         select * from monster where id > #{id} and salary > #{salary}
     </select>
 </mapper>

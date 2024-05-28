@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="mapper.UserMapper">
+    <insert id="addUser" parameterType="User" useGeneratedKeys="true" keyProperty="user_id">
+        insert into user (user_email, user_name) VALUES
+            (#{useremail}, #{username})
+    </insert>
+    
+    <!--由于数据库字段和entity属性名不一致，查询出来的部分信息为null-->
+    <!--User{user_id=1, username='null', useremail='null'}-->
+	<!--User{user_id=2, username='null', useremail='null'}-->
+	<!--User{user_id=3, username='null', useremail='null'}-->
+    <!--<select id="findAllUsers" resultType="User">-->
+    <!--    select * from user-->
+    <!--</select>-->
+    
+    <resultMap id="findAllUsersMap" type="User">
+        <result column="user_name" property="username"/>
+        <result column="user_email" property="useremail"/>
+    </resultMap>
+    
+    <select id="findAllUsers" resultMap="findAllUsersMap">
+        select * from user
+    </select>
+</mapper>

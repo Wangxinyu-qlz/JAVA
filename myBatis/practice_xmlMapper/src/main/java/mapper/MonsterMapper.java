@@ -19,4 +19,8 @@ public interface MonsterMapper {
 	List<Monster> findMonsterByName(String name);
 	//多条件查询 id>? && salary>?
 	List<Monster> findMonsterByIdAndSalary(Map<String, Object> map);
+
+	//多条件查询 id>? && salary>?
+	List<Map<String, Object>> findMonsterByIdAndSalary_returnMap(Map<String, Object> map);
+
 }

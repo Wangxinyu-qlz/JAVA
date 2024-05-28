@@ -93,4 +93,20 @@ public class MonsterMapperTest {
 		}
 		System.out.println("ok");
 	}
+
+	@Test
+	public void testFindMonsterByIdAndSalary_returnMap() {
+		Map<String, Object> map = new HashMap<>();
+		map.put("id", 15);
+		map.put("salary", 9.0);
+		List<Map<String, Object>> monster = monsterMapper.findMonsterByIdAndSalary_returnMap(map);
+		for(Map<String, Object> m : monster) {
+			System.out.println(m);
+		}
+		if(sqlSession != null) {
+			sqlSession.commit();
+			sqlSession.close();
+		}
+		System.out.println("ok");
+	}
 }

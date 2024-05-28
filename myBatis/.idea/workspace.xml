@@ -4,14 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="168b7bae-394f-47a3-a325-e8c2aeb9f009" name="Changes" comment="xml mapper">
-      <change afterPath="$PROJECT_DIR$/practice_xmlMapper/src/main/java/mapper/MonsterMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/practice_xmlMapper/src/main/java/mapper/MonsterMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/practice_xmlMapper/src/test/java/MonsterMapperTest.java" afterDir="false" />
+    <list default="true" id="168b7bae-394f-47a3-a325-e8c2aeb9f009" name="Changes" comment="多条件查询 模糊查询">
+      <change afterPath="$PROJECT_DIR$/practice_xmlMapper/src/main/java/mapper/UserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/practice_xmlMapper/src/main/java/mapper/UserMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/practice_xmlMapper/src/test/java/TestUserMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cache/src/main/java/mapper/MonsterMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/cache/src/main/java/mapper/MonsterMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice_xmlMapper/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/practice_xmlMapper/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice_xmlMapper/src/main/java/util/MybatisUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/practice_xmlMapper/src/main/java/util/MybatisUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice_xmlMapper/src/main/java/mapper/MonsterMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/practice_xmlMapper/src/main/java/mapper/MonsterMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice_xmlMapper/src/main/java/mapper/MonsterMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/practice_xmlMapper/src/main/java/mapper/MonsterMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice_xmlMapper/src/test/java/MonsterMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/practice_xmlMapper/src/test/java/MonsterMapperTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,6 +88,7 @@
     "JUnit.MonsterMapperTest.test.executor": "Run",
     "JUnit.MonsterMapperTest.test1.executor": "Run",
     "JUnit.MonsterMapperTest.testDel.executor": "Run",
+    "JUnit.MonsterMapperTest.testFindMonsterByIdAndSalary_returnMap.executor": "Run",
     "JUnit.MonsterMapperTest.testGetAllMonsters.executor": "Run",
     "JUnit.MonsterMapperTest.testInsert.executor": "Run",
     "JUnit.MonsterMapperTest.testSelect.executor": "Run",
@@ -113,6 +114,8 @@
     "JUnit.PetMapperTest.test2.executor": "Run",
     "JUnit.PetMapperTest.test3.executor": "Run",
     "JUnit.T.test.executor": "Run",
+    "JUnit.TestUserMapper.testAdd.executor": "Run",
+    "JUnit.TestUserMapper.testFindAllUsers.executor": "Run",
     "JUnit.UserMapperAnnotationTest.test1.executor": "Run",
     "JUnit.UserMapperAnnotationTest.test2.executor": "Run",
     "JUnit.UserMapperTest.add.executor": "Run",
@@ -163,22 +166,12 @@
       <recent name="main.java.util" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.MonsterMapperTest.testSelectMonsterByIdAndSalary">
-    <configuration name="MonsterMapperTest.testInsert" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.TestUserMapper.testFindAllUsers">
+    <configuration name="MonsterMapperTest.testFindMonsterByIdAndSalary_returnMap" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="practice_xmlMapper" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="MonsterMapperTest" />
-      <option name="METHOD_NAME" value="testInsert" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MonsterMapperTest.testSelectByNameOrId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="practice_xmlMapper" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="MonsterMapperTest" />
-      <option name="METHOD_NAME" value="testSelectByNameOrId" />
+      <option name="METHOD_NAME" value="testFindMonsterByIdAndSalary_returnMap" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -204,30 +197,40 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="T.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="xml-mapper" />
+    <configuration name="TestUserMapper.testAdd" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="practice_xmlMapper" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="T" />
-      <option name="METHOD_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="TestUserMapper" />
+      <option name="METHOD_NAME" value="testAdd" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestUserMapper.testFindAllUsers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="practice_xmlMapper" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestUserMapper" />
+      <option name="METHOD_NAME" value="testFindAllUsers" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.MonsterMapperTest.testInsert" />
-      <item itemvalue="JUnit.MonsterMapperTest.testSelectByNameOrId" />
+      <item itemvalue="JUnit.MonsterMapperTest.testFindMonsterByIdAndSalary_returnMap" />
+      <item itemvalue="JUnit.TestUserMapper.testAdd" />
+      <item itemvalue="JUnit.TestUserMapper.testFindAllUsers" />
       <item itemvalue="JUnit.MonsterMapperTest.testSelectByValueInName" />
       <item itemvalue="JUnit.MonsterMapperTest.testSelectMonsterByIdAndSalary" />
-      <item itemvalue="JUnit.T.test" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TestUserMapper.testFindAllUsers" />
+        <item itemvalue="JUnit.TestUserMapper.testAdd" />
+        <item itemvalue="JUnit.MonsterMapperTest.testFindMonsterByIdAndSalary_returnMap" />
         <item itemvalue="JUnit.MonsterMapperTest.testSelectMonsterByIdAndSalary" />
         <item itemvalue="JUnit.MonsterMapperTest.testSelectByValueInName" />
-        <item itemvalue="JUnit.MonsterMapperTest.testSelectByNameOrId" />
-        <item itemvalue="JUnit.MonsterMapperTest.testInsert" />
-        <item itemvalue="JUnit.T.test" />
       </list>
     </recent_temporary>
   </component>
@@ -254,7 +257,8 @@
       <workItem from="1716460464758" duration="13736000" />
       <workItem from="1716546203557" duration="9689000" />
       <workItem from="1716799422541" duration="255000" />
-      <workItem from="1716799688261" duration="3852000" />
+      <workItem from="1716799688261" duration="4874000" />
+      <workItem from="1716859557586" duration="1771000" />
     </task>
     <task id="LOCAL-00001" summary="mybatis xml/注解配置操作数据库 日志 keyProperty useGeneratedKeys&#10;@Options(useGeneratedKeys=true, keyProperty=&quot;id&quot;)&#10;@Delete()&#10;@Select()&#10;@Insert()&#10;@Update()">
       <option name="closed" value="true" />
@@ -376,7 +380,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716797610054</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="多条件查询 模糊查询">
+      <option name="closed" value="true" />
+      <created>1716806918762</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1716806918762</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -406,7 +418,8 @@
     <MESSAGE value="ehcache  完结撒花" />
     <MESSAGE value="practice1:quick start" />
     <MESSAGE value="xml mapper" />
-    <option name="LAST_COMMIT_MESSAGE" value="xml mapper" />
+    <MESSAGE value="多条件查询 模糊查询" />
+    <option name="LAST_COMMIT_MESSAGE" value="多条件查询 模糊查询" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
