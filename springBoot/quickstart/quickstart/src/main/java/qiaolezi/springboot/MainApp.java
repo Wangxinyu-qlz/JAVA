@@ -3,9 +3,8 @@ package qiaolezi.springboot;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-import qiaolezi.springboot.bean.Monster;
-import qiaolezi.springboot.config.BeanConfig;
+import qiaolezi.springboot.bean.Cat;
+import qiaolezi.springboot.bean.Dog;
 
 /**
  * @program: quickstart
@@ -57,11 +56,30 @@ public class MainApp {
 		//System.out.println("bean = " + bean + " " + bean.hashCode());
 		//System.out.println("bean1 = " + bean1 + " " + bean1.hashCode());
 
-		//  第一个配置类
-		Monster mayi = ioc.getBean("monster_mayi", Monster.class);
-		System.out.println(mayi);
-		//	第二个配置类
-		Monster niu = ioc.getBean("monster02", Monster.class);
-		System.out.println(niu);
+		////  第一个配置类
+		//Monster mayi = ioc.getBean("monster_mayi", Monster.class);
+		//System.out.println(mayi);
+		////	第二个配置类
+		//Monster niu = ioc.getBean("monster02", Monster.class);
+		//System.out.println(niu);
+
+		//============@Import====================
+		Dog dog = ioc.getBean("qiaolezi.springboot.bean.Dog", Dog.class);
+		//qiaolezi.springboot.bean.Dog
+		System.out.println(dog);
+		Cat cat = ioc.getBean("qiaolezi.springboot.bean.Cat", Cat.class);
+		System.out.println(cat);
+
+		//============@ConditionalOnBean==================
+		//TODO 可以解决循环注入的问题
+		//@ConditionalOnBean(name = "monster_?")
+		Dog dog01 = ioc.getBean("dog01", Dog.class);
+		System.out.println(dog01);
+		//@ConditionalOnMissingBean(name = "monster_")
+		Cat cat01 = ioc.getBean("cat01", Cat.class);
+		System.out.println(cat01);
+		//和配置类的加载顺序也有关
+		Cat cat_test = ioc.getBean("cat_test", Cat.class);
+		System.out.println(cat_test);
 	}
 }

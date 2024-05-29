@@ -1,8 +1,11 @@
 package qiaolezi.springboot.config;
 
+import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.Import;
+import qiaolezi.springboot.bean.Cat;
+import qiaolezi.springboot.bean.Dog;
 import qiaolezi.springboot.bean.Monster;
 
 /**
@@ -24,6 +27,8 @@ import qiaolezi.springboot.bean.Monster;
 * (4) 如何选择: 组件依赖必须使用 Full 模式默认。如果不需要组件依赖使用 Lite 模
 * (5) Lite 模 也称为轻量级模式，因为不检测依赖关系，运行速度快
 * */
+//注入组件，id为类型的全类名  qiaolezi.springboot.bean.Dog
+@Import(value = {Dog.class, Cat.class})
 @Configuration(proxyBeanMethods = true)
 public class BeanConfig {
 	//给容器添加一个组件
@@ -35,5 +40,11 @@ public class BeanConfig {
 	//@Scope("prototype")
 	public Monster monster01() {
 		return new Monster(200, "蚂蚁", 500, "钳子");
+	}
+
+	@Bean()
+	@ConditionalOnBean(name = "dog01")
+	public Cat cat_test() {
+		return new Cat();
 	}
 }
