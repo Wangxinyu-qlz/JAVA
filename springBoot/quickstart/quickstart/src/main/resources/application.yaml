@@ -1,0 +1,30 @@
+monster:
+  id: 100
+  name: 牛魔
+  age: 500
+  isMarried: true
+  birth: 2000/11/11
+  car: {name:宝马, price:99999999}  # 行内格式
+#  car:
+#    name: 宝马
+#    price: 9999999.9
+  skill:
+    - 铁拳
+    - 牛角
+  hobby: [喝酒, 吃肉]
+#  wife: {key01:狐狸精, key02:铁扇公主}
+  wife:
+    no1: 狐狸精
+    no2: 铁扇公主
+  salaries:
+    - 100
+    - 200
+  cars:  # k-v  v:List<Car>
+    grade01:
+      - { name: 保时捷, price: 999999 }  # 行内风格
+      - name: 法拉利  # 换行风格
+        price: 888888.88
+    grade02:
+      - { name: 宝马,price: 200000 }
+      - name: 奥迪
+        price: 88888.3
