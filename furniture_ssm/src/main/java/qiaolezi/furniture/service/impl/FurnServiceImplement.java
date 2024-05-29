@@ -2,7 +2,9 @@ package qiaolezi.furniture.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 import qiaolezi.furniture.bean.Furn;
+import qiaolezi.furniture.bean.FurnExample;
 import qiaolezi.furniture.dao.FurnMapper;
 import qiaolezi.furniture.service.FurnService;
 
@@ -46,5 +48,18 @@ public class FurnServiceImplement implements FurnService {
 	@Override
 	public void update(Furn furn) {
 		furnMapper.updateByPrimaryKeySelective(furn);
+	}
+
+	@Override
+	public List<Furn> findByCondition(String name) {
+		FurnExample furnExample = new FurnExample();
+		//通过Criteria对象设置查询条件
+		FurnExample.Criteria criteria = furnExample.createCriteria();
+		//判断
+		if(StringUtils.hasText(name)) {
+			criteria.andNameLike("%"+name+"%");
+		}
+		//如果name是 null ""  "   "，会查询所有数据
+		return furnMapper.selectByExample(furnExample);
 	}
 }

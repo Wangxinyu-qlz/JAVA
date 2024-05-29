@@ -19,4 +19,6 @@ public interface FurnService {
 	void delete(Integer id);
 
 	Furn findById(Integer id);
+
+	List<Furn> findByCondition(String name);
 }
