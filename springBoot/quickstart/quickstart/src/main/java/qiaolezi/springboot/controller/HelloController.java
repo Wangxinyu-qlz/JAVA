@@ -1,7 +1,9 @@
 package qiaolezi.springboot.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import qiaolezi.springboot.bean.Furn;
 
 /**
  * @program: quickstart
@@ -16,5 +18,13 @@ public class HelloController {
 	//@ResponseBody//这里不加上访问不到
 	public String hello() {
 		return "Hello,SpringBoot~";
+	}
+
+	@Autowired
+	Furn furn;
+
+	@RequestMapping("/furn")
+	public Furn furn() {
+		return furn;
 	}
 }

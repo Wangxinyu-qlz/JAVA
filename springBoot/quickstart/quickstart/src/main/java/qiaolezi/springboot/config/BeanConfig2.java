@@ -2,11 +2,13 @@ package qiaolezi.springboot.config;
 
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.ImportResource;
 import qiaolezi.springboot.bean.Cat;
 import qiaolezi.springboot.bean.Dog;
+import qiaolezi.springboot.bean.Furn;
 import qiaolezi.springboot.bean.Monster;
 
 /**
@@ -17,6 +19,7 @@ import qiaolezi.springboot.bean.Monster;
  **/
 @Configuration
 @ImportResource(value = "classpath:beans.xml")
+@EnableConfigurationProperties({Furn.class})
 public class BeanConfig2 {
 	@Bean()
 	//@Scope("prototype")
