@@ -19,7 +19,7 @@ import qiaolezi.springboot.bean.Monster;
  **/
 @Configuration
 @ImportResource(value = "classpath:beans.xml")
-@EnableConfigurationProperties({Furn.class})
+//@EnableConfigurationProperties({Furn.class})
 public class BeanConfig2 {
 	@Bean()
 	//@Scope("prototype")
