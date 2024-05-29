@@ -24,4 +24,3 @@ public class Furn {
 	private String name;
 	private Double price;
 }
-
