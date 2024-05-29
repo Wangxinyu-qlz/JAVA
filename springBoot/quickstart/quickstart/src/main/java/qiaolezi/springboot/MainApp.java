@@ -87,7 +87,7 @@ public class MainApp {
 		//System.out.println(cat01);
 
 		//============@ImportResource==================
-		Monster monster = ioc.getBean("monster", Monster.class);
-		System.out.println(monster);
+		//Monster monster = ioc.getBean("monster", Monster.class);
+		//System.out.println(monster);
 	}
 }
