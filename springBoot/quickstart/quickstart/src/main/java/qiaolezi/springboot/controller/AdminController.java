@@ -41,24 +41,36 @@ public class AdminController {
 
 	@GetMapping("/manage.html")
 	public String mainPage(Model model, HttpSession httpSession) {
-		Object loginAdmin = httpSession.getAttribute("loginAdmin");
-		if (null != loginAdmin) {
-			//集合模拟用户数据，放入到request域中，显示
-			ArrayList<User> users = new ArrayList<>();
-			users.add(new User(1, "关羽~", "666666", 20, "gy@sohu.com"));
-			users.add(new User(2, "张飞", "666666", 30, "zf@sohu.com"));
-			users.add(new User(3, "赵云", "666666", 22, "zy@sohu.com"));
-			users.add(new User(4, "马超", "666666", 28, "mc@sohu.com"));
-			users.add(new User(5, "黄忠", "666666", 50, "hz@sohu.com"));
-			model.addAttribute("users", users);
+		//Object loginAdmin = httpSession.getAttribute("loginAdmin");
+		//if (null != loginAdmin) {
+		//	//集合模拟用户数据，放入到request域中，显示
+		//	ArrayList<User> users = new ArrayList<>();
+		//	users.add(new User(1, "关羽~", "666666", 20, "gy@sohu.com"));
+		//	users.add(new User(2, "张飞", "666666", 30, "zf@sohu.com"));
+		//	users.add(new User(3, "赵云", "666666", 22, "zy@sohu.com"));
+		//	users.add(new User(4, "马超", "666666", 28, "mc@sohu.com"));
+		//	users.add(new User(5, "黄忠", "666666", 50, "hz@sohu.com"));
+		//	model.addAttribute("users", users);
+		//
+		//	System.out.println(httpSession.getAttribute("loginAdmin"));
+		//	return "manage";//这里才是视图解析器到 /templates/manage.html
+		//} else {
+		//	//返回登陆页面
+		//	model.addAttribute("message", "请登录");
+		//	return "adminLogin";  //请求转发
+		//}
 
-			System.out.println(httpSession.getAttribute("loginAdmin"));
-			return "manage";//这里才是视图解析器到 /templates/manage.html
-		} else {
-			//返回登陆页面
-			model.addAttribute("message", "请登录");
-			return "adminLogin";  //请求转发
-		}
+		//配置拦截器之后
+		ArrayList<User> users = new ArrayList<>();
+		users.add(new User(1, "关羽~", "666666", 20, "gy@sohu.com"));
+		users.add(new User(2, "张飞", "666666", 30, "zf@sohu.com"));
+		users.add(new User(3, "赵云", "666666", 22, "zy@sohu.com"));
+		users.add(new User(4, "马超", "666666", 28, "mc@sohu.com"));
+		users.add(new User(5, "黄忠", "666666", 50, "hz@sohu.com"));
+		model.addAttribute("users", users);
+
+		System.out.println(httpSession.getAttribute("loginAdmin"));
+		return "manage";//这里才是视图解析器到 /templates/manage.html
 
 	}
 }
