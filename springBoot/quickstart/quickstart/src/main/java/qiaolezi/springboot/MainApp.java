@@ -3,6 +3,7 @@ package qiaolezi.springboot;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
+import qiaolezi.springboot.bean.Car;
 import qiaolezi.springboot.bean.Cat;
 import qiaolezi.springboot.bean.Dog;
 import qiaolezi.springboot.bean.Monster;
@@ -89,5 +90,8 @@ public class MainApp {
 		//============@ImportResource==================
 		//Monster monster = ioc.getBean("monster", Monster.class);
 		//System.out.println(monster);
+
+		//Car car = ioc.getBean("car", Car.class);
+		//System.out.println(car);
 	}
 }

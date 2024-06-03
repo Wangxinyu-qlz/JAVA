@@ -9,8 +9,10 @@ import org.springframework.stereotype.Component;
  * @create: 2024-05-29 22:52
  * @description:
  **/
+//@Data : All together now: A shortcut for @ToString, @EqualsAndHashCode,
+// @Getter on all fields, @Setter on all non-final fields, and @RequiredArgsConstructor!
 @Data
-@ToString
+//@ToString
 @NoArgsConstructor
 @AllArgsConstructor
 @Component

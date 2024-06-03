@@ -1,5 +1,6 @@
 package qiaolezi.springboot.controller;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import qiaolezi.springboot.bean.Monster2;
 
@@ -11,7 +12,8 @@ import javax.annotation.Resource;
  * @create: 2024-05-29 22:58
  * @description:
  **/
-@RestController
+//@RestController
+@Controller
 public class MonsterController {
 	@Resource
 	private Monster2 monster2;
@@ -28,6 +30,12 @@ public class MonsterController {
 		return "GET-查询";
 	}
 
+	//为什么这里 return "GET-查询妖怪",返回的是字符串,而不是转发到对应的资源文件?
+	// 因为@ResController是一个复合注解,含有@ResponseBody,所以springboot底层(springmvc), 在处理
+	// return "xxx" 时, 会以@ResponseBody 注解进行解析处理, 即返回字符串 "xxx", 而不会使用视图解析器来处理.
+	// 如果把 @RestController 改成 @Controller , 访问getMonster() 时, 如果有xxx.html
+	// 就会转发到xxx.html , 如果没有xxx.html , 就会报404
+	// 提示: 在测试时, 讲xxx.html 放在 main\resources\public\xxx.html 进行测试, 并在application.yml 配置视图解析器
 	@PostMapping("/monster")
 	public String saveMonster() {
 		return "POST-保存";

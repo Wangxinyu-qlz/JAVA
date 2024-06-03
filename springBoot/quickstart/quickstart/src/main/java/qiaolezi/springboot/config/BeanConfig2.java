@@ -8,7 +8,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.ImportResource;
 import qiaolezi.springboot.bean.Cat;
 import qiaolezi.springboot.bean.Dog;
-import qiaolezi.springboot.bean.Furn;
 import qiaolezi.springboot.bean.Monster;
 
 /**

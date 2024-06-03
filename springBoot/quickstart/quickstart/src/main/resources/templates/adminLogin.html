@@ -1,0 +1,25 @@
+<!DOCTYPE html >
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+</head>
+<body bgcolor="#CED3FE">
+<img src="images/1.gif"/>
+<hr/>
+<div style="text-align: center">
+    <h1>用户登陆</h1>
+    <!--使用 # 作为占位符，表示提交到当前页面，但不会改变URL。这通常用于开发过程中或需要在前端处理表单提交的情况。
+    使用 # 作为 action 的好处是可以避免页面跳转，有利于在前端使用JavaScript处理表单数据。-->
+    <form action="#" th:action="@{login}" method="post">
+        <label style="color: red" th:text="${message}"></label><br/>
+        用户名:<input type="text" style="width:150px" name="username"/><br/><br/>
+        密 码 :<input type="password" style="width:150px" name="password"/><br/><br/>
+        <input type="submit" value="登录"/>
+        <input type="reset" value="重新填写"/>
+    </form>
+</div>
+<hr/>
+<img src="images/1.jpg" height="300px" width="400px"/>
+</body>
+</html>

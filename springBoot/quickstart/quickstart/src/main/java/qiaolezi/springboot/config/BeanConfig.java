@@ -4,6 +4,7 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
+import org.springframework.core.annotation.Order;
 import qiaolezi.springboot.bean.Cat;
 import qiaolezi.springboot.bean.Dog;
 import qiaolezi.springboot.bean.Monster;
@@ -18,9 +19,9 @@ import qiaolezi.springboot.bean.Monster;
 //通过@Bean注解注入bean对象
 /** 1. proxyBeanMethods：代理bean 的方法  默认为true
 * (1) Full(proxyBeanMethods = true)
- *   【保证每个@Bean 方法被调用多少次返回的组件都是单实例的是代理方式】
+ *   【保证每个@Bean 方法被调用多少次返回的组件都是单实例   代理方式】
 * (2) Lite(proxyBeanMethods = false)
- *   【每个@Bean 方法被调用多少次返回的组件都是新创建的是非代理方式】
+ *   【每个@Bean 方法被调用多少次返回的组件都是新创建的   非代理方式】
 * (3) 特别说明: proxyBeanMethods 是在 调用@Bean 方法 才生效，因此，需要先获取
        BeanConfig 组件，再调用方法 而不是直接通过 SpringBoot 主程序得到的容器来获取 bean,
        注意观察直接通过ioc.getBean() 获取 Bean, proxyBeanMethods 值并没有生效
