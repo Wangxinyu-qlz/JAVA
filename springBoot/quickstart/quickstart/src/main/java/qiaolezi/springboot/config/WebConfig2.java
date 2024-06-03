@@ -18,6 +18,6 @@ public class WebConfig2 implements WebMvcConfigurer {
 		//  /** 拦截所有请求
 		registry.addInterceptor(new LoginInterceptor())
 				.addPathPatterns("/**")
-				.excludePathPatterns("/", "/login", "/images/**");//指定要放行的路径 TODO 登陆界面的图片也需要放行
+				.excludePathPatterns("/", "/login", "/images/**", "/upload.html", "/upload");//指定要放行的路径 TODO 登陆界面的图片也需要放行
 	}
 }
