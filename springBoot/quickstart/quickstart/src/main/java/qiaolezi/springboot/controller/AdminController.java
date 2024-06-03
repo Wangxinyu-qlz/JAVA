@@ -71,6 +71,5 @@ public class AdminController {
 
 		System.out.println(httpSession.getAttribute("loginAdmin"));
 		return "manage";//这里才是视图解析器到 /templates/manage.html
-
 	}
 }

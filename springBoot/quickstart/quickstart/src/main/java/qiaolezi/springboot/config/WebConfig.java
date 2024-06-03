@@ -8,7 +8,7 @@ import org.springframework.util.ObjectUtils;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import qiaolezi.springboot.bean.Car;
-import qiaolezi.springboot.interceptor.LoginInterceptor;
+//import qiaolezi.springboot.interceptor.LoginInterceptor;
 
 /**
  * @program: quickstart

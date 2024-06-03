@@ -71,6 +71,7 @@ public class ParameterController {
 		return "success";
 	}
 
+	//请求体，表单提交的数据
 	//content:name=1&age=1
 	@PostMapping("/save")
 	public String postMethod(@RequestBody String content) {

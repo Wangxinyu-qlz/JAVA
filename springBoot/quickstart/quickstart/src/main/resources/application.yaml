@@ -29,14 +29,14 @@ monster:
       - name: 奥迪
         price: 88888.3
 
-#TODO 配置静态资源访问路径为/qiaolezi/**   (ori: /**)
+
 spring:
   servlet:
     multipart:  # 设置上传文件的大小
       max-file-size: 10MB
       max-request-size: 50MB
   mvc:
-    static-path-pattern: /**
+    static-path-pattern: /**  # 配置静态资源访问路径为/qiaolezi/**
     hiddenmethod:
       filter:
         enabled: true  # 启用HiddenHttpMethodFilter
@@ -47,5 +47,5 @@ spring:
       favor-parameter: true  # 开启基于请求参数的内容协商功能
   web:
     resources:
-      # 这里指定的话，会覆盖掉原来的路径，所以需要把原来的也加上
+      # 指定静态资源访问路径 这里指定的话，会覆盖掉原来的路径，所以需要把原来的也加上
       static-locations: ["classpath:/img/","classpath:/META-INF/resources/","classpath:/resources/", "classpath:/static/", "classpath:/public/" ]

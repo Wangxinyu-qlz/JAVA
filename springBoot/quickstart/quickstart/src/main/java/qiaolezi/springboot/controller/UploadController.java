@@ -30,7 +30,7 @@ public class UploadController {
 	                     @RequestParam("age")String age,
 	                     @RequestParam("job")String job,
 	                     @RequestPart("header") MultipartFile header,
-	                     @RequestPart("photo")MultipartFile[] photos) throws IOException {
+	                     @RequestPart("photos")MultipartFile[] photos) throws IOException {
 		//动态创建上传文件夹
 		String path = ResourceUtils.getURL("classpath:").getPath();
 		System.out.println(path);
