@@ -30,8 +30,12 @@ public class LoginInterceptor implements HandlerInterceptor {
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
 		//查看访问的uri
+		//URI: Universal Resource Identifier 标识符 标识一个唯一的资源
+		//URL: Universal Resource Locator 定位器 提供找到该资源的路径
 		String uri = request.getRequestURI();
+		String url = request.getRequestURL().toString();
 		log.info("================uri:{}=======================",uri);
+		log.info("================url:{}=======================",url);
 		//登录校验
 		HttpSession session = request.getSession();
 		Object loginAdmin = session.getAttribute("loginAdmin");
