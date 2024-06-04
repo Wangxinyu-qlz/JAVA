@@ -2,14 +2,14 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>login</title>
+    <title>全局异常</title>
 </head>
 <body bgcolor="#CED3FE">
 <img src="images/1.gif"/>
 <hr/>
 <div style="text-align: center">
-    <h1>5xx 发生错误了:)  templates</h1><br/>
-    错误状态码: <h1 th:text="${status}"></h1><br/>
+    <h1>全局异常/错误发生了:)  templates</h1><br/>
+    异常/错误信息: <h1 th:text="${mes}"></h1><br/>
     <a href='#' th:href="@{/}">返回主页面</a>
 </div>
 <hr/>

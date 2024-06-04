@@ -3,6 +3,7 @@ package qiaolezi.springboot.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import qiaolezi.springboot.exception.AccessException;
 
 /**
  * @program: quickstart
@@ -20,6 +21,14 @@ public class MyErrorController {
 
 	@PostMapping(value = {"err2"})
 	public String error2() {
+		return "manage";
+	}
+
+	@GetMapping(value = {"/err3"})
+	public String err3(String name) {
+		if(!"tom".equals(name)) {
+			throw new AccessException();
+		}
 		return "manage";
 	}
 }
