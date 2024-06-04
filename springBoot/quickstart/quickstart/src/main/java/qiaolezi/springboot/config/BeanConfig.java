@@ -32,7 +32,7 @@ import qiaolezi.springboot.bean.Monster;
 @Configuration(proxyBeanMethods = true)
 public class BeanConfig {
 	//给容器添加一个组件
-	//类型: Monster
+	//类型: Monster2
 	//id: monster01
 	//value = "monster_mayi" 指定id为monster_mayi 以此为准
 	//默认为单例 singleton
