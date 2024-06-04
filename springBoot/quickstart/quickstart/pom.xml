@@ -62,5 +62,63 @@
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-thymeleaf</artifactId>
     </dependency>
+    
+    <!--切换 WebServer, 演示如何切换成 Undertow-->
+    <!--<dependency>-->
+    <!--  <groupId>org.springframework.boot</groupId>-->
+    <!--  <artifactId>spring-boot-starter-web</artifactId>-->
+    <!--  &lt;!&ndash; 引入spring-boot-starter-web 排除tomcat &ndash;&gt;-->
+    <!--  <exclusions>-->
+    <!--    <exclusion>-->
+    <!--      <groupId>org.springframework.boot</groupId>-->
+    <!--      <artifactId>spring-boot-starter-tomcat</artifactId>-->
+    <!--    </exclusion>-->
+    <!--  </exclusions>-->
+    <!--</dependency>-->
+    <!--&lt;!&ndash; 引入undertow &ndash;&gt;-->
+    <!--<dependency>-->
+    <!--  <groupId>org.springframework.boot</groupId>-->
+    <!--  <artifactId>spring-boot-starter-undertow</artifactId>-->
+    <!--</dependency>-->
+    
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-data-jdbc</artifactId>
+    </dependency>
+    
+    <!--指定数据库 以及 版本（默认版本仲裁8.0.31）
+    TODO 版本可以不指定但是一定要指定是哪个数据库 mysql oracle-->
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+    </dependency>
+    
+    <!--开发SpringBoot测试类，需要引入包-->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+    </dependency>
+    
+    <!--druid数据源-->
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>druid</artifactId>
+      <version>1.1.17</version>
+    </dependency>
+    
+    <!-- https://mvnrepository.com/artifact/com.alibaba/druid-spring-boot-starter -->
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>druid-spring-boot-starter</artifactId>
+      <version>1.2.8</version>
+    </dependency>
+    
+    <!--MyBatis-->
+    <dependency>
+      <groupId>org.mybatis.spring.boot</groupId>
+      <artifactId>mybatis-spring-boot-starter</artifactId>
+      <version>2.2.2</version>
+    </dependency>
+  
   </dependencies>
 </project>

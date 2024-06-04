@@ -25,6 +25,8 @@ public class WebConfig2 implements WebMvcConfigurer {
 				//注意: 过滤器配置的urlPatterns 也会经过Spring-Boot 拦截器(根据拦截器的规则)
 				//所以为了看到效果，请在拦截器配置放行 /css/**
 				//在servlet 匹配全部是 /*, 在Spring-Boot 是/**
-				.excludePathPatterns("/css/**");
+				.excludePathPatterns("/css/**")
+				.excludePathPatterns("/sql")
+				.excludePathPatterns("/monster-mybatis");
 	}
 }

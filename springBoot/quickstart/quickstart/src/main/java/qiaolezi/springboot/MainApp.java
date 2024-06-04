@@ -4,10 +4,6 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.context.ConfigurableApplicationContext;
-import qiaolezi.springboot.bean.Car;
-import qiaolezi.springboot.bean.Cat;
-import qiaolezi.springboot.bean.Dog;
-import qiaolezi.springboot.bean.Monster;
 
 /**
  * @program: quickstart

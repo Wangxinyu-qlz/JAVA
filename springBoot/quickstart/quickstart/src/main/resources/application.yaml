@@ -35,6 +35,38 @@ spring:
     multipart:  # 设置上传文件的大小
       max-file-size: 10MB
       max-request-size: 50MB
+  datasource:
+#    url: jdbc:mysql://127.0.0.1:3306/spring_boot?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    url: jdbc:mysql://127.0.0.1:3306/springboot_mybatis?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+
+    druid:
+      #filters: stat,wall,slf4j #所有开启的功能
+
+      stat-view-servlet: # 监控页配置
+        enabled: true
+        login-username: root
+        login-password: root
+        resetEnable: false
+
+      web-stat-filter: # web监控
+        enabled: true
+        urlPattern: /*
+        exclusions: '*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*'
+
+      filter:
+        stat: # sql监控
+          slow-sql-millis: 1000
+          logSlowSql: true
+          enabled: true
+        wall: #防火墙
+          enabled: true
+          config:
+            drop-table-allow: false
+    # druid 配置 end
+
   mvc:
     static-path-pattern: /**  # 配置静态资源访问路径为/qiaolezi/**
     hiddenmethod:
@@ -49,3 +81,28 @@ spring:
     resources:
       # 指定静态资源访问路径 这里指定的话，会覆盖掉原来的路径，所以需要把原来的也加上
       static-locations: ["classpath:/img/","classpath:/META-INF/resources/","classpath:/resources/", "classpath:/static/", "classpath:/public/" ]
+
+server:
+  port: 8080
+  tomcat:
+    threads:
+      max: 200  # 最大工作线程数
+      min-spare: 10  # 最小工作线程数
+    accept-count: 100  # tomcat 启动的线程数达到最大时，接受排队的请求个数，默认值为100
+    max-connections: 2000  # 最大连接数
+    connection-timeout: 10000  # 建立连接超时时间毫秒
+mybatis:
+  # mapper-locations 指定 Xxxmapper.xml 文件的位置
+  mapper-locations: classpath:mapper/*.xml
+  # 通过 config-location 可以指定 mybatis 传统的 mybatis-config.xml
+  # 建议直接配置到 application.yml, 如果确实有需要再单独写
+  # config-location: classpath:mybatis/mybatis-config.xml
+
+  # 在 application.yml 直接配置 mybatis, configuration 说明
+  #1. 指定 mybatis 全局配置文件中的相关配置项，
+  # 也就是以前在 mybatis-config.xml 配置的参数
+  #2. 顶行输入 mybatis 会看到更多配置, 我们讲解过
+  #3. 这个 configuration 和 config-location 不要同时存在
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+

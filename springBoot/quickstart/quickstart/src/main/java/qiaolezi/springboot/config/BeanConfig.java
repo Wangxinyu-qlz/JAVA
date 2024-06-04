@@ -4,7 +4,6 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
-import org.springframework.core.annotation.Order;
 import qiaolezi.springboot.bean.Cat;
 import qiaolezi.springboot.bean.Dog;
 import qiaolezi.springboot.bean.Monster;
