@@ -15,7 +15,7 @@ import java.io.IOException;
 public class MyFilter implements Filter {
 	@Override
 	public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
-		System.out.println("doFilter...");
+		System.out.println("=========MyFilter::doFilter=============");
 		filterChain.doFilter(servletRequest, servletResponse);//TODO 放行
 	}
 

@@ -2,6 +2,7 @@ package qiaolezi.springboot;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.context.ConfigurableApplicationContext;
 import qiaolezi.springboot.bean.Car;
 import qiaolezi.springboot.bean.Cat;
@@ -14,8 +15,9 @@ import qiaolezi.springboot.bean.Monster;
  * @create: 2024-05-29 15:19
  * @description:
  **/
-//标识这是一个springboot项目
-//	scanBasePackages 指定扫描包以及子包
+//扫描指定目录下的原生方式注入的Servlet
+@ServletComponentScan(basePackages = "qiaolezi")
+//标识这是一个springboot项目 scanBasePackages 指定扫描包以及子包
 @SpringBootApplication(scanBasePackages = {"qiaolezi", })
 public class MainApp {
 	public static void main(String[] args) {
