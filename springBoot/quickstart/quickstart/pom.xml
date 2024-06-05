@@ -20,7 +20,7 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <!--springboot对依赖包制定了默认的版本号，如果手动指定则覆盖-->
-    <mysql.version>5.1.49</mysql.version>
+    <!--<mysql.version>5.1.49</mysql.version>-->
   </properties>
 
   <dependencies>

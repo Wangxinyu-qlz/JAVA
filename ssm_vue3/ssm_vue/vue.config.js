@@ -10,7 +10,7 @@ module.exports = {
       '/api':{//设置拦截器  /api/save ==>  http://127.0.0.1:8080/ssm/save
         // localhost ==> 127.0.0.1 否则500 404
         // 最后有没有 / 都可
-        target: 'http://127.0.0.1:8080/ssm',//代理的目标地址 /api 代替 http://127.0.0.1:8080/ssm/
+        target: 'http://127.0.0.1:8080',//代理的目标地址 /api 代替 http://127.0.0.1:8080/ssm/
         changeOrigin: true,//设置是否同源，浏览器允许跨域访问
         ws:true,
         pathRewrite: {//路径重写

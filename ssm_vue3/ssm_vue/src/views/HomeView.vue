@@ -193,7 +193,7 @@ export default {
           } else {
             this.$message({//弹出更新失败信息
               type: "error",
-              message: res.msg
+              message: res.message
             })
           }
           this.list() //刷新列表
@@ -216,11 +216,11 @@ export default {
                 this.dialogVisible = false
                 this.list()
               } else if (res.code === 400) {
-                this.serverValidErrors.name = res.extend.errorMsg.name;
-                this.serverValidErrors.sales = res.extend.errorMsg.sales;
-                this.serverValidErrors.price = res.extend.errorMsg.price;
-                this.serverValidErrors.maker = res.extend.errorMsg.maker;
-                this.serverValidErrors.stock = res.extend.errorMsg.stock;
+                this.serverValidErrors.name = res.data.name;
+                this.serverValidErrors.sales = res.data.sales;
+                this.serverValidErrors.price = res.data.price;
+                this.serverValidErrors.maker = res.data.maker;
+                this.serverValidErrors.stock = res.data.stock;
               }
             })
           } else {
@@ -253,15 +253,15 @@ export default {
       // })
 
       // 带条件的分页查询
-      request.get("/api/furnByConditionPages", {
+      request.get("/api/furnsBySearchPage", {
         params: {//请求携带的参数
           pageNum: this.currentPage,
           pageSize: this.pageSize,
           search: this.search,
         }
       }).then(res => {//处理分页信息
-        this.tableData = res.extend.pageInfo.list
-        this.total = res.extend.pageInfo.total
+        this.tableData = res.data.records
+        this.total = res.data.total
       })
     },
     handleEdit(row) {
@@ -270,13 +270,13 @@ export default {
       // 方法1
       // this.form = JSON.parse(JSON.stringify(row));
       // 方法2
-      request.get("/api/find/" + row.id).then(res => {
-        this.form = res.extend.furn;
+      request.get("/api/furns/" + row.id).then(res => {
+        this.form = res.data;
       })
       this.dialogVisible = true;
     },
     handleDel(id) {
-      request.delete("/api/del/" + id).then(res => {
+      request.delete("/api/delete/" + id).then(res => {
         if (res.code === 200) {
           this.$message(
               {
