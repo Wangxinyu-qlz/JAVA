@@ -6,7 +6,7 @@
   <!--表明是一个父项目，管理其他模块-->
   <packaging>pom</packaging>
   <modules>
-    <module>member-service-provider-10000</module>
+    <module>member-service-provider-10001</module>
   </modules>
   <version>1.0-SNAPSHOT</version>
   <name>E-commerce-center</name>

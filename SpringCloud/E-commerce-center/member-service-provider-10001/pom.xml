@@ -8,7 +8,7 @@
     </parent>
     
     <!-- 因为是子模块，因此不需要指定 groupId 了,从父工程继承 -->
-    <artifactId>member-service-provider-10000</artifactId>
+    <artifactId>member-service-provider-10001</artifactId>
     <packaging>jar</packaging>
     
     <name>member-service-provider-10000</name>
