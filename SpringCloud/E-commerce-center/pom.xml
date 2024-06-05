@@ -3,19 +3,101 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.example</groupId>
   <artifactId>E-commerce-center</artifactId>
-  <packaging>war</packaging>
+  <!--表明是一个父项目，管理其他模块-->
+  <packaging>pom</packaging>
+  <modules>
+    <module>member-service-provider-10000</module>
+  </modules>
   <version>1.0-SNAPSHOT</version>
-  <name>E-commerce-center Maven Webapp</name>
+  <name>E-commerce-center</name>
   <url>http://maven.apache.org</url>
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
-  <build>
-    <finalName>E-commerce-center</finalName>
-  </build>
+  
+  <!-- 统一配置各个依赖版本 -->
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <junit.version>4.12</junit.version>
+    
+    <!--老师说明: 使用最新版本的log4j , 防止安全漏洞-->
+    <log4j.version>2.17.2</log4j.version>
+    <lombok.version>1.18.20</lombok.version>
+    <mysql.version>8.0.31</mysql.version>
+    <druid.version>1.1.17</druid.version>
+    <mybatis.spring.boot.version>2.2.2</mybatis.spring.boot.version>
+  </properties>
+  <!--
+  1. dependencyManagement 作用: 子模块继承后, 锁定版本,子模块不用再写 version
+  注意：只锁定版本，不引入依赖
+  -->
+  <dependencyManagement>
+    <dependencies>
+      <!--配置SpringBoot-->
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-dependencies</artifactId>
+        <version>2.2.2.RELEASE</version>
+        <!--
+        老师解读:
+        1. type: pom 和 scope import 配合使用
+        2. 表示 父项目的子模块, 在引入 springboot 相关依赖时 锁定版本为2.2.2.RELEASE
+        3. 通过 pom + import 解决maven 单继承机制
+        -->
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      
+      <!--配置SpringCloud-->
+      <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-dependencies</artifactId>
+        <version>Hoxton.SR1</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      
+      <!--spring-cloud-alibaba-->
+      <dependency>
+        <groupId>com.alibaba.cloud</groupId>
+        <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+        <version>2.1.0.RELEASE</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      
+      <dependency>
+        <groupId>mysql</groupId>
+        <artifactId>mysql-connector-java</artifactId>
+        <version>${mysql.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.alibaba</groupId>
+        <artifactId>druid</artifactId>
+        <version>${druid.version}</version>
+      </dependency>
+      
+      <dependency>
+        <groupId>org.mybatis.spring.boot</groupId>
+        <artifactId>mybatis-spring-boot-starter</artifactId>
+        <version>${mybatis.spring.boot.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.logging.log4j</groupId>
+        <artifactId>log4j</artifactId>
+        <version>${log4j.version}</version>
+      </dependency>
+      
+      <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>${junit.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.projectlombok</groupId>
+        <artifactId>lombok</artifactId>
+        <version>1.18.24</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+  
 </project>
