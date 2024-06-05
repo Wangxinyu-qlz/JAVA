@@ -13,6 +13,7 @@ import java.util.Date;
  * @description:
  **/
 @Data
+//如果数据库名称和Bean名称不一致，可以配置一个映射
 @TableName("monster")
 public class Monster2 {
 	private Integer id;

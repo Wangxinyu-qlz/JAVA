@@ -12,7 +12,8 @@ import org.springframework.context.ConfigurableApplicationContext;
  * @create: 2024-05-29 15:19
  * @description:
  **/
-@MapperScan("qiaolezi.springboot.mybatis_plus.mapper")
+//扫描包下的所有mapper，XXXMapper不需要@Mapper注解 会覆盖掉其他的@Mapper
+//@MapperScan("qiaolezi.springboot.mybatis_plus.mapper")
 //扫描指定目录下的原生方式注入的Servlet
 @ServletComponentScan(basePackages = "qiaolezi")
 //标识这是一个springboot项目 scanBasePackages 指定扫描包以及子包
