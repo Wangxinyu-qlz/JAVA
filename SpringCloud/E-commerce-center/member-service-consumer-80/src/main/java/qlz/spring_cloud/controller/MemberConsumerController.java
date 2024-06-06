@@ -38,6 +38,7 @@ public class MemberConsumerController {
 	public static final String
 			//MEMBER_SERVICE_PROVIDER_URL = "http://localhost:10002";
 	//集群配置
+	//这里的名字就是spring.application.name: member-service-provider
 	MEMBER_SERVICE_PROVIDER_URL = "http://MEMBER-SERVICE-PROVIDER";
 	@Resource
 	private RestTemplate restTemplate;
