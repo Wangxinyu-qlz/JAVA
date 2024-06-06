@@ -20,8 +20,25 @@ import javax.annotation.Resource;
 @RestController
 @Slf4j
 public class MemberConsumerController {
+	/**
+	 * 1. MEMBER-SERVICE-PROVIDER 就是服务提供方[集群]注册到 EurekaServer 的名称
+	 * 2. 也就是服务提供方[集群] 对外暴露的名称为 MEMBER-SERVICE-PROVIDER
+	 * 3. MEMBER-SERVICE-PROVIDER 目 前 有 两 个 Availability Zones
+	 * 1member-service-provider:10002 , member-service-provider:10000
+	 * 所以如果你还需要使用注解@LoadBalanced 赋予 RestTemplate 负载均衡的能力, [即选
+	 * 择 MEMBER-SERVICE-PROVIDER 某一个服务访问, 否则就会报错, 可以给学员演示一下
+	 * 4. 具体方法
+	 * @Configuration public class CustomizationBean {
+	 * @Bean
+	 * @LoadBalanced public RestTemplate getRestTemplate() {
+	 * return new RestTemplate();
+	 *     }
+	 * }
+	 */
 	public static final String
-	MEMBER_SERVICE_PROVIDER_URL = "http://localhost:10002";
+			//MEMBER_SERVICE_PROVIDER_URL = "http://localhost:10002";
+	//集群配置
+	MEMBER_SERVICE_PROVIDER_URL = "http://MEMBER-SERVICE-PROVIDER";
 	@Resource
 	private RestTemplate restTemplate;
 

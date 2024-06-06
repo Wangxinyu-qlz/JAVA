@@ -1,0 +1,98 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.example</groupId>
+        <artifactId>E-commerce-center</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    
+    <!-- 因为是子模块，因此不需要指定 groupId 了,从父工程继承 -->
+    <artifactId>member-service-provider-10002</artifactId>
+    <packaging>jar</packaging>
+    
+    <name>member-service-provider-10000</name>
+    <url>http://maven.apache.org</url>
+    
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+    
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <!-- 如果在子工程/模块指定了 version，则以指定为准 -->
+        </dependency>
+        <!--
+        老师解读
+        1. starter-actuator 是 springboot 程序的监控系统，可以实现健康检查，info 信息等
+        2. 访问 http://localhost:10000/actuator 可以看到相关链接, 还可以做相关设置.
+        -->
+        <!--
+        https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web
+        -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        
+        <!--
+        https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web
+        -->
+        <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+        </dependency>
+        
+        <!-- https://mvnrepository.com/artifact/com.alibaba/druid -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid-spring-boot-starter</artifactId>
+            <!--父项目没有指定版本，这里需要指定-->
+            <version>1.1.17</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+        
+        <!--
+        https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-jdbc
+        -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
+        </dependency>
+        
+        <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+        
+        <!--
+        https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test
+        -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.example</groupId>
+            <artifactId>e_commerce_center-common-api</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        
+        <!-- 引入 eureka-client 依赖 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+    
+    </dependencies>
+</project>

@@ -7,14 +7,13 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 /**
  * @program: E-commerce-center
  * @author: Qiaolezi
- * @create: 2024-06-05 17:36
+ * @create: 2024-06-06 15:47
  * @description:
  **/
-//标识为 Eureka Client
-@EnableEurekaClient
 @SpringBootApplication
-public class MemberApplication {
+@EnableEurekaClient
+public class MemberProviderApplication10003 {
 	public static void main(String[] args) {
-		SpringApplication.run(MemberApplication.class, args);
+		SpringApplication.run(MemberProviderApplication10003.class, args);
 	}
 }

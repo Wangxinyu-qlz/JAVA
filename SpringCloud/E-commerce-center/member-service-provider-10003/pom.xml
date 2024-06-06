@@ -7,11 +7,10 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     
-    <!-- 因为是子模块，因此不需要指定 groupId 了,从父工程继承 -->
-    <artifactId>member-service-provider-10001</artifactId>
+    <artifactId>member-service-provider-10003</artifactId>
     <packaging>jar</packaging>
     
-    <name>member-service-provider-10000</name>
+    <name>member-service-provider-10003</name>
     <url>http://maven.apache.org</url>
     
     <properties>

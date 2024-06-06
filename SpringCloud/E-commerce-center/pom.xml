@@ -6,11 +6,12 @@
   <!--表明是一个父项目，管理其他模块-->
   <packaging>pom</packaging>
   <modules>
-    <module>member-service-provider-10001</module>
+    <module>member-service-provider-10002</module>
     <module>member-service-consumer-80</module>
     <module>e_commerce_center-common-api</module>
     <module>e-commerce-eureka-server-9001</module>
       <module>e-commerce-eureka-server-9002</module>
+    <module>member-service-provider-10003</module>
   </modules>
   <version>1.0-SNAPSHOT</version>
   <name>E-commerce-center</name>

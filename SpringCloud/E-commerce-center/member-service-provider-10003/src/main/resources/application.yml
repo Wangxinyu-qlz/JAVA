@@ -1,0 +1,38 @@
+server:
+  port: 10003
+
+spring:
+  application:
+    name: member-service-provider # 应用名称 因为是作为一个集群，所以两个实例使用相同的name
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://127.0.0.1:3306/e_commerce_center_db?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml  # 指定mapper.xml的位置
+  type-aliases-package: qlz.spring_cloud.entity  # 实例类所在的包，通过类名可以引用
+
+# eureka 客户端配置
+eureka:
+  client:
+    register-with-eureka: true # 将自己注册到 EurekaServer
+    # 是否从从 EurekaServer 抓取注册信息，默认为 true, 单节点无所谓，
+    # 集群必须设置为 true 才能配合 ribbon 使用负载均衡
+    fetchRegistry: true
+    service-url:
+      #表示将自己注册到哪个 eurekaServer
+      # defaultZone: http://localhost:9001/eureka
+      # 集群配置
+      defaultZone: http://eureka9001.com:9001/eureka, http://eureka9002.com:9002/eureka
+  instance:
+    # 心断检与续约时间
+    # 如果你希望保证CP，时间间隔可以短一些，
+    # 保证服务关闭后注册中心能及时剔除服务instance
+    # Eureka客户端向服务端发送心跳的时间间隔，单位为秒（默认是30秒）
+    lease-renewal-interval-in-seconds: 1
+    # Eureka服务端在收到最后一次心跳后等待时间上限，
+    # 单位为种（默认是90秒），超时将剔除服务
+    lease-expiration-duration-in-seconds: 2

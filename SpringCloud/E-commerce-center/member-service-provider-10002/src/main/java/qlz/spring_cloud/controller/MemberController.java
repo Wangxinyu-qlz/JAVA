@@ -31,7 +31,7 @@ public class MemberController {
 	public Result save(@RequestBody Member member) {
 		int affectedRows = memberService.save(member);
 		if(affectedRows > 0) {
-			return Result.success("添加会员成功", affectedRows);
+			return Result.success("添加会员成功 member-service-provider-10002", affectedRows);
 		} else {
 			return Result.error("401", "添加会员失败");
 		}
@@ -41,7 +41,7 @@ public class MemberController {
 	public Result getMemberById(@PathVariable("id")Long id){
 		Member member = memberService.queryMemberById(id);
 		if(member != null) {
-			return Result.success("查询成功", member);
+			return Result.success("查询成功 member-service-provider-10002", member);
 		} else {
 			return Result.error("402", "id=" +id + "不存在");
 		}

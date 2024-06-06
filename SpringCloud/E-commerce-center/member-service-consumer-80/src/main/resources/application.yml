@@ -14,3 +14,12 @@ eureka:
     service-url:
       #表示关联哪个 eurekaServer(注册/拉取服务信息)
       defaultZone: http://eureka9001.com:9001/eureka, http://eureka9002.com:9002/eureka
+  instance:
+    # 心断检与续约时间
+    # 如果你希望保证CP，时间间隔可以短一些，
+    # 保证服务关闭后注册中心能及时剔除服务instance
+    # Eureka客户端向服务端发送心跳的时间间隔，单位为秒（默认是30秒）
+    lease-renewal-interval-in-seconds: 1
+    # Eureka服务端在收到最后一次心跳后等待时间上限，
+    # 单位为种（默认是90秒），超时将剔除服务
+    lease-expiration-duration-in-seconds: 2

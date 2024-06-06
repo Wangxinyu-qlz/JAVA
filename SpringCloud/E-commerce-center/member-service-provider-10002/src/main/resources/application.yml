@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: member-service-provider-10002 # 应用名称
+    name: member-service-provider # 应用名称 因为是作为一个集群，所以两个实例使用相同的name
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     url: jdbc:mysql://127.0.0.1:3306/e_commerce_center_db?useUnicode=true&characterEncoding=utf-8&useSSL=false
