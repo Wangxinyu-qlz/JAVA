@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.test.context.SpringBootTest;
-import qlz.spring_cloud.MainApp;
+import qlz.spring_cloud.MemberApplication;
 import qlz.spring_cloud.dao.MemberDao;
 import qlz.spring_cloud.entity.Member;
 import qlz.spring_cloud.service.MemberService;
@@ -17,7 +17,7 @@ import javax.annotation.Resource;
  * @create: 2024-06-05 17:49
  * @description:
  **/
-@SpringBootTest(classes = MainApp.class)
+@SpringBootTest(classes = MemberApplication.class)
 public class AppTests {
 	private static final Logger log = LoggerFactory.getLogger(AppTests.class);
 	@Resource
