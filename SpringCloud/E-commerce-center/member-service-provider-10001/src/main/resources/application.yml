@@ -24,7 +24,9 @@ eureka:
     fetchRegistry: true
     service-url:
       #表示将自己注册到哪个 eurekaServer
-      defaultZone: http://localhost:9001/eureka
+      # defaultZone: http://localhost:9001/eureka
+      # 集群配置
+      defaultZone: http://eureka9001.com:9001/eureka, http://eureka9002.com:9002/eureka
   instance:
     # 心断检与续约时间
     # 如果你希望保证CP，时间间隔可以短一些，
