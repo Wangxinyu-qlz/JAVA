@@ -1,9 +1,7 @@
 package qlz.spring_cloud.controller;
 
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import qlz.spring_cloud.entity.Member;
 import qlz.spring_cloud.entity.Result;
 import qlz.spring_cloud.service.MemberService;
@@ -27,13 +25,25 @@ public class MemberController {
 	// 才能将数据封装到对应的bean，同时保证http的请求头的content-type是对应
 	// 2．如果前端是以表单形式提交了，则不需要使用@RequestBody，才会进行对象参数封装，
 	// 同时保证http的请求头的content-type是对应
+	//TODO @RequestBody:解决通过member-service-consumer添加数据，数据库中为null
+	// 可以将restTemplate发送的数据重新封装成Member
 	@PostMapping("/member/save")
-	public Result save(Member member) {
+	public Result save(@RequestBody Member member) {
 		int affectedRows = memberService.save(member);
 		if(affectedRows > 0) {
 			return Result.success("添加会员成功", affectedRows);
 		} else {
 			return Result.error("401", "添加会员失败");
+		}
+	}
+
+	@GetMapping("/member/get/{id}")
+	public Result getMemberById(@PathVariable("id")Long id){
+		Member member = memberService.queryMemberById(id);
+		if(member != null) {
+			return Result.success("查询成功", member);
+		} else {
+			return Result.error("402", "id=" +id + "不存在");
 		}
 	}
 }
