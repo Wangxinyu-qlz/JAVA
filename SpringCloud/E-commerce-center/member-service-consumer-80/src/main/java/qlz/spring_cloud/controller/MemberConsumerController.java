@@ -1,6 +1,8 @@
 package qlz.spring_cloud.controller;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.cloud.client.ServiceInstance;
+import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -10,6 +12,7 @@ import qlz.spring_cloud.entity.Member;
 import qlz.spring_cloud.entity.Result;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * @program: E-commerce-center
@@ -36,6 +39,9 @@ public class MemberConsumerController {
 	 *      return new RestTemplate();
 	 *     }
 	 * }
+	 * 交替访问member 服务说明:
+	 * 1. 注解@LoadBalanced 底层是Ribbon 支持算法
+	 * 2.Ribbon 和 Eureka 整合后 consumer 直接调用服务而不用再关心地址和端口号，且该服务还有负载功能
 	 */
 	//public static final String MEMBER_SERVICE_PROVIDER_URL = "http://localhost:10002";
 	//集群配置
@@ -44,6 +50,10 @@ public class MemberConsumerController {
 	public static final String MEMBER_SERVICE_PROVIDER_URL = "http://MEMBER-SERVICE-PROVIDER";
 	@Resource
 	private RestTemplate restTemplate;
+
+	//注意是spring cloud 的包而不是netflix
+	@Resource
+	private DiscoveryClient discoveryClient;
 
 	@PostMapping("/member/consumer/save")
 	public Result<Member> save(Member member) {
@@ -56,5 +66,19 @@ public class MemberConsumerController {
 	public Result<Member> get(@PathVariable("id")Long id) {
 		return restTemplate.getForObject(MEMBER_SERVICE_PROVIDER_URL +
 				"/member/get/" + id, Result.class);
+	}
+
+	@GetMapping(value = "/member/consumer/discovery")
+	public Object discovery() {
+		List<String> services = discoveryClient.getServices();
+		for(String service : services) {
+			System.out.println("=============服务名："+service+"===================");
+			List<ServiceInstance> instances = discoveryClient.getInstances(service);
+			for(ServiceInstance instance : instances) {
+				System.out.println(instance.getServiceId() + "\t" + instance.getHost()
+						+ "\t" + instance.getPort() + "\t" + instance.getUri());
+			}
+		}
+		return this.discoveryClient;
 	}
 }
