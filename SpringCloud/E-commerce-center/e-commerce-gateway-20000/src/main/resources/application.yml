@@ -31,7 +31,7 @@ eureka:
   instance:
     hostname: e-commerce-service
   client:
-    enabled: false
+    enabled: true
     service-url:
       register-with-eureka: true
       fetch-registry: true
