@@ -2,17 +2,28 @@ spring:
   application:
     name: e-commerce-gateway
   cloud:
+    loadbalancer:
+      ribbon:
+        enabled: true
     gateway:
+      discovery:
+        locator:
+          # 使用动态路由
+          enabled: true  #开启 Flag that enables DiscoveryClient gateway integration,即启用 DiscoveryClient 服务发现
       #配置路由, 可以有多个路由配置 List<RouteDefinition> routes
       routes:
         - id: member_route01   #路由的 ID，程序员自己写,要求唯一
           #gateway 最终访问的 url = uri+Path 即: http://localhost:10002/memeber/get/
           #匹配后提供服务的路由地址, 也可以是外网 uri,比如 http://www.qq.com 等
-          uri: http://localhost:10002
+          #uri: http://localhost:10002
+          #lb:协议名称  member-service-provider:服务名称
+          uri: lb://MEMBER-SERVICE-PROVIDER  # 使用动态路由
           predicates:
             - Path=/member/get/**
         - id: member_route02
-          uri: http://localhost:10002
+          #uri: http://localhost:10002
+          #lb:协议名称  member-service-provider:服务名称
+          uri: lb://MEMBER-SERVICE-PROVIDER
           predicates:
             - Path=/member/save
 
@@ -20,7 +31,7 @@ eureka:
   instance:
     hostname: e-commerce-service
   client:
-    enabled: false
+    enabled: true
     service-url:
       register-with-eureka: true
       fetch-registry: true

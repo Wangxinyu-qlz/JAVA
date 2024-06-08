@@ -18,15 +18,8 @@
     </properties>
     
     <dependencies>
-        <!--TODO 这两个不能引入，会冲突，因为gateway是一个网关-->
-        <!--<dependency>-->
-        <!--    <groupId>org.springframework.boot</groupId>-->
-        <!--    <artifactId>spring-boot-starter-web</artifactId>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-        <!--    <groupId>org.springframework.boot</groupId>-->
-        <!--    <artifactId>spring-boot-starter-actuator</artifactId>-->
-        <!--</dependency>-->
+        <!--TODO 这两个不能引入，会冲突，因为gateway是一个网关
+        spring-boot-starter-web  spring-boot-starter-actuator-->
         
         <!-- 引入 cloud gateway -->
         <dependency>
@@ -56,6 +49,14 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
-    
+        
+        <!--<dependency>-->
+        <!--    <groupId>org.springframework.cloud</groupId>-->
+        <!--    <artifactId>spring-cloud-starter-kubernetes-ribbon</artifactId>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+        <!--    <groupId>org.springframework.cloud</groupId>-->
+        <!--    <artifactId>spring-cloud-starter-loadbalancer</artifactId>-->
+        <!--</dependency>-->
     </dependencies>
 </project>
