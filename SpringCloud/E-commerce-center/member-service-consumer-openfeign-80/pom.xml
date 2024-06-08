@@ -1,0 +1,68 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.example</groupId>
+        <artifactId>E-commerce-center</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    
+    <artifactId>member-service-consumer-openfeign-80</artifactId>
+    <packaging>jar</packaging>
+    
+    <name>member-service-consumer-openfeign-80</name>
+    <url>http://maven.apache.org</url>
+    
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+    
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <!-- 如果在子工程/模块指定了 version，则以指定为准 -->
+        </dependency>
+        
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        
+        <!--TODO 直接去请求member-service-provider-10000
+             不需要操作数据库-->
+        <!--<dependency>-->
+        <!--    <groupId>org.mybatis.spring.boot</groupId>-->
+        <!--    <artifactId>mybatis-spring-boot-starter</artifactId>-->
+        <!--</dependency>-->
+        
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.example</groupId>
+            <artifactId>e_commerce_center-common-api</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        
+        <!-- 引入 eureka-client 依赖 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+        
+        <!-- 引入 openfeign -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
+    </dependencies>
+</project>

@@ -7,6 +7,7 @@ import qlz.spring_cloud.entity.Result;
 import qlz.spring_cloud.service.MemberService;
 
 import javax.annotation.Resource;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @program: E-commerce-center
@@ -39,6 +40,12 @@ public class MemberController {
 
 	@GetMapping("/member/get/{id}")
 	public Result getMemberById(@PathVariable("id")Long id){
+		//模拟超时，这里暂停 5 秒
+		//try {
+		//	TimeUnit.SECONDS.sleep(5);
+		//} catch (Exception e) {
+		//	e.printStackTrace();
+		//}
 		Member member = memberService.queryMemberById(id);
 		if(member != null) {
 			return Result.success("查询成功 member-service-provider-10003", member);
