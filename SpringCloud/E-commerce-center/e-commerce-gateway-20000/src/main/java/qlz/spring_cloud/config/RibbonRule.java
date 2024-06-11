@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Configuration;
  * @create: 2024-06-08 17:19
  * @description:
  **/
-//@Configuration
+@Configuration
 public class RibbonRule {
 	@Bean
 	public IRule myRule() {

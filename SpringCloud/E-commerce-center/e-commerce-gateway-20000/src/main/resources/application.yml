@@ -20,6 +20,16 @@ spring:
           uri: lb://MEMBER-SERVICE-PROVIDER  # 使用动态路由
           predicates:
             - Path=/member/get/**
+            # - After=2024-06-11T12:35:50.387+08:00[Asia/Shanghai] # 只有 2024-6-12 12:35:50 之后的请求才进行匹配/转发
+            # - Before=2024-06-11T12:35:50.387+08:00[Asia/Shanghai] # 只有 22024-6-12 12:35:50 之前的请求才进行匹配/转发
+            # - Between=2024-06-11T12:35:50.387+08:00[Asia/Shanghai],2024-06-12T12:35:50.387+08:00[Asia/Shanghai]
+            # - Cookie=user,qlz  # user:cookie的名字 qlz:cookie的值
+            # - Header=X-Request-Id, \d+  # 请求头 Header 有 X-Request-Id， 并且值 hello 才匹配/断言成功  也可以使用正则表达式\d+匹配数字
+            # - Host=**.qlz.**, **.qiaolezi.**  #  请求 Host 是**.hspedu.** 才匹配/断言成功 , 比如 Host www.hspedu.com
+            # - Method=GET,POST  # 请求方式为GET POST才成功
+            # - Path=/member/get/{segment},/blue/{segment}  # segment表示任意匹配的，可以通过变量名segment获取
+            # - Query=email, [\w-]+@([a-zA-Z]+\.)+[a-zA-Z]+
+            # - RemoteAddr=127.0.0.1  # 请求的 IP 是 127.0.0.1, 才能匹配/断言成功
         - id: member_route02
           #uri: http://localhost:10002
           #lb:协议名称  member-service-provider:服务名称
