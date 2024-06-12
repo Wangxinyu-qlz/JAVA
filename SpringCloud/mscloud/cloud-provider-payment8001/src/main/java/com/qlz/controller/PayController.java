@@ -2,7 +2,7 @@ package com.qlz.controller;
 
 
 import com.qlz.entities.Pay;
-import com.qlz.entities.PayDTO;
+import com.qlz.entity.PayDTO;
 import com.qlz.resp.ResultData;
 import com.qlz.resp.ReturnCodeEnum;
 import com.qlz.service.PayService;
