@@ -18,6 +18,10 @@ spring:
           #uri: http://localhost:10002
           #lb:协议名称  member-service-provider:服务名称
           uri: lb://MEMBER-SERVICE-PROVIDER  # 使用动态路由
+          filters:
+            - AddRequestParameter=color, blue  # #过滤器工厂会在匹配的请求头加上一对请求头，名称为 color 值为 blue
+            - AddRequestParameter=age, 18
+
           predicates:
             - Path=/member/get/**
             # - After=2024-06-11T12:35:50.387+08:00[Asia/Shanghai] # 只有 2024-6-12 12:35:50 之后的请求才进行匹配/转发

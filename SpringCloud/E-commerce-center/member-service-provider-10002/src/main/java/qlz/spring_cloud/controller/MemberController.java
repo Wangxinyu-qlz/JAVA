@@ -8,6 +8,7 @@ import qlz.spring_cloud.service.MemberService;
 import java.util.concurrent.TimeUnit;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 
 /**
  * @program: E-commerce-center
@@ -39,7 +40,9 @@ public class MemberController {
 	}
 
 	@GetMapping("/member/get/{id}")
-	public Result getMemberById(@PathVariable("id")Long id){
+	public Result getMemberById(@PathVariable("id")Long id, HttpServletRequest request){
+		String color = request.getParameter("color");
+		String age = request.getParameter("age");
 		//模拟超时，这里暂停 5 秒
 		//try {
 		//	TimeUnit.SECONDS.sleep(5);
@@ -48,7 +51,7 @@ public class MemberController {
 		//}
 		Member member = memberService.queryMemberById(id);
 		if(member != null) {
-			return Result.success("查询成功 member-service-provider-10002", member);
+			return Result.success("查询成功 member-service-provider-10002" +color+age, member);
 		} else {
 			return Result.error("402", "id=" +id + "不存在");
 		}
