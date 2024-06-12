@@ -13,13 +13,8 @@ spring:
     username: root
     password: root
 
-  ####Spring Cloud Consul for Service Discovery
-  cloud:
-    consul:
-      host: localhost
-      port: 8500
-      discovery:
-        service-name: ${spring.application.name}
+  profiles:
+    active: dev # 多环境配置加载内容dev/prod,不写就是默认default配置
 
 # ========================mybatis===================
 mybatis:
