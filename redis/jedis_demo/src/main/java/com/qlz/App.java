@@ -14,6 +14,7 @@ public class App {
     @BeforeEach
     public void init() {
         jedis = new Jedis("192.168.10.128", 6379);
+        jedis.auth("123456");
         jedis.select(0);
     }
 
