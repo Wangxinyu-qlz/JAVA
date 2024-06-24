@@ -9,6 +9,7 @@ import com.hmdp.dto.Result;
 import com.hmdp.entity.ShopType;
 import com.hmdp.mapper.ShopTypeMapper;
 import com.hmdp.service.IShopTypeService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.core.ZSetOperations;
 import org.springframework.stereotype.Service;
@@ -31,6 +32,7 @@ import static com.hmdp.utils.RedisConstants.CACHE_SHOP_TYPE_TTL;
  * @author 虎哥
  * @since 2021-12-22
  */
+@Slf4j
 @Service
 public class ShopTypeServiceImpl extends ServiceImpl<ShopTypeMapper, ShopType> implements IShopTypeService {
 	@Resource
@@ -51,7 +53,7 @@ public class ShopTypeServiceImpl extends ServiceImpl<ShopTypeMapper, ShopType> i
 					ShopType shopType = objectMapper.readValue(shopTypeJson, ShopType.class);
 					shopTypeList.add(shopType);
 				} catch (JsonProcessingException e) {
-					e.printStackTrace();
+					log.error("An error occurred", e);
 					// 处理 JSON 转换异常
 					return Result.fail("数据处理错误");
 				}
@@ -84,7 +86,6 @@ public class ShopTypeServiceImpl extends ServiceImpl<ShopTypeMapper, ShopType> i
 				throw new RuntimeException(e);
 			}
 		}
-		//设置缓存有效期（假设是1小时）
 		stringRedisTemplate.expire(CACHE_SHOP_TYPE_KEY, CACHE_SHOP_TYPE_TTL, TimeUnit.MINUTES);
 		//返回
 		return Result.ok(typeList);
