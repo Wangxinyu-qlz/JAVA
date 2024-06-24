@@ -21,13 +21,6 @@ import java.util.concurrent.TimeUnit;
  * @description:
  **/
 public class LoginInterceptor implements HandlerInterceptor {
-	//这里借助MvcConfig类中配置的拦截器，注入StringRedisTemplate
-	private StringRedisTemplate stringRedisTemplate;
-
-	public LoginInterceptor(StringRedisTemplate stringRedisTemplate) {
-		this.stringRedisTemplate = stringRedisTemplate;
-	}
-
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
 		////获取session
@@ -44,28 +37,37 @@ public class LoginInterceptor implements HandlerInterceptor {
 		//UserHolder.saveUser((UserDTO) user);
 		//return true;
 
-		//获取请求头中的token
-		String token = request.getHeader("authorization");
-		//判断token是否为空
-		if(StrUtil.isBlank(token)) {
+		////获取请求头中的token
+		//String token = request.getHeader("authorization");
+		////判断token是否为空
+		//if(StrUtil.isBlank(token)) {
+		//	response.setStatus(401);//未授权错误
+		//	return false;
+		//}
+		////基于token获取redis中的用户信息
+		//String key = RedisConstants.LOGIN_USER_KEY + token;
+		//Map<Object, Object> userMap = stringRedisTemplate.opsForHash().entries(key);
+		////判断用户是否存在
+		//if(userMap.isEmpty()) {
+		//	response.setStatus(401);//未授权错误
+		//	return false;
+		//}
+		////将查询到的Hash数据转换为UserDTO对象
+		//UserDTO userDTO = BeanUtil.fillBeanWithMap(userMap, new UserDTO(), false);
+		////存在，保存用户信息到ThreadLocal
+		//UserHolder.saveUser(userDTO);
+		//
+		////TODO 这里有问题，此拦截器并没有拦截所有的路径，并不能保证有效刷新token有效期
+		//// 解决方法：责任链：在此拦截器之前加一个拦截器，拦截所有路径，刷新token有效期
+		////刷新token有效期，只要用户一致在操作，就不会过期，距离最后一次操作过了TTL，就会自动过期
+		//stringRedisTemplate.expire(key, RedisConstants.LOGIN_USER_TTL, TimeUnit.MINUTES);
+
+		//1.判断是否需要拦截 ThreadLocal是否有用户
+		if(UserHolder.getUser() == null) {
 			response.setStatus(401);//未授权错误
 			return false;
 		}
-		//基于token获取redis中的用户信息
-		String key = RedisConstants.LOGIN_USER_KEY + token;
-		Map<Object, Object> userMap = stringRedisTemplate.opsForHash().
-				entries(key);
-		//判断用户是否存在
-		if(userMap.isEmpty()) {
-			response.setStatus(401);//未授权错误
-			return false;
-		}
-		//将查询到的Hash数据转换为UserDTO对象
-		UserDTO userDTO = BeanUtil.fillBeanWithMap(userMap, new UserDTO(), false);
-		//存在，保存用户信息到ThreadLocal
-		UserHolder.saveUser(userDTO);
-		//刷新token有效期
-		stringRedisTemplate.expire(key, RedisConstants.LOGIN_USER_TTL, TimeUnit.MINUTES);
+		//2.放行
 		return true;
 	}
 

@@ -1,6 +1,7 @@
 package com.hmdp.service.impl;
 
 import cn.hutool.core.bean.BeanUtil;
+import cn.hutool.core.bean.copier.CopyOptions;
 import cn.hutool.core.lang.UUID;
 import cn.hutool.core.util.RandomUtil;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
@@ -18,6 +19,7 @@ import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 
+import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
@@ -35,7 +37,6 @@ import static com.hmdp.utils.SystemConstants.USER_NICK_NAME_PREFIX;
 @Slf4j
 @Service
 public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IUserService {
-	private final String CODE = "code";
 	@Resource
 	private StringRedisTemplate stringRedisTemplate;
 
@@ -83,20 +84,32 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
 		}
 
 		//7.保存用户信息到session -> redis
+		//TODO 需要考虑的问题：
+		// 选择合适的数据结构（简单用String 对象用Hash，减少空间占用，可以存储单个字段，灵活）
+		// 合适的key（唯一性，方便查找）
+		// 设置有效期，避免占用过长时间
+		// 合适的存储粒度，只存储必要信息（UserDTO），减少空间占用，不存储敏感信息
 		//session有唯一id，保存在cookies中
 		//session.setAttribute("user", user);//敏感信息会返回给前端，无关信息多，tomcat压力大
 		//session.setAttribute("user", BeanUtil.copyProperties(user, UserDTO.class));
 		//7.1随机生成token，作为登录令牌
 		String token = UUID.randomUUID().toString(true);
 		//7.2将User对象转换为HashMap存储
+		//class java.lang.Long cannot be cast to class java.lang.String
+		// (java.lang.Long and java.lang.String are in module java.base of loader 'bootstrap')
+		//UserDTO::Long id -> redis String ERROR
 		UserDTO userDTO = BeanUtil.copyProperties(user, UserDTO.class);
-		Map<String, Object> userMap = BeanUtil.beanToMap(userDTO);
+		Map<String, Object> userMap = BeanUtil.beanToMap(userDTO, new HashMap<>(),
+				CopyOptions.create().
+						setIgnoreNullValue(true).
+						setFieldValueEditor((fieldName, fieldValue) -> fieldValue.toString()));
 		String tokenKey = LOGIN_USER_KEY + token;
 		stringRedisTemplate.opsForHash().putAll(tokenKey, userMap);
 		//7.3设置有效期
 		stringRedisTemplate.expire(tokenKey, LOGIN_USER_TTL, TimeUnit.MINUTES);
 		//7.4存储
-		//这里不返回的话，前端会一直跳转回登录界面
+		//这里不返回的话，前端会一直跳转回登录界面，
+		// 注意要返回token，而不是tokenKey（这只是存储在redis中的字段名）
 		//7.5返回token
 		return Result.ok(token);
 	}
