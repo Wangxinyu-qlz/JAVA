@@ -9,13 +9,13 @@ import com.hmdp.mapper.ShopMapper;
 import com.hmdp.service.IShopService;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 
 import java.util.concurrent.TimeUnit;
 
-import static com.hmdp.utils.RedisConstants.CACHE_SHOP_KEY;
-import static com.hmdp.utils.RedisConstants.CACHE_SHOP_TTL;
+import static com.hmdp.utils.RedisConstants.*;
 
 /**
  * <p>
@@ -36,20 +36,51 @@ public class ShopServiceImpl extends ServiceImpl<ShopMapper, Shop> implements IS
 		// 1.从redis查询商铺缓存
 		String shopJson = stringRedisTemplate.opsForValue().get(key);
 		//2.判断是否存在
+			//字符串是否为空白，空白的定义如下：
+			//null
+			//空字符串：""
+			//空格、全角空格、制表符、换行符，等不可见字符
+			//例：
+			//StrUtil. isBlank(null) // true
+			//StrUtil. isBlank("") // true
+			//StrUtil. isBlank(" \t\n") // true
+			//StrUtil. isBlank("abc") // false
 		if (StrUtil.isNotBlank(shopJson)) {
 			//3.存在，直接返回
 			Shop shop = JSONUtil.toBean(shopJson, Shop.class);
 			return Result.ok(shop);
 		}
+		//命中的是否是null
+		if(shopJson != null) {
+			//返回错误信息
+			return Result.fail("店铺信息不存在");
+		}
 		//4.不存在，根据id查询数据库
 		Shop shop = getById(id);
 		//5.不存在，返回错误
 		if (shop == null) {
+			//将null写入redis
+			stringRedisTemplate.opsForValue().set(key, "", CACHE_NULL_TTL, TimeUnit.MINUTES);
 			return Result.fail("店铺不存在");
 		}
-		//6.存在，写入redis，设置有效期30分钟
+		//6.存在，写入redis，设置有效期（timeout）30分钟
 		stringRedisTemplate.opsForValue().set(key, JSONUtil.toJsonStr(shop), CACHE_SHOP_TTL, TimeUnit.MINUTES);
 		//7.返回
 		return Result.ok(shop);
+	}
+
+	@Override
+	@Transactional//更新数据库和删除缓存做成一个事务
+	public Result update(Shop shop) {
+		Long id = shop.getId();
+		if(id == null) {
+			return Result.fail("商铺id不能为空");
+		}
+		//更新数据库
+		updateById(shop);
+		//删除缓存
+		stringRedisTemplate.delete(CACHE_SHOP_KEY + id);
+
+		return Result.ok();
 	}
 }
