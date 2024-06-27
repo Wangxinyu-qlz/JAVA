@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="168b7bae-394f-47a3-a325-e8c2aeb9f009" name="Changes" comment="传入map,返回map，resultMap" />
+    <list default="true" id="168b7bae-394f-47a3-a325-e8c2aeb9f009" name="Changes" comment="传入map,返回map，resultMap">
+      <change beforePath="$PROJECT_DIR$/../springBoot/quickstart/quickstart/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../springBoot/quickstart/quickstart/src/main/resources/application.yaml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -46,99 +48,99 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.T.executor": "Run",
-    "JUnit.AnnotationTest.executor": "Run",
-    "JUnit.AnnotationTest.testAdd.executor": "Run",
-    "JUnit.AnnotationTest.testDel.executor": "Run",
-    "JUnit.AnnotationTest.testSelect.executor": "Run",
-    "JUnit.IdenCardMapperAnnotationTest.test1.executor": "Run",
-    "JUnit.IdenCardMapperAnnotationTest.test2.executor": "Run",
-    "JUnit.IdenCardMapperTest.getIdenCardByCardId.executor": "Run",
-    "JUnit.IdenCardMapperTest.test1.executor": "Run",
-    "JUnit.MonsterAnnotationTest.add.executor": "Run",
-    "JUnit.MonsterAnnotationTest.init.executor": "Run",
-    "JUnit.MonsterMapperTest.addMonster.executor": "Run",
-    "JUnit.MonsterMapperTest.cacheSeqTest.executor": "Run",
-    "JUnit.MonsterMapperTest.deleteMonster.executor": "Run",
-    "JUnit.MonsterMapperTest.ehCacheTest.executor": "Run",
-    "JUnit.MonsterMapperTest.getMonsterByIdAndSalary_ParameterHashMap.executor": "Run",
-    "JUnit.MonsterMapperTest.getMonsterByIdAndSalary_ParameterHashMap_ReturnHashMap.executor": "Run",
-    "JUnit.MonsterMapperTest.getMonsterByIdOrName_choose.executor": "Run",
-    "JUnit.MonsterMapperTest.getMonsterById_forEach.executor": "Run",
-    "JUnit.MonsterMapperTest.getMonsterByName.executor": "Run",
-    "JUnit.MonsterMapperTest.getMonsterByNameAndAge_Trim.executor": "Run",
-    "JUnit.MonsterMapperTest.getMonsterByNameORId.executor": "Run",
-    "JUnit.MonsterMapperTest.level1CacheTest.executor": "Run",
-    "JUnit.MonsterMapperTest.level2CacheTest.executor": "Debug",
-    "JUnit.MonsterMapperTest.selectAllMonsterIf.executor": "Run",
-    "JUnit.MonsterMapperTest.selectAllMonsterIfWhere.executor": "Run",
-    "JUnit.MonsterMapperTest.selectAllMonsters.executor": "Run",
-    "JUnit.MonsterMapperTest.selectMonster (1).executor": "Run",
-    "JUnit.MonsterMapperTest.selectMonster.executor": "Run",
-    "JUnit.MonsterMapperTest.test.executor": "Run",
-    "JUnit.MonsterMapperTest.test1.executor": "Run",
-    "JUnit.MonsterMapperTest.testDel.executor": "Run",
-    "JUnit.MonsterMapperTest.testFindMonsterByIdAndSalary_returnMap.executor": "Run",
-    "JUnit.MonsterMapperTest.testGetAllMonsters.executor": "Run",
-    "JUnit.MonsterMapperTest.testInsert.executor": "Run",
-    "JUnit.MonsterMapperTest.testSelect.executor": "Run",
-    "JUnit.MonsterMapperTest.testSelectByNameOrId.executor": "Run",
-    "JUnit.MonsterMapperTest.testSelectByValueInName.executor": "Run",
-    "JUnit.MonsterMapperTest.testSelectMonsterByIdAndSalary.executor": "Run",
-    "JUnit.MonsterMapperTest.testUpdate.executor": "Run",
-    "JUnit.MonsterMapperTest.updateMonster.executor": "Run",
-    "JUnit.MonsterMapperTest.updateMonster_set.executor": "Run",
-    "JUnit.MyBatisNativeAPITest.init.executor": "Run",
-    "JUnit.MyBatisNativeAPITest.nativeCRUD.executor": "Run",
-    "JUnit.MyBatisNativeAPITest.nativeDelete.executor": "Run",
-    "JUnit.MyBatisNativeAPITest.nativeSelect.executor": "Run",
-    "JUnit.MyBatisNativeAPITest.nativeUpdate.executor": "Run",
-    "JUnit.NativeAPITest.testAdd.executor": "Run",
-    "JUnit.NativeAPITest.testDel.executor": "Run",
-    "JUnit.NativeAPITest.testUpdate.executor": "Run",
-    "JUnit.PersonMapperAnnotationTest.test2.executor": "Run",
-    "JUnit.PersonMapperTest.getIdenCardByCardId.executor": "Run",
-    "JUnit.PersonMapperTest.getIdenCardByCardId2.executor": "Run",
-    "JUnit.PetMapperAnnotationTest.test.executor": "Run",
-    "JUnit.PetMapperAnnotationTest.test1.executor": "Run",
-    "JUnit.PetMapperTest.test2.executor": "Run",
-    "JUnit.PetMapperTest.test3.executor": "Run",
-    "JUnit.T.test.executor": "Run",
-    "JUnit.TestUserMapper.testAdd.executor": "Run",
-    "JUnit.TestUserMapper.testFindAllUsers.executor": "Run",
-    "JUnit.UserMapperAnnotationTest.test1.executor": "Run",
-    "JUnit.UserMapperAnnotationTest.test2.executor": "Run",
-    "JUnit.UserMapperTest.add.executor": "Run",
-    "JUnit.UserMapperTest.getAllUser.executor": "Run",
-    "JUnit.UserMapperTest.test1.executor": "Run",
-    "JUnit.UserMapperTest.test2.executor": "Run",
-    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
-    "Maven.mybatis [clean].executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/My_Code/Java/mybatis/practice_xmlMapper/src/main/java/entity",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.15179393",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.T.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AnnotationTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AnnotationTest.testAdd.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AnnotationTest.testDel.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AnnotationTest.testSelect.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.IdenCardMapperAnnotationTest.test1.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.IdenCardMapperAnnotationTest.test2.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.IdenCardMapperTest.getIdenCardByCardId.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.IdenCardMapperTest.test1.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MonsterAnnotationTest.add.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MonsterAnnotationTest.init.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MonsterMapperTest.addMonster.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MonsterMapperTest.cacheSeqTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MonsterMapperTest.deleteMonster.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MonsterMapperTest.ehCacheTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MonsterMapperTest.getMonsterByIdAndSalary_ParameterHashMap.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MonsterMapperTest.getMonsterByIdAndSalary_ParameterHashMap_ReturnHashMap.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MonsterMapperTest.getMonsterByIdOrName_choose.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MonsterMapperTest.getMonsterById_forEach.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MonsterMapperTest.getMonsterByName.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MonsterMapperTest.getMonsterByNameAndAge_Trim.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MonsterMapperTest.getMonsterByNameORId.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MonsterMapperTest.level1CacheTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MonsterMapperTest.level2CacheTest.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.MonsterMapperTest.selectAllMonsterIf.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MonsterMapperTest.selectAllMonsterIfWhere.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MonsterMapperTest.selectAllMonsters.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MonsterMapperTest.selectMonster (1).executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MonsterMapperTest.selectMonster.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MonsterMapperTest.test.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MonsterMapperTest.test1.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MonsterMapperTest.testDel.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MonsterMapperTest.testFindMonsterByIdAndSalary_returnMap.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MonsterMapperTest.testGetAllMonsters.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MonsterMapperTest.testInsert.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MonsterMapperTest.testSelect.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MonsterMapperTest.testSelectByNameOrId.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MonsterMapperTest.testSelectByValueInName.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MonsterMapperTest.testSelectMonsterByIdAndSalary.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MonsterMapperTest.testUpdate.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MonsterMapperTest.updateMonster.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MonsterMapperTest.updateMonster_set.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MyBatisNativeAPITest.init.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MyBatisNativeAPITest.nativeCRUD.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MyBatisNativeAPITest.nativeDelete.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MyBatisNativeAPITest.nativeSelect.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MyBatisNativeAPITest.nativeUpdate.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.NativeAPITest.testAdd.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.NativeAPITest.testDel.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.NativeAPITest.testUpdate.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PersonMapperAnnotationTest.test2.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PersonMapperTest.getIdenCardByCardId.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PersonMapperTest.getIdenCardByCardId2.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PetMapperAnnotationTest.test.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PetMapperAnnotationTest.test1.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PetMapperTest.test2.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PetMapperTest.test3.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.T.test.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestUserMapper.testAdd.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestUserMapper.testFindAllUsers.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserMapperAnnotationTest.test1.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserMapperAnnotationTest.test2.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserMapperTest.add.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserMapperTest.getAllUser.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserMapperTest.test1.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserMapperTest.test2.executor&quot;: &quot;Run&quot;,
+    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.mybatis [clean].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/My_Code/Java/mybatis/practice_xmlMapper/src/main/java/entity&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.15179393&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\My_Code\Java\mybatis\practice_xmlMapper\src\main\java\entity" />
@@ -257,6 +259,7 @@
       <workItem from="1716799422541" duration="255000" />
       <workItem from="1716799688261" duration="4874000" />
       <workItem from="1716859557586" duration="6974000" />
+      <workItem from="1719461655353" duration="1008000" />
     </task>
     <task id="LOCAL-00001" summary="mybatis xml/注解配置操作数据库 日志 keyProperty useGeneratedKeys&#10;@Options(useGeneratedKeys=true, keyProperty=&quot;id&quot;)&#10;@Delete()&#10;@Select()&#10;@Insert()&#10;@Update()">
       <option name="closed" value="true" />
