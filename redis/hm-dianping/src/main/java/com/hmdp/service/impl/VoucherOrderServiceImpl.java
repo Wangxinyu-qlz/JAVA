@@ -8,8 +8,10 @@ import com.hmdp.mapper.VoucherOrderMapper;
 import com.hmdp.service.ISeckillVoucherService;
 import com.hmdp.service.IVoucherOrderService;
 import com.hmdp.utils.RedisIdWorker;
+import com.hmdp.utils.SimpleRedisLock;
 import com.hmdp.utils.UserHolder;
 import org.springframework.aop.framework.AopContext;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -31,6 +33,9 @@ public class VoucherOrderServiceImpl extends ServiceImpl<VoucherOrderMapper, Vou
 
 	@Resource
 	private RedisIdWorker redisIdWorker;
+
+	@Resource
+	private StringRedisTemplate stringRedisTemplate;
 
 	@Override
 	public Result seckillVoucher(Long voucherId) {
@@ -65,12 +70,39 @@ public class VoucherOrderServiceImpl extends ServiceImpl<VoucherOrderMapper, Vou
 		//            <artifactId>aspectjweaver</artifactId>
 		//        </dependency>
 		//同时启动类中加入注解，暴露这个代理对象：@EnableAspectJAutoProxy(exposeProxy=true)
-		synchronized (userId.toString().intern()) {
-			//获取VoucherOrderServiceImpl的代理对象
-			IVoucherOrderService proxy = (IVoucherOrderService)AopContext.currentProxy();
-			//return this.createVoucher(voucherId);
-			//调用代理对象的createVoucher()方法
+
+		//保证是同一个用户才加锁，不同的用户使用不同的锁
+		//toString()返回的是新的String对象
+		//.intern() 返回字符串对象的规范表示，如果池中包含一个等于该String对象的字符串，返回池中的字符串
+
+		//这把锁在多JVM下，不同进程的线程之间会失效
+		//synchronized (userId.toString().intern()) {
+		//	//获取VoucherOrderServiceImpl的代理对象
+		//	IVoucherOrderService proxy = (IVoucherOrderService)AopContext.currentProxy();
+		//	//return this.createVoucher(voucherId);
+		//	//调用代理对象的createVoucher()方法
+		//	return proxy.createVoucher(voucherId);
+		//}
+
+		//使用redis的setnx，互斥
+		//1.setnx lock islock  获取锁
+		//2.expire lock 5  （避免服务出现问题导致锁一直存在）
+		//3.del lock  释放锁
+		//1 2必须要原子性，否则会出现获取锁后，服务失效，锁一直存在
+		//改进：set lock islock nx ex 10
+		//创建锁对象
+		SimpleRedisLock lock = new SimpleRedisLock(stringRedisTemplate, "order" + userId);
+		//获取锁
+		boolean isLock = lock.tryLock(1200L);
+		if(!isLock) {//获取锁失败
+			//返回失败信息，或者重试，这里因为是一人一单，所以不应该重试
+			return Result.fail("不允许重复下单");
+		}
+		try {
+			IVoucherOrderService proxy = (IVoucherOrderService) AopContext.currentProxy();
 			return proxy.createVoucher(voucherId);
+		} finally {
+			lock.unlock();
 		}
 	}
 
@@ -78,16 +110,12 @@ public class VoucherOrderServiceImpl extends ServiceImpl<VoucherOrderMapper, Vou
 	public Result createVoucher(Long voucherId) {
 		//一人一单
 		Long userId = UserHolder.getUser().getId();
-		//保证是同一个用户才加锁，不同的用户使用不同的锁
-		//toString()返回的是新的String对象
-		//.intern() 返回字符串对象的规范表示，如果池中包含一个等于该string对象的字符串，返回池中的字符串
-
 		//查询订单
 		Integer count = query().eq("user_id", userId).eq("voucher_id", voucherId).count();
 		//判断是否存在
 		if (count > 0) {
 			//用户已经够买过
-			return Result.fail("用户已经够买过");
+			return Result.fail("用户已经购买过");
 		}
 
 		//扣减库存
