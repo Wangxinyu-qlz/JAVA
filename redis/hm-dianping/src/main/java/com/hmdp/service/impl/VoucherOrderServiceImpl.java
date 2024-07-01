@@ -10,6 +10,8 @@ import com.hmdp.service.IVoucherOrderService;
 import com.hmdp.utils.RedisIdWorker;
 import com.hmdp.utils.SimpleRedisLock;
 import com.hmdp.utils.UserHolder;
+import org.redisson.api.RLock;
+import org.redisson.api.RedissonClient;
 import org.springframework.aop.framework.AopContext;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
@@ -17,6 +19,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.time.LocalDateTime;
+import java.util.concurrent.TimeUnit;
 
 /**
  * <p>
@@ -37,8 +40,11 @@ public class VoucherOrderServiceImpl extends ServiceImpl<VoucherOrderMapper, Vou
 	@Resource
 	private StringRedisTemplate stringRedisTemplate;
 
+	@Resource
+	private RedissonClient redissonClient;
+
 	@Override
-	public Result seckillVoucher(Long voucherId) {
+	public Result seckillVoucher(Long voucherId) throws InterruptedException {
 		//查询优惠券
 		SeckillVoucher voucher = seckillVoucherService.getById(voucherId);
 		//判断秒杀是否开始
@@ -85,15 +91,32 @@ public class VoucherOrderServiceImpl extends ServiceImpl<VoucherOrderMapper, Vou
 		//}
 
 		//使用redis的setnx，互斥
+		//特性：
+		//  利用setnx保证互斥性
+		//  利用setnx保证故障时锁依然可以释放，避免死锁，提高安全性
+		//  利用redis集群保证高可用和高并发特性
+		//缺陷：
+		//  不可重入；同一个线程无法多次获取同一把锁
+		//  不可重试：获取锁只尝试一次就返回false，没有重试机制
+		//  超时释放：如果业务执行时间较长，会导致锁释放，有安全隐患
+		//  主从一致性：如果redis提供了主从集群，主从同步存在延时，主机宕机时，从机未同步主机数据，导致锁失效
 		//1.setnx lock islock  获取锁
 		//2.expire lock 5  （避免服务出现问题导致锁一直存在）
 		//3.del lock  释放锁
 		//1 2必须要原子性，否则会出现获取锁后，服务失效，锁一直存在
 		//改进：set lock islock nx ex 10
 		//创建锁对象
-		SimpleRedisLock lock = new SimpleRedisLock(stringRedisTemplate, "order" + userId);
+		//SimpleRedisLock lock = new SimpleRedisLock(stringRedisTemplate, "order" + userId);
 		//获取锁
-		boolean isLock = lock.tryLock(1200L);
+		//boolean isLock = lock.tryLock(1200L);
+
+		//使用redisson获取锁
+		RLock lock = redissonClient.getLock("lock:order:" + userId);
+		//1:获取锁的最大等待时间（期间会重试），默认-1，不重试；
+		//10:锁的自动释放时间；默认30s
+		//时间单位
+		//boolean isLock = lock.tryLock(1, 10, TimeUnit.SECONDS);
+		boolean isLock = lock.tryLock();
 		if(!isLock) {//获取锁失败
 			//返回失败信息，或者重试，这里因为是一人一单，所以不应该重试
 			return Result.fail("不允许重复下单");
