@@ -18,7 +18,7 @@ public class RedissonConfig {
 	public RedissonClient redissonClient() {
 		Config config = new Config();
 		//添加redis地址，单点，集群使用config.useClusterServers()添加集群地址
-		config.useSingleServer().setAddress("redis://192.168.10.128").setPassword("123456");
+		config.useSingleServer().setAddress("redis://192.168.10.128:6379").setPassword("123456");
 		//创建客户端
 		return Redisson.create(config);
 	}
