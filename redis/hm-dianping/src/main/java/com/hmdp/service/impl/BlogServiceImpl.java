@@ -18,6 +18,7 @@ import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -117,6 +118,9 @@ public class BlogServiceImpl extends ServiceImpl<BlogMapper, Blog> implements IB
 		//查询top5的点赞用户 zrange key 0 4
 		String key = BLOG_LIKED_KEY + id;
 		Set<String> top5 = stringRedisTemplate.opsForZSet().range(key, 0, 4);
+		if(top5 == null || top5.isEmpty()) {
+			return Result.ok(Collections.emptyList());
+		}
 		//解析用户id
 		List<Long> ids = top5.stream().map(Long::valueOf).collect(Collectors.toList());
 		//根据用户id查询用户
