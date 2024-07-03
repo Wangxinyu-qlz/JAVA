@@ -2,6 +2,7 @@ package com.hmdp.service.impl;
 
 import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.util.BooleanUtil;
+import cn.hutool.core.util.StrUtil;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.hmdp.dto.Result;
@@ -56,7 +57,12 @@ public class BlogServiceImpl extends ServiceImpl<BlogMapper, Blog> implements IB
 	}
 
 	private void isBlogLiked(Blog blog) {
-		Long userId = UserHolder.getUser().getId();
+		UserDTO user = UserHolder.getUser();
+		if(user == null) {
+			//用户未登录，不需要查询是否点赞
+			return;
+		}
+		Long userId = user.getId();
 		String key = BLOG_LIKED_KEY + blog.getId();
 		Double timeStamp = stringRedisTemplate.opsForZSet().score(key, userId.toString());
 		blog.setIsLike(timeStamp != null);
@@ -123,8 +129,10 @@ public class BlogServiceImpl extends ServiceImpl<BlogMapper, Blog> implements IB
 		}
 		//解析用户id
 		List<Long> ids = top5.stream().map(Long::valueOf).collect(Collectors.toList());
-		//根据用户id查询用户
-		List<UserDTO> userDTOS = userService.listByIds(ids)
+		//根据用户id查询用户 where id in (5, 1)  order by field(id, 5, 1) 解决查询顺序反的问题
+		String idStr = StrUtil.join(",", ids);
+		List<UserDTO> userDTOS = userService.query().
+				in("id", ids).last("order by field(id" + idStr + ")").list()
 				.stream().map(user -> BeanUtil.copyProperties(user, UserDTO.class))
 				.collect(Collectors.toList());
 		//返回
