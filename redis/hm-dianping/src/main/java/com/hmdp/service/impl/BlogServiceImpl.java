@@ -130,7 +130,7 @@ public class BlogServiceImpl extends ServiceImpl<BlogMapper, Blog> implements IB
 		//根据用户id查询用户 where id in (5, 1)  order by field(id, 5, 1) 解决查询顺序反的问题
 		String idStr = StrUtil.join(",", ids);
 		List<UserDTO> userDTOS = userService.query().
-				in("id", ids).last("order by field(id" + idStr + ")").list()
+				in("id", ids).last("order by field(id," + idStr + ")").list()
 				.stream().map(user -> BeanUtil.copyProperties(user, UserDTO.class))
 				.collect(Collectors.toList());
 		//返回

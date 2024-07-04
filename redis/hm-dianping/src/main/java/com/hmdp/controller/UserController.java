@@ -83,4 +83,18 @@ public class UserController {
         // 返回
         return Result.ok(info);
     }
+
+    @GetMapping("/{id}")
+    public Result info1(@PathVariable("id") Long userId) {
+        // 查询详情
+        User user = userService.getById(userId);
+        if (user == null) {
+            // 没有详情，应该是第一次查看详情
+            return Result.ok();
+        }
+        user.setCreateTime(null);
+        user.setUpdateTime(null);
+        // 返回
+        return Result.ok(user);
+    }
 }
