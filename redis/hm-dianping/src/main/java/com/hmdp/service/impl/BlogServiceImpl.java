@@ -17,7 +17,6 @@ import com.hmdp.service.IFollowService;
 import com.hmdp.service.IUserService;
 import com.hmdp.utils.SystemConstants;
 import com.hmdp.utils.UserHolder;
-import com.sun.tools.classfile.StackMapTable_attribute;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.core.ZSetOperations;
 import org.springframework.stereotype.Service;
@@ -178,6 +177,8 @@ public class BlogServiceImpl extends ServiceImpl<BlogMapper, Blog> implements IB
 		Long userId = UserHolder.getUser().getId();
 		//查询收件箱
 		String key = FEED_KEY + userId;
+		//如果是第一次查询 offset=0
+		offset = offset == null ? 0 : offset;
 		//返回score在[min, max]区间的逆序集合，3表示查询3条数据
 		//此处的max：当前查询的最大值，上次查询的最小值
 		Set<ZSetOperations.TypedTuple<String>> typedTuples = stringRedisTemplate.opsForZSet().
