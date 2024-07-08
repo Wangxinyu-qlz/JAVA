@@ -1,14 +1,26 @@
 package com.hmdp;
 
+import com.hmdp.entity.Shop;
 import com.hmdp.service.impl.ShopServiceImpl;
 import com.hmdp.utils.RedisIdWorker;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.geo.Point;
+import org.springframework.data.redis.connection.RedisGeoCommands;
+import org.springframework.data.redis.core.StringRedisTemplate;
 
 import javax.annotation.Resource;
+import java.awt.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.stream.Collectors;
+
+import static com.hmdp.utils.RedisConstants.SHOP_GEO_KEY;
 
 @SpringBootTest
 class HmDianPingApplicationTests {
@@ -19,6 +31,9 @@ class HmDianPingApplicationTests {
 	private RedisIdWorker redisIdWorker;
 
 	private ExecutorService es = Executors.newFixedThreadPool(500);
+	@Autowired
+	private StringRedisTemplate stringRedisTemplate;
+
 	@Test
 	public void testIDWorker() throws InterruptedException {
 		CountDownLatch countDownLatch = new CountDownLatch(300);
@@ -43,5 +58,32 @@ class HmDianPingApplicationTests {
 	@Test
 	public void testSaveShop() {
 		shopService.saveShop2Redis(1L, 10L);
+	}
+
+	@Test
+	void loadShopData() {
+		//获取店铺信息
+		List<Shop> list = shopService.list();
+		//将店铺分组，按照typeId放入一个集合
+		Map<Long, List<Shop>> map = list.stream().collect(Collectors.groupingBy(Shop::getTypeId));
+		//分批写入redis
+		for(Map.Entry<Long, List<Shop>> entry : map.entrySet()){
+			//获取类型id
+			Long typeId = entry.getKey();
+			String key = SHOP_GEO_KEY + typeId;
+			//获取同类型的店铺集合
+			List<Shop> value = entry.getValue();
+			//写入redis
+			//for(Shop shop : value) {//效率低
+			//	stringRedisTemplate.opsForGeo().add(key, new Point(shop.getX(), shop.getY()), shop.getId().toString());
+			//}
+			List<RedisGeoCommands.GeoLocation<String>> location = new ArrayList<>(value.size());
+			for(Shop shop : value) {//效率低
+				location.add(new RedisGeoCommands.GeoLocation<>(
+						shop.getId().toString(),
+						new Point(shop.getX(), shop.getY())));
+			}
+			stringRedisTemplate.opsForGeo().add(key, location);
+		}
 	}
 }
