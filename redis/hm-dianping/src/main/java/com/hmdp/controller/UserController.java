@@ -97,4 +97,14 @@ public class UserController {
         // 返回
         return Result.ok(user);
     }
+
+    @PostMapping("/sign")
+    public Result sing() {
+        return userService.sign();
+    }
+
+    @GetMapping("/sign/count")
+    public Result signCount() {
+        return userService.signCount();
+    }
 }

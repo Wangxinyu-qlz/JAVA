@@ -86,4 +86,20 @@ class HmDianPingApplicationTests {
 			stringRedisTemplate.opsForGeo().add(key, location);
 		}
 	}
+
+	//UV统计 用户访问量，页面点击量
+	@Test
+	public void testHyperLogLog() {
+		String[] values = new String[1000];
+		int j = 0;
+		for (int i = 0; i < 1000000; i++) {
+			j = i % 1000;
+			values[j] = "user_" + i;
+			if (j == 999) {
+				stringRedisTemplate.opsForHyperLogLog().add("hll", values);
+			}
+		}
+		Long size = stringRedisTemplate.opsForHyperLogLog().size("hll");
+		System.out.println("size = " + size);
+	}
 }
