@@ -18,7 +18,7 @@ mybatis:
   mapper-locations: classpath:mapper/*.xml
   type-aliases-package: com.sky.entity
   configuration:
-    #开启驼峰命名
+    #开启驼峰命名 实体类属性名(idNumber)转换为数据库字段名(id_number)
     map-underscore-to-camel-case: true
 
 logging:
