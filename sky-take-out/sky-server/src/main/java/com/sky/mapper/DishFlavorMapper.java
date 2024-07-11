@@ -1,6 +1,9 @@
 package com.sky.mapper;
 
+import com.sky.entity.DishFlavor;
 import org.apache.ibatis.annotations.Mapper;
+
+import java.util.List;
 
 /**
  * @program: sky-take-out
@@ -10,5 +13,5 @@ import org.apache.ibatis.annotations.Mapper;
  **/
 @Mapper
 public interface DishFlavorMapper {
-	void insertBatch();
+	void insertBatch(List<DishFlavor> flavors);
 }
