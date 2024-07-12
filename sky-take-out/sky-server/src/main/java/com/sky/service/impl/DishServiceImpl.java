@@ -8,20 +8,22 @@ import com.sky.dto.DishDTO;
 import com.sky.dto.DishPageQueryDTO;
 import com.sky.entity.Dish;
 import com.sky.entity.DishFlavor;
+import com.sky.entity.Setmeal;
 import com.sky.exception.DeletionNotAllowedException;
 import com.sky.mapper.DishFlavorMapper;
 import com.sky.mapper.DishMapper;
 import com.sky.mapper.SetmealDishMapper;
+import com.sky.mapper.SetmealMapper;
 import com.sky.result.PageResult;
 import com.sky.service.DishService;
 import com.sky.vo.DishVO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -39,6 +41,8 @@ public class DishServiceImpl implements DishService {
 	private DishFlavorMapper dishFlavorMapper;
 	@Autowired
 	private SetmealDishMapper setmealDishMapper;
+	@Autowired
+	private SetmealMapper setmealMapper;
 
 	/**
 	 * 新增菜品和对应的口味
@@ -149,8 +153,42 @@ public class DishServiceImpl implements DishService {
 		}
 	}
 
+	/**
+	 * 根据分类id查询菜品
+	 *
+	 * @param categoryId
+	 * @return
+	 */
 	@Override
 	public List<Dish> list(Integer categoryId) {
 		return dishMapper.list(categoryId);
+	}
+
+	/**
+	 * 启用停用菜品，停用菜品时需要将包含其的套餐停用
+	 *
+	 * @param status
+	 * @param id
+	 */
+	@Override
+	public void startOrStop(Integer status, Long id) {
+		Dish dish = Dish.builder()
+				.status(status)
+				.id(id)
+				.build();
+		dishMapper.update(dish);
+		if (status == StatusConstant.DISABLE) {
+			//将包含其的套餐停用
+			List<Long> setMealIds = setmealDishMapper.getSetMealIdsByDishIds(Collections.singletonList(id));
+			if (setMealIds != null && !setMealIds.isEmpty()) {
+				for (Long setMealId : setMealIds) {
+					Setmeal setmeal = Setmeal.builder()
+							.status(status)
+							.id(setMealId)
+							.build();
+					setmealMapper.update(setmeal);
+				}
+			}
+		}
 	}
 }

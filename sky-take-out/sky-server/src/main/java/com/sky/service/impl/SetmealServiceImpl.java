@@ -5,9 +5,12 @@ import com.github.pagehelper.PageHelper;
 import com.sky.constant.StatusConstant;
 import com.sky.dto.SetmealDTO;
 import com.sky.dto.SetmealPageQueryDTO;
+import com.sky.entity.Dish;
 import com.sky.entity.Setmeal;
 import com.sky.entity.SetmealDish;
 import com.sky.exception.DeletionNotAllowedException;
+import com.sky.exception.SetmealEnableFailedException;
+import com.sky.mapper.DishMapper;
 import com.sky.mapper.SetmealDishMapper;
 import com.sky.mapper.SetmealMapper;
 import com.sky.result.PageResult;
@@ -20,7 +23,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Objects;
 
+import static com.sky.constant.MessageConstant.SETMEAL_ENABLE_FAILED;
 import static com.sky.constant.MessageConstant.SETMEAL_ON_SALE;
 
 /**
@@ -36,6 +41,9 @@ public class SetmealServiceImpl implements SetmealService {
 	private SetmealMapper setmealMapper;
 	@Autowired
 	private SetmealDishMapper setmealDishMapper;
+	@Autowired
+	private DishMapper dishMapper;
+
 	/**
 	 * 新增套餐
 	 * @param setmealDTO
@@ -76,5 +84,23 @@ public class SetmealServiceImpl implements SetmealService {
 		//sql: delete from ? where id in (?,?,?)
 		setmealMapper.deleteBatch(ids);
 		setmealDishMapper.deleteBatchBySetmealId(ids);
+	}
+
+	@Override
+	public void startOrStop(Integer status, Long id) {
+		if (StatusConstant.ENABLE.equals(status)) {//启用套餐，需要判断套餐内菜品的情况
+			//查询该套餐所有菜品的状态
+			List<Dish> dishes = dishMapper.getDishesBySetmealDishId(id);
+			for (Dish dish : dishes) {
+				if (Objects.equals(dish.getStatus(), StatusConstant.DISABLE)) {//套餐关联的菜品状态为停售，则套餐启用失败
+					throw new SetmealEnableFailedException(SETMEAL_ENABLE_FAILED);
+				}
+			}
+		}
+		Setmeal setmeal = Setmeal.builder()
+				.id(id)
+				.status(status)
+				.build();
+		setmealMapper.update(setmeal);
 	}
 }

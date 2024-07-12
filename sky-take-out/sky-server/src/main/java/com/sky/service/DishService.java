@@ -53,4 +53,11 @@ public interface DishService {
 	 * @return
 	 */
 	List<Dish> list(Integer categoryId);
+
+	/**
+	 * 菜品起售停售 停售菜品时，需要将包含菜品的套餐停售
+	 * @param status
+	 * @param id
+	 */
+	void startOrStop(Integer status, Long id);
 }
