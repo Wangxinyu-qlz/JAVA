@@ -2,10 +2,12 @@ package com.sky.service.impl;
 
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
+import com.sky.constant.StatusConstant;
 import com.sky.dto.SetmealDTO;
 import com.sky.dto.SetmealPageQueryDTO;
 import com.sky.entity.Setmeal;
 import com.sky.entity.SetmealDish;
+import com.sky.exception.DeletionNotAllowedException;
 import com.sky.mapper.SetmealDishMapper;
 import com.sky.mapper.SetmealMapper;
 import com.sky.result.PageResult;
@@ -18,6 +20,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+
+import static com.sky.constant.MessageConstant.SETMEAL_ON_SALE;
 
 /**
  * @program: sky-take-out
@@ -58,5 +62,19 @@ public class SetmealServiceImpl implements SetmealService {
 		PageHelper.startPage(setmealPageQueryDTO.getPage(), setmealPageQueryDTO.getPageSize());
 		Page<SetmealVO> page = setmealMapper.pageQuery(setmealPageQueryDTO);
 		return new PageResult(page.getTotal(), page.getResult());
+	}
+
+	@Override
+	public void deleteBatch(List<Long> ids) {
+		for(Long id : ids) {
+			Setmeal setmeal = setmealMapper.getById(id);
+			if(setmeal.getStatus() == StatusConstant.ENABLE) {
+				throw new DeletionNotAllowedException(SETMEAL_ON_SALE);
+			}
+		}
+		//删除套餐 和 套餐菜品关系表中的数据
+		//sql: delete from ? where id in (?,?,?)
+		setmealMapper.deleteBatch(ids);
+		setmealDishMapper.deleteBatchBySetmealId(ids);
 	}
 }
