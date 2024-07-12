@@ -4,6 +4,8 @@ import com.sky.dto.DishDTO;
 import com.sky.dto.DishPageQueryDTO;
 import com.sky.result.PageResult;
 
+import java.util.List;
+
 /**
  * @program: sky-take-out
  * @author: Qiaolezi
@@ -18,4 +20,6 @@ public interface DishService {
 	public void saveWithFlavor(DishDTO dishDTO);
 
 	PageResult pageQuery(DishPageQueryDTO dishPageQueryDTO);
+
+	void deleteBatch(List<Long> ids);
 }
