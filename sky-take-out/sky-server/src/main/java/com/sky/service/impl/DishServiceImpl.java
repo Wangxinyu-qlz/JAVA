@@ -49,7 +49,7 @@ public class DishServiceImpl implements DishService {
 	public void saveWithFlavor(DishDTO dishDTO) {
 		Dish dish = new Dish();
 		BeanUtils.copyProperties(dishDTO, dish);
-		//像菜品表添加一条数据
+		//向菜品表添加一条数据
 		dishMapper.insert(dish);
 		Long dishId = dish.getId();//mapper useGeneratedKeys="true" keyProperty="id"
 		List<DishFlavor> flavors = dishDTO.getFlavors();
@@ -147,5 +147,10 @@ public class DishServiceImpl implements DishService {
 			});
 			dishFlavorMapper.insertBatch(flavors);
 		}
+	}
+
+	@Override
+	public List<Dish> list(Integer categoryId) {
+		return dishMapper.list(categoryId);
 	}
 }
