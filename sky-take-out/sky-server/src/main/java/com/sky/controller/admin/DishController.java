@@ -21,7 +21,7 @@ import java.util.List;
  * @create: 2024-07-11 16:18
  * @description: 菜品管理
  **/
-@RestController
+@RestController("adminDishController")
 @RequestMapping("/admin/dish")
 @Api(tags = "菜品相关接口")
 @Slf4j
@@ -96,7 +96,7 @@ public class DishController {
 	}
 
 	@GetMapping("/list")
-	public Result<List<Dish>> list(Integer categoryId) {
+	public Result<List<Dish>> list(Long categoryId) {
 		List<Dish> list = dishService.list(categoryId);
 		return Result.success(list);
 	}

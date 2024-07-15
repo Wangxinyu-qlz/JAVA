@@ -52,7 +52,7 @@ public interface DishService {
 	 * @param categoryId
 	 * @return
 	 */
-	List<Dish> list(Integer categoryId);
+	List<Dish> list(Long categoryId);
 
 	/**
 	 * 菜品起售停售 停售菜品时，需要将包含菜品的套餐停售
@@ -60,4 +60,11 @@ public interface DishService {
 	 * @param id
 	 */
 	void startOrStop(Integer status, Long id);
+
+	/**
+	 * 根据分类id查询菜品和口味
+	 * @param dish
+	 * @return
+	 */
+	List<DishVO> listWithFlavor(Dish dish);
 }
