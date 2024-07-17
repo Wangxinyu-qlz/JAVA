@@ -15,6 +15,8 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
@@ -83,6 +85,14 @@ public class EmployeeController {
      */
     @PostMapping
     @ApiOperation("新增员工")
+    //使用Spring Cache缓存数据，key的生成：employeeCache::employeeDTO.userName
+    //注解中key的值即id值为null，即该方法的入参 id 为空
+    // 在调用方法时，不能传null值，传入 null 值的话就会报上述错误。
+    @CachePut(cacheNames = "employeeCache", key = "#employeeDTO.username")
+    //@CachePut(cacheNames = "employeeCache", key = "#result.id")//取当前方法的返回值 对象导航
+    //@CachePut(cacheNames = "employeeCache", key = "#p0.id")//取第一个参数
+    //@CachePut(cacheNames = "employeeCache", key = "#a0.id")//取第一个参数
+    //@CachePut(cacheNames = "employeeCache", key = "#root.args[0].id")//取第一个参数
     public Result save(@RequestBody EmployeeDTO employeeDTO) {
         log.info("新增员工：{}", employeeDTO);
         employeeService.save(employeeDTO);
@@ -123,6 +133,7 @@ public class EmployeeController {
      */
     @GetMapping("/{id}")
     @ApiOperation("根据id查询员工信息")
+    @Cacheable(cacheNames = "employeeCache", key = "id")
     public Result<Employee> getById(@PathVariable Long id) {
         Employee employee = employeeService.getById(id);
 
