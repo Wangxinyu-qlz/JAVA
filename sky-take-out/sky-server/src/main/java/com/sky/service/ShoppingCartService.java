@@ -29,4 +29,9 @@ public interface ShoppingCartService {
 	 * @param shoppingCartDTO
 	 */
 	void subShoppingCart(ShoppingCartDTO shoppingCartDTO);
+
+	/**
+	 * 清空当前用户的购物车
+	 */
+	void clean();
 }
