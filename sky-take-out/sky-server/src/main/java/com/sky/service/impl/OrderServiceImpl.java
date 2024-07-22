@@ -275,4 +275,20 @@ public class OrderServiceImpl implements OrderService {
 
 		shoppingCartMapper.insertBatch(shoppingCartList);
 	}
+
+	//TODO
+	/**
+	 * 订单搜索
+	 * @param ordersPageQueryDTO
+	 * @return
+	 */
+	@Override
+	public Page<Orders> conditionSearch(OrdersPageQueryDTO ordersPageQueryDTO) {
+		Orders orders = new Orders();
+		new OrderVO();
+		new OrdersPageQueryDTO();
+
+
+		return null;
+	}
 }
