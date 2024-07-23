@@ -106,8 +106,20 @@ public class OrderController {
 	 */
 	@PutMapping("/rejection")
 	@ApiOperation("拒单")
-	public Result reject(@RequestBody OrdersRejectionDTO ordersRejectionDTO) {
+	public Result reject(@RequestBody OrdersRejectionDTO ordersRejectionDTO) throws Exception {
 		orderService.reject(ordersRejectionDTO);
+		return Result.success();
+	}
+
+	/**
+	 * 派送订单
+	 * @param id
+	 * @return
+	 */
+	@PutMapping("delivery/{id}")
+	@ApiOperation("派送订单")
+	public Result delivery(@PathVariable("id") Long id) {
+		orderService.delivery(id);
 		return Result.success();
 	}
 }

@@ -406,4 +406,24 @@ public class OrderServiceImpl implements OrderService {
 		orders.setCancelTime(LocalDateTime.now());
 		orderMapper.update(orders);
 	}
+
+	/**
+	 * 派送订单
+	 * 将订单状态改为派送中，只有状态为待派送的订单才能执行此操作
+	 * @param id
+	 */
+	@Override
+	public void delivery(Long id) {
+		Orders ordersDB = orderMapper.getById(id);
+		//校验订单状态
+		if(ordersDB==null || !ordersDB.getStatus().equals(Orders.CONFIRMED)) {
+			throw new OrderBusinessException(MessageConstant.ORDER_STATUS_ERROR);
+		}
+
+		Orders orders = Orders.builder()
+				.status(Orders.DELIVERY_IN_PROGRESS)
+				.id(ordersDB.getId())
+				.build();
+		orderMapper.update(orders);
+	}
 }
