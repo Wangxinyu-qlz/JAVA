@@ -1,10 +1,7 @@
 package com.sky.service;
 
 import com.github.pagehelper.Page;
-import com.sky.dto.OrdersCancelDTO;
-import com.sky.dto.OrdersPageQueryDTO;
-import com.sky.dto.OrdersPaymentDTO;
-import com.sky.dto.OrdersSubmitDTO;
+import com.sky.dto.*;
 import com.sky.entity.OrderDetail;
 import com.sky.entity.Orders;
 import com.sky.result.PageResult;
@@ -92,4 +89,10 @@ public interface OrderService {
 	 * @param ordersCancelDTO
 	 */
 	void cancel(OrdersCancelDTO ordersCancelDTO) throws Exception;
+
+	/**
+	 * 接单
+	 * @param ordersConfirmDTO
+	 */
+	void confirm(OrdersConfirmDTO ordersConfirmDTO);
 }

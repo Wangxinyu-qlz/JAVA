@@ -3,6 +3,7 @@ package com.sky.controller.admin;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.sky.dto.OrdersCancelDTO;
+import com.sky.dto.OrdersConfirmDTO;
 import com.sky.dto.OrdersPageQueryDTO;
 import com.sky.entity.Orders;
 import com.sky.result.PageResult;
@@ -82,6 +83,18 @@ public class OrderController {
 	public Result cancel(@RequestBody OrdersCancelDTO ordersCancelDTO) throws Exception {
 		orderService.cancel(ordersCancelDTO);
 
+		return Result.success();
+	}
+
+	/**
+	 * 接单
+	 * @param ordersConfirmDTO
+	 * @return
+	 */
+	@PutMapping("/confirm")
+	@ApiOperation("接单")
+	public Result confirm(@RequestBody OrdersConfirmDTO ordersConfirmDTO) {
+		orderService.confirm(ordersConfirmDTO);
 		return Result.success();
 	}
 }

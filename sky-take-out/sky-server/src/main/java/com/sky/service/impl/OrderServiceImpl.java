@@ -5,10 +5,7 @@ import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.sky.constant.MessageConstant;
 import com.sky.context.BaseContext;
-import com.sky.dto.OrdersCancelDTO;
-import com.sky.dto.OrdersPageQueryDTO;
-import com.sky.dto.OrdersPaymentDTO;
-import com.sky.dto.OrdersSubmitDTO;
+import com.sky.dto.*;
 import com.sky.entity.*;
 import com.sky.exception.AddressBookBusinessException;
 import com.sky.exception.OrderBusinessException;
@@ -197,6 +194,11 @@ public class OrderServiceImpl implements OrderService {
 		return new PageResult(page.getTotal(), orderVOList);
 	}
 
+	/**
+	 * 查询订单详情
+	 * @param id
+	 * @return
+	 */
 	@Override
 	public OrderVO getOrderDetailByOrderId(Long id) {
 		Orders orders = orderMapper.getById(id);
@@ -313,10 +315,13 @@ public class OrderServiceImpl implements OrderService {
 		return new PageResult(ordersPage.getTotal(), orderVOList);
 	}
 
+	/**
+	 * 统计各个状态订单的数量
+	 * @return
+	 */
 	@Override
 	public OrderStatisticsVO statistics() {
 		//统计status == 2 3 4的订单数量
-
 		Integer toBeConfirmed = orderMapper.countStatus(Orders.TO_BE_CONFIRMED);
 		Integer confirmed = orderMapper.countStatus(Orders.CONFIRMED);
 		Integer deliveryInProgress = orderMapper.countStatus(Orders.DELIVERY_IN_PROGRESS);
@@ -327,6 +332,11 @@ public class OrderServiceImpl implements OrderService {
 		return orderStatisticsVO;
 	}
 
+	/**
+	 * 取消订单
+	 * @param ordersCancelDTO
+	 * @throws Exception
+	 */
 	@Override
 	public void cancel(OrdersCancelDTO ordersCancelDTO) throws Exception {
 		Orders ordersDB = orderMapper.getById(ordersCancelDTO.getId());
@@ -348,6 +358,20 @@ public class OrderServiceImpl implements OrderService {
 		orders.setStatus(Orders.CANCELLED);
 		orders.setCancelReason(ordersCancelDTO.getCancelReason());
 		orders.setCancelTime(LocalDateTime.now());
+		orderMapper.update(orders);
+	}
+
+	/**
+	 * 接单
+	 * @param ordersConfirmDTO
+	 */
+	@Override
+	public void confirm(OrdersConfirmDTO ordersConfirmDTO) {
+		Orders orders = Orders.builder()
+				.id(ordersConfirmDTO.getId())
+				.status(Orders.CONFIRMED)
+				.build();
+
 		orderMapper.update(orders);
 	}
 }
