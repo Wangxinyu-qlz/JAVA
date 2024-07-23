@@ -374,4 +374,36 @@ public class OrderServiceImpl implements OrderService {
 
 		orderMapper.update(orders);
 	}
+
+	/**
+	 * 拒单
+	 * @param ordersRejectionDTO
+	 */
+	@Override
+	public void reject(OrdersRejectionDTO ordersRejectionDTO) throws Exception {
+		Orders ordersDB = orderMapper.getById(ordersRejectionDTO.getId());
+
+		if(ordersDB==null || !ordersDB.getStatus().equals(Orders.TO_BE_CONFIRMED)) {
+			throw new OrderBusinessException(MessageConstant.ORDER_STATUS_ERROR);
+		}
+
+		//支付状态
+		Integer payStatus = ordersDB.getPayStatus();
+		if(payStatus == Orders.PAID) {//退款
+			String refund = weChatPayUtil.refund(
+					ordersDB.getNumber(),
+					ordersDB.getNumber(),
+					new BigDecimal(0.01),
+					new BigDecimal(0.01));
+			log.info("申请退款：{}", refund);
+		}
+
+		//更新订单的状态、拒单原因、取消时间
+		Orders orders = new Orders();
+		orders.setStatus(Orders.CANCELLED);
+		orders.setCancelReason(ordersRejectionDTO.getRejectionReason());
+		orders.setId(ordersDB.getId());
+		orders.setCancelTime(LocalDateTime.now());
+		orderMapper.update(orders);
+	}
 }
