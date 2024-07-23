@@ -5,6 +5,7 @@ import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.sky.constant.MessageConstant;
 import com.sky.context.BaseContext;
+import com.sky.dto.OrdersCancelDTO;
 import com.sky.dto.OrdersPageQueryDTO;
 import com.sky.dto.OrdersPaymentDTO;
 import com.sky.dto.OrdersSubmitDTO;
@@ -324,5 +325,29 @@ public class OrderServiceImpl implements OrderService {
 		orderStatisticsVO.setToBeConfirmed(confirmed);
 		orderStatisticsVO.setConfirmed(deliveryInProgress);
 		return orderStatisticsVO;
+	}
+
+	@Override
+	public void cancel(OrdersCancelDTO ordersCancelDTO) throws Exception {
+		Orders ordersDB = orderMapper.getById(ordersCancelDTO.getId());
+		Integer payStatus = ordersDB.getPayStatus();
+
+		//如果已支付，需要退款
+		if(payStatus == 1) {
+			String refund = weChatPayUtil.refund(
+					ordersDB.getNumber(),
+					ordersDB.getNumber(),
+					new BigDecimal(0.01),
+					new BigDecimal(0.01));
+			log.info("申请退款：{}", refund);
+		}
+
+		//根据订单id更新订单状态、取消原因、取消时间
+		Orders orders = new Orders();
+		orders.setId(ordersCancelDTO.getId());
+		orders.setStatus(Orders.CANCELLED);
+		orders.setCancelReason(ordersCancelDTO.getCancelReason());
+		orders.setCancelTime(LocalDateTime.now());
+		orderMapper.update(orders);
 	}
 }

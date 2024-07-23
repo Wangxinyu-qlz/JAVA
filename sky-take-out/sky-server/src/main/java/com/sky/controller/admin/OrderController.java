@@ -2,6 +2,7 @@ package com.sky.controller.admin;
 
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
+import com.sky.dto.OrdersCancelDTO;
 import com.sky.dto.OrdersPageQueryDTO;
 import com.sky.entity.Orders;
 import com.sky.result.PageResult;
@@ -13,10 +14,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.naming.spi.ResolveResult;
 import java.util.Properties;
@@ -72,5 +70,18 @@ public class OrderController {
 		OrderVO orderVO = orderService.getOrderDetailByOrderId(id);
 
 		return Result.success(orderVO);
+	}
+
+	/**
+	 * 取消订单
+	 * @param ordersCancelDTO
+	 * @return
+	 */
+	@PutMapping("cancel")
+	@ApiOperation("取消订单")
+	public Result cancel(@RequestBody OrdersCancelDTO ordersCancelDTO) throws Exception {
+		orderService.cancel(ordersCancelDTO);
+
+		return Result.success();
 	}
 }
