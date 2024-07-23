@@ -2,7 +2,6 @@ package com.sky.controller.user;
 
 import com.sky.dto.OrdersPaymentDTO;
 import com.sky.dto.OrdersSubmitDTO;
-import com.sky.entity.OrderDetail;
 import com.sky.result.PageResult;
 import com.sky.result.Result;
 import com.sky.service.OrderService;
@@ -14,8 +13,6 @@ import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 /**
  * @program: sky-take-out
@@ -108,6 +105,14 @@ public class OrderController {
 	@ApiOperation("再来一单")
 	public Result repetition(@PathVariable("id") Long id) {
 		orderService.repetition(id);
+		return Result.success();
+	}
+
+	@GetMapping("/reminder/{id}")
+	@ApiOperation("客户催单")
+	public Result reminder(@PathVariable("id") Long id) {
+		orderService.reminder(id);
+
 		return Result.success();
 	}
 }

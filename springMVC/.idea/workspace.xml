@@ -10,12 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d78e2bda-5bdd-4d66-bd2c-d5cd590ce33b" name="Changes" comment="添加注释">
-      <change afterPath="$PROJECT_DIR$/../sky-take-out/sky-server/src/main/java/com/sky/config/WebSocketConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../sky-take-out/sky-server/src/main/java/com/sky/task/WebSocketTask.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../sky-take-out/sky-server/src/main/java/com/sky/websocket/WebSocketServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../sky-take-out/sky-server/src/main/resources/websocket.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../sky-take-out/sky-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../sky-take-out/sky-server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../sky-take-out/sky-server/src/main/java/com/sky/controller/notify/PayNotifyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sky-take-out/sky-server/src/main/java/com/sky/controller/notify/PayNotifyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sky-take-out/sky-server/src/main/java/com/sky/controller/user/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sky-take-out/sky-server/src/main/java/com/sky/controller/user/OrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sky-take-out/sky-server/src/main/java/com/sky/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sky-take-out/sky-server/src/main/java/com/sky/service/OrderService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../sky-take-out/sky-server/src/main/java/com/sky/service/impl/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sky-take-out/sky-server/src/main/java/com/sky/service/impl/OrderServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
