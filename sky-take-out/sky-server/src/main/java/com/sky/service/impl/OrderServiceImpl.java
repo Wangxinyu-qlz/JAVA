@@ -21,6 +21,7 @@ import com.sky.vo.OrderVO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.info.BuildProperties;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
@@ -423,6 +424,24 @@ public class OrderServiceImpl implements OrderService {
 		Orders orders = Orders.builder()
 				.status(Orders.DELIVERY_IN_PROGRESS)
 				.id(ordersDB.getId())
+				.build();
+		orderMapper.update(orders);
+	}
+
+	/**
+	 * 完成订单
+	 * @param id
+	 */
+	@Override
+	public void complete(Long id) {
+		Orders ordersDB = orderMapper.getById(id);
+		if(ordersDB==null || !ordersDB.getStatus().equals(Orders.DELIVERY_IN_PROGRESS)) {
+			throw new OrderBusinessException(MessageConstant.ORDER_STATUS_ERROR);
+		}
+
+		Orders orders = Orders.builder()
+				.id(ordersDB.getId())
+				.status(Orders.COMPLETED)
 				.build();
 		orderMapper.update(orders);
 	}
