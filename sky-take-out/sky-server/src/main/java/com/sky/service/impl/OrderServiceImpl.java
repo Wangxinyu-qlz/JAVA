@@ -22,9 +22,9 @@ import com.sky.vo.OrderVO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.CollectionUtils;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -276,19 +276,38 @@ public class OrderServiceImpl implements OrderService {
 		shoppingCartMapper.insertBatch(shoppingCartList);
 	}
 
-	//TODO
 	/**
 	 * 订单搜索
 	 * @param ordersPageQueryDTO
 	 * @return
 	 */
 	@Override
-	public Page<Orders> conditionSearch(OrdersPageQueryDTO ordersPageQueryDTO) {
-		Orders orders = new Orders();
-		new OrderVO();
-		new OrdersPageQueryDTO();
+	public PageResult conditionSearch(OrdersPageQueryDTO ordersPageQueryDTO) {
+		PageHelper.startPage(ordersPageQueryDTO.getPage(), ordersPageQueryDTO.getPageSize());
+		Page<Orders> ordersPage = orderMapper.pageQuery(ordersPageQueryDTO);
 
+		//通过page得到OrderVOList
+		ArrayList<OrderVO> orderVOList = new ArrayList<>();
+		List<Orders> orderList = ordersPage.getResult();
 
-		return null;
+		if (!CollectionUtils.isEmpty(orderList)) {
+			for (Orders orders : orderList) {
+				OrderVO orderVO = new OrderVO();
+				BeanUtils.copyProperties(orders, orderVO);
+
+				//将订单菜品信息拼接为字符串
+				List<OrderDetail> orderDetailList = orderDetailMapper.getByOrderId(orders.getId());
+				List<String> orderDishList = orderDetailList.stream().map(x -> {
+					String orderDish = x.getName() + "*" + x.getNumber() + ";";
+					return orderDish;
+				}).collect(Collectors.toList());
+				String orderDishLists = String.join("", orderDishList);
+
+				orderVO.setOrderDishes(orderDishLists);
+				orderVOList.add(orderVO);
+			}
+		}
+
+		return new PageResult(ordersPage.getTotal(), orderVOList);
 	}
 }

@@ -36,10 +36,8 @@ public class OrderController {
 	@GetMapping("/conditionSearch")
 	@ApiOperation("订单搜索")
 	public Result<PageResult> conditionSearch(OrdersPageQueryDTO ordersPageQueryDTO) {
-		PageHelper.startPage(ordersPageQueryDTO.getPage(), ordersPageQueryDTO.getPageSize());
+		PageResult pageResult = orderService.conditionSearch(ordersPageQueryDTO);
 
-		Page<Orders> page = orderService.conditionSearch(ordersPageQueryDTO);
-
-		return Result.success(new PageResult(page.getTotal(), page.getResult()));
+		return Result.success(pageResult);
 	}
 }
