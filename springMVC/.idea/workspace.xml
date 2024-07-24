@@ -9,7 +9,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d78e2bda-5bdd-4d66-bd2c-d5cd590ce33b" name="Changes" comment="添加注释" />
+    <list default="true" id="d78e2bda-5bdd-4d66-bd2c-d5cd590ce33b" name="Changes" comment="添加注释">
+      <change afterPath="$PROJECT_DIR$/../sky-take-out/sky-server/src/main/resources/template/运营数据报表模板.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sky-take-out/sky-server/src/main/java/com/sky/controller/admin/ReportController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sky-take-out/sky-server/src/main/java/com/sky/controller/admin/ReportController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sky-take-out/sky-server/src/main/java/com/sky/service/ReportService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sky-take-out/sky-server/src/main/java/com/sky/service/ReportService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sky-take-out/sky-server/src/main/java/com/sky/service/impl/ReportServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sky-take-out/sky-server/src/main/java/com/sky/service/impl/ReportServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
