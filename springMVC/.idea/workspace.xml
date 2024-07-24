@@ -15,7 +15,6 @@
       <change beforePath="$PROJECT_DIR$/../sky-take-out/sky-server/src/main/java/com/sky/service/ReportService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sky-take-out/sky-server/src/main/java/com/sky/service/ReportService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../sky-take-out/sky-server/src/main/java/com/sky/service/impl/ReportServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sky-take-out/sky-server/src/main/java/com/sky/service/impl/ReportServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../sky-take-out/sky-server/src/main/resources/mapper/OrderMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../sky-take-out/sky-server/src/main/resources/mapper/OrderMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
