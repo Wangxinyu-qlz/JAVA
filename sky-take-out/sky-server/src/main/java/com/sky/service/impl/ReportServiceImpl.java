@@ -4,6 +4,7 @@ import com.sky.entity.Orders;
 import com.sky.mapper.OrderMapper;
 import com.sky.mapper.UserMapper;
 import com.sky.service.ReportService;
+import com.sky.vo.OrderReportVO;
 import com.sky.vo.TurnoverReportVO;
 import com.sky.vo.UserReportVO;
 import lombok.extern.slf4j.Slf4j;
@@ -41,15 +42,7 @@ public class ReportServiceImpl implements ReportService {
 	 */
 	@Override
 	public TurnoverReportVO getTurnoverStatistics(LocalDate begin, LocalDate end) {
-		//存放从begin -> end 日期之间每天的日期
-		ArrayList<LocalDate> dateList = new ArrayList<>();
-
-		dateList.add(begin);
-		while(!begin.equals(end)) {
-			//计算指定日期后一天的日期
-			begin = begin.plusDays(1);
-			dateList.add(begin);
-		}
+		ArrayList<LocalDate> dateList = getDateList(begin, end);
 		String dateString = StringUtils.join(dateList, ",");
 
 		List<Double> turnoverList = new ArrayList<>();
@@ -75,6 +68,19 @@ public class ReportServiceImpl implements ReportService {
 				.build();
 	}
 
+	private static ArrayList<LocalDate> getDateList(LocalDate begin, LocalDate end) {
+		//存放从begin -> end 日期之间每天的日期
+		ArrayList<LocalDate> dateList = new ArrayList<>();
+
+		dateList.add(begin);
+		while (!begin.equals(end)) {
+			//计算指定日期后一天的日期
+			begin = begin.plusDays(1);
+			dateList.add(begin);
+		}
+		return dateList;
+	}
+
 	/**
 	 * 统计指定时间区间内的用户数据
 	 *
@@ -85,14 +91,7 @@ public class ReportServiceImpl implements ReportService {
 	@Override
 	public UserReportVO getUserStatistics(LocalDate begin, LocalDate end) {
 		//存放从begin -> end 日期之间每天的日期
-		ArrayList<LocalDate> dateList = new ArrayList<>();
-
-		dateList.add(begin);
-		while (!begin.equals(end)) {
-			//计算指定日期后一天的日期
-			begin = begin.plusDays(1);
-			dateList.add(begin);
-		}
+		ArrayList<LocalDate> dateList = getDateList(begin, end);
 		String dateString = StringUtils.join(dateList, ",");
 
 		//新增用户数量 select count(id) from user where create_time < ? and create_time > ?
@@ -122,6 +121,67 @@ public class ReportServiceImpl implements ReportService {
 				.dateList(dateString)
 				.newUserList(newUserString)
 				.totalUserList(totalUserString)
+				.build();
+	}
+
+	/**
+	 * 订单统计
+	 *
+	 * @param begin
+	 * @param end
+	 * @return
+	 */
+	@Override
+	public OrderReportVO getOrdersStatistics(LocalDate begin, LocalDate end) {
+		//存放从begin -> end 日期之间每天的日期
+		ArrayList<LocalDate> dateList = getDateList(begin, end);
+		String dateString = StringUtils.join(dateList, ",");
+
+		//订单总数
+		List<Integer> ordersNumList = new ArrayList<>();
+		//有效订单数
+		List<Integer> validOrdersNumList = new ArrayList<>();
+
+		for (LocalDate date : dateList) {
+			LocalDateTime beginTime = LocalDateTime.of(date, LocalTime.MIN);
+			LocalDateTime endTime = LocalDateTime.of(date, LocalTime.MAX);
+
+			//查询每天的订单数量 select count(id) from orders where order_time > begin and order_time < end
+			Map map = new HashMap();
+			map.put("begin", beginTime);
+			map.put("end", endTime);
+			Integer orderNum = orderMapper.countByMap(map);
+			orderNum = orderNum == null ? 0 : orderNum;
+
+			//查询每天的有效订单数 select count(id) from orders where order_time > begin and order_time < end and status = 5
+			map.put("status", Orders.COMPLETED);
+			Integer validOrdersNum = orderMapper.countByMap(map);
+			validOrdersNum = validOrdersNum == null ? 0 : validOrdersNum;
+
+			ordersNumList.add(orderNum);
+			validOrdersNumList.add(validOrdersNum);
+		}
+
+		//计算时间区间内的订单总数量
+		Integer totalOrderNum = ordersNumList.stream().reduce(Integer::sum).get();
+		//计算时间区间内的有效订单数量
+		Integer validOrderNum = validOrdersNumList.stream().reduce(Integer::sum).get();
+		//计算订单完成率
+		Double orderCompletionRate = 0.0;
+		if(totalOrderNum != 0) {
+			orderCompletionRate = validOrderNum.doubleValue() / totalOrderNum;
+		}
+
+		String ordersNumString = StringUtils.join(ordersNumList, ",");
+		String valOrdersNumString = StringUtils.join(validOrdersNumList, ",");
+
+		return OrderReportVO.builder()
+				.dateList(dateString)
+				.orderCountList(ordersNumString)
+				.validOrderCountList(valOrdersNumString)
+				.totalOrderCount(totalOrderNum)
+				.validOrderCount(validOrderNum)
+				.orderCompletionRate(orderCompletionRate)
 				.build();
 	}
 }
