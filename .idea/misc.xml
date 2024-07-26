@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/stage4_IavaWeb/my_tomcat_maven/pom.xml" />
+        <option value="$PROJECT_DIR$/stage4_IavaWeb/web_path/pom.xml" />
+        <option value="$PROJECT_DIR$/stage4_IavaWeb/listener/pom.xml" />
+        <option value="$PROJECT_DIR$/stage4_IavaWeb/filter/pom.xml" />
+        <option value="$PROJECT_DIR$/stage4_IavaWeb/ajax/pom.xml" />
+        <option value="$PROJECT_DIR$/stage4_IavaWeb/file_up_down_load/pom.xml" />
+        <option value="$PROJECT_DIR$/stage4_JavaWeb/file_up_down_load/pom.xml" />
+        <option value="$PROJECT_DIR$/stage4_JavaWeb/my_tomcat_maven/pom.xml" />
+        <option value="$PROJECT_DIR$/stage4_JavaWeb/filter/pom.xml" />
+        <option value="$PROJECT_DIR$/stage4_JavaWeb/ajax/pom.xml" />
+        <option value="$PROJECT_DIR$/stage4_JavaWeb/web_path/pom.xml" />
+        <option value="$PROJECT_DIR$/stage4_JavaWeb/listener/pom.xml" />
+        <option value="$PROJECT_DIR$/untitled/pom.xml" />
+        <option value="$PROJECT_DIR$/sping_framework/pom.xml" />
+        <option value="$PROJECT_DIR$/stage6_sping_framework/pom.xml" />
+        <option value="$PROJECT_DIR$/stage6_springFramework/pom.xml" />
+        <option value="$PROJECT_DIR$/stage6_SpringFramework/pom.xml" />
+      </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/stage6_SpringFramework/pom.xml" />
+        <option value="$PROJECT_DIR$/stage6_springFramework/pom.xml" />
+      </set>
+    </option>
+    <option name="workspaceImportForciblyTurnedOn" value="true" />
+  </component>
+  <component name="PWA">
+    <option name="wasEnabledAtLeastOnce" value="true" />
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="corretto-1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>

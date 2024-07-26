@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="servlet-api">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/stage4_IavaWeb/servlet/web/WEB-INF/lib/servlet-api.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/stage4_IavaWeb/servlet/web/WEB-INF/lib/servlet-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/stage4_IavaWeb/servlet/web/WEB-INF/lib/servlet-api.jar!/" />
+    </SOURCES>
+  </library>
+</component>
