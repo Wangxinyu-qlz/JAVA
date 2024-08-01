@@ -1,4 +1,3 @@
-import org.jetbrains.annotations.NotNull;
 
 public class VarParameter {
     public static void main(String[] args) {
@@ -6,7 +5,7 @@ public class VarParameter {
         System.out.println("求和结果为：" + sm.sum(1, 1, 1, 1));
 
         StuInfo si = new StuInfo();
-        System.out.println(si.Info("王新宇", 1, 1, 1, 1, 1));
+        System.out.println(si.Info("1", 1, 1, 1, 1, 1));
     }
 }
 
@@ -15,7 +14,7 @@ public class VarParameter {
     //可变参数可以作为数组使用
     //@@@@可变参数和普通参数同时存在时，可变参数必须放在最后
     //@@@@一个形参列表中最多只能有一个可变参数
-    public int sum(int @NotNull ... nums) {
+    public int sum(int ... nums) {
         System.out.println("接受的参数的个数为：" + nums.length);
         int res = 0;
         for(int i : nums){
@@ -26,7 +25,7 @@ public class VarParameter {
 }
 
 class StuInfo {
-    public String Info(String name, @org.jetbrains.annotations.NotNull int @NotNull ...scores) {
+    public String Info(String name, int ...scores) {
         int tol = 0;
         for(int score : scores){
             tol += score;

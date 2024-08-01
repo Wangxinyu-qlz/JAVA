@@ -66,6 +66,7 @@ public class Display
         // increase();//ERRIR
         // Display.value = 3;//ERROR:value是成员变量，不是类变量
         d1.increase();
+        Display.f();
         f();
         d1.f();
     }

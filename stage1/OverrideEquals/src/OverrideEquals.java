@@ -1,3 +1,5 @@
+package OverrideEquals.src;
+
 public class OverrideEquals {
     public static void main(String[] args) {
         Person person = new Person("jack", 10, '男');

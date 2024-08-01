@@ -1,3 +1,5 @@
+package finalize.src;
+
 /*
 * finalize方法几乎不会用，只是应付面试
 * */

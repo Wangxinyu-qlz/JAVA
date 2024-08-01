@@ -1,4 +1,6 @@
-public class VendingMachine 
+package Vendingmachine.Vendingmachine.src;
+
+public class VendingMachine
 {
 //  成员变量 生存周期为对象的生存周期
 //  在实例化对象时，自动初始化

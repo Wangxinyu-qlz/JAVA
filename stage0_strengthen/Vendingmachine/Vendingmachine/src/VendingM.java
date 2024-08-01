@@ -1,4 +1,4 @@
-// package VendingM;
+package Vendingmachine.Vendingmachine.src;// package VendingM;
 
 public class VendingM
 {

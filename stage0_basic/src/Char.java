@@ -1,3 +1,5 @@
+package src;
+
 import java.util.Scanner;
 
 public class Char 
@@ -13,7 +15,7 @@ public class Char
         System.out.println((int)c+" "+(int)d);//98 65
         System.out.println(c-d);//33
 
-        char h = '一';
+        char h = '1';
         h++;
         System.out.println(h);//丁
     }

@@ -1,5 +1,7 @@
-//testandtest
+package Note.Note.src;
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.LinkedList;
 
 class Value1
 {
@@ -121,5 +123,24 @@ public class note
         {
             System.out.println(k.get());//1
         }
+
+        //TODO forEach循环中会将对象锁定，不可增删改
+        LinkedList<String> strings = new LinkedList<>();
+        strings.add("LinkedList");
+        strings.add("LinkedList");
+        strings.add("LinkedList");
+        strings.add("LinkedList");
+        for (String string : strings) {
+            string = "LinkedListLinkedList";
+            //strings.pop();//java.util.ConcurrentModificationException
+        }
+        Iterator<String> iterator = strings.iterator();
+        while(iterator.hasNext()) {
+            System.out.println(iterator.next());
+            //iterator.next();
+        }
+        //for (String string : strings) {
+        //    System.out.println(string);
+        //}
     }
 }

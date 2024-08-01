@@ -1,3 +1,5 @@
+package Extend.src;
+
 //父类
 public class Student {
     public String name;
