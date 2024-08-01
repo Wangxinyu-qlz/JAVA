@@ -1,3 +1,6 @@
+package castle.src;
+
+
 public class HandlerGo extends Handler {
 
 	public HandlerGo(Game game) {
@@ -8,6 +11,4 @@ public class HandlerGo extends Handler {
 	public void doCmd(String word) {
 		game.goRoom(word);
 	}
-
-
 }

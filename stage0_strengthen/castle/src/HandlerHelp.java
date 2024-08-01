@@ -1,3 +1,6 @@
+package castle.src;
+
+
 public class HandlerHelp extends Handler {
 
 	public HandlerHelp(Game game) {

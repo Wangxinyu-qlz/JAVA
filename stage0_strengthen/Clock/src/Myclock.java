@@ -1,3 +1,5 @@
+package Clock.src;
+
 public class Myclock{
     Mydisplay hour = new Mydisplay(24);
     Mydisplay minute = new Mydisplay(60);

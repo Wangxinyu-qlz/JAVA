@@ -1,5 +1,5 @@
-package Clock;
-import Display.Display;//13 14行需要
+package Clock.src.Clock;
+import Clock.src.Display.Display;
 
 /**
  * class Clock

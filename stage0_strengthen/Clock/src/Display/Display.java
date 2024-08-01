@@ -1,4 +1,4 @@
-package Display;
+package Clock.src.Display;
 // 别人可以使用这个类定义变量
 // 一个文件中只能有一个public类
 public class Display 

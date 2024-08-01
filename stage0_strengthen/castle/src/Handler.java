@@ -1,3 +1,5 @@
+package castle.src;
+
 public class Handler {
 	protected Game game;
 

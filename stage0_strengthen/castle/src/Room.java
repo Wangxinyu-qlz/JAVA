@@ -1,3 +1,5 @@
+package castle.src;
+
 import java.util.HashMap;
 
 public class Room {
