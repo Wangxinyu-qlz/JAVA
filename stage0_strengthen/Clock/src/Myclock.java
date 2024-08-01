@@ -14,6 +14,11 @@ public class Myclock{
                 hour.increase();
             }
             System.out.printf("%02d:%02d\n", hour.getValue(), minute.getValue());
+	        try {
+		        Thread.sleep(1000);
+	        } catch (InterruptedException e) {
+		        throw new RuntimeException(e);
+	        }
         }
     }
 
