@@ -6,7 +6,7 @@ public class This {
     }
 }
 
-class TT {
+class TT extends Object {
 //    output：TT(String name, int n)构造器  TT()构造器
     public TT() {
 //        在此处访问TT(String name, int n)构造器

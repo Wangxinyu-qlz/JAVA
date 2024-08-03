@@ -54,7 +54,7 @@ public class Peoplee {
 
     public static void main(String[] args) {
         Peoplee peoplee = new Peoplee();
-        peoplee.setName("王新宇1111111111");
+        peoplee.setName("王1111111111");
         peoplee.setAge(200);
         peoplee.setSalary(30000.0);
         System.out.println(peoplee.info());

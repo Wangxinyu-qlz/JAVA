@@ -33,7 +33,7 @@ class Person {
     private char gender;
 //    重写Object类的equals方法
     public boolean equals(Object obj) {
-//        this：person/person2    obj:person1/person3
+//        this：person/person2 调用该方法的对象    obj:person1/person3
 //        判断是否为同一个对象，是直接返回true
         if(this == obj){
             return true;

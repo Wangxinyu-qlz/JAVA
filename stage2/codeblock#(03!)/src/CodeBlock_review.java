@@ -7,6 +7,7 @@ public class CodeBlock_review {
         * 1
         * 这是普通代码块
         * */
+        System.out.println("------------------------------创建对象实例-----------------------------");
         //AW aw = new AW(1);//创建对象实例
         /*
         * 这是static代码块
@@ -15,7 +16,8 @@ public class CodeBlock_review {
         * 1
         * 这是普通代码块
         * */
-//        BW bw = new BW(2);//创建子类对象实例
+        System.out.println("-----------------创建子类对象实例------------------------");
+        //BW bw = new BW(2);//创建子类对象实例
         /*
         * 这是static代码块
         * 1
@@ -23,7 +25,8 @@ public class CodeBlock_review {
         * 1
         * www
         * */
-//        System.out.println(AW.name);//使用类的静态属性
+        System.out.println("--------------------------使用类的静态属性----------------------------");
+        System.out.println(AW.name);//使用类的静态属性
         /*
         * 这是static代码块
         * 1
@@ -31,6 +34,7 @@ public class CodeBlock_review {
         * 1
         * AW静态方法
         * */
+        System.out.println("---------------------使用类的静态方法-------------------------");
         AW.sf();//使用类的静态方法
     }
 }
