@@ -16,7 +16,7 @@ class Car {
 	}
 
 //	<T, R> 是泛型标识符
-	public<T, R> void fly(T t, R r) {//泛型方法
+	public <T, R> void fly(T t, R r) {//泛型方法
 		System.out.println(t.getClass());//String
 		System.out.println(r.getClass());//Double
 	}
