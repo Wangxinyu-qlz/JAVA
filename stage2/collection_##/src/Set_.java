@@ -6,7 +6,7 @@ import java.util.Set;
  * @author qiaolezi
  * @version 1.0
  * 不是线程安全的
- * 底层是哈希表
+ * 底层是哈希表 hashMap
  * 不保证元素插入和取出顺序一致
  */
 public class Set_ {
