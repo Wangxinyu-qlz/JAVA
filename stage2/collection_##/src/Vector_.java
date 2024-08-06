@@ -3,6 +3,7 @@ import java.util.Vector;
 /**
  * @author qiaolezi
  * @version 1.0
+ * List的古老实现，是线程安全的
  */
 public class Vector_ {
 	@SuppressWarnings({"all"})
@@ -16,5 +17,6 @@ public class Vector_ {
 			vector.add(i);
 		}
 		vector.add(100);
+
 	}
 }

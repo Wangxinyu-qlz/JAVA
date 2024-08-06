@@ -4,6 +4,8 @@ import java.util.TreeSet;
 /**
  * @author qiaolezi
  * @version 1.0
+ * 不是线程安全的
+ * 用于支持对元素自定义排序
  */
 public class TreeSet_ {
 	@SuppressWarnings({"all"})

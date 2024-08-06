@@ -5,6 +5,9 @@ import java.util.Set;
 /**
  * @author qiaolezi
  * @version 1.0
+ * 不是线程安全的
+ * 元素插入和取出满足FIFO
+ * 底层是链表+哈希表
  */
 public class LinkedHashSet01 {
 	@SuppressWarnings({"all"})

@@ -1,9 +1,15 @@
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 /**
  * @author qiaolezi
  * @version 1.0
+ * ArrayList不保证线程安全
+ * 操作时间复杂度：
+ *  增：头增：O(n) 尾增：不扩容O(1) 扩容O(n) 指定位置 O(n)
+ *  删：头删：O(n) 尾删：O(1)              指定位置 O(n)
  */
 public class List_ {
 	@SuppressWarnings({"all"})

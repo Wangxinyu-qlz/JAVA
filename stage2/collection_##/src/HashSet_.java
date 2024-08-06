@@ -3,6 +3,8 @@ import java.util.HashSet;
 /**
  * @author qiaolezi
  * @version 1.0
+ * 不是线程安全的
+ * 不保证存放顺序和取出顺序一致
  */
 public class HashSet_ {
 	@SuppressWarnings({"all"})
