@@ -1,3 +1,5 @@
+package collection;
+
 import java.util.LinkedList;
 
 /**
@@ -68,7 +70,7 @@ class Node {
 
 	@Override
 	public String toString() {
-		return "Node{" +
+		return "collection.Node{" +
 				"item=" + item +
 				'}';
 	}

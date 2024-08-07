@@ -60,8 +60,8 @@ public class MapFor {
 		Iterator iterator2 = entrySet.iterator();;
 		while (iterator2.hasNext()) {
 			Object entry =  iterator2.next();
-//			System.out.println(entry.getClass());//class java.util.HashMap$Node
-//			HashMap$Node -实现->Map.Entry(getKey,getValue)
+//			System.out.println(entry.getClass());//class java.util.HashMap$collection.Node
+//			HashMap$collection.Node -实现->Map.Entry(getKey,getValue)
 //			向下转型 Map.Entry
 			Map.Entry m = (Map.Entry) entry;
 			System.out.println(m.getKey() + "-" + m.getValue());

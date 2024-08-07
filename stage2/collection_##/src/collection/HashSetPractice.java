@@ -1,3 +1,5 @@
+package collection;
+
 import java.util.HashSet;
 import java.util.Objects;
 
@@ -42,7 +44,7 @@ class Employee {
 
 	@Override
 	public String toString() {
-		return "Employee{" +
+		return "collection.Employee{" +
 				"name='" + name + '\'' +
 				", age=" + age +
 				'}';

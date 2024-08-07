@@ -1,3 +1,5 @@
+package collection;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
@@ -32,8 +34,6 @@ public class CollectionIterator {
 			Object next =  iterator.next();
 			System.out.println(next);
 		}
-
-
 	}
 }
 

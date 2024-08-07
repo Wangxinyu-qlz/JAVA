@@ -26,6 +26,11 @@ public class Exception04_Throws {
 	}
 
 	public void f4() {
+		loop:for (int i = 0; i < 3; i++) {
+			for (int j = 0; j < 3; j++) {
+				break loop;
+			}
+		}
 		f5();//OK TODO 运行异常，不必显式处理
 	}
 

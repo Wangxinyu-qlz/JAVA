@@ -30,7 +30,7 @@ public class HashMapIncrement {
 		System.out.println("hashSet=" + hashSet);
 
 		/*
-		* 当向hashSet中添加元素时，-> Node -> 接入table，就是增加了一个*/
+		* 当向hashSet中添加元素时，-> collection.Node -> 接入table，就是增加了一个*/
 		for (int i = 1; i <=7 ; i++) {//在table上的某一条链表上添加7个A对象
 			hashSet.add(new A(i));
 		}

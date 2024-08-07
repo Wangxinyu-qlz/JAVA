@@ -1,3 +1,5 @@
+package collection;
+
 import java.util.LinkedHashSet;
 import java.util.Objects;
 import java.util.Set;
@@ -25,7 +27,7 @@ public class LinkedHashSet01 {
 //		2.LinkedHashSet 底层维护的是一个 LinkedHashMap（是 HashMap 的子类）
 //		3.LinkedHashSet 底层结构：数组+双向链表
 //		4.添加第一次时，直接将 数组table 扩容到16，存放的类型是 LinkHashMap$Entry
-//		5.数组是 HashMap$Node[] 存放的数据/对象/元素是 LinkHashMap$Entry 类型
+//		5.数组是 HashMap$collection.Node[] 存放的数据/对象/元素是 LinkHashMap$Entry 类型
 	}
 }
 
@@ -40,7 +42,7 @@ class Car {
 
 	@Override
 	public String toString() {
-		return "Car{" +
+		return "collection.Car{" +
 				"name='" + name + '\'' +
 				", price=" + price +
 				'}';

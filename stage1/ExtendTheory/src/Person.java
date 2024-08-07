@@ -65,10 +65,9 @@ class Student extends Person {
 	}
 }
 
-
 class TestStudent {
 	public static void main(String[] args) {
-		//通过super(String name) 继承了父类的私有域
+		//TODO 通过super(String name) 继承了父类的私有域
 		Student mStudent = new Student("abc");
 		String mName = mStudent.getName();
 		System.out.println("Name is : " + mName);//abc

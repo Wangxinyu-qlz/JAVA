@@ -1,3 +1,5 @@
+package collection;
+
 import java.util.HashSet;
 
 /**
@@ -36,14 +38,14 @@ public class HashSet_ {
 		System.out.println("==============");
 		hashSet.add(new Dog1("tom"));
 		hashSet.add(new Dog1("tom"));
-		System.out.println(hashSet);//[d, Dog1@4554617c, Dog1@1b6d3586]
+		System.out.println(hashSet);//[d, collection.Dog1@4554617c, collection.Dog1@1b6d3586]
 
 //		TODO 为什么只添加一个"aaa"
 //		String将equals方法重写了，比较的是内容
 		System.out.println("==============");
 		hashSet.add(new String("aaa"));
 		hashSet.add(new String("aaa"));
-		System.out.println(hashSet);//[aaa, d, Dog1{name='tom'}, Dog1{name='tom'}]
+		System.out.println(hashSet);//[aaa, d, collection.Dog1{name='tom'}, collection.Dog1{name='tom'}]
 	}
 }
 
@@ -56,7 +58,7 @@ class Dog1 {
 
 	@Override
 	public String toString() {
-		return "Dog1{" +
+		return "collection.Dog1{" +
 				"name='" + name + '\'' +
 				'}';
 	}

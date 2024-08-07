@@ -27,7 +27,7 @@ public class HashSetSource {
 		* 2.    public boolean add(E e) {return map.put(e, PRESENT)==null;}
 		* 3.    static final int hash(Object key) {int h; return (key == null) ? 0 : (h = key.hashCode()) ^ (h >>> 16);}
 		* 4.执行   final V putVal(int hash, K key, V value, boolean onlyIfAbsent, boolean evict) {
-				        Node<K,V>[] tab; Node<K,V> p; int n, i;//辅助变量
+				        collection.Node<K,V>[] tab; collection.Node<K,V> p; int n, i;//辅助变量
 				        //table 是 HashMap 的一个数组，类型是Node[]
 				        //if 语句表示如果当前table 是null，或者大小=0
 				        //就进行第一次扩容，到16个
@@ -42,7 +42,7 @@ public class HashSetSource {
 				            tab[i] = newNode(hash, key, value, null);
 				        else {
 				            //开发技巧提示：局部变量（辅助）定义在需要的地方
-				            Node<K,V> e; K k;
+				            collection.Node<K,V> e; K k;
 				            //如果当前索引位置对应的链表的第一个元素 和 准备添加的key的hash值一样
 				            //并且满足以下两个条件之一：
 				            //（1）准备加入的 key 和 p指向的Node结点的 key 是同一个对象

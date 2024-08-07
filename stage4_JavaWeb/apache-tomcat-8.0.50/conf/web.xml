@@ -2190,7 +2190,7 @@
     </mime-mapping>
     <mime-mapping>
         <extension>lbe</extension>
-        <mime-type>application/vnd.llamagraphics.life-balance.exchange+xml</mime-type>
+        <mime-type>application/vnd.llamagraphics.life-balance.SwapNumbers+xml</mime-type>
     </mime-mapping>
     <mime-mapping>
         <extension>les</extension>

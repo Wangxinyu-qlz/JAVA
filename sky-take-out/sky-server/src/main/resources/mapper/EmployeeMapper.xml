@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.sky.mapper.EmployeeMapper">
-    <update id="update" parameterType="Employee">
+    <update id="update" parameterType="collection.Employee">
         update employee
         <set>
             <if test="name != null and name != ''">name = #{name},</if>
@@ -18,7 +18,7 @@
         where id = #{id}
     </update>
     
-    <select id="pageQuery" resultType="Employee">
+    <select id="pageQuery" resultType="collection.Employee">
         select * from employee
         <where>
             <if test="name != null and name != ''">

@@ -4,7 +4,7 @@ package qlz;
  * Hello world!
  *
  */
-public class App 
+public class Cache
 {
     public static void main( String[] args )
     {

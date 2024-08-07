@@ -1,3 +1,5 @@
+package collection;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
@@ -14,18 +16,18 @@ public class HomeWork01 {
 		collection.add(new Dog("E", 3));
 
 		Iterator iterator = collection.iterator();
-		while(iterator.hasNext()){
+		while (iterator.hasNext()) {
 			Object obj = iterator.next();
 			System.out.println(obj);
 		}
 
 		iterator = collection.iterator();
 		while (iterator.hasNext()) {
-			Object next =  iterator.next();
+			Object next = iterator.next();
 			System.out.println(next);
 		}
 
-		for (Object obj: collection) {
+		for (Object obj : collection) {
 			System.out.println(obj);
 		}
 	}

@@ -138,7 +138,7 @@
     <bean class="main.spring.bean.Department" id="department"/>
     
     <!--======================================配置Employee对象==============================================-->
-    <bean class="main.spring.bean.Employee" id="employee">
+    <bean class="main.spring.bean.collection.Employee" id="employee">
         <property name="name" value="jack"/>
         <property name="department" ref="department"/>
         <!--给department的name属性指定值  TODO 级联属性赋值

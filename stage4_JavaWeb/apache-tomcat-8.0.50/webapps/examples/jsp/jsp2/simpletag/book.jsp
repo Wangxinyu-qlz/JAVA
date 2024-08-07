@@ -17,10 +17,10 @@
 <%@ taglib prefix="my" uri="/WEB-INF/jsp2/jsp2-example-taglib.tld" %>
 <html>
   <head>
-    <title>JSP 2.0 Examples - Book SimpleTag Handler</title>
+    <title>JSP 2.0 Examples - collection.Book SimpleTag Handler</title>
   </head>
   <body>
-    <h1>JSP 2.0 Examples - Book SimpleTag Handler</h1>
+    <h1>JSP 2.0 Examples - collection.Book SimpleTag Handler</h1>
     <hr>
     <p>Illustrates a semi-realistic use of SimpleTag and the Expression
     Language.  First, a &lt;my:findBook&gt; tag is invoked to populate

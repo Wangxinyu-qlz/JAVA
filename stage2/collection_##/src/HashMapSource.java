@@ -18,8 +18,7 @@ public class HashMapSource {
 //		源码解读
 //		1.执行构造器
 //		执行加载因子，loadfactor=0.75
-//		HashMap$Node[] table = null
+//		HashMap$collection.Node[] table = null
 //		2.执行put
-
 	}
 }

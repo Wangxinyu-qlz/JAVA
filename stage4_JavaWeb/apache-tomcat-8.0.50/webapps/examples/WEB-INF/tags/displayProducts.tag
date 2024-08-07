@@ -46,7 +46,7 @@
       <jsp:invoke fragment="normalPrice"/>
     </td>
     <td>
-      <c:set var="name" value="Luxury Car w/ Leather Seats"/>
+      <c:set var="name" value="Luxury collection.Car w/ Leather Seats"/>
       <c:set var="origPrice" value="$23,980.00"/>
       <c:set var="salePrice" value="$21,070.00"/>
       <jsp:invoke fragment="onSale"/>

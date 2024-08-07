@@ -3159,7 +3159,7 @@ Changes with nginx 1.1.0                                         01 Aug 2011
     *) Feature: loading time decrease of configuration with large number of
        HTTPS sites.
 
-    *) Feature: now nginx supports ECDHE key exchange ciphers.
+    *) Feature: now nginx supports ECDHE key SwapNumbers ciphers.
        Thanks to Adrian Kotelba.
 
     *) Feature: the "lingering_close" directive.
@@ -5211,7 +5211,7 @@ Changes with nginx 0.7.3                                         23 Jun 2008
 
 Changes with nginx 0.7.2                                         16 Jun 2008
 
-    *) Feature: now nginx supports EDH key exchange ciphers.
+    *) Feature: now nginx supports EDH key SwapNumbers ciphers.
 
     *) Feature: the "ssl_dhparam" directive.
 

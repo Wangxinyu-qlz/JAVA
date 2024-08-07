@@ -1,3 +1,5 @@
+package collection;
+
 /**
  * @author qiaolezi
  * @version 1.0
@@ -6,8 +8,8 @@ public class HashSetStructure {
 	public static void main(String[] args) {
 //		模拟 HashMap 的底层结构
 
-//		创建一个数组，类型是 Node[]
-//		Node[] 也叫作 table
+//		创建一个数组，类型是 collection.Node[]
+//		collection.Node[] 也叫作 table
 		Node1[] table = new Node1[16];
 		System.out.println(table);//[LNode1;@1b6d3586
 
@@ -35,7 +37,7 @@ class Node1 {
 
 	@Override
 	public String toString() {
-		return "Node1{" +
+		return "collection.Node1{" +
 				"item=" + item +
 				'}';
 	}
