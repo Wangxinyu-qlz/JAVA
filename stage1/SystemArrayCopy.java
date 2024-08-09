@@ -30,16 +30,16 @@ public class SystemArrayCopy {
 		// 因此它们都指向同一个内存位置。
 		// 数组对象和字符串对象则存储在堆上，
 		// s1 变量存储在栈上。
-		String[] s1 = new String[]{"1", "1", "1"};
+		String[] s1 = new String[]{"1", "2", "3"};
 		String[] s2 = new String[s1.length];
 		//TODO 浅拷贝：只拷贝对象的引用而非对象本身
 		System.arraycopy(s1, 0, s2, 0, s1.length);
 
 		//TODO 这里不是将s1[2]的值改为"12"，而是重新指向了一个新的字符串对象
-		s1[2] = "12";
-		//[1, 1, 12]
+		s1[2] = "1";
+		//[1, 2, 1]
 		System.out.println(Arrays.toString(s1));
-		//[1, 1, 1]
+		//[1, 2, 3]
 		System.out.println(Arrays.toString(s2));
 	}
 }
