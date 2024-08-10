@@ -107,17 +107,24 @@ public class PracticeTest1 {
 
 	@Test
 	void TestDestroyWithPrototype() {
-		/*TODO 当一个bean配置为多例时，ioc容器关闭时，不会调用该bean的destroy()方法，因为多例bean不在ioc容器的管理范围内
-		   多例bean每次调用都会创建，destroy()方法可以选择手动调用
+		ApplicationContext ioc = new ClassPathXmlApplicationContext("testDestroyWithPrototype.xml");
+		/*TODO 当一个bean配置为多例时，ioc容器关闭时，不会调用该bean的destroy()方法
+		       多例bean每次调用都会创建，destroy()方法可以选择手动调用
 		Monster::Constructor NULL
 		这是杰瑞init捣乱了吧*/
-		ApplicationContext ioc = new ClassPathXmlApplicationContext("testDestroyWithPrototype.xml");
 		Monster monster_prototype = ioc.getBean("monster_prototype", Monster.class);
+		/*
+		Monster::Constructor NULL
+		这是杰瑞init捣乱了吧
+		杰瑞走了
+		 */
 		Monster monster_singleton = ioc.getBean("monster_singleton", Monster.class);
+		//多例Bean，手动调用destroy()才会执行
+		//杰瑞走了
 		monster_prototype.destroy();//手动调用销毁方法
 
 		Monster monster_prototype1 = ioc.getBean("monster_prototype", Monster.class);
 		System.out.println(monster_prototype.hashCode() + "  vs  " + monster_prototype1.hashCode());
-		((ConfigurableApplicationContext) ioc).close();
+		((ConfigurableApplicationContext) ioc).close();//这里会调用单例 Bean 的destroy()
 	}
 }

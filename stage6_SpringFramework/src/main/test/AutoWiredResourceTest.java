@@ -22,8 +22,8 @@ public class AutoWiredResourceTest {
 	@Test
 	void testAutoWiredResource() {
 		Animal animal = ioc.getBean("animal", Animal.class);
+		//main.spring.practice.autoWiredResource.Animal@e3c0e40
 		System.out.println(animal);
-
 		//class main.spring.practice.autoWiredResource.Animal
 		System.out.println(Animal.class);
 	}

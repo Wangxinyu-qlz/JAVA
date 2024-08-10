@@ -1,6 +1,5 @@
 package main.mySQL.practice.test;
 
-import com.sun.org.apache.xml.internal.res.XMLErrorResources_tr;
 import main.spring.bean.Monster;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
