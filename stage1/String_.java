@@ -39,5 +39,17 @@ public class String_ {
 		char[] array2 = {'a', 'b', 'c'};
 		String str6 = new String(array2);
 		System.out.println(str6);//abc
+
+
+		//TODO 如果能预知大小的话，最好提前设置StringBuilder、StringBuffer的capacity
+		// 避免多次扩容开销（要创建新的数组并拷贝、抛弃旧数组）
+		StringBuffer stringBuffer = new StringBuffer(8);
+		stringBuffer.append("a");
+		StringBuilder stringBuilder = new StringBuilder(8);
+
+		Integer a = 10;
+		Integer b = 11;
+		//a - b: 00 <0-1 >01
+		System.out.println(a.compareTo(b));
 	}
 }

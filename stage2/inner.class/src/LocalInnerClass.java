@@ -21,7 +21,7 @@ class Outer02 {
 //        不能使用访问修饰符，但是可以使用final修饰（局部变量可以使用final）
 //        作用域仅仅在定义它的方法中或代码块中
         final class Inner02 {
-            //            可以访问外部类的所有成员，包括方法
+            //可以访问外部类的所有成员，包括方法
             private int n1 = 200;
 
             public void f1() {
