@@ -3,10 +3,17 @@ import java.util.Hashtable;
 /**
  * @author qiaolezi
  * @version 1.0
+ * 线程安全
+ * HashTable是过期的类，现在都用ConcurrentHashMap，因为它加锁粒度更低
  */
 public class HashTableExercise {
 	@SuppressWarnings({"all"})
 	public static void main(String[] args) {
+		/*
+		public Hashtable() {
+            this(11, 0.75f);
+        }
+		 */
 		Hashtable table = new Hashtable();//OK
 		table.put("john", 100);//OK
 //		table.put(null, 100);//NullPointerException
