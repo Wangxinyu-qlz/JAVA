@@ -1,4 +1,4 @@
-import collection.Book;
+package collection;
 
 import java.util.*;
 
