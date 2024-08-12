@@ -16,10 +16,10 @@ public class HashSetSource {
 		*   并且table的达标 >= MIN_TREEIFY_CAPACITY(默认64)，进行树化（红黑树）
 		* */
 
-		HashSet hashSet = new HashSet();
-		hashSet.add("java");
+		HashSet<String> hashSet = new HashSet<>();
+		hashSet.add("Java");
 		hashSet.add("Python");
-		hashSet.add("java");
+		hashSet.add("Java");
 		System.out.println("set=" + hashSet);//set=[java, Python]
 
 		/*

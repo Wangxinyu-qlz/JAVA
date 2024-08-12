@@ -5,6 +5,7 @@ import java.util.ArrayList;
 /**
  * @author qiaolezi
  * @version 1.0
+ * 线程不安全
  */
 public class ArrayListSource {
 	@SuppressWarnings({"all"})
