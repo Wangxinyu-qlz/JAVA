@@ -1,5 +1,7 @@
 package singleton_pattern;
 
+import java.io.Serializable;
+
 /**
  * @program: Java
  * @author: Qiaolezi
@@ -8,6 +10,9 @@ package singleton_pattern;
  * 使用一个私有构造函数、一个私有静态变量以及一个公有静态函数来实现。
  * 私有构造函数保证了不能通过构造函数来创建对象实例，
  * 只能通过公有静态函数返回唯一的私有静态变量。
+ *
+ * 实例锁：锁住非静态方法  锁住this  锁住非静态变量
+ * 类 锁： 锁住Class(ClassName.class)  锁住静态变量  锁住静态方法
  **/
 //懒汉式
 //线程不安全
@@ -45,7 +50,8 @@ class LazybonesSynchronized {
 	//但是当一个线程进入该方法之后，
 	// 其它试图进入该方法的线程都必须等待，
 	// 因此性能上有一定的损耗。
-	//实例锁：锁住非静态方法 （还有：锁住this   锁住非静态变量）
+
+	//类锁：锁住静态方法  （还有：锁住类   锁住静态变量）
 	public static synchronized LazybonesSynchronized getUniqueZInstance() {
 		if (uniqueZInstance == null) {
 			uniqueZInstance = new LazybonesSynchronized();
@@ -129,5 +135,45 @@ class LazybonesDoubleCheckLock {
 			}
 		}
 		return uniqueZInstance;
+	}
+}
+
+//静态内部类实现
+//当 Singleton 类加载时，静态内部类 SingletonHolder 没有被加载进内存。
+// 只有当调用 getUniqueInstance() 方法从而触发 SingletonHolder.INSTANCE 时
+// SingletonHolder 才会被加载，此时初始化 INSTANCE 实例。
+// 这种方式不仅具有延迟初始化的好处，而且由虚拟机提供了对线程安全的支持。
+class LazyBonesStaticInnerClass {
+	private LazyBonesStaticInnerClass(){}
+
+	private static class SingletonHolder {
+		private static final LazyBonesStaticInnerClass INSTANCE = new LazyBonesStaticInnerClass();
+	}
+	public static LazyBonesStaticInnerClass getUniqueInstance() {
+		return SingletonHolder.INSTANCE;
+	}
+}
+
+//TODO 枚举实现 单例模式的最佳实践
+// 实现简单，并且在面对复杂的序列化或者反射攻击的时候，能够防止实例化多次。
+enum Singleton {
+	uniqueInstance;
+}
+//考虑以下单例模式的实现，该 Singleton 在每次序列化的时候都会创建一个新的实例，
+// 为了保证只创建一个实例，必须声明所有字段都是 transient，并且提供一个 readResolve() 方法。
+
+//如果不使用枚举来实现单例模式，会出现反射攻击，
+// 因为通过 setAccessible() 方法可以将私有构造函数的访问级别设置为 public，
+// 然后调用构造函数从而实例化对象。如果要防止这种攻击，
+// 需要在构造函数中添加防止实例化第二个对象的代码。
+class SingletonEnum implements Serializable {
+	private static SingletonEnum uniqueInstance;
+	private SingletonEnum(){}
+
+	public static synchronized SingletonEnum getUniqueInstance() {
+		if(uniqueInstance == null) {
+			uniqueInstance = new SingletonEnum();
+		}
+		return uniqueInstance;
 	}
 }
