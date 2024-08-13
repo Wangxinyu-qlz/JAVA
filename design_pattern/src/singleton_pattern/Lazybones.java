@@ -45,6 +45,7 @@ class LazybonesSynchronized {
 	//但是当一个线程进入该方法之后，
 	// 其它试图进入该方法的线程都必须等待，
 	// 因此性能上有一定的损耗。
+	//实例锁：锁住非静态方法 （还有：锁住this   锁住非静态变量）
 	public static synchronized LazybonesSynchronized getUniqueZInstance() {
 		if (uniqueZInstance == null) {
 			uniqueZInstance = new LazybonesSynchronized();
@@ -120,6 +121,7 @@ class LazybonesDoubleCheckLock {
 				类锁通常用于控制对静态变量的访问，因为静态变量属于类而不是某个实例。
 				适用于单例模式中，确保在并发环境下只有一个实例被创建。
 			 */
+			//类锁：锁住当前类  （锁住静态方法  锁住静态变量）
 			synchronized (LazybonesDoubleCheckLock.class) {
 				if(uniqueZInstance == null) {
 					uniqueZInstance = new LazybonesDoubleCheckLock();
