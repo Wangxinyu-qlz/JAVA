@@ -10,7 +10,7 @@ import java.util.concurrent.locks.ReentrantLock;
  **/
 public class ReentrantLock_ {
 	private static int inc = 0;
-	//TODO 使用可重入锁
+	//TODO 使用可重入锁 属于悲观锁
 	ReentrantLock lock = new ReentrantLock();
 	public void increase() {
 		lock.lock();
