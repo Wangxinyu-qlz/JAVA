@@ -13,7 +13,7 @@ public class App {
     private Jedis jedis = null;
     @BeforeEach
     public void init() {
-        jedis = new Jedis("192.168.10.128", 6379);
+        jedis = new Jedis("192.168.10.129", 6379);
         jedis.auth("123456");
         jedis.select(0);
     }
