@@ -15,6 +15,6 @@ public class String_Set {
 		set.add(a1);
 		System.out.println(set);//[aaa, a]
 		a1 += "aa";
-		System.out.println(set);
+		System.out.println(set);//[aaa, a]
 	}
 }

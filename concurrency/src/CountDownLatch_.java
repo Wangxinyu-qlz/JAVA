@@ -28,14 +28,20 @@ public class CountDownLatch_ {
 		for (int i = 0; i < THREAD_NUM; i++) {
 			new Thread(() -> {
 				for (int j = 0; j <COUNT_NUM_PER_THREAD ; j++) {
-					//方式1
-					//代码运行会将锁升级到重量级锁，比较耗时
+					//方式1 悲观锁
+					//悲观锁总是假设最坏的情况，
+					// 认为共享资源每次被访问的时候就会出现问题(比如共享数据被修改)，
+					// 所以每次在获取资源操作的时候都会上锁，
+					// 这样其他线程想拿到这个资源就会阻塞直到锁被上一个持有者释放。
+					// 也就是说，共享资源每次只给一个线程使用，
+					// 其它线程阻塞，用完后再把资源转让给其它线程。
 					//TODO synchronized(count){}是线程不安全的
 					// count 是一个静态的 Integer 对象，
 					// 而 Integer 是不可变的对象（immutable），
 					// [String 基本类型的包装类 BigInteger BigDecimal]
 					// 这意味着每次对 count 的操作都会创建一个新的 Integer 对象。
-					//当你使用 synchronized (count) 来加锁时，
+
+					//使用 synchronized (count) 来加锁时，
 					// 实际上是对当前 count 对象进行加锁，而不是对共享资源本身进行加锁。
 					// 一旦 count 被修改，count 变量就指向了一个新的 Integer 对象，
 					// 而其他线程仍然可能持有旧的 count 对象的锁，这导致了并发情况下的线程安全问题。
@@ -43,7 +49,7 @@ public class CountDownLatch_ {
 						count += 2;
 					}
 
-					//方式2
+					//方式2 乐观锁
 					//AtomicInteger 类，在内存中使用CAS自旋累加，
 					// 但是加的结果都指向内存中的一个变量，
 					// 冲突会比较严重，耗时较多
@@ -82,7 +88,7 @@ public class CountDownLatch_ {
 
 	/*
 	TODO accumulate() 方法是 synchronized 的，这意味着在同一时刻，只有一个线程可以执行这个方法中的代码。
-	 但是，你在 accumulate() 方法内部启动了多个线程，
+	 但是，在 accumulate() 方法内部启动了多个线程，
 	 每个线程运行的是一个新的 Runnable 实例，
 	 这些线程是独立的，它们并不会受到 synchronized 方法的锁定限制。
 	 */
