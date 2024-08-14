@@ -1,48 +1,54 @@
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.atomic.AtomicInteger;
-import java.util.concurrent.atomic.LongAccumulator;
-import java.util.concurrent.atomic.LongAdder;
-
 /**
  * @program: Java
  * @author: Qiaolezi
  * @create: 2024-08-13 20:30
  * @description:
  **/
-public class Concurrency {
+public class CountDownLatch_ {
 	public static int THREAD_NUM = 10;
-	public static int COUNT_NUM = 10000000;//千万
-	//线程池
-	public static CountDownLatch countDownLatch =
-			new CountDownLatch(THREAD_NUM);
+	public static int COUNT_NUM_PER_THREAD = 10000;
+	//线程池 倒计时锁
+	public static java.util.concurrent.CountDownLatch countDownLatch =
+			new java.util.concurrent.CountDownLatch(THREAD_NUM);
 
 	//TODO volatile只能保证可见性和顺序性，但不能保证原子性，
 	//  对于自增（获取值、自增、赋值）等复合操作，
 	//  无法保证多线程下的安全性
-	//public static Integer count = 0;
+	public static Integer count = 0;
 	//public static int count = 0;//4.8s
 
 	//public static AtomicInteger count = new AtomicInteger();//1.7s
 
 	//public static LongAdder count = new LongAdder();//0.13s
 
-	public static LongAccumulator count = new LongAccumulator((left, right) -> left + right, 0);//0.11s
+	//public static LongAccumulator count = new LongAccumulator((left, right) -> left + right, 0);//0.11s
 	//
 	public static void main(String[] args) throws InterruptedException {
 		long start = System.currentTimeMillis();
 		for (int i = 0; i < THREAD_NUM; i++) {
 			new Thread(() -> {
-				for (int j = 0; j <COUNT_NUM ; j++) {
+				for (int j = 0; j <COUNT_NUM_PER_THREAD ; j++) {
 					//方式1
 					//代码运行会将锁升级到重量级锁，比较耗时
-					//synchronized (Concurrency.class) {
-					//	count += 2;
-					//}
+					//TODO synchronized(count){}是线程不安全的
+					// count 是一个静态的 Integer 对象，
+					// 而 Integer 是不可变的对象（immutable），
+					// [String 基本类型的包装类 BigInteger BigDecimal]
+					// 这意味着每次对 count 的操作都会创建一个新的 Integer 对象。
+					//当你使用 synchronized (count) 来加锁时，
+					// 实际上是对当前 count 对象进行加锁，而不是对共享资源本身进行加锁。
+					// 一旦 count 被修改，count 变量就指向了一个新的 Integer 对象，
+					// 而其他线程仍然可能持有旧的 count 对象的锁，这导致了并发情况下的线程安全问题。
+					synchronized (CountDownLatch_.class) {
+						count += 2;
+					}
+
 					//方式2
 					//AtomicInteger 类，在内存中使用CAS自旋累加，
 					// 但是加的结果都指向内存中的一个变量，
 					// 冲突会比较严重，耗时较多
 					//count.addAndGet(2);
+
 					// LongAdder 和 LongAccumulator 底层使用了
 					// base（基本值）+ Cell[] cells（单元表）来保持数据，
 					// 当需要进行累加一个值 n 时，根据线程的一个特有值计算
@@ -54,8 +60,9 @@ public class Concurrency {
 					// 也是这样方案）
 					//方式3
 					//count.add(2);
+
 					//方式4
-					count.accumulate(2);
+					//count.accumulate(2);
 				}
 				countDownLatch.countDown();
 			}).start();
@@ -71,5 +78,24 @@ public class Concurrency {
 		long end = System.currentTimeMillis();
 		System.out.println(count);
 		System.out.println("耗时：" + (end - start));
+	}
+
+	/*
+	TODO accumulate() 方法是 synchronized 的，这意味着在同一时刻，只有一个线程可以执行这个方法中的代码。
+	 但是，你在 accumulate() 方法内部启动了多个线程，
+	 每个线程运行的是一个新的 Runnable 实例，
+	 这些线程是独立的，它们并不会受到 synchronized 方法的锁定限制。
+	 */
+	private static synchronized void accumulate() throws InterruptedException {
+		for (int i=0; i<THREAD_NUM; i++) {
+			new Thread(()->{
+				for(int j = 0; j<COUNT_NUM_PER_THREAD; j++) {
+					count += 2;
+				}
+				countDownLatch.countDown();
+			}).start();
+		}
+		countDownLatch.await();
+		System.out.println("count=" + count);
 	}
 }
