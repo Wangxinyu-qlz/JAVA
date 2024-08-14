@@ -8,6 +8,7 @@ package creation_based.singleton_pattern;
  **/
 //线程安全，双重校验锁
 public class LazybonesDoubleCheckedLock {
+	public int a = 0;
 	//uniqueInstance 采用 volatile 关键字修饰也是很有必要的。
 	// uniqueInstance = new Singleton();
 	// 这段代码其实是分为三步执行。
@@ -25,7 +26,7 @@ public class LazybonesDoubleCheckedLock {
 	//保证可见性：volatile 还确保了 uniqueInstance 的最新值对所有线程是可见的。
 	// 当一个线程修改了 uniqueInstance，其他线程立即能够看到修改后的值，而不会使用缓存中的过期数据。
 
-	private volatile static LazybonesDoubleCheckedLock uniqueZInstance;
+	private  static LazybonesDoubleCheckedLock uniqueZInstance;
 
 	private LazybonesDoubleCheckedLock() {}
 
@@ -80,10 +81,10 @@ public class LazybonesDoubleCheckedLock {
 					//20 dup
 					//21 invokespecial #13 <creation_based/singleton_pattern/LazybonesDoubleCheckedLock.<init> : ()V>
 					//24 putstatic #7 <creation_based/singleton_pattern/LazybonesDoubleCheckedLock.uniqueZInstance : Lcreation_based/singleton_pattern/LazybonesDoubleCheckedLock;>
-					//new 指令创建一个LazybonesDoubleCheckedLock类的新实例。
-					//dup 复制这个新创建的实例引用，以便将其同时用于构造函数调用和putstatic指令。
+					//new 指令创建一个LazybonesDoubleCheckedLock类的新实例，将其引用入栈，此时对象内存分配完毕，但是没有初始化
+					//dup 复制这个新创建的实例的引用，以便将其同时用于构造函数调用和putstatic指令。
 					//invokespecial 调用构造函数初始化新对象。
-					//putstatic 将新创建的对象存储在uniqueZInstance静态字段中。
+					//putstatic 将新创建的对象存储在uniqueZInstance静态字段中。此时，uniqueInstance指向新创建并初始化的对象
 					uniqueZInstance = new LazybonesDoubleCheckedLock();
 				}
 			}
@@ -92,6 +93,11 @@ public class LazybonesDoubleCheckedLock {
 	}
 
 	public static void main(String[] args) {
-		LazybonesDoubleCheckedLock instance = LazybonesDoubleCheckedLock.getUniqueZInstance();
+		for (int i = 0; i < 10; i++) {
+			new Thread(()->{
+				LazybonesDoubleCheckedLock instance = LazybonesDoubleCheckedLock.getUniqueZInstance();
+				int a1 = instance.a;
+			}).start();
+		}
 	}
 }
