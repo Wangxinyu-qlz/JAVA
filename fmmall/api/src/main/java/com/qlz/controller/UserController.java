@@ -6,6 +6,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,6 +28,9 @@ public class UserController {
 	@Resource
 	private UserService userService;
 
+	@Value("${token.header}")
+	private String header;
+
 	@ApiOperation("用户登录")
 	@GetMapping("/login")
 	@ApiImplicitParams({
@@ -34,7 +38,7 @@ public class UserController {
 			@ApiImplicitParam(dataType = "sting", name = "pwd", value = "密码", required = false, defaultValue = "1111")
 	})
 	public ResultVO login(String name, String pwd) {
+		System.out.println("header");
 		return userService.checkLogin(name, pwd);
 	}
 }
-

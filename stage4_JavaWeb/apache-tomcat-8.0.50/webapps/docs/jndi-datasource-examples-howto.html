@@ -289,7 +289,7 @@ resource to your <a href="config/context.html">Context</a>.</p>
     xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee
 http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
     version="2.4"&gt;
-  &lt;description&gt;MySQL Test App&lt;/description&gt;
+  &lt;description&gt;MySQL ThreadTest2 App&lt;/description&gt;
   &lt;resource-ref&gt;
       &lt;description&gt;DB Connection&lt;/description&gt;
       &lt;res-ref-name&gt;jdbc/TestDB&lt;/res-ref-name&gt;
@@ -298,7 +298,7 @@ http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
   &lt;/resource-ref&gt;
 &lt;/web-app&gt;</code></pre></div>
 
-<h5>4. Test code</h5>
+<h5>4. ThreadTest2 code</h5>
 <p>Now create a simple <code>test.jsp</code> page for use later.</p>
 <div class="codeBox"><pre><code>&lt;%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %&gt;
 &lt;%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %&gt;
@@ -309,7 +309,7 @@ select id, foo, bar from testdata
 
 &lt;html&gt;
   &lt;head&gt;
-    &lt;title&gt;DB Test&lt;/title&gt;
+    &lt;title&gt;DB ThreadTest2&lt;/title&gt;
   &lt;/head&gt;
   &lt;body&gt;
 

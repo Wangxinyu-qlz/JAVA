@@ -1,28 +1,28 @@
-import org.junit.jupiter.api.Test;²âÊÔÒ»ÏÂ°É
+import org.junit.jupiter.api.ThreadTest2;ï¿½ï¿½ï¿½ï¿½Ò»ï¿½Â°ï¿½
 import java.io.FileInputStream;
 import java.io.IOException;
 
 /**
  * @author qiaolezi
  * @version 1.0
- * ÑİÊ¾FileInputStreamµÄÊ¹ÓÃ£¨×Ö½ÚÊäÈëÁ÷ ÎÄ¼ş-->³ÌĞò£©
- * µ¥¸ö×Ö½Ú¶ÁÈ¡ Ğ§ÂÊµÍ
- * Ê¹ÓÃread(byte[] b)
+ * ï¿½ï¿½Ê¾FileInputStreamï¿½ï¿½Ê¹ï¿½Ã£ï¿½ï¿½Ö½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ä¼ï¿½-->ï¿½ï¿½ï¿½ï¿½
+ * ï¿½ï¿½ï¿½ï¿½ï¿½Ö½Ú¶ï¿½È¡ Ğ§ï¿½Êµï¿½
+ * Ê¹ï¿½ï¿½read(byte[] b)
  */
 public class FileInputStream_ {
 	public static void main(String[] args) {
 
 	}
 
-	@Test
+	@ThreadTest2
 	public void readFile01() {
 		String filePath = "C:\\My_Code\\Java\\stage2\\file\\test1.txt";
 		int readDate = 0;
 		FileInputStream fileInputStream = null;
 		try {
 			fileInputStream = new FileInputStream(filePath);
-//			´Ó¸ÃÊäÈëÁ÷¶ÁÈ¡Ò»¸ö×Ö½ÚµÄÊı¾İ£¬Èç¹ûÃ»ÓĞÊäÈë¿ÉÓÃ£¬´Ë·½·¨±»×èÖ¹
-//			·µ»Ø-1±íÊ¾ÎÄ¼ş¶ÁÈ¡Íê±Ï
+//			ï¿½Ó¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¡Ò»ï¿½ï¿½ï¿½Ö½Úµï¿½ï¿½ï¿½ï¿½İ£ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã£ï¿½ï¿½Ë·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¹
+//			ï¿½ï¿½ï¿½ï¿½-1ï¿½ï¿½Ê¾ï¿½Ä¼ï¿½ï¿½ï¿½È¡ï¿½ï¿½ï¿½
 			while((readDate = fileInputStream.read()) != -1) {
 				System.out.print((char)readDate);
 			}
@@ -37,20 +37,20 @@ public class FileInputStream_ {
 		}
 	}
 
-	@Test
+	@ThreadTest2
 	public void readFile02() {
 		String filePath = "C:\\My_Code\\Java\\stage2\\file\\test1.txt";
-//		×Ö½ÚÊı×é
+//		ï¿½Ö½ï¿½ï¿½ï¿½ï¿½ï¿½
 		byte[] buf  = new byte[8];
 		int readLength = 0;
 		FileInputStream fileInputStream = null;
 		try {
 			fileInputStream = new FileInputStream(filePath);
-//			´Ó¸ÃÊäÈëÁ÷¶ÁÈ¡×î¶àb.length×Ö½ÚµÄÊı¾İµ½×Ö½ÚÊı×é£¬´Ë·½·¨½«×èÈû£¬Ö±µ½Ä³Ğ©ÊäÈë¿ÉÓÃ
-//			·µ»Ø -1 ±íÊ¾ ÎÄ¼ş¶ÁÈ¡½áÊø
-//			Èç¹û¶ÁÈ¡Õı³££¬·µ»ØÊµ¼Ê¶ÁÈ¡µÄ×Ö½ÚÊı
+//			ï¿½Ó¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¡ï¿½ï¿½ï¿½b.lengthï¿½Ö½Úµï¿½ï¿½ï¿½ï¿½İµï¿½ï¿½Ö½ï¿½ï¿½ï¿½ï¿½é£¬ï¿½Ë·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö±ï¿½ï¿½Ä³Ğ©ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+//			ï¿½ï¿½ï¿½ï¿½ -1 ï¿½ï¿½Ê¾ ï¿½Ä¼ï¿½ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½
+//			ï¿½ï¿½ï¿½ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Êµï¿½Ê¶ï¿½È¡ï¿½ï¿½ï¿½Ö½ï¿½ï¿½ï¿½
 			while((readLength = fileInputStream.read(buf)) != -1) {
-				System.out.print(new String(buf, 0, readLength));//×ª»»Îª×Ö·ûÏÔÊ¾
+				System.out.print(new String(buf, 0, readLength));//×ªï¿½ï¿½Îªï¿½Ö·ï¿½ï¿½ï¿½Ê¾
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -65,10 +65,10 @@ public class FileInputStream_ {
 }
 HHabcH\nabcH
 abcH
-abc½ñÌìÍí
+abcï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 H
-abcÌìÍíÉÏH
-abcÌìÍíÉÏÃ÷ÌìÔçÉÏ¼¸µãÆğ£¿H
-abcÌìÍíÉÏÃ÷ÌìÔçÉÏ¼¸µãÆğ£¿¿É°®H
-abcÌìÍíÉÏÃ÷ÌìÔçÉÏ¼¸µãÆğ£¿¿É°®H
-abcÌìÍíÉÏÃ÷ÌìÔçÉÏ¼¸µãÆğ£¿¿É°®H½ñÌìÓÖ¶ÏÍøÁË£¬·şÁË£¡
+abcï¿½ï¿½ï¿½ï¿½ï¿½ï¿½H
+abcï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½ï¿½ï¿½H
+abcï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½ï¿½ğ£¿¿É°ï¿½H
+abcï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½ï¿½ğ£¿¿É°ï¿½H
+abcï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½ï¿½ğ£¿¿É°ï¿½Hï¿½ï¿½ï¿½ï¿½ï¿½Ö¶ï¿½ï¿½ï¿½ï¿½Ë£ï¿½ï¿½ï¿½ï¿½Ë£ï¿½

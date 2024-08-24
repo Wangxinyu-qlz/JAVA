@@ -1,5 +1,5 @@
 
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.ThreadTest2;
 import java.io.FileInputStream;
 import java.io.IOException;
 
@@ -15,7 +15,7 @@ public class FileInputStream_ {
 
 	}
 
-	@Test
+	@ThreadTest2
 	public void readFile01() {
 		String filePath = "C:\\My_Code\\Java\\stage2\\file\\test1.txt";
 		int readDate = 0;
@@ -38,7 +38,7 @@ public class FileInputStream_ {
 		}
 	}
 
-	@Test
+	@ThreadTest2
 	public void readFile02() {
 		String filePath = "C:\\My_Code\\Java\\stage2\\file\\test1.txt";
 //		字节数组
