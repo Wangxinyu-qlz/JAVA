@@ -22,7 +22,7 @@ class DeadLockDemo extends Thread {
 
 	@Override
 	public void run() {
-//		业务逻辑分析：
+//		逻辑分析：
 //		1.flag=true，线程A持有o1对象锁，然后尝试获取o2对象锁
 //		2.如果线程A得不到o2对象锁，就会Blocked
 //		3.flag=false，线程B持有o2对象锁，然后尝试获取o1对象锁
