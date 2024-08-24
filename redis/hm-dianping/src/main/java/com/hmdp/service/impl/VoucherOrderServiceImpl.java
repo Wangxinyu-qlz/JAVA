@@ -342,7 +342,7 @@ public class VoucherOrderServiceImpl extends ServiceImpl<VoucherOrderMapper, Vou
 				//where voucher_id = ? and stock = ?
 				.eq("voucher_id", voucherId)
 				//乐观锁：使用库存代替版本号，如果库存没变，说明在此期间没有别的线程修改库存，本线程可以进行操作
-				//不会出现超卖，但是会少买
+				//不会出现超卖，但是会少卖
 				//.eq("stock", voucher.getStock())
 				//只要库存大于0，可以进行操作
 				.gt("stock", 0)
