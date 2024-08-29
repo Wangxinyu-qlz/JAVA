@@ -5,16 +5,16 @@
  * @description:
  * 演示死锁的情况
  * 两个方法m1 m2分别获取l1 l2两把锁，然后再分别获取l2 l1，需要的锁都由对方持有
- * 但是如果将Object()换成包装类型/String，不会发生死锁，因为是不可变对象
+ * 但是如果将Object()换成 包装类型/String，不会发生死锁，因为是不可变对象
+ * TODO 两个synchronized()必须是嵌套而不是并列
  **/
 public class DeadLockExample {
 
-    private  String lock1 = "1";
+    private  Object lock1 = new Object();
     private  Object lock2 = new Object();
 
     public void method1() {
         synchronized (lock1) {
-			lock1 = "2";
             System.out.println(Thread.currentThread().getName() + " acquired lock1 in method1");
             //try {
             //    // Simulate some work
