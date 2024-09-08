@@ -1,9 +1,9 @@
 package main.mySQL.practice.tx_practice.service;
 
+import jakarta.annotation.Resource;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.annotation.Resource;
 
 /**
  * @program: pom.xml

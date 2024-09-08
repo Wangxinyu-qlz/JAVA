@@ -1,12 +1,12 @@
 package main.mySQL.practice.tx_practice.service;
 
+import jakarta.annotation.Resource;
 import main.mySQL.practice.tx_practice.dao.GoodsDao;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.annotation.Resource;
 
 /**
  * @program: pom.xml

@@ -1,9 +1,9 @@
 package main.mySQL.practice.tx_practice.dao;
 
+import jakarta.annotation.Resource;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-import javax.annotation.Resource;
 
 /**
  * @program: pom.xml
