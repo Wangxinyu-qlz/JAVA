@@ -1,6 +1,11 @@
 public class PolyParameter {
     public static void main(String[] args) {
-        Phone phone = new Phone();
+        Phone phone = new Phone() {
+            @Override
+            public void ter() {
+
+            }
+        };
         Camera camera = new Camera();
         Computer computer = new Computer();
 
@@ -12,6 +17,16 @@ public class PolyParameter {
 interface Usb {
     public void start();
     public void end();
+
+    public abstract void ter();
+
+	static void tere() {
+
+	}
+
+    public static final int f = 0;
+    int a = 0;
+    //int b;
 }
 
 class Camera implements Usb {
@@ -22,9 +37,14 @@ class Camera implements Usb {
     public void end() {
         System.out.println("相机停止工作.");
     }
+
+    @Override
+    public void ter() {
+
+    }
 }
 
-class Phone implements Usb {
+abstract class Phone implements Usb {
     public void start() {
         System.out.println("手机开始工作.");
     }
