@@ -24,8 +24,7 @@ interface Usb {
 
 	}
 
-    public static final int f = 0;
-    int a = 0;
+    public static final int a = 0;
     //int b;
 }
 
