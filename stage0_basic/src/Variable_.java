@@ -42,5 +42,18 @@ public class Variable_ {
 		}
 		//int i;
 		//if(i==0);//编译错误
+
+		long l = 010;
+		Long ll = 10l;//包装类要加l
+		float f = 10;
+		Float ff = 10.1f;//包装类要加f
+
+		//int flag = (int)true;//boolean类型不能进行转换
+		double d = 0x123;
+		//byte b = 128;//byte类型是[-128, 127]，溢出了需要强转
+		byte b = (byte)128;
+		System.out.println(b);//-128
+
+
 	}
 }
