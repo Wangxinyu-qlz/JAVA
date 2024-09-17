@@ -1,0 +1,67 @@
+GET http://localhost:8080/springMVC/login
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: JSESSIONID=BA00BD2F4BD86EB7225EDCF093AC1188
+content-length: 0
+
+<> 2024-05-23T153552.200.html
+
+###
+
+GET http://localhost:8080/springMVC/login
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: JSESSIONID=BA00BD2F4BD86EB7225EDCF093AC1188
+content-length: 0
+
+<> 2024-05-23T153536.200.html
+
+###
+
+GET http://localhost:8080/springMVC/login
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: JSESSIONID=BA00BD2F4BD86EB7225EDCF093AC1188
+content-length: 0
+
+<> 2024-05-23T153520.200.html
+
+###
+
+GET http://localhost:8080/springMVC/login
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-05-23T153519.200.html
+
+###
+
+GET http://localhost:8080/sprintMVC/login
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+###
+
+GET http://localhost:8080/sprintMVC/login
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+###
+
+GET http://localhost:8080/login
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+###
+
